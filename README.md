@@ -43,6 +43,3 @@ Questo è un esempio di output
 Prima di poter iniziare a scrivere codice (e inziare, quindi, a definire nuove Variabili,Parametri,Riforme,Formule etc...) dovrai leggere attentamente i [concetti chiave](http://openfisca.org/doc/key-concepts.html) sui cui si basa OpenFisca (e in generale un sistema di tasse e benefici) e la [guida dalla legge al codice](http://openfisca.org/doc/coding-the-legislation/index.html).
 ## Conclusione
 :tada: Complimenti, se hai letto tutte le sezioni precedenti ed hai eseguito tutte le istruzioni al loro interno sei pronto per sviluppare il sistema di tasse e benefici per l'italia.:tada:
-
-
-
