@@ -1,0 +1,50 @@
+# Test files describe situations and their expected outcomes
+# We can run this test on our command line using `openfisca-run-test reddito_di_base.yaml`
+
+- name: Il reddito di base dovrebbe essere 0 prima che fosse introdotto
+  period: 2015-11
+  input_variables:
+    age: 18
+    salary: 0
+  output_variables:
+    basic_income: 0
+
+- name: Nel Dicembre 2015, un adulto senza stipendio dovrebbe ottenere un reddito base di 600
+  period: 2015-12
+  input_variables:
+    salary: 0
+    age: 18
+  output_variables:
+    basic_income: 600
+
+- name: Nel Dicembre 2015, un bambino senza stipendio non dovrebbe avere un reddito di base
+  period: 2015-12
+  input_variables:
+    salary: 0
+    age: 17
+  output_variables:
+    basic_income: 0
+
+- name: Nel Dicembre 2015, un adulto con un salario non dovrebbe avere un reddito di base
+  period: 2015-12
+  input_variables:
+    salary: 1200
+    age: 18
+  output_variables:
+    basic_income: 0
+
+- name: Nel Dicembre 2016, un bambino senza stipendio non dovrebbe avere un reddito di base
+  period: 2016-12
+  input_variables:
+    salary: 0
+    age: 17
+  output_variables:
+    basic_income: 0
+
+- name: Nel Dicembre 2016, un adulto con un salario dovrebbe ottenere un reddito base di 600
+  period: 2016-12
+  input_variables:
+    salary: 1200
+    age: 18
+  output_variables:
+    basic_income: 600
