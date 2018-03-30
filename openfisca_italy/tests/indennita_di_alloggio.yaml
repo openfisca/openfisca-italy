@@ -1,0 +1,16 @@
+# Test files describe situations and their expected outcomes
+# We can run this test on our command line using `openfisca-run-test indennita_di_alloggio.yaml`
+
+- name: Nel gennaio 2016, una famiglia che paga 400 di affitto riceve un'indennità di 100
+  period: 2016-01
+  input_variables:
+    rent: 400
+  output_variables:
+    housing_allowance: 100
+
+- name: L' indennita_di_alloggio è scomparsa nel Dicembre 2016
+  period: 2016-12
+  input_variables:
+    rent: 400
+  output_variables:
+    housing_allowance: 0

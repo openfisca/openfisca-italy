@@ -1,0 +1,10 @@
+#Test to see if a person as 
+
+- name: Test per vedere se funziona eta' pensionabile
+  period: 2009-01
+  input_variables:
+    birth: 1942-01-01
+  outuput_variables:
+    isAgeRetirement:
+      2009-01: 0
+      2009-02: 1   
