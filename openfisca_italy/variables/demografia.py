@@ -42,6 +42,6 @@ class isAgeRetirement(Variable):
     label = u"La persona è in età pensionabile?"
     # a person is in age of retirement if it has more than 66.7
     def formula(person,period,parameters):
-        birth = person('birth', period)
-        age = (datetime64(period.date) - birth).astype('timedelta64[Y]')
+        age = person('age', period)
+        age = age.astype(int) # to be secure that age is an int 
         return age > 66.7
