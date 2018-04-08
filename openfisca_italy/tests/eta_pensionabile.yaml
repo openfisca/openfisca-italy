@@ -1,10 +1,20 @@
-#Test to see if a person as 
+#Test to see if a person is in age of retirement (parameter: eta_pensionamento.yaml) 
 
-- name: Test per vedere se funziona eta' pensionabile
-  period: 2009-01
+- name: Test per vedere se funziona eta' pensionabile prima del 2012
+  period: 2000-01
   input_variables:
-    birth: 1933-01-01
+    birth: 1935-02-01
   output_variables:
     isAgeRetirement:
       2000-01: 0
       2000-02: 1
+
+- name: Test per vedere se funziona eta' pensionabile dopo del 2012
+  #test for second period
+  period: 2013-01
+  input_variables:
+    birth: 1950-02-01
+  output_variables:
+    isAgeRetirement:
+      2017-01: 0
+      2017-02: 1

@@ -3,7 +3,7 @@
 # This file defines the entities needed by our legislation.
 from openfisca_core.entities import build_entity
 
-Household = build_entity(
+Famiglia = build_entity(
     key = "household",
     plural = "households",
     label = u'Famiglia',
@@ -39,7 +39,7 @@ Household = build_entity(
         ]
     )
 
-Person = build_entity(
+Persona = build_entity(
     key = "person",
     plural = "persons",
     label = u'Persona',
@@ -58,4 +58,4 @@ Person = build_entity(
     is_person = True,
     )
 
-entities = [Household, Person]
+entities = [Famiglia, Persona]

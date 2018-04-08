@@ -14,14 +14,14 @@ from openfisca_italy.entita import *
 # The error returns when try to run this command: openfisca-run-test openfisca_italy\tests\eta.yaml
 
 
-'''
+
 class total_benefits(Variable):
     value_type = float
-    entity = Household
+    entity = Famiglia
     definition_period = MONTH
     label = "Somma dei benefici percepiti da una famiglia"
     reference = "https://stats.gov.example/benefits"
-    def total_benefits(household, period, parameters):
+    def formula(household, period, parameters):
         basic_income_i = household.members('basic_income', period)  # Calculates the value of basic_income for each member of the household
         return (
             + household.sum(basic_income_i)  # Sum the household members basic incomes
@@ -30,12 +30,12 @@ class total_benefits(Variable):
 
 class total_taxes(Variable):
     value_type = float
-    entity = Household
+    entity = Famiglia
     definition_period = MONTH
     label = "Somma delle tasse pagate da una famiglia"
     reference = "https://stats.gov.example/taxes"
 
-    def total_taxes(household, period, parameters):
+    def formula(household, period, parameters):
         income_tax_i = household.members('income_tax', period)
         social_security_contribution_i = household.members('social_security_contribution', period)
         return (
@@ -43,4 +43,3 @@ class total_taxes(Variable):
             + household.sum(social_security_contribution_i)
             + household('housing_tax', period.this_year) / 12
             )
-'''

@@ -13,7 +13,7 @@ from openfisca_italy.entita import *
 # This variable is a pure input: it doesn't have a formula
 class salary(Variable):
     value_type = float
-    entity = Person
+    entity = Persona
     definition_period = MONTH
     set_input = set_input_divide_by_period  # Optional attribute. Allows user to declare a salary for a year. OpenFisca will spread the yearly amount over the months contained in the year.
     label = "Stipendio"
@@ -22,7 +22,7 @@ class salary(Variable):
 
 class disposable_income(Variable):
     value_type = float
-    entity = Person
+    entity = Persona
     definition_period = MONTH
     label = "Importo effettivo disponibile alla persona alla fine del mese"
     reference = "https://stats.gov.example/disposable_income"  # Some variables represent quantities used in economic models, and not defined by law. Always give the source of your definition.

@@ -12,7 +12,7 @@ from openfisca_italy.entita import *
 
 class income_tax(Variable):
     value_type = float
-    entity = Person
+    entity = Persona
     definition_period = MONTH
     label = u"Imposta sul reddito"
     reference = "https://law.gov.example/income_tax"  # Always use the most official source
@@ -24,7 +24,7 @@ class income_tax(Variable):
 
 class social_security_contribution(Variable):
     value_type = float
-    entity = Person
+    entity = Persona
     definition_period = MONTH
     label = u"Contributo progressivo pagato sui salari per finanziare la previdenza sociale"
     reference = "https://law.gov.example/social_security_contribution"  # Always use the most official source
@@ -40,7 +40,7 @@ class social_security_contribution(Variable):
 
 class housing_tax(Variable):
     value_type = float
-    entity = Household
+    entity = Famiglia
     definition_period = YEAR  # This housing tax is defined for a year.
     label = u"Imposta pagata da ogni famiglia proporzionalmente alle dimensioni del suo alloggio"
     reference = "https://law.gov.example/housing_tax"  # Always use the most official source

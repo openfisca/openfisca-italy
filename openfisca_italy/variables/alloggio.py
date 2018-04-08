@@ -13,7 +13,7 @@ from openfisca_italy.entita import *
 # This variable is a pure input: it doesn't have a formula
 class accomodation_size(Variable):
     value_type = float
-    entity = Household
+    entity = Famiglia
     definition_period = MONTH
     label = u"Dimensione dell'alloggio, in metri quadri"
 
@@ -21,7 +21,7 @@ class accomodation_size(Variable):
 # This variable is a pure input: it doesn't have a formula
 class rent(Variable):
     value_type = float
-    entity = Household
+    entity = Famiglia
     definition_period = MONTH
     label = u"Affitto pagato dalla famiglia"
 
@@ -39,6 +39,6 @@ class housing_occupancy_status(Variable):
     value_type = Enum
     possible_values = HousingOccupancyStatus
     default_value = HousingOccupancyStatus.tenant
-    entity = Household
+    entity = Famiglia
     definition_period = MONTH
     label = u"Situazione abitativa legale della famiglia riguardante la loro residenza principale"

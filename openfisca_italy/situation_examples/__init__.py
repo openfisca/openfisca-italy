@@ -14,4 +14,4 @@ def parse(file_name):
 
 
 single = parse('single.json')
-couple = parse('couple.json')
+coppie = parse('coppie.json')
