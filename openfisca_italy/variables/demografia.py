@@ -44,3 +44,16 @@ class isAgeRetirement(Variable):
         age = person('age', period)
         age = age.astype(int) # to be secure that age is an int 
         return age >= parameters(period).eta.eta_pensionamento
+
+# This variable is to know if a person could work
+class isAgeOfWork(Variable):
+    value_type = bool
+    default_value = False
+    entity = Persona
+    definition_period = MONTH
+    label = u"La persona è in età lavorativa?"
+    # a person is in age of retirement if it has more than 66.7
+    def formula(person,period,parameters):
+        age = person('age', period)
+        age = age.astype(int) # to be secure that age is an int 
+        return age >= parameters(period).eta.eta_lavorativa

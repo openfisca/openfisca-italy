@@ -1,0 +1,26 @@
+#Test to see if a person is in age of work (parameter: eta_lavorativa.yaml) 
+
+- name: Test per vedere se funziona eta' lavorativa 
+  period: 1970-01
+  input_variables:
+    birth: 1965-02-01
+  output_variables:
+    isAgeOfWork:
+      1980-01: 0
+      1980-02: 1
+  #test for second period
+  period: 2000-01
+  input_variables:
+    birth: 1995-02-01
+  output_variables:
+    isAgeOfWork:
+      2010-01: 0
+      2010-02: 1
+  #test for second period
+  period: 2010-01
+  input_variables:
+    birth: 2000-02-01
+  output_variables:
+    isAgeOfWork:
+      2016-01: 0
+      2016-02: 1
