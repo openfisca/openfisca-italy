@@ -12,7 +12,7 @@ from openfisca_italy.entita import *
 
 class basic_income(Variable):
     value_type = float
-    entity = Person
+    entity = Persona
     definition_period = MONTH
     label = "Reddito di base fornito agli adulti"
     reference = "https://law.gov.example/basic_income"  # Always use the most official source
@@ -31,7 +31,7 @@ class basic_income(Variable):
 
 class housing_allowance(Variable):
     value_type = float
-    entity = Household
+    entity = Famiglia
     definition_period = MONTH
     label = "Indennità di alloggio"
     reference = "https://law.gov.example/housing_allowance"  # Always use the most official source
@@ -45,7 +45,7 @@ class housing_allowance(Variable):
 # By default, you can use utf-8 characters in a variable. OpenFisca web API manages utf-8 encoding.
 class pension(Variable):
     value_type = float
-    entity = Person
+    entity = Persona
     definition_period = MONTH
     label = "Pensione per gli anziani. Pensione assegnata agli anziani."
     reference = [u"https://www.inps.it/nuovoportaleinps/default.aspx?itemdir=46023"]

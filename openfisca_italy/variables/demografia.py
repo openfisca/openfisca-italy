@@ -13,7 +13,7 @@ from numpy import datetime64
 
 class age(Variable):
     value_type = int
-    entity = Person
+    entity = Persona
     definition_period = MONTH
     label = u"Eta' della persona (in anni)"
     # A person's age is computed according to its birth date.
@@ -26,22 +26,21 @@ class age(Variable):
 class birth(Variable):
     value_type = date
     default_value = date(1970, 1, 1)  # By default, is no value is set for a simulation, we consider the people involed in a simulation to be born on the 1st of Jan 1970.
-    entity = Person
+    entity = Persona
     label = u"Data di nascita"
     definition_period = ETERNITY  # This variable cannot change over time.
     reference = u"https://it.wiktionary.org/wiki/compleanno"
 
 
-# TOFIX
 # This variable is to know if a person is in retirement age
 class isAgeRetirement(Variable):
     value_type = bool
     default_value = False
-    entity = Person
+    entity = Persona
     definition_period = MONTH
     label = u"La persona è in età pensionabile?"
     # a person is in age of retirement if it has more than 66.7
     def formula(person,period,parameters):
         age = person('age', period)
         age = age.astype(int) # to be secure that age is an int 
-        return age > 66.7
+        return age >= parameters(period).eta.eta_pensionamento
