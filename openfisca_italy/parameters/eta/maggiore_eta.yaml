@@ -2,7 +2,8 @@ description:  Maggiore Età (espressa in anni)
 reference: https://it.wikipedia.org/wiki/Maggiore_et%C3%A0
 values:
   # This parameter has last changed on the 8th of March 1975.
-  1946-06-02: #born or italian republic
+  # born or italian republic
+  1946-06-02:
     value: 21.0
   1975-08-03:
     value: 18.0
