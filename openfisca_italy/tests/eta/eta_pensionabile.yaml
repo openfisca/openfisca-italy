@@ -6,8 +6,8 @@
     birth: 1935-02-01
   output_variables:
     isAgeRetirement:
-      2000-01: 0
-      2000-02: 1
+      2000-01: False
+      2000-02: True
   
 - name: Test per vedere se funziona eta' pensionabile dopo il 2012
   period: 2013-01
@@ -15,5 +15,5 @@
     birth: 1950-02-01
   output_variables:
     isAgeRetirement:
-      2017-01: 0
-      2017-02: 1
+      2017-01: False
+      2017-02: True

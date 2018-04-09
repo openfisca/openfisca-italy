@@ -6,8 +6,8 @@
     birth: 1965-02-01
   output_variables:
     isAgeOfWork:
-      1980-2: 0
-      1981-3: 1
+      1980-02: False
+      1980-03: True
 
 - name: Test per vedere se funziona eta' lavorativa dopo 1999 e prima del 2006 
   period: 2000-01
@@ -15,8 +15,8 @@
     birth: 1985-02-01
   output_variables:
     isAgeOfWork:
-      2000-2: 0
-      2000-3: 1
+      2000-02: False
+      2000-03: True
 
 - name: Test per vedere se funziona eta' lavorativa dopo 2006 
   period: 2008-01
@@ -24,5 +24,5 @@
     birth: 2001-02-01
   output_variables:
     isAgeOfWork:
-      2017-02: 0 #Throw error when testing, this value must be false instead was true
-      2017-03: 1
+      2017-02: False #Throw error when testing, this value must be false instead was true
+      2017-03: True
