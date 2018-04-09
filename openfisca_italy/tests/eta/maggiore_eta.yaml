@@ -5,13 +5,13 @@
     birth: 1945-02-01
   output_variables:
     isAdult:
-      1966-02: 0
-      1966-03: 1
+      1966-02: False
+      1966-03: True
 - name: Test per vedere se funziona maggiore età prima del 75
   period: 2000-01
   input_variables:
     birth: 1990-02-01
   output_variables:
     isAdult:
-      2008-02: 0
-      2008-03: 1
+      2008-02: False
+      2008-03: True
