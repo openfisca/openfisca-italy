@@ -25,7 +25,8 @@
     * `reforms/modify_social_security_taxation.py` -> `reforms/modifica_tassazione_sicurezza_sociale.py`
     * `reforms/removal_basic_income.py` -> `reforms/rimozione_reddito_base.py`
     * `situation_example/couple.json` -> `situation_example/coppie.json`
-    * `tests/Riforme/modify_social_security_taxation.yaml` -> `tests/Riforme/modifica_la_tassazione_sulla_sicurezza_sociale.yaml`
+    * `tests/Riforme/modify_social_security_taxation.yaml` -> 
+    * `tests/Riforme/modifica_la_tassazione_sulla_sicurezza_sociale.yaml`
     * `tests/social_security_contribution.yaml` -> `tests/contributi_previdenziali.yaml`
     * `tests/age_of_majority.yaml` -> `tests/eta_pensionabile.yaml`
     * `tests/age.yaml` -> `tests/eta.yaml`
@@ -42,9 +43,15 @@
     * `variables/taxes.py` -> `variables/tasse.py`
     * `entities.py` -> `entita.py`
 * Details:
-  - Build the structure of the italian tax and benefit system (adapt country_template translating names of files, variables...)
-  - Introduce variable `isAgeRetirement` in `demografia.py` used to know if a person has the minimum age to retire
+  - Build the structure of the italian tax and benefit system (adapt country_template translating names of      files, variables...)
   - Introduce directory `tasse_lavoro` to distinguish work taxes and all the other type of taxes
-  - Add tests yaml for `isAgeRetirement` in `eta_pensionabile.yaml`
-  - Introduce parameter `eta_lavorativa` in `parameters/eta` used to know if a person could work
+  - Introduce parameter `eta_pensionabile.yaml` in `parameters/eta` used to know if a person could retire
+  - Introduce variable `is_age_retirement` in `demografia.py` used to know if a person has the minimum age to   retire (using the parameter `parameters/eta/eta_pensionabile.yaml`)
+  - Add tests yaml for `is_age_retirement` in `tests/eta/eta_pensionabile.yaml`
+  - Introduce parameter `eta_lavorativa.yaml` in `parameters/eta` used to know if a person could work
+  - Introduce variable `is_age_of_work` in `demografia.py` used to know if a person has the minimum age to   work (using the parameter `parameters/eta/eta_lavorativa.yaml`)
+  - Add tests yaml for `is_age_of_work` in `tests/eta/eta_lavorativa.yaml`
+  - Introduce parameter `maggiore_eta.yaml` in `parameters/eta` used to know if a person is adult
+  - Introduce variable `is_adult` in `demografia.py` used to know if a person is adult (using the parameter `parameters/eta/maggiore_eta.yaml`)
+  - Add tests yaml for `is_adult` in  `tests/eta/maggiore_eta.yaml`
   - Build using Core v21

@@ -5,8 +5,8 @@
 - name: Persona nata il 15 gennaio del 1980
   period: 2015-01
   input_variables:
-    birth: 1969-01-15
+    birth: 1970-01-15
   output_variables:
     age:
-      2015-01: 45 
-      2015-02: 46
+      2014-12: 44 
+      2015-01: 45
