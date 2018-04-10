@@ -19,7 +19,11 @@ class age(Variable):
     # A person's age is computed according to its birth date.
     def formula(person, period, parameters):
         birth = person('birth', period)
-        return (datetime64(period.date) - birth).astype('timedelta64[Y]')
+        birth_year = birth.astype('datetime64[Y]').astype(int) + 1970
+        birth_month = birth.astype('datetime64[M]').astype(int) % 12 + 1
+        birth_day = (birth - birth.astype('datetime64[M]') + 1).astype(int)
+        is_birthday_past = (birth_month <= period.start.month) + (birth_month == period.start.month) * (birth_day <= period.start.day)
+        return (period.start.year - birth_year) - where(is_birthday_past, 0, 1)  # If the birthday is not passed this year, substract one year
 
 
 # This variable is a pure input: it doesn't have a formula
@@ -33,7 +37,7 @@ class birth(Variable):
 
 
 # This variable is to know if a person is in retirement age
-class isAgeRetirement(Variable):
+class is_age_retirement(Variable):
     value_type = bool
     default_value = False
     entity = Persona
@@ -44,7 +48,7 @@ class isAgeRetirement(Variable):
         return age >= parameters(period).eta.eta_pensionamento
 
 # This variable is to know if a person could work
-class isAgeOfWork(Variable):
+class is_age_of_work(Variable):
     value_type = bool
     default_value = False
     entity = Persona
@@ -55,7 +59,7 @@ class isAgeOfWork(Variable):
         return age >= parameters(period).eta.eta_lavorativa
 
 # This variable is to know if a person is adult
-class isAdult(Variable):
+class is_adult(Variable):
     value_type = bool
     default_value = False
     entity = Persona
