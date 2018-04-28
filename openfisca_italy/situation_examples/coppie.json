@@ -4,7 +4,7 @@
             "birth": {
                 "ETERNITY": "1980-01-01"
             },
-            "salary": {
+            "reddito_lavoro_dipendente": {
                 "2017-01": 4000
             },
             "disposable_income": {
@@ -15,7 +15,7 @@
             "birth": {
                 "ETERNITY": "1984-01-01"
             },
-            "salary": {
+            "reddito_lavoro_dipendente": {
                 "2017-01": 2500
             },
             "disposable_income": {

@@ -25,7 +25,7 @@ class basic_income(Variable):
     # Before Dec 1st 2015, the basic income does not exist in the law, and calculating it returns its default value, which is 0.
     def formula_2015_12(person, period, parameters):
         age_condition = person('age', period) >= parameters(period).eta.maggiore_eta
-        salary_condition = person('salary', period) == 0
+        salary_condition = person('reddito_lavoro_dipendente', period) == 0
         return age_condition * salary_condition * parameters(period).benefici.reddito_base  # The '*' is also used as a vectorial 'and'. See http://openfisca.org/doc/coding-the-legislation/25_vectorial_computing.html#forbidden-operations-and-alternatives
 
 
