@@ -1,16 +1,11 @@
-# Test files describe situations and their expected outcomes
-# We can run this test on our command line using `openfisca-run-test contributi_previdenziali.yaml`
-
-- name: Persona che guadagna 200 euro LD, 1500 LA, 500 RD, 500 RI ma deve pagare 1000 di CSS
+#Test for total gross income in a year
+- name: Persona che guadagna 12000 euro LD, 6000 LA, 6000 RD, 6000 RI deve avere un reddito lordo annuale di 30000 euro
   period: 2017
   input_variables:
-    reddito_lavoro_dipendente_mensile: 1000
-    reddito_lavoro_autonomo_mensile: 500
-    reddito_fondiario_mensile: 500
-    reddito_di_impresa_mensile: 500
+    reddito_lavoro_dipendente_annuale: 12000
+    reddito_lavoro_autonomo_annuale: 6000
+    reddito_fondiario_annuale: 6000
+    reddito_di_impresa_annuale: 6000
   output_variables:
-    reddito_totale_lordo_annuale: 
-      2017: 30000
-
-
+    reddito_totale_lordo_annuale: 30000
 
