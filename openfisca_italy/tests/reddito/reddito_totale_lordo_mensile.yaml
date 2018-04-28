@@ -5,7 +5,8 @@
   input_variables:
     reddito_lavoro_dipendente_annuale: 12000
     reddito_lavoro_autonomo_annuale: 6000
-    reddito_fondiario_annuale: 6000
+    reddito_fabbricati_annuale: 3000
+    reddito_terreni_annuale: 3000
     reddito_di_impresa_annuale: 6000
   output_variables:
     reddito_totale_lordo_mensile: 

@@ -1,0 +1,5 @@
+description: Soglia entro la quale il reddito da fabbricati non è tassabile
+values:
+ #Defined since 2017 because we do not know the previous legislation yet
+  2017-01-01:
+    value: 500.00

@@ -24,13 +24,22 @@ class reddito_lavoro_autonomo_annuale(Variable):
     reference = "http://www.ilsole24ore.com/art/SoleOnLine4/dossier/Norme%20e%20Tributi/2010/annuario-contribuente/lavoro-autonomo/2-reddito-lavoro-autonomo.shtml"  # Always use the most official source
 
 # This variable is a pure input: it doesn't have a formula
-class reddito_fondiario_annuale(Variable):
+class reddito_fabbricati_annuale(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
     set_input = set_input_divide_by_period  
-    label = "Reddito da fondiario composto da terreni e fabbricati"
-    reference = "https://it.wikipedia.org/wiki/Redditi_fondiari"  # Always use the most official source
+    label = "Reddito da fabbricati"
+    reference = "https://www.mycaf.it/it/consulenza-e-assistenza-fiscale/il-reddito-dei-fabbricati_43_qt/"  # Always use the most official source
+
+# This variable is a pure input: it doesn't have a formula
+class reddito_terreni_annuale(Variable):
+    value_type = float
+    entity = Persona
+    definition_period = YEAR
+    set_input = set_input_divide_by_period  
+    label = "Reddito da terreni"
+    reference = "https://www.fiscoetasse.com/approfondimenti/12828-redditi-di-terreni.html"  # Always use the most official source
 
 # This variable is a pure input: it doesn't have a formula
 class reddito_di_impresa_annuale(Variable):
