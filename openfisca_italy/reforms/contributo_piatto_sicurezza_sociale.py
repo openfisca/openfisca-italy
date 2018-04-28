@@ -13,7 +13,7 @@ from openfisca_core.model_api import *
 class contributo_sicurezza_sociale(Variable):
     # Variable metadata don't need to be redefined. By default, the reference variable metadatas will be used.
     def formula(person, period, parameters):
-        return person('salary', period) * 0.03
+        return person('reddito_lavoro_dipendente', period) * 0.03
 
 
 class contributo_piatto_sicurezza_sociale(Reform):

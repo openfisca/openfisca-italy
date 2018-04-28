@@ -19,7 +19,7 @@ class income_tax(Variable):
 
     # The formula to compute the income tax for a given person at a given period
     def formula(person, period, parameters):
-        return person('salary', period) * parameters(period).tasse.aliquota_imposta_reddito
+        return person('reddito_lavoro_dipendente_annuale', period) * parameters(period).tasse.aliquota_IRPEF
 
 
 class social_security_contribution(Variable):
@@ -30,7 +30,7 @@ class social_security_contribution(Variable):
     reference = "https://law.gov.example/social_security_contribution"  # Always use the most official source
 
     def formula(person, period, parameters):
-        salary = person('salary', period)
+        salary = person('reddito_lavoro_dipendente_annuale', period)
 
         # The social_security_contribution is computed according to a marginal scale.
         scale = parameters(period).tasse.contributo_sicurezza_sociale
