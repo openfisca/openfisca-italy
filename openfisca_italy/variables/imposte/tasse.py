@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
 
-# This file defines the variables of our legislation.
-# A variable is property of a person, or an entity (e.g. a household).
-# See http://openfisca.org/doc/variables.html
-
 # Import from openfisca-core the common python objects used to code the legislation in OpenFisca
 from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
@@ -59,21 +55,3 @@ class housing_tax(Variable):
         owner = (occupancy_status == HousingOccupancyStatus.owner)
         # The tax is applied only if the household owns or rents its main residency
         return (owner + tenant) * accommodation_size * 10
-
-
-class Irpef (Variable):
-    value_type = float
-    entity = Persona
-    definition_period = YEAR  # This housing tax is defined for a year.
-    label = u"Imposta sul reddito delle persone fisiche"
-    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf"  # Always use the most official source
-
-    def formula(person, period, parameters):
-        # TO DO
-        base_imponibile_lorda = person('reddito_totale_lordo_annuale',period)
-        aliquota_da_considerare = parameters(period).tasse.IRPEF.aliquote_scaglioni_IRPEF
-        return base_imponibile_lorda*aliquota_da_considerare
-        # oneri_deducibili
-        # irpef lorda
-        # detrazioni
-        # irpef netta
