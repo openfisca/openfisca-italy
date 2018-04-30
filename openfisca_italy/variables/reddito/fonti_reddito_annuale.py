@@ -12,7 +12,7 @@ class reddito_lavoro_dipendente_annuale(Variable):
     definition_period = YEAR
     set_input = set_input_divide_by_period 
     label = "Reddito da lavoro dipendente"
-    reference = "http://www.treccani.it/enciclopedia/redditi-da-lavoro-dipendente-dir-trib_%28Diritto-on-line%29/"  # Always use the most official source
+    reference = "http://www.aclimperia.it/documenti/la_dichiarazione_dei_redditi.pdf"  # Always use the most official source
 
 # This variable is a pure input: it doesn't have a formula
 class reddito_lavoro_autonomo_annuale(Variable):
@@ -21,7 +21,7 @@ class reddito_lavoro_autonomo_annuale(Variable):
     definition_period = YEAR
     set_input = set_input_divide_by_period  
     label = "Reddito da lavoro autonomo al netto delle detrazioni del datore di lavoro"
-    reference = "http://www.ilsole24ore.com/art/SoleOnLine4/dossier/Norme%20e%20Tributi/2010/annuario-contribuente/lavoro-autonomo/2-reddito-lavoro-autonomo.shtml"  # Always use the most official source
+    reference = "http://www.aclimperia.it/documenti/la_dichiarazione_dei_redditi.pdf"  # Always use the most official source
 
 # This variable is a pure input: it doesn't have a formula
 class reddito_fabbricati_annuale(Variable):
@@ -30,7 +30,7 @@ class reddito_fabbricati_annuale(Variable):
     definition_period = YEAR
     set_input = set_input_divide_by_period  
     label = "Reddito da fabbricati"
-    reference = "https://www.mycaf.it/it/consulenza-e-assistenza-fiscale/il-reddito-dei-fabbricati_43_qt/"  # Always use the most official source
+    reference = "http://www.aclimperia.it/documenti/la_dichiarazione_dei_redditi.pdf"  # Always use the most official source
 
 # This variable is a pure input: it doesn't have a formula
 class reddito_terreni_annuale(Variable):
@@ -39,7 +39,7 @@ class reddito_terreni_annuale(Variable):
     definition_period = YEAR
     set_input = set_input_divide_by_period  
     label = "Reddito da terreni"
-    reference = "https://www.fiscoetasse.com/approfondimenti/12828-redditi-di-terreni.html"  # Always use the most official source
+    reference = "http://www.aclimperia.it/documenti/la_dichiarazione_dei_redditi.pdf"  # Always use the most official source
 
 # This variable is a pure input: it doesn't have a formula
 class reddito_di_impresa_annuale(Variable):
@@ -48,5 +48,23 @@ class reddito_di_impresa_annuale(Variable):
     definition_period = YEAR
     set_input = set_input_divide_by_period  
     label = "Reddito d'imprese"
-    reference = "https://it.wikipedia.org/wiki/Redditi_di_impresa"  # Always use the most official source
+    reference = "http://www.aclimperia.it/documenti/la_dichiarazione_dei_redditi.pdf"  # Always use the most official source
 
+# This variable is a pure input: it doesn't have a formula
+class reddito_di_capitali_annuale(Variable):
+    value_type = float
+    entity = Persona
+    definition_period = YEAR
+    set_input = set_input_divide_by_period  
+    label = "Reddito di capitali"
+    reference = "http://www.aclimperia.it/documenti/la_dichiarazione_dei_redditi.pdf"  # Always use the most official source
+
+
+# This variable is a pure input: it doesn't have a formula
+class reddito_diversi_annuale(Variable):
+    value_type = float
+    entity = Persona
+    definition_period = YEAR
+    set_input = set_input_divide_by_period  
+    label = "Reddito diversi"
+    reference = "http://www.aclimperia.it/documenti/la_dichiarazione_dei_redditi.pdf"  # Always use the most official source    
