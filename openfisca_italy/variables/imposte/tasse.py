@@ -51,13 +51,29 @@ class housing_tax(Variable):
         # To build different periods, see http://openfisca.org/doc/coding-the-legislation/35_periods.html#calculating-dependencies-for-a-specific-period
         january = period.first_month
         accommodation_size = household('accomodation_size', january)
-
         # `housing_occupancy_status` is an Enum variable
         occupancy_status = household('housing_occupancy_status', january)
         HousingOccupancyStatus = occupancy_status.possible_values  # Get the enum associated with the variable
         # To access an enum element, we use the . notation.
         tenant = (occupancy_status == HousingOccupancyStatus.tenant)
         owner = (occupancy_status == HousingOccupancyStatus.owner)
-
         # The tax is applied only if the household owns or rents its main residency
         return (owner + tenant) * accommodation_size * 10
+
+
+class Irpef (Variable):
+    value_type = float
+    entity = Persona
+    definition_period = YEAR  # This housing tax is defined for a year.
+    label = u"Imposta sul reddito delle persone fisiche"
+    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf"  # Always use the most official source
+
+    def formula(person, period, parameters):
+        # TO DO
+        base_imponibile_lorda = person('reddito_totale_lordo_annuale',period)
+        aliquota_da_considerare = parameters(period).tasse.IRPEF.aliquote_scaglioni_IRPEF
+        return base_imponibile_lorda*aliquota_da_considerare
+        # oneri_deducibili
+        # irpef lorda
+        # detrazioni
+        # irpef netta

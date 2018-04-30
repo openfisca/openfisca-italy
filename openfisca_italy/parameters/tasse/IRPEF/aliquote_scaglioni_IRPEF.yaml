@@ -1,0 +1,34 @@
+# IRPEF aliquotes 
+description: Aliquote dell'imposta sul reddito delle persone fisiche
+brackets:
+- rate:
+    2010-01-01:
+      value: 0.23
+  threshold:
+    2010-01-01:
+      value: 0.0
+- rate:
+    2010-01-01:
+      value: 0.27
+  threshold:
+    2010-01-01:
+      value: 15000
+- rate:
+    2010-01-01:
+      value: 0.38
+  threshold:
+    2010-01-01:
+      value: 28000
+- rate:
+    2010-01-01:
+      value: 0.41
+  threshold:
+    2010-01-01:
+      value: 55000
+- rate:
+    2010-01-01:
+      value: 0.43
+  threshold:
+    2010-01-01:
+      value: 75000
+

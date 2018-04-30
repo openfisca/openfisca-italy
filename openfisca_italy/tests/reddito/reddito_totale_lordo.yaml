@@ -1,0 +1,59 @@
+#Test for total gross income in a year
+- name: Calcolo reddito lordo annuale senza centesimi
+  period: 2017
+  input_variables:
+    reddito_lavoro_dipendente_annuale: 12000.00
+    reddito_lavoro_autonomo_annuale: 8000.00
+    reddito_fabbricati_annuale: 4000.00
+    reddito_terreni_annuale: 4000.00
+    reddito_di_impresa_annuale: 6000.00
+    reddito_di_capitali_annuale: 7000.00
+    reddito_diversi_annuale: 7000.00
+  output_variables:
+    reddito_totale_lordo_annuale: 48000.00
+
+
+- name: Calcolo reddito lordo annuale con centesimi
+  period: 2017
+  input_variables:
+    reddito_lavoro_dipendente_annuale: 12000.00
+    reddito_lavoro_autonomo_annuale: 8000.00
+    reddito_fabbricati_annuale: 3715.62
+    reddito_terreni_annuale: 3715.62
+    reddito_di_impresa_annuale: 6000.00
+    reddito_di_capitali_annuale: 7000.00
+    reddito_diversi_annuale: 7000.00
+  output_variables:
+    reddito_totale_lordo_annuale: 47431.24    
+
+#Test for total gross income in a month
+
+
+- name: Calcolo reddito lordo mensile senza centesimi
+  period: 2017
+  input_variables:
+    reddito_lavoro_dipendente_annuale: 12000.00
+    reddito_lavoro_autonomo_annuale: 8000.00
+    reddito_fabbricati_annuale: 4000.00
+    reddito_terreni_annuale: 4000.00
+    reddito_di_impresa_annuale: 6000.00
+    reddito_di_capitali_annuale: 7000.00
+    reddito_diversi_annuale: 7000.00
+  output_variables:
+    reddito_totale_lordo_mensile: 
+      2017-01: 4000.00
+
+
+- name: Calcolo reddito lordo mensile con centesimi
+  period: 2017
+  input_variables:
+    reddito_lavoro_dipendente_annuale: 12000.00
+    reddito_lavoro_autonomo_annuale: 8000.00
+    reddito_fabbricati_annuale: 3715.62
+    reddito_terreni_annuale: 4000.00
+    reddito_di_impresa_annuale: 6000.00
+    reddito_di_capitali_annuale: 7000.00
+    reddito_diversi_annuale: 7000.00
+  output_variables:
+    reddito_totale_lordo_mensile: 
+      2017-01: 3976.30

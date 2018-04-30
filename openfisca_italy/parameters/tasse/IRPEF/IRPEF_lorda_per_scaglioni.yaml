@@ -1,0 +1,37 @@
+# This parameteres indicate the fixed payment of IRPEF depending on the income threshold exceeded. Example: If the income is 20000 the relative gross IRPEF is 
+# the result of (3450 + ((2000-1500)*0.27)) where 3450 is the fixed quote of IRPEF for that income threshold exceeded, 20000-15000 is the quote subject to IRPEF calculation
+# using the percentage valuue for the income range (defined in aliquote_scaglioni_IRPEF.yaml).
+description: Aliquote dell'imposta sul reddito delle persone fisiche
+reference: "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf"
+brackets:
+- rate:
+    2010-01-01:
+      value: 0
+  threshold:
+    2010-01-01:
+      value: 0.0
+- rate:
+    2010-01-01:
+      value: 3450
+  threshold:
+    2010-01-01:
+      value: 15000
+- rate:
+    2010-01-01:
+      value: 6960
+  threshold:
+    2010-01-01:
+      value: 28000
+- rate:
+    2010-01-01:
+      value: 17220
+  threshold:
+    2010-01-01:
+      value: 55000
+- rate:
+    2010-01-01:
+      value: 25420
+  threshold:
+    2010-01-01:
+      value: 75000
+
