@@ -16,6 +16,29 @@ class reddito_lavoro_dipendente_annuale(Variable):
 
 
 # This variable is a pure input: it doesn't have a formula
+class reddito_pensioni_annuale(Variable):
+    value_type = float
+    entity = Persona
+    definition_period = YEAR
+    set_input = set_input_divide_by_period 
+    label = "Reddito da pensioni"
+    reference = "http://www.aclimperia.it/documenti/la_dichiarazione_dei_redditi.pdf"  # Always use the most official source
+
+
+# This variable is a pure input: it doesn't have a formula
+class reddito_lavoro_dipendente_e_assimilati_annuale(Variable):
+    value_type = float
+    entity = Persona
+    definition_period = YEAR
+    set_input = set_input_divide_by_period 
+    label = "Reddito da lavoro dipendente e assimilati"
+    reference = "http://www.aclimperia.it/documenti/la_dichiarazione_dei_redditi.pdf"  # Always use the most official source
+    def formula(person,period,parameters):
+        reddito_lavoro_dipendente = person('reddito_lavoro_dipendente_annuale',period)
+        reddito_pensioni = person('reddito_pensioni_annuale',period)
+        return reddito_lavoro_dipendente + reddito_pensioni
+
+# This variable is a pure input: it doesn't have a formula
 class reddito_lavoro_autonomo_annuale(Variable):
     value_type = float
     entity = Persona

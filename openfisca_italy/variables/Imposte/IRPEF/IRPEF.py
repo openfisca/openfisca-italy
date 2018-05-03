@@ -16,7 +16,8 @@ class irpef_lorda (Variable):
     def formula(person, period, parameters):
         base_imponibile_lorda = person('reddito_totale_lordo_annuale',period)
         oneri_deducibili = person('oneri_deducibili_totali_annuale',period)
-        base_imponibile_netta = base_imponibile_lorda - oneri_deducibili
+        deduzione_abitazione_principale = person('deduzione_abitazione_principale_annuale',period)
+        base_imponibile_netta = base_imponibile_lorda - deduzione_abitazione_principale - oneri_deducibili
         irpef_lorda = round_(parameters(period).imposte.IRPEF.aliquote_scaglioni_IRPEF.calc(base_imponibile_netta),2) 
         return np.array(irpef_lorda)
         # detrazioni
