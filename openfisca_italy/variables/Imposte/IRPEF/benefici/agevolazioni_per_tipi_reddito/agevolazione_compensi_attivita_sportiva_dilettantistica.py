@@ -18,7 +18,6 @@ class possiede_reddito_da_attivita_sportiva_dilettantistica(Variable):
     def formula(person,period,parameters):
         return person('redditi_da_attivita_sportive_dilettantistiche',period) > 0 
 
-
 class compensi_per_attivita_sportive_compilato (Variable):
     value_type = bool
     entity = Persona

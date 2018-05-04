@@ -9,15 +9,18 @@
     oneri_deducibili_totali_annuale: 1020
     # agevolazione ACE
     possiede_diritto_agevolazione_ACE: True
-    eccedenza_trasformata_in_credito_irap: 150
-    # agevolazione ACE
+    importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore: 150
+    # agevolazione attività sportiva dilettantistica
     possiede_diritto_agevolazione_per_attivita_sportive: True
     compensi_con_ritenuta_a_titolo_di_imposta: 150
+    # agevolazione per investimenti in startup
+    possiede_diritto_agevolazione_per_recupero_detrazione_startup: True 
+    interessi_su_detrazione_fruita: 150
     # detrazioni d'imposta
     detrazioni_imposta_annuale: 600.62
   output_variables:
     base_imponibile_netta: 45280
-    irpef_lorda: 13457.40
+    irpef_lorda: 13607.40
 
 - name: Calcolo IRPEF 2
   period: 2017
@@ -30,10 +33,13 @@
     oneri_deducibili_totali_annuale: 1020
     # agevolazione ACE
     possiede_diritto_agevolazione_ACE: False
-    eccedenza_trasformata_in_credito_irap: 150
-    # agevolazione ACE
+    importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore: 150
+    # agevolazione attività sportiva dilettantistica
     possiede_diritto_agevolazione_per_attivita_sportive: False
     compensi_con_ritenuta_a_titolo_di_imposta: 150
+    # agevolazione per investimenti in startup
+    possiede_diritto_agevolazione_per_recupero_detrazione_startup: False 
+    interessi_su_detrazione_fruita: 150
     # detrazioni d'imposta
     detrazioni_imposta_annuale: 600.62
   output_variables:

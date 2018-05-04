@@ -38,16 +38,16 @@ class possiede_diritto_agevolazione_ACE(Variable):
     def formula(person, period,parameters):
         return person('possiede_reddito_impresa',period) and person('deduzione_per_capitale_investito_proprio_compilato',period)
 
-# The variable eccedenza_trasformata_in_credito_irap is the fourteenth column of deduzione_per_capitale_investito_proprio_compilato field in
+# The variable ’importo del rendimento nozionale di spettanza dell’imprenditore  is the fourteenth column of deduzione_per_capitale_investito_proprio_compilato field in
 # RS square.
 # This value is included in the calculation of gross IRPEF if possiede_diritto_agevolazione_ACE is TRUE.
 # This will be transformed in credito_di_imposta
-class eccedenza_trasformata_in_credito_irap(Variable):
+class importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore (Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
     set_input = set_input_divide_by_period  
-    label = "Eccedenza trasformata in credito IRAP"
+    label = "Eccedenza trasformata in credito IRAP rigo rs 37 colonna 14"
     reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
     
