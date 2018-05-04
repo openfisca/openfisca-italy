@@ -11,7 +11,7 @@ class reddito_lavoro_dipendente_annuale(Variable):
     entity = Persona
     definition_period = YEAR
     set_input = set_input_divide_by_period 
-    label = "Reddito da lavoro dipendente"
+    label = "Reddito da lavoro dipendente al netto delle detrazioni del datore di lavoro"
     reference = "http://www.aclimperia.it/documenti/la_dichiarazione_dei_redditi.pdf"  # Always use the most official source
 
 
@@ -44,7 +44,7 @@ class reddito_lavoro_autonomo_annuale(Variable):
     entity = Persona
     definition_period = YEAR
     set_input = set_input_divide_by_period  
-    label = "Reddito da lavoro autonomo al netto delle detrazioni del datore di lavoro"
+    label = "Reddito da lavoro autonomo al netto delle perdite"
     reference = "http://www.aclimperia.it/documenti/la_dichiarazione_dei_redditi.pdf"  # Always use the most official source
 
 

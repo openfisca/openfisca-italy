@@ -1,4 +1,4 @@
-- name: Calcolo IRPEF 
+- name: Calcolo IRPEF 1
   period: 2017
   input_variables:
     # redditi percepiti
@@ -7,9 +7,29 @@
     deduzione_abitazione_principale_annuale: 2000
     #oneri deducibili
     oneri_deducibili_totali_annuale: 1020
+    # agevolazione ACE
+    possiede_diritto_agevolazione_ACE: True
+    eccedenza_trasformata_in_credito_irap: 150
     # detrazioni d'imposta
     detrazioni_imposta_annuale: 600.62
   output_variables:
+    base_imponibile_netta: 45130
+    irpef_lorda: 13434.90
+
+- name: Calcolo IRPEF 2
+  period: 2017
+  input_variables:
+    # redditi percepiti
     reddito_totale_lordo_annuale: 48000
-    irpef_lorda: 13412.40
-    irpef_netta: 12811.78
+    # deduzione abitazione principale
+    deduzione_abitazione_principale_annuale: 2000
+    #oneri deducibili
+    oneri_deducibili_totali_annuale: 1020
+    # agevolazione ACE
+    possiede_diritto_agevolazione_ACE: False
+    eccedenza_trasformata_in_credito_irap: 150
+    # detrazioni d'imposta
+    detrazioni_imposta_annuale: 600.62
+  output_variables:
+    base_imponibile_netta: 44980
+    irpef_lorda: 13412.4
