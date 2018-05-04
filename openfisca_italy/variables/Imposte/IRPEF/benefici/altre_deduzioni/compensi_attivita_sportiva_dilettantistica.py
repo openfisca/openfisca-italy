@@ -4,10 +4,10 @@ from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
 from openfisca_italy.entita import *
 
-# The variable possiede_reddito_impresa, is a boolean and its used during the calculation of the Irpef
+# The variable possiede_reddito_da_attivita_sportiva_dilettantistica, is a boolean and its used during the calculation of the Irpef
 # Togheter with another boolean called deduzione_per_capitale_investito_proprio_compilato to understand if the subject can benefit the ACE facilitation
 
-class possiede_reddito_impresa(Variable):
+class possiede_reddito_da_attivita_sportiva_dilettantistica(Variable):
     value_type = bool
     entity = Persona
     definition_period = YEAR
@@ -16,19 +16,18 @@ class possiede_reddito_impresa(Variable):
     reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
     
     def formula(person,period,parameters):
-        return person('reddito_di_impresa_annuale',period) > 0 
+        return person('redditi_da_attivita_sportive_dilettantistiche',period) > 0 
 
 
-class deduzione_per_capitale_investito_proprio_compilato(Variable):
+class compensi_per_attivita_sportive_compilato (Variable):
     value_type = bool
     entity = Persona
     definition_period = YEAR
     set_input = set_input_divide_by_period  
-    label = "La persona ha compilato il rigo riguardo Deduzione per capitale investito proprio nella dichiarazione dei redditi"
+    label = "La persona ha compilato il rigo RL 22 col 1 riguardo parte di reddito soggetta a ritenuta a titolo d’imposta nella dichiarazione dei redditi"
     reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
-# This boolean 
-class possiede_diritto_agevolazione_ACE(Variable):
+class possiede_diritto_agevolazione_per_attivita_sportive(Variable):
     value_type = bool
     entity = Persona
     definition_period = YEAR
@@ -37,18 +36,18 @@ class possiede_diritto_agevolazione_ACE(Variable):
     reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
     def formula(person, period,parameters):
-        return person('possiede_reddito_impresa',period) and person('deduzione_per_capitale_investito_proprio_compilato',period)
+        return person('possiede_reddito_da_attivita_sportiva_dilettantistica',period) and person('compensi_per_attivita_sportive_compilato',period)
 
-# The variable eccedenza_trasformata_in_credito_irap is the fourteenth column of deduzione_per_capitale_investito_proprio_compilato field in
+# The variable compensi_con_ritenuta_a_titolo_di_imposta is the first column of compensi_per_attivita_sportive_compilato field in
 # RS square.
 # This value is included in the calculation of gross IRPEF if possiede_diritto_agevolazione_ACE is TRUE.
 # This will be transformed in credito_di_imposta
-class eccedenza_trasformata_in_credito_irap(Variable):
+class compensi_con_ritenuta_a_titolo_di_imposta(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
     set_input = set_input_divide_by_period  
-    label = "Eccedenza trasformata in credito IRAP"
-    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
+    label = "Compensi con ritenuta a titolo di imposta, campo del quadro RL contenente compensi per attività sportive dilettantistiche"
+    reference = "https://telematici.agenziaentrate.gov.it/pdf/uni08/help/Quadro_RL.pdf"  # Always use the most official source
 
     

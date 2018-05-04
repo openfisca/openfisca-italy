@@ -155,3 +155,12 @@ class reddito_diversi_annuale(Variable):
     set_input = set_input_divide_by_period  
     label = "Reddito diversi"
     reference = "http://www.aclimperia.it/documenti/la_dichiarazione_dei_redditi.pdf"  # Always use the most official source    
+
+# This variable is a pure input: it doesn't have a formula
+class redditi_da_attivita_sportive_dilettantistiche(Variable):
+    value_type = float
+    entity = Persona
+    definition_period = YEAR
+    set_input = set_input_divide_by_period  
+    label = "Redditi da attività sportive dilettantistiche"
+    reference = "http://www.aclimperia.it/documenti/la_dichiarazione_dei_redditi.pdf"  # Always use the most official source    

@@ -18,12 +18,19 @@ class base_imponibile_netta (Variable):
         base_imponibile_lorda = person('reddito_totale_lordo_annuale',period)
         oneri_deducibili = person('oneri_deducibili_totali_annuale',period)
         deduzione_abitazione_principale = person('deduzione_abitazione_principale_annuale',period)
-        # eccedenza_trasformata_in_credito_irap is optional
-        eccedenza_trasformata_in_credito_irap = person('eccedenza_trasformata_in_credito_irap',period)
-        possiede_diritto_agevolazione_ACE = person('possiede_diritto_agevolazione_ACE',period)
         # this formula is fixed
         base_imponibile_netta = base_imponibile_lorda - deduzione_abitazione_principale - oneri_deducibili
-        return where (possiede_diritto_agevolazione_ACE,(base_imponibile_netta + eccedenza_trasformata_in_credito_irap),base_imponibile_netta)
+
+        # agevolazione ACE section that is optional depending on possiede_diritto_agevolazione_ACE (optional)
+        eccedenza_trasformata_in_credito_irap = person('eccedenza_trasformata_in_credito_irap',period)
+        possiede_diritto_agevolazione_ACE = person('possiede_diritto_agevolazione_ACE',period)
+        base_imponibile_netta = where (possiede_diritto_agevolazione_ACE,(base_imponibile_netta + eccedenza_trasformata_in_credito_irap),base_imponibile_netta)
+
+        # fees for amateur sports activities is optional
+        compensi_con_ritenuta_a_titolo_di_imposta = person('compensi_con_ritenuta_a_titolo_di_imposta',period)
+        possiede_diritto_agevolazione_per_attivita_sportive = person('possiede_diritto_agevolazione_per_attivita_sportive',period)
+        base_imponibile_netta = where (possiede_diritto_agevolazione_per_attivita_sportive,(base_imponibile_netta + compensi_con_ritenuta_a_titolo_di_imposta),base_imponibile_netta)
+        return base_imponibile_netta
 
 class irpef_lorda (Variable):
     value_type = float
@@ -35,13 +42,22 @@ class irpef_lorda (Variable):
     def formula(person, period, parameters):
         # In the IRPEF calculation the  gross base income calculation could be in two ways
         base_imponibile_netta = person('base_imponibile_netta',period)
-        # agevolazione ACE section that is optional depending on possiede_diritto_agevolazione_ACE
+        # this is a fixed calculation
+        irpef_lorda = round_(parameters(period).imposte.IRPEF.aliquote_scaglioni_IRPEF.calc(base_imponibile_netta),2)
+
+        # agevolazione ACE section that is optional depending on possiede_diritto_agevolazione_ACE (optional)
         eccedenza_trasformata_in_credito_irap = person('eccedenza_trasformata_in_credito_irap',period)
         possiede_diritto_agevolazione_ACE = person('possiede_diritto_agevolazione_ACE',period)
         valore_da_sottrarre_in_caso_di_diritto_agevolazione_ACE = round_(parameters(period).imposte.IRPEF.aliquote_scaglioni_IRPEF.calc(eccedenza_trasformata_in_credito_irap),2)
-        # this is a fixed calculation
-        irpef_lorda = round_(parameters(period).imposte.IRPEF.aliquote_scaglioni_IRPEF.calc(base_imponibile_netta),2) 
-        return where(possiede_diritto_agevolazione_ACE, (np.array(irpef_lorda - valore_da_sottrarre_in_caso_di_diritto_agevolazione_ACE)),(np.array(irpef_lorda)))
+        irpef_lorda = where(possiede_diritto_agevolazione_ACE, (np.array(irpef_lorda - valore_da_sottrarre_in_caso_di_diritto_agevolazione_ACE)),(np.array(irpef_lorda)))
+       
+        # fees for amateur sports activities is optional
+        compensi_con_ritenuta_a_titolo_di_imposta = person('compensi_con_ritenuta_a_titolo_di_imposta',period)
+        possiede_diritto_agevolazione_per_attivita_sportive = person('possiede_diritto_agevolazione_per_attivita_sportive',period)
+        valore_da_sottrarre_in_caso_di_diritto_attivita_sportive = round_(parameters(period).imposte.IRPEF.aliquote_scaglioni_IRPEF.calc(compensi_con_ritenuta_a_titolo_di_imposta),2)
+        irpef_lorda = where(possiede_diritto_agevolazione_per_attivita_sportive, (np.array(irpef_lorda - valore_da_sottrarre_in_caso_di_diritto_attivita_sportive)),(np.array(irpef_lorda)))
+
+        return irpef_lorda
 
 
 class irpef_netta (Variable):

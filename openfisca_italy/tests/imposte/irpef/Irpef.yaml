@@ -10,11 +10,14 @@
     # agevolazione ACE
     possiede_diritto_agevolazione_ACE: True
     eccedenza_trasformata_in_credito_irap: 150
+    # agevolazione ACE
+    possiede_diritto_agevolazione_per_attivita_sportive: True
+    compensi_con_ritenuta_a_titolo_di_imposta: 150
     # detrazioni d'imposta
     detrazioni_imposta_annuale: 600.62
   output_variables:
-    base_imponibile_netta: 45130
-    irpef_lorda: 13434.90
+    base_imponibile_netta: 45280
+    irpef_lorda: 13457.40
 
 - name: Calcolo IRPEF 2
   period: 2017
@@ -28,6 +31,9 @@
     # agevolazione ACE
     possiede_diritto_agevolazione_ACE: False
     eccedenza_trasformata_in_credito_irap: 150
+    # agevolazione ACE
+    possiede_diritto_agevolazione_per_attivita_sportive: False
+    compensi_con_ritenuta_a_titolo_di_imposta: 150
     # detrazioni d'imposta
     detrazioni_imposta_annuale: 600.62
   output_variables:
