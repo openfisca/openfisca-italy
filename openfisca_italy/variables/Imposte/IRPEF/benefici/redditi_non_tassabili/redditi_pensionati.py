@@ -32,8 +32,9 @@ class irpef_non_dovuta_pensionati_e_terreni (Variable):
         credito_per_fondi_comuni_compilato = person('credito_per_fondi_comuni_compilato',period)
         # person have only income from fields and retirement
         # check that all other incomes are 0
-        tutti_altri_redditi_sono_zero = person('tutti_altri_redditi_sono_zero',period)
+        tutti_altri_redditi_sono_zero = person('solo_redditi_da_pensione_e_terreni',period)
         return where((reddito_da_pensione_sotto_la_soglia and reddito_da_terreni_sotto_la_soglia and tutti_altri_redditi_sono_zero and credito_per_fondi_comuni_compilato),True,False)
+
 
 class credito_per_fondi_comuni_compilato (Variable):
     value_type = bool  
@@ -42,11 +43,12 @@ class credito_per_fondi_comuni_compilato (Variable):
     label = "Condizione vera se persona ha compilato rigo RN1 col. 2 nella dichiarazione dei redditi"
     reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf"
 
-class tutti_altri_redditi_sono_zero(Variable):
+
+class solo_redditi_da_pensione_e_terreni(Variable):
     value_type = bool  
     entity = Persona
     definition_period = YEAR
-    label = "Condizione vera se persona ha compilato rigo RN1 col. 2 nella dichiarazione dei redditi"
+    label = "Condizione vera se la persona ha solo reddito da pensione e da terreni"
     reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf"
 
     def formula(person,period,parameters):  

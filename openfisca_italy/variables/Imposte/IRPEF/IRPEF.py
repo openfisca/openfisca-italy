@@ -61,12 +61,17 @@ class irpef_lorda (Variable):
         possiede_diritto_agevolazione_per_recupero_detrazione_startup = person('possiede_diritto_agevolazione_per_recupero_detrazione_startup',period)
         irpef_lorda = where (possiede_diritto_agevolazione_per_recupero_detrazione_startup,(irpef_lorda + interessi_su_detrazione_fruita),irpef_lorda)
 
+         # conditions for what the Irpef values if fixed to 0
+        irpef_non_dovuta_pensionati_e_terreni = person('irpef_non_dovuta_pensionati_e_terreni',period)
+        irpef_non_dovuta_per_soli_terreni_e_fabbricati = np.array(person('irpef_non_dovuta_per_soli_terreni_e_fabbricati',period))
+
         # this boolean indicate that are no situations for what the Irpef values if fixed to 0
-        no_condizioni_redditi_non_tassabili = not np.array(any([person('irpef_non_dovuta_pensionati_e_terreni',period)]))
-        # conditions for what the Irpef values if fixed to 0
-        irpef_non_dovuta_pensionati_e_terreni = np.array(person('irpef_non_dovuta_pensionati_e_terreni',period))
-        return select([irpef_non_dovuta_pensionati_e_terreni == np.array(True), no_condizioni_redditi_non_tassabili],
-         [0, irpef_lorda],)
+        no_condizioni_redditi_non_tassabili = not np.array(any([irpef_non_dovuta_pensionati_e_terreni,irpef_non_dovuta_per_soli_terreni_e_fabbricati]))
+        print('pensione',irpef_non_dovuta_pensionati_e_terreni)
+        print('fabbricati',irpef_non_dovuta_per_soli_terreni_e_fabbricati)
+        print('insieme', no_condizioni_redditi_non_tassabili)
+       
+        return select([irpef_non_dovuta_pensionati_e_terreni, irpef_non_dovuta_per_soli_terreni_e_fabbricati, no_condizioni_redditi_non_tassabili], [0, 0, irpef_lorda])
 
 
 class irpef_netta (Variable):

@@ -1,9 +1,20 @@
-- name: Test per vedere se i redditi da sola pensione e terreni sotto le soglie indicate non vengono effettivamente tassati
+- name: Test per vedere se i redditi da sola pensione e terreni sotto le soglie indicate non vengono effettivamente tassati e come è stato percepito il reddito da pensione
   period: 2017
   input_variables:
     age_year: 65
-    reddito_pensioni_annuale: 6000
+    reddito_totale_da_pensioni: 6000
     reddito_terreni_annuale: 150
+    giorni_in_cui_si_e_percepita_la_pensione: 150
     credito_per_fondi_comuni_compilato: True
   output_variables:
     irpef_non_dovuta_pensionati_e_terreni: True
+    reddito_pensioni_annuale: 14600
+
+
+- name: Test per vedere se i redditi da soli terreni e fabbricati sotto le soglie indicate non vengono effettivamente tassati
+  period: 2017
+  input_variables:
+    reddito_fondiari_annuale: 485
+    credito_per_fondi_comuni_compilato: False
+  output_variables:
+    irpef_non_dovuta_per_soli_terreni_e_fabbricati: True
