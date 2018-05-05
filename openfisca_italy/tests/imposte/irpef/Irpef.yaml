@@ -45,3 +45,31 @@
   output_variables:
     base_imponibile_netta: 44980
     irpef_lorda: 13412.4
+
+- name: Test speciale per IRPEF non dovuta a persone con reddito da sola pensione e terreni sotto la soglia
+  period: 2017
+  input_variables:
+    # deduzione abitazione principale
+    deduzione_abitazione_principale_annuale: 2000
+    #oneri deducibili
+    oneri_deducibili_totali_annuale: 1020
+    # agevolazione ACE
+    possiede_diritto_agevolazione_ACE: False
+    importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore: 150
+    # agevolazione attività sportiva dilettantistica
+    possiede_diritto_agevolazione_per_attivita_sportive: False
+    compensi_con_ritenuta_a_titolo_di_imposta: 150
+    # agevolazione per investimenti in startup
+    possiede_diritto_agevolazione_per_recupero_detrazione_startup: False 
+    interessi_su_detrazione_fruita: 150
+    # detrazioni d'imposta
+    detrazioni_imposta_annuale: 600.62
+     # variabili che comportano una irpef nulla
+    reddito_pensioni_annuale: 6000
+    reddito_terreni_annuale: 150
+    credito_per_fondi_comuni_compilato: True
+  output_variables:
+    irpef_non_dovuta_pensionati_e_terreni: True
+    base_imponibile_netta: 3130
+    irpef_lorda: 0
+    irpef_netta: 0 

@@ -21,6 +21,14 @@ class age(Variable):
         is_birthday_past = (birth_month <= period.start.month) + (birth_month == period.start.month) * (birth_day <= period.start.day)
         return (period.start.year - birth_year) - where(is_birthday_past, 0, 1)  # If the birthday is not passed this year, substract one year
 
+class age_year(Variable):
+    value_type = int
+    entity = Persona
+    definition_period = YEAR
+    label = u"Eta' della persona (in anni)"
+
+    def formula(person,period,parameters):
+        return person('age',period)
 
 # This variable is a pure input: it doesn't have a formula
 class birth(Variable):
