@@ -15,12 +15,15 @@ class detrazioni_per_conigue_a_carico(Variable):
     def formula(person,period,parameters):
         #reddito per detrazioni è uguale alla somma del reddito_totale_lordo_annuale - deduzione_abitazione_principale + importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore
         reddito_per_detrazioni = person('reddito_per_detrazioni',period) 
-        # basing on the value of reddito_per_detrazioni
-        return select([reddito_per_detrazioni<=15000,reddito_per_detrazioni<=40000,
+        # if this person doesn't have a spouse this value must be 0
+        la_persona_ha_un_coniuge_a_carico = person('la_persona_non_ha_un_coniuge_a_carico',period)
+        # calcuation basing on income
+        return select([la_persona_ha_un_coniuge_a_carico,reddito_per_detrazioni<=15000,reddito_per_detrazioni<=40000,
                         reddito_per_detrazioni<=80000,reddito_per_detrazioni>=80000],
-                    [person('detrazioni_per_conigue_a_carico_reddito_inferiore_15000',period),
+                    [0, person('detrazioni_per_conigue_a_carico_reddito_inferiore_15000',period),
                     person('detrazioni_per_conigue_a_carico_reddito_inferiore_40000',period),
                     person('detrazioni_per_conigue_a_carico_reddito_inferiore_80000',period),0])
+
 
 class detrazioni_per_conigue_a_carico_reddito_inferiore_15000(Variable):
     value_type = float
@@ -69,6 +72,7 @@ class maggiorazione_detrazioni_coniuge_in_base_al_reddito(Variable):
                         reddito_per_detrazioni<=35200,reddito_per_detrazioni<=40000],
                         [0,10,20,30,20,10,0])
 
+
 class detrazioni_per_conigue_a_carico_reddito_inferiore_80000(Variable):
     value_type = float
     entity = Persona
@@ -84,10 +88,32 @@ class detrazioni_per_conigue_a_carico_reddito_inferiore_80000(Variable):
         # if quoziente is 0 this deduction can not be calculated
         return detrazione_spettante
 
+
 class mesi_coniuge_a_carico(Variable):
     value_type = int
     entity = Persona
     definition_period = YEAR
-    set_input = set_input_divide_by_period  
     label = "Mesi dell'anno in cui il coniuge è stato a carico della persona"
     reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf"  # Always use the most official source       
+
+
+class la_persona_non_ha_un_coniuge_a_carico(Variable):
+    value_type = bool
+    entity = Persona
+    definition_period = YEAR
+    label = "La persona ha un coniuge a carico?"
+    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf"  # Always use the most official source  
+
+    def formula(person,period,parameters):
+        reddito_coniuge_per_calcolo_detrazioni_coniuge_a_carico = person('reddito_coniuge_per_calcolo_detrazioni_coniuge_a_carico',period)
+        il_coniuge_ha_reddito_maggiore_di_soglia = reddito_coniuge_per_calcolo_detrazioni_coniuge_a_carico >= parameters(period).imposte.IRPEF.detrazioni.detrazioni_carichi_famigliari.soglia_familiare_a_carico
+        return il_coniuge_ha_reddito_maggiore_di_soglia
+
+
+# TO DO, understand how family works and erase this variable
+class reddito_coniuge_per_calcolo_detrazioni_coniuge_a_carico(Variable):
+    value_type = float
+    entity = Persona
+    definition_period = YEAR
+    label = "Reddito coniuge"
+    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf"  # Always use the most official source                
