@@ -1,0 +1,33 @@
+- name: Test reddito inferiore 15000
+  period: 2017
+  input_variables:
+    reddito_totale_lordo_annuale: 15000.00
+    deduzione_abitazione_principale_annuale: 2000.00
+    importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore: 100.00
+    mesi_coniuge_a_carico: 12
+  output_variables:
+    reddito_per_detrazioni: 13100.00
+    detrazioni_per_conigue_a_carico: 703.94
+
+- name: Test reddito inferiore tra 15000 e 40000
+  period: 2017
+  input_variables:
+    reddito_totale_lordo_annuale: 37000.00
+    deduzione_abitazione_principale_annuale: 2500.00
+    importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore: 300.00
+    mesi_coniuge_a_carico: 8
+  output_variables:
+    reddito_per_detrazioni: 34800.00
+    detrazioni_per_conigue_a_carico: 490
+
+
+- name: Test reddito inferiore tra 40000 e 80000
+  period: 2017
+  input_variables:
+    reddito_totale_lordo_annuale: 70000.00
+    deduzione_abitazione_principale_annuale: 6000.00
+    importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore: 1000.00
+    mesi_coniuge_a_carico: 12
+  output_variables:
+    reddito_per_detrazioni: 65000.00
+    detrazioni_per_conigue_a_carico: 258.75    
