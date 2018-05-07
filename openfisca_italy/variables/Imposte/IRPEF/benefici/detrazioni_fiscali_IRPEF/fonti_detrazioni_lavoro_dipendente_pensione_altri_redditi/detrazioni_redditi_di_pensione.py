@@ -30,17 +30,7 @@ class detrazioni_per_pensionati(Variable):
         soglia_per_esenzioni_detrazioni_pensioni_solo_campione_italia = parameters(period).imposte.IRPEF.detrazioni.detrazioni_pensione.soglia_per_detrazione_esente_residenti_campioni_italia
         soglia_per_esenzioni_detrazioni_pensioni_solo_favore_dei_superstiti_corrisposte_agli_orfani = parameters(period).imposte.IRPEF.detrazioni.detrazioni_pensione.soglia_per_detrazione_esente_a_favore_superstiti_corrisposte_agli_orfani
         soglia_per_esenzioni_detrazioni_pensioni_solo_campione_italia_e_favore_dei_superstiti_corrisposte_agli_orfani = soglia_per_esenzioni_detrazioni_pensioni_solo_campione_italia + soglia_per_esenzioni_detrazioni_pensioni_solo_favore_dei_superstiti_corrisposte_agli_orfani
-        print 'reddito pension', person('reddito_totale_da_pensioni',period)
-        print 'reddito totale vero pensione', person('reddito_pensioni_annuale',period)
-        print('reddito_per_detrazioni', reddito_per_detrazioni)
         # Condizioni
-        print 'cond 1', solo_pensione_residente_campione_italia * (reddito_totale_da_pensioni <= soglia_per_esenzioni_detrazioni_pensioni_solo_campione_italia)
-        print 'cond 2', solo_pensione_favore_dei_superstiti_corrisposte_agli_orfani * (reddito_totale_da_pensioni <= soglia_per_esenzioni_detrazioni_pensioni_solo_favore_dei_superstiti_corrisposte_agli_orfani)
-        print 'cond 3', percepite_pensioni_favore_dei_superstiti_corrisposte_agli_orfani_e_residente_campione_italia * (reddito_totale_da_pensioni <= soglia_per_esenzioni_detrazioni_pensioni_solo_campione_italia_e_favore_dei_superstiti_corrisposte_agli_orfani)
-        print 'cond 4', reddito_per_detrazioni <=8000
-        print 'cond 5', reddito_per_detrazioni <=28000
-        print 'cond 6', reddito_per_detrazioni <=55000
-        print 'cond 7', reddito_per_detrazioni >=55000
         return select([solo_pensione_residente_campione_italia * (reddito_totale_da_pensioni <= soglia_per_esenzioni_detrazioni_pensioni_solo_campione_italia),
                         solo_pensione_favore_dei_superstiti_corrisposte_agli_orfani * (reddito_totale_da_pensioni <= soglia_per_esenzioni_detrazioni_pensioni_solo_favore_dei_superstiti_corrisposte_agli_orfani),
                         percepite_pensioni_favore_dei_superstiti_corrisposte_agli_orfani_e_residente_campione_italia * (reddito_totale_da_pensioni <= soglia_per_esenzioni_detrazioni_pensioni_solo_campione_italia_e_favore_dei_superstiti_corrisposte_agli_orfani),
@@ -126,9 +116,9 @@ class detrazioni_per_reddito_da_pensione_inferiore_28000(Variable):
     reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
     def formula(person,period,parameter):
-        quoziente = round_(((28000 -(person('reddito_per_detrazioni',period)))/20000),4)
+        quoziente = round_(((15000 -(person('reddito_per_detrazioni',period)))/7000),4)
         quoziente_valido = quoziente>0 * quoziente<1
-        detrazione_spettante = round_(((978 + (902*quoziente)) * (person('numero_giorni_lavoro_dipendente',period) / 365.00)),2)
+        detrazione_spettante = round_(((1297 + (583*quoziente)) * (person('giorni_in_cui_si_e_percepita_la_pensione',period) / 365.00)),2)
         return where (quoziente_valido,detrazione_spettante,0)
 
 
@@ -141,9 +131,7 @@ class detrazioni_per_reddito_da_pensione_inferiore_55000(Variable):
     reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
     def formula(person,period,parameter):
-        quoziente = round_(((55000 -(person('reddito_per_detrazioni',period)))/27000),4)
-        #print(quoziente)
+        quoziente = round_(((55000 -(person('reddito_per_detrazioni',period)))/40000),4)
         quoziente_valido = quoziente>0 * quoziente<1
-        detrazione_spettante = round_(((978.00 * quoziente) * (person('numero_giorni_lavoro_dipendente',period) / 365.00)),2)
-        #print(detrazione_spettante)
+        detrazione_spettante = round_(((1297.00 * quoziente) * (person('giorni_in_cui_si_e_percepita_la_pensione',period) / 365.00)),2)
         return where (quoziente_valido,detrazione_spettante,0)
