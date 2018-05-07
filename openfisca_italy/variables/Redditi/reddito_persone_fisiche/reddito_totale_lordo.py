@@ -34,4 +34,3 @@ class reddito_totale_lordo_annuale(Variable):
         # TO DO Check if incomes are taxable or not
         totale_reddito_annuale = round_(sum(person(reddito, period) for reddito in tipi_reddito),2) # get first two decimale
         return np.array(totale_reddito_annuale) #return converting in np.array becaues tests accept only this type
-    

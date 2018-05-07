@@ -1,0 +1,71 @@
+- name: Detrazione per soli redditi di pensione percepiti a campione d'italia
+  period: 2017
+  input_variables:
+    percepita_pensione_normale: False
+    reddito_pensione_normale: 0
+    percepita_pensione_residente_campione_italia: True
+    reddito_pensione_residente_campione_italia: 1000
+    percepito_pensione_favore_dei_superstiti_corrisposte_agli_orfani: False
+    reddito_pensione_favore_dei_superstiti_corrisposte_agli_orfani: 0
+
+  output_variables:
+    reddito_totale_da_pensioni: 1000.00
+    detrazioni_per_pensionati: 0
+
+- name: Detrazione per soli redditi di pensione favore_dei_superstiti_corrisposte_agli_orfani
+  period: 2017
+  input_variables:
+    percepita_pensione_normale: False
+    reddito_pensione_normale: 0
+    percepita_pensione_residente_campione_italia: False
+    reddito_pensione_residente_campione_italia: 0
+    percepito_pensione_favore_dei_superstiti_corrisposte_agli_orfani: True
+    reddito_pensione_favore_dei_superstiti_corrisposte_agli_orfani: 500
+
+  output_variables:
+    reddito_totale_da_pensioni: 500.00
+    detrazioni_per_pensionati: 0
+
+- name: Detrazione per redditi di pensione percepiti a campione d'italia e a favore_dei_superstiti_corrisposte_agli_orfani
+  period: 2017
+  input_variables:
+    percepita_pensione_normale: False
+    reddito_pensione_normale: 0
+    percepita_pensione_residente_campione_italia: True
+    reddito_pensione_residente_campione_italia: 2500
+    percepito_pensione_favore_dei_superstiti_corrisposte_agli_orfani: True
+    reddito_pensione_favore_dei_superstiti_corrisposte_agli_orfani: 3100
+
+  output_variables:
+    reddito_totale_da_pensioni: 5600.00
+    detrazioni_per_pensionati: 0
+
+- name: Detrazione per redditi di pensione percepiti normalmente e a favore_dei_superstiti_corrisposte_agli_orfani che superano la soglia con detrazione sotto al minimo garantito
+  period: 2017
+  input_variables:
+    percepita_pensione_normale: False
+    reddito_pensione_normale: 22000
+    percepita_pensione_residente_campione_italia: False
+    reddito_pensione_residente_campione_italia: 0
+    percepito_pensione_favore_dei_superstiti_corrisposte_agli_orfani: True
+    reddito_pensione_favore_dei_superstiti_corrisposte_agli_orfani: 2000.00
+    giorni_in_cui_si_e_percepita_la_pensione: 120
+  output_variables:
+    reddito_totale_da_pensioni: 24000.00
+    reddito_per_detrazioni: 7890.41
+    detrazioni_per_pensionati: 713
+
+- name: Detrazione per redditi di pensione percepiti normalmente e a favore_dei_superstiti_corrisposte_agli_orfani che superano la soglia con detrazione sotto al minimo garantito
+  period: 2017
+  input_variables:
+    percepita_pensione_normale: False
+    reddito_pensione_normale: 22000
+    percepita_pensione_residente_campione_italia: False
+    reddito_pensione_residente_campione_italia: 0
+    percepito_pensione_favore_dei_superstiti_corrisposte_agli_orfani: True
+    reddito_pensione_favore_dei_superstiti_corrisposte_agli_orfani: 2000.00
+    giorni_in_cui_si_e_percepita_la_pensione: 120
+  output_variables:
+    reddito_totale_da_pensioni: 24000.00
+    reddito_per_detrazioni: 7890.41
+    detrazioni_per_pensionati: 713

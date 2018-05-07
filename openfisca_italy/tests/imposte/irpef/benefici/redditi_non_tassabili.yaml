@@ -8,7 +8,7 @@
     credito_per_fondi_comuni_compilato: True
   output_variables:
     irpef_non_dovuta_pensionati_e_terreni: True
-    reddito_pensioni_annuale: 14600
+    reddito_pensioni_annuale: 2465.75
 
 
 - name: Test per vedere se i redditi da soli terreni e fabbricati sotto le soglie indicate non vengono effettivamente tassati

@@ -90,9 +90,3 @@ class numero_figli_a_carico(Variable):
         numero_figli_inferiore_tre_anni_a_carico = where( person('numero_figli_inferiore_tre_anni_a_carico',period) >=0, person('numero_figli_inferiore_tre_anni_a_carico',period),0)
         numero_figli_maggiore_tre_anni_a_carico = where( person('numero_figli_maggiore_tre_anni_a_carico',period) >=0, person('numero_figli_maggiore_tre_anni_a_carico',period),0)
         return numero_figli_inferiore_tre_anni_a_carico + numero_figli_maggiore_tre_anni_a_carico
-
-
-
-
-
-
