@@ -1,5 +1,5 @@
-description: Detrazione aggiuntiva per ogni figlio a carico se il soggetto ha più di 3 figli
+description: Ulteriore detrazione fissa se soggetto ha più di 3 figli a carico
 reference: http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf
 values:
   2010-01-01:
-    value: 200
+    value: 1200

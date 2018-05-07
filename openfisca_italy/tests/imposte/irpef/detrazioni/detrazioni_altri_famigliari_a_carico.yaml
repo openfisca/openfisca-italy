@@ -1,0 +1,8 @@
+- name: Test per calcolare detrazione figli a carico teorica
+  period: 2017
+  input_variables:
+    reddito_per_detrazioni: 13100.00
+    numero_altri_famigliari_a_carico: 2
+  output_variables:
+    detrazioni_per_altri_famigliari_a_carico_teorica: 1500.00
+    detrazioni_per_altri_famigliari_a_carico: 1254.3

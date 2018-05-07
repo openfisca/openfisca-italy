@@ -18,6 +18,8 @@ class reddito_lavoro_dipendente_annuale(Variable):
     set_input = set_input_divide_by_period 
     label = "Reddito da lavoro dipendente al netto delle detrazioni del datore di lavoro"
     reference = "http://www.aclimperia.it/documenti/la_dichiarazione_dei_redditi.pdf"  # Always use the most official source
+    def formula(person,period,parameters):
+        return person('reddito_comune_campione_italia',period) + person('reddito_lavoro_frontaliere',period) + person('reddito_lavoro_dipendente_normale',period) + person('reddito_lavori_socialmente_utili',period)
 
 
 # This variable is a pure input: it doesn't have a formula
@@ -68,6 +70,7 @@ class reddito_lavoro_dipendente_e_assimilati_annuale(Variable):
         reddito_lavoro_dipendente = person('reddito_lavoro_dipendente_annuale',period)
         reddito_pensioni = person('reddito_pensioni_annuale',period)
         return reddito_lavoro_dipendente + reddito_pensioni
+
 
 # This variable is a pure input: it doesn't have a formula
 class reddito_lavoro_autonomo_annuale(Variable):

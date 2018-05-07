@@ -15,10 +15,12 @@ class detrazioni_per_figli_a_carico(Variable):
 
     def formula(person,period,parameter):
         reddito_per_detrazioni = person('reddito_per_detrazioni',period)
-        incremento = person('numero_figli_a_carico',period) * 15000
+        incremento = (person('numero_figli_a_carico',period)-1) * 15000
         quoziente = round_((((95000 + incremento) - reddito_per_detrazioni)/(95000 + incremento)),4)
         # deduction formula used if quoziente is valid
         detrazione_spettante = round_((person('detrazioni_per_figli_a_carico_teorica',period) * quoziente),2)
+        detrazione_fissa_per_numero_figli_dopo_il_terzo = where (person('numero_figli_a_carico',period),parameter(period).imposte.IRPEF.detrazioni.detrazioni_carichi_famigliari.detrazioni_tipi_figli.ulteriore_detrazione_figli_a_carico,0)
+        detrazione_spettante = detrazione_spettante + detrazione_fissa_per_numero_figli_dopo_il_terzo
         # check if quoziente is valid or not
         quoziente_valido = quoziente > 0 * quoziente < 1
         # if quoziente is less than 0 the deduction is 0 instead there is a formula to calculate it use the theoretical deduction
@@ -29,7 +31,8 @@ class detrazioni_per_figli_a_carico(Variable):
 # It takes for granted that a child maintains a condition for a whole year, which is not true at all.
 # For example a child who is 3 years old during the year will be 4 so the condition will change.
 # These notes are valid only for the theoretical detraction, the formula of detrazioni_per_figli_a_carico is correct (the result is non correct at all because
-# of the value of the theoretical deduction)
+# of the value of the theoretical deduction).
+# I can't evaluate the percentage of responsibility too. 
 
 
 class detrazioni_per_figli_a_carico_teorica(Variable):
@@ -51,9 +54,10 @@ class detrazioni_per_figli_a_carico_teorica(Variable):
         # evaluation
         detrazione_per_numero_figli_inferiore_tre_anni_a_carico = numero_figli_inferiore_tre_anni_a_carico * parameter(period).imposte.IRPEF.detrazioni.detrazioni_carichi_famigliari.detrazioni_tipi_figli.detrazione_figli_eta_minore_tre
         detrazione_per_numero_figli_maggiore_tre_anni_a_carico = numero_figli_maggiore_tre_anni_a_carico * parameter(period).imposte.IRPEF.detrazioni.detrazioni_carichi_famigliari.detrazioni_tipi_figli.detrazione_figli_eta_maggiore_tre
-        detrazione_per_numero_figli_dopo_il_terzo = numero_figli_dopo_il_terzo * parameter(period).imposte.IRPEF.detrazioni.detrazioni_carichi_famigliari.detrazioni_tipi_figli.detrazione_aggiuntiva_per_figlio_dopo_terzo
+        detrazione_per_numero_figli_se_possiede_piu_di_3_figli = numero_totale_figli * parameter(period).imposte.IRPEF.detrazioni.detrazioni_carichi_famigliari.detrazioni_tipi_figli.detrazione_aggiuntiva_per_figlio_dopo_terzo
         detrazione_per_numero_figli_maggiore_disabili_a_carico = numero_figli_maggiore_disabili_a_carico * parameter(period).imposte.IRPEF.detrazioni.detrazioni_carichi_famigliari.detrazioni_tipi_figli.detrazione_figli_handicap
-        return detrazione_per_numero_figli_inferiore_tre_anni_a_carico + detrazione_per_numero_figli_maggiore_tre_anni_a_carico + detrazione_per_numero_figli_dopo_il_terzo + detrazione_per_numero_figli_maggiore_disabili_a_carico
+        
+        return detrazione_per_numero_figli_inferiore_tre_anni_a_carico + detrazione_per_numero_figli_maggiore_tre_anni_a_carico + detrazione_per_numero_figli_se_possiede_piu_di_3_figli + detrazione_per_numero_figli_maggiore_disabili_a_carico
 
 
 class numero_figli_inferiore_tre_anni_a_carico(Variable):
