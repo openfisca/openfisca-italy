@@ -14,7 +14,7 @@
     possiede_diritto_agevolazione_per_attivita_sportive: True
     compensi_con_ritenuta_a_titolo_di_imposta: 150
     # agevolazione per investimenti in startup
-    possiede_diritto_agevolazione_per_recupero_detrazione_startup: True 
+    possiede_diritto_agevolazione_per_recupero_detrazione_startup: True
     interessi_su_detrazione_fruita: 150
     # detrazioni d'imposta
     detrazioni_imposta_annuale: 600.62
@@ -38,7 +38,7 @@
     possiede_diritto_agevolazione_per_attivita_sportive: False
     compensi_con_ritenuta_a_titolo_di_imposta: 150
     # agevolazione per investimenti in startup
-    possiede_diritto_agevolazione_per_recupero_detrazione_startup: False 
+    possiede_diritto_agevolazione_per_recupero_detrazione_startup: False
     interessi_su_detrazione_fruita: 150
     # detrazioni d'imposta
     detrazioni_imposta_annuale: 600.62
@@ -60,7 +60,7 @@
     possiede_diritto_agevolazione_per_attivita_sportive: False
     compensi_con_ritenuta_a_titolo_di_imposta: 150
     # agevolazione per investimenti in startup
-    possiede_diritto_agevolazione_per_recupero_detrazione_startup: False 
+    possiede_diritto_agevolazione_per_recupero_detrazione_startup: False
     interessi_su_detrazione_fruita: 150
     # da inserire detrazioni d'imposta una volta stabilito se irpef possa andare sotto lo 0 oppure no
     # variabili che comportano una irpef nulla
@@ -87,7 +87,7 @@
     possiede_diritto_agevolazione_per_attivita_sportive: False
     compensi_con_ritenuta_a_titolo_di_imposta: 150
     # agevolazione per investimenti in startup
-    possiede_diritto_agevolazione_per_recupero_detrazione_startup: False 
+    possiede_diritto_agevolazione_per_recupero_detrazione_startup: False
     interessi_su_detrazione_fruita: 150
     # da inserire detrazioni d'imposta una volta stabilito se irpef possa andare sotto lo 0 oppure no
     # variabili che comportano una irpef nulla

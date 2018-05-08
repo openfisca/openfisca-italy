@@ -16,6 +16,7 @@ class base_imponibile_netta (Variable):
     def formula(person, period, parameters):
         # In the IRPEF calculation the  gross base income calculation could be in two ways
         base_imponibile_lorda = person('reddito_totale_lordo_annuale',period)
+        print('base_imponibile_lorda',base_imponibile_lorda)
         oneri_deducibili = person('oneri_deducibili_totali_annuale',period)
         deduzione_abitazione_principale = person('deduzione_abitazione_principale_annuale',period)
         # this formula is fixed
@@ -70,7 +71,7 @@ class irpef_lorda (Variable):
         print('pensione',irpef_non_dovuta_pensionati_e_terreni)
         print('fabbricati',irpef_non_dovuta_per_soli_terreni_e_fabbricati)
         print('insieme', no_condizioni_redditi_non_tassabili)
-       
+
         return select([irpef_non_dovuta_pensionati_e_terreni, irpef_non_dovuta_per_soli_terreni_e_fabbricati, no_condizioni_redditi_non_tassabili], [0, 0, irpef_lorda])
 
 
@@ -85,6 +86,6 @@ class irpef_netta (Variable):
         irpef_lorda = person('irpef_lorda',period)
         detrazioni_imposta = person('detrazioni_imposta_annuale',period)
         irpef_netta = irpef_lorda - detrazioni_imposta
-        # TO DO: if gross IRPEF is 0, then the Net IRPEF is 0 too or could be minor than 0 
+        # TO DO: if gross IRPEF is 0, then the Net IRPEF is 0 too or could be minor than 0
         return np.array(round_(irpef_netta,2))
         # TO DO: variabile per capirese l'irpef del soggetto è da versare o no

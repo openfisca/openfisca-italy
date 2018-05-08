@@ -4,7 +4,7 @@ from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
 from openfisca_italy.entita import *
 
-class per_assegni_percepiti_ex_coniuge(Variable):
+class detrazioni_per_assegni_percepiti_ex_coniuge(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR

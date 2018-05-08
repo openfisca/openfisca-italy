@@ -17,7 +17,7 @@ class detrazioni_imposta_mensile(Variable):
 
     def formula(person, period, parameters):
         tipi_detrazione = ['detrazioni_per_carichi_famigliari','detrazione_per_lavoro','detrazioni_per_pensionati',
-        'per_assegni_percepiti_ex_coniuge']
+        'detrazioni_per_assegni_percepiti_ex_coniuge']
         totale_detrazioni_imposta_mensile = round_(sum(person(detrazione, period,options=[DIVIDE]) for detrazione in tipi_detrazione),2)
         return np.array(totale_detrazioni_imposta_mensile)
 
@@ -32,6 +32,6 @@ class detrazioni_imposta_annuale(Variable):
 
     def formula(person, period, parameters):
         tipi_detrazione = ['detrazioni_per_carichi_famigliari','detrazione_per_lavoro','detrazioni_per_pensionati',
-        'per_assegni_percepiti_ex_coniuge']
+        'detrazioni_per_assegni_percepiti_ex_coniuge']
         totale_detrazioni_imposta_annuale = round_(sum(person(detrazione, period) for detrazione in tipi_detrazione),2)
         return np.array(totale_detrazioni_imposta_annuale)

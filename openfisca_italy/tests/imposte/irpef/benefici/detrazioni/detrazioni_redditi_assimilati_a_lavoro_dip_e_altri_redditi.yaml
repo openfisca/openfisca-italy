@@ -1,0 +1,32 @@
+- name: Test per calcolare detrazione per lavori ass. a dip. e altri redditi con reddito per detrazione inferiore a 4800
+  period: 2017
+  input_variables:
+    sono_stati_percepiti_redditi_assimilati_a_quelli_di_lavoro_dipendente: True
+    reddito_per_detrazioni: 3500
+  output_variables:
+    detrazione_per_redditi_assimilati_a_lavoro_dipendente_e_altri_redditi: 1104.00
+
+- name: Test per calcolare detrazione per lavori ass. a dip. e altri redditi con reddito per detrazione inferiore a 55000
+  period: 2017
+  input_variables:
+    sono_stati_percepiti_redditi_assimilati_a_quelli_di_lavoro_dipendente: True
+    reddito_per_detrazioni: 47000
+  output_variables:
+    detrazione_per_redditi_assimilati_a_lavoro_dipendente_e_altri_redditi: 175.94
+
+- name: Test per calcolare detrazione per lavori ass. a dip. e altri redditi con reddito per detrazione superiore a 55000
+  period: 2017
+  input_variables:
+    sono_stati_percepiti_redditi_assimilati_a_quelli_di_lavoro_dipendente: True
+    reddito_per_detrazioni: 75000
+  output_variables:
+    detrazione_per_redditi_assimilati_a_lavoro_dipendente_e_altri_redditi: 0
+
+
+- name: Test per vedere se detrazione per lavori ass. a dip. e altri redditi non spettante
+  period: 2017
+  input_variables:
+    sono_stati_percepiti_redditi_assimilati_a_quelli_di_lavoro_dipendente: 0
+    reddito_per_detrazioni: 47000
+  output_variables:
+    detrazione_per_redditi_assimilati_a_lavoro_dipendente_e_altri_redditi: 0
