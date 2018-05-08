@@ -28,7 +28,7 @@ class inquilini_di_alloggi_adibiti_ad_abitazione_principale_con_contratti_a_regi
     value_type = bool
     entity = Persona
     definition_period = YEAR
-    label = "E' stato indicato il codice “1” nella colonna 1 del rigo RP71 "
+    label = "E' stato indicato il codice “2” nella colonna 1 del rigo RP71 "
     reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
 

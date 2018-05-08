@@ -1,0 +1,29 @@
+- name: Detrazione per canoni di locazione relativi a contratti di locazione per abitazione principale per i giovani di età compresa tra i 20 ed i 30 anni con reddito inferiore a 15.493,71
+  period: 2017
+  input_variables:
+    inquilini_di_alloggi_adibiti_ad_abitazione_principale_per_giovani_tra_20_e_30_anni: True
+    numero_giorni_dell_anno_inquilini_alloggi_adibiti_ad_abitazione_principale_con_contratti_per_giovani_tra_20_e_30_anni: 200
+    numero_inquilini_relativo_a_inquilini_alloggi_adibiti_ad_abitazione_principale_con_contratti_per_giovani_tra_20_e_30_anni: 2
+    reddito_totale_lordo_annuale: 11000
+  output_variables:
+    detrazione_per_inquilini_alloggi_adibiti_ad_abitazione_principale_con_contratti_per_giovani_tra_20_e_30_anni: 273
+
+- name: Detrazione per canoni di locazione relativi a contratti di locazione per abitazione principale per i giovani di età compresa tra i 20 ed i 30 anni con reddito maggiore a 15.493,71
+  period: 2017
+  input_variables:
+    inquilini_di_alloggi_adibiti_ad_abitazione_principale_per_giovani_tra_20_e_30_anni: True
+    numero_giorni_dell_anno_inquilini_alloggi_adibiti_ad_abitazione_principale_con_contratti_per_giovani_tra_20_e_30_anni: 200
+    numero_inquilini_relativo_a_inquilini_alloggi_adibiti_ad_abitazione_principale_con_contratti_per_giovani_tra_20_e_30_anni: 2
+    reddito_totale_lordo_annuale: 30000
+  output_variables:
+    detrazione_per_inquilini_alloggi_adibiti_ad_abitazione_principale_con_contratti_per_giovani_tra_20_e_30_anni: 0
+
+- name: Detrazione per canoni di locazione relativi a contratti di locazione per abitazione principale per i giovani di età compresa tra i 20 ed i 30 anni non dovuto
+  period: 2017
+  input_variables:
+    inquilini_di_alloggi_adibiti_ad_abitazione_principale_per_giovani_tra_20_e_30_anni: False
+    numero_giorni_dell_anno_inquilini_alloggi_adibiti_ad_abitazione_principale_con_contratti_per_giovani_tra_20_e_30_anni: 200
+    numero_inquilini_relativo_a_inquilini_alloggi_adibiti_ad_abitazione_principale_con_contratti_per_giovani_tra_20_e_30_anni: 2
+    reddito_totale_lordo_annuale: 50000
+  output_variables:
+    detrazione_per_inquilini_alloggi_adibiti_ad_abitazione_principale_con_contratti_per_giovani_tra_20_e_30_anni: 0
