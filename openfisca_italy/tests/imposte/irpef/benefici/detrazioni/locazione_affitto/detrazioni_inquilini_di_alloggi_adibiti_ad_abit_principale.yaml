@@ -1,0 +1,39 @@
+- name: Detrazione per per inquilini di alloggi adibiti ad abitazione principale con reddito per detrazioni inferiore a 15.493,71
+  period: 2017
+  input_variables:
+    inquilini_di_alloggi_adibiti_ad_abitazione_principale_compilato: True
+    numero_giorni_dell_anno_inquilini_alloggi_adibiti_ad_abitazione_principale: 200
+    numero_inquilini_relativo_a_inquilini_alloggi_adibiti_ad_abitazione_principale: 2
+    reddito_per_detrazioni: 11000
+  output_variables:
+    detrazione_per_inquilini_alloggi_adibiti_ad_abitazione_principale: 82.5
+
+- name: Detrazione per per inquilini di alloggi adibiti ad abitazione principale con reddito per detrazioni inferiore a 30.987,41
+  period: 2017
+  input_variables:
+    inquilini_di_alloggi_adibiti_ad_abitazione_principale_compilato: True
+    numero_giorni_dell_anno_inquilini_alloggi_adibiti_ad_abitazione_principale: 200
+    numero_inquilini_relativo_a_inquilini_alloggi_adibiti_ad_abitazione_principale: 2
+    reddito_per_detrazioni: 25000
+  output_variables:
+    detrazione_per_inquilini_alloggi_adibiti_ad_abitazione_principale: 41.25
+
+- name: Detrazione per per inquilini di alloggi adibiti ad abitazione principale con reddito per detrazioni maggiore a 30.987,41
+  period: 2017
+  input_variables:
+    inquilini_di_alloggi_adibiti_ad_abitazione_principale_compilato: True
+    numero_giorni_dell_anno_inquilini_alloggi_adibiti_ad_abitazione_principale: 200
+    numero_inquilini_relativo_a_inquilini_alloggi_adibiti_ad_abitazione_principale: 2
+    reddito_per_detrazioni: 40000
+  output_variables:
+    detrazione_per_inquilini_alloggi_adibiti_ad_abitazione_principale: 0
+
+- name: Detrazione per per inquilini di alloggi adibiti ad abitazione principale non dovuta
+  period: 2017
+  input_variables:
+    inquilini_di_alloggi_adibiti_ad_abitazione_principale_compilato: 0
+    numero_giorni_dell_anno_inquilini_alloggi_adibiti_ad_abitazione_principale: 200
+    numero_inquilini_relativo_a_inquilini_alloggi_adibiti_ad_abitazione_principale: 2
+    reddito_per_detrazioni: 5000
+  output_variables:
+    detrazione_per_inquilini_alloggi_adibiti_ad_abitazione_principale: 0
