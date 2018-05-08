@@ -8,13 +8,13 @@ class detrazioni_per_conigue_a_carico(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
-    set_input = set_input_divide_by_period  
+    set_input = set_input_divide_by_period
     label = "Detrazioni dovute per coniuge a carico"
     reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf"  # Always use the most official source
-    
+
     def formula(person,period,parameters):
         #reddito per detrazioni è uguale alla somma del reddito_totale_lordo_annuale - deduzione_abitazione_principale + importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore
-        reddito_per_detrazioni = person('reddito_per_detrazioni',period) 
+        reddito_per_detrazioni = person('reddito_per_detrazioni',period)
         # if this person doesn't have a spouse this value must be 0
         la_persona_ha_un_coniuge_a_carico = person('la_persona_non_ha_un_coniuge_a_carico',period)
         # calcuation basing on income
@@ -29,7 +29,7 @@ class detrazioni_per_conigue_a_carico_reddito_inferiore_15000(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
-    set_input = set_input_divide_by_period  
+    set_input = set_input_divide_by_period
     label = "Formula per detrazioni dovute per coniuge a carico basata sul reddito per detrazioni"
     reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf"  # Always use the most official source
 
@@ -45,7 +45,7 @@ class detrazioni_per_conigue_a_carico_reddito_inferiore_40000(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
-    set_input = set_input_divide_by_period  
+    set_input = set_input_divide_by_period
     label = "Formula per detrazioni dovute per coniuge a carico basata sul reddito per detrazioni"
     reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf"  # Always use the most official source
 
@@ -61,7 +61,7 @@ class maggiorazione_detrazioni_coniuge_in_base_al_reddito(Variable):
     value_type = int
     entity = Persona
     definition_period = YEAR
-    set_input = set_input_divide_by_period  
+    set_input = set_input_divide_by_period
     label = "Maggiorazione per redditi complessivi tra 15000 euro e 40000"
     reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf"  # Always use the most official source
     def formula(person,period,parameters):
@@ -77,7 +77,7 @@ class detrazioni_per_conigue_a_carico_reddito_inferiore_80000(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
-    set_input = set_input_divide_by_period  
+    set_input = set_input_divide_by_period
     label = "Formula per detrazioni dovute per coniuge a carico basata sul reddito per detrazioni"
     reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf"  # Always use the most official source
 
@@ -94,7 +94,7 @@ class mesi_coniuge_a_carico(Variable):
     entity = Persona
     definition_period = YEAR
     label = "Mesi dell'anno in cui il coniuge è stato a carico della persona"
-    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf"  # Always use the most official source       
+    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf"  # Always use the most official source
 
 
 class la_persona_non_ha_un_coniuge_a_carico(Variable):
@@ -102,7 +102,7 @@ class la_persona_non_ha_un_coniuge_a_carico(Variable):
     entity = Persona
     definition_period = YEAR
     label = "La persona ha un coniuge a carico?"
-    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf"  # Always use the most official source  
+    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf"  # Always use the most official source
 
     def formula(person,period,parameters):
         reddito_coniuge_per_calcolo_detrazioni_coniuge_a_carico = person('reddito_coniuge_per_calcolo_detrazioni_coniuge_a_carico',period)
@@ -116,4 +116,4 @@ class reddito_coniuge_per_calcolo_detrazioni_coniuge_a_carico(Variable):
     entity = Persona
     definition_period = YEAR
     label = "Reddito coniuge"
-    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf"  # Always use the most official source                
+    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf"  # Always use the most official source

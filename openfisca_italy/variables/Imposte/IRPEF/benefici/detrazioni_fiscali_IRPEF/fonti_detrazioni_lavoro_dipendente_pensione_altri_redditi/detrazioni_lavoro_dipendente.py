@@ -10,7 +10,7 @@ class detrazioni_per_lavoro_dipendente(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
-    set_input = set_input_divide_by_period  
+    set_input = set_input_divide_by_period
     label = "Detrazioni per lavoro dipendente"
     reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
@@ -26,7 +26,7 @@ class detrazioni_per_lavoro_dipendente(Variable):
         # reddito per detrazioni
         reddito_per_detrazioni = person('reddito_per_detrazioni',period)
         return select([solo_reddito_frontalieri==True * reddito_lavoro_dipendente_annuale <= parameter(period).imposte.IRPEF.detrazioni.detrazioni_lavoro_dipendente.soglia_per_detrazioni_lavoro_dip_frontaliero,
-         solo_reddito_comune_campione_italia==True * reddito_lavoro_dipendente_annuale <= parameter(period).imposte.IRPEF.detrazioni.detrazioni_lavoro_dipendente.soglia_per_detrazioni_lavoro_dip_campione_italia, 
+         solo_reddito_comune_campione_italia==True * reddito_lavoro_dipendente_annuale <= parameter(period).imposte.IRPEF.detrazioni.detrazioni_lavoro_dipendente.soglia_per_detrazioni_lavoro_dip_campione_italia,
          solo_reddito_comune_campione_italia_e_frontalieri * not_(reddito_lavoro_dipendente_annuale <= parameter(period).imposte.IRPEF.detrazioni.detrazioni_lavoro_dipendente.soglia_per_detrazioni_lavoro_dip_campione_italia) * not_(reddito_lavoro_dipendente_annuale<=parameter(period).imposte.IRPEF.detrazioni.detrazioni_lavoro_dipendente.soglia_per_detrazioni_lavoro_dip_frontaliero),
          reddito_per_detrazioni<=8000,
          reddito_per_detrazioni<=28000,
@@ -51,7 +51,7 @@ class percepito_reddito_lavoro_dipendente_indeterminato(Variable):
     entity = Persona
     definition_period = YEAR
     label = "La persona ha percepito reddito da lavoro dipendente con contratto a tempo indeterminato"
-    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source    
+    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
 
 class percepito_reddito_lavori_socialmente_utili(Variable):
@@ -59,7 +59,7 @@ class percepito_reddito_lavori_socialmente_utili(Variable):
     entity = Persona
     definition_period = YEAR
     label = "La persona ha percepito reddito da lavori socialmente utili"
-    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source   
+    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
 
 class percepito_reddito_lavoro_frontaliere(Variable):
@@ -77,58 +77,13 @@ class percepito_reddito_comune_campione_italia(Variable):
     label = "La persona ha percepito reddito nel comune di Campion d'Italia"
     reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
-# Tipi di redditi percepibili
-
-class reddito_comune_campione_italia(Variable):
-    value_type = float
-    entity = Persona
-    definition_period = YEAR
-    label = "Reddito nel comune di Campione d'Italia"
-    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
-
-
-class reddito_lavoro_frontaliere(Variable):
-    value_type = float
-    entity = Persona
-    definition_period = YEAR
-    label = "Reddito frontaliero"
-    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
-
-
-class reddito_lavori_socialmente_utili(Variable):
-    value_type = float
-    entity = Persona
-    definition_period = YEAR
-    label = "Reddito lavori socialmente utile"
-    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
-
-
-class reddito_lavoro_dipendente_normale(Variable):
-    value_type = float
-    entity = Persona
-    definition_period = YEAR
-    label = "Reddito lavoro dipendente"
-    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
-
-
-
-
-# Numero giorni di lavoro
-
-
-class numero_giorni_lavoro_dipendente(Variable):
-    value_type =  int 
-    entity = Persona
-    definition_period = YEAR
-    label = "Numero giorni in cui persona ha percepito reddito da lavoro dipendente"
-    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
 
 # Detrazioni per scaglioni di reddito
 # Non un parametro perchè cambia la formula
 
 class detrazioni_per_reddito_da_lavoro_dipendente_inferiore_8000(Variable):
-    value_type =  float 
+    value_type =  float
     entity = Persona
     definition_period = YEAR
     label = "Calcolo detrazioni per reddito da lavoro dipendente inferiore a 8000 euro"
@@ -142,7 +97,7 @@ class detrazioni_per_reddito_da_lavoro_dipendente_inferiore_8000(Variable):
 
 
 class detrazioni_per_reddito_da_lavoro_dipendente_inferiore_28000(Variable):
-    value_type =  float 
+    value_type =  float
     entity = Persona
     definition_period = YEAR
     label = "Calcolo detrazioni per reddito da lavoro dipendente inferiore a 28000 euro"
@@ -156,8 +111,8 @@ class detrazioni_per_reddito_da_lavoro_dipendente_inferiore_28000(Variable):
 
 
 class detrazioni_per_reddito_da_lavoro_dipendente_inferiore_55000(Variable):
-    
-    value_type =  float 
+
+    value_type =  float
     entity = Persona
     definition_period = YEAR
     label = "Calcolo detrazioni per reddito da lavoro dipendente inferiore a 55000 euro"

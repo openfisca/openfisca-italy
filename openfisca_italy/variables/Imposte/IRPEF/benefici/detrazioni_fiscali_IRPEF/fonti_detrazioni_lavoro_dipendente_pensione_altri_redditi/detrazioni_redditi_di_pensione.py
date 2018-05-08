@@ -8,7 +8,7 @@ class detrazioni_per_pensionati(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
-    set_input = set_input_divide_by_period  
+    set_input = set_input_divide_by_period
     label = "Detrazioni per i pensionati"
     reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
@@ -22,7 +22,7 @@ class detrazioni_per_pensionati(Variable):
         solo_pensione_residente_campione_italia = not_(percepita_pensione_normale) * not_(percepito_pensione_favore_dei_superstiti_corrisposte_agli_orfani)
         solo_pensione_favore_dei_superstiti_corrisposte_agli_orfani = not_(percepita_pensione_normale) * not_(percepita_pensione_residente_campione_italia)
         percepite_pensioni_favore_dei_superstiti_corrisposte_agli_orfani_e_residente_campione_italia = percepita_pensione_residente_campione_italia * percepito_pensione_favore_dei_superstiti_corrisposte_agli_orfani
-        
+
         # income
         reddito_totale_da_pensioni = person('reddito_totale_da_pensioni',period) # it's the sum of the three income tipologies
         reddito_per_detrazioni = person('reddito_per_detrazioni',period)
@@ -55,7 +55,7 @@ class percepita_pensione_residente_campione_italia(Variable):
     entity = Persona
     definition_period = YEAR
     label = "La persona ha percepito reddito da pensione nel comune Campione D'italia"
-    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source    
+    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
 
 class percepito_pensione_favore_dei_superstiti_corrisposte_agli_orfani(Variable):
@@ -63,7 +63,7 @@ class percepito_pensione_favore_dei_superstiti_corrisposte_agli_orfani(Variable)
     entity = Persona
     definition_period = YEAR
     label = "La persona ha percepito reddito da pensione in favore dei supersitit corrisposte agli orfani"
-    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source   
+    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
 
 # Tipi di redditi percepibili
@@ -95,7 +95,7 @@ class reddito_pensione_favore_dei_superstiti_corrisposte_agli_orfani(Variable):
 # Non un è parametro perchè cambia la formula
 
 class detrazioni_per_reddito_da_pensione_inferiore_8000(Variable):
-    value_type =  float 
+    value_type =  float
     entity = Persona
     definition_period = YEAR
     label = "Calcolo detrazioni per reddito da lavoro dipendente inferiore a 8000 euro"
@@ -109,7 +109,7 @@ class detrazioni_per_reddito_da_pensione_inferiore_8000(Variable):
 
 
 class detrazioni_per_reddito_da_pensione_inferiore_28000(Variable):
-    value_type =  float 
+    value_type =  float
     entity = Persona
     definition_period = YEAR
     label = "Calcolo detrazioni per reddito da lavoro dipendente inferiore a 28000 euro"
@@ -123,8 +123,8 @@ class detrazioni_per_reddito_da_pensione_inferiore_28000(Variable):
 
 
 class detrazioni_per_reddito_da_pensione_inferiore_55000(Variable):
-    
-    value_type =  float 
+
+    value_type =  float
     entity = Persona
     definition_period = YEAR
     label = "Calcolo detrazioni per reddito da lavoro dipendente inferiore a 55000 euro"

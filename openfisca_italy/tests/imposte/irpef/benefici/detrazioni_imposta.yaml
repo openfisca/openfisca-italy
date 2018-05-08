@@ -2,9 +2,9 @@
   period: 2017
   input_variables:
     detrazioni_per_carichi_famigliari: 150
-    detrazioni_per_lavoro_dipendente: 150
+    detrazione_per_lavoro: 150
     detrazioni_per_pensionati: 150
-    per_assegni_percepiti_ex_coniuge: 150 
+    per_assegni_percepiti_ex_coniuge: 150
   output_variables:
     detrazioni_imposta_annuale: 600
 
@@ -12,7 +12,7 @@
   period: 2017
   input_variables:
     detrazioni_per_carichi_famigliari: 150
-    detrazioni_per_lavoro_dipendente: 150.25
+    detrazione_per_lavoro: 150.25
     detrazioni_per_pensionati: 150
     per_assegni_percepiti_ex_coniuge: 150.37
   output_variables:
@@ -22,9 +22,9 @@
   period: 2017-01
   input_variables:
     detrazioni_per_carichi_famigliari: 150
-    detrazioni_per_lavoro_dipendente: 150
+    detrazione_per_lavoro: 150
     detrazioni_per_pensionati: 150
-    per_assegni_percepiti_ex_coniuge: 150 
+    per_assegni_percepiti_ex_coniuge: 150
   output_variables:
     detrazioni_imposta_mensile: 50
 
@@ -32,8 +32,8 @@
   period: 2017-01
   input_variables:
     detrazioni_per_carichi_famigliari: 150
-    detrazioni_per_lavoro_dipendente: 150.25
+    detrazione_per_lavoro: 150.25
     detrazioni_per_pensionati: 150
-    per_assegni_percepiti_ex_coniuge: 150 
+    per_assegni_percepiti_ex_coniuge: 150
   output_variables:
     detrazioni_imposta_mensile: 50.02
