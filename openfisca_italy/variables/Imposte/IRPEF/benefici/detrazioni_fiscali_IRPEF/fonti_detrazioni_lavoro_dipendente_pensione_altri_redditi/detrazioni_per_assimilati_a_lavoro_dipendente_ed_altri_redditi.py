@@ -51,6 +51,6 @@ class detrazione_per_redditi_assimilati_a_lavoro_dipendente_e_altri_redditi_con_
     reference = "https://www.gbsoftware.it/legginotizia.asp?IdNews=2364"  # Always use the most official source
 
     def formula(person,period,parameters):
-        quoziente = (55000.00-person('reddito_per_detrazioni',period))/50200.00
+        quoziente = round_(((55000.00-person('reddito_per_detrazioni',period))/50200.00),4)
         quoziente_valido = quoziente>0 * quoziente<1
-        return round_((quoziente * 1104.00),2)
+        return where(quoziente_valido,round_((quoziente * 1104.00),2),np.array(0))

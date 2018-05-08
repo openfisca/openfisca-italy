@@ -12,7 +12,7 @@
     sono_stati_percepiti_redditi_assimilati_a_quelli_di_lavoro_dipendente: True
     reddito_per_detrazioni: 47000
   output_variables:
-    detrazione_per_redditi_assimilati_a_lavoro_dipendente_e_altri_redditi: 175.94
+    detrazione_per_redditi_assimilati_a_lavoro_dipendente_e_altri_redditi: 175.98
 
 - name: Test per calcolare detrazione per lavori ass. a dip. e altri redditi con reddito per detrazione superiore a 55000
   period: 2017

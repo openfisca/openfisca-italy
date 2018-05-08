@@ -62,6 +62,14 @@ class reddito_lavoro_dipendente_annuale(Variable):
     def formula(person,period,parameters):
         return person('reddito_comune_campione_italia',period) + person('reddito_lavoro_frontaliere',period) + person('reddito_lavoro_dipendente_normale',period) + person('reddito_lavori_socialmente_utili',period)
 
+class reddito_da_assegni_ex_coniuge(Variable):
+    value_type = float
+    entity = Persona
+    definition_period = YEAR
+    set_input = set_input_divide_by_period
+    label = "Reddito da assegni ex coniuge"
+    reference = "http://www.aclimperia.it/documenti/la_dichiarazione_dei_redditi.pdf"  # Always use the most official source
+
 
 # This variable is a pure input: it doesn't have a formula
 class reddito_assimilato_a_lavoro_dipendente_ed_altri_redditi_annuale(Variable):
@@ -77,6 +85,7 @@ class reddito_assimilato_a_lavoro_dipendente_ed_altri_redditi_annuale(Variable):
         reddito_da_attivita_lavoro_autonomo_non_esercitate_abitualmente = person('reddito_da_attivita_lavoro_autonomo_non_esercitate_abitualmente',period)
         reddito_da_attivita_assunzioni_fare_nonfare_permettere = person('reddito_da_attivita_assunzioni_fare_nonfare_permettere',period)
         reddito_di_impresa_annuale = person('reddito_di_impresa_annuale',period)
+        reddito_da_assegni_ex_coniuge  = person('reddito_da_assegni_ex_coniuge',period)
         return reddito_lavoro_autonomo_annuale + reddito_da_attivita_commerciali_non_esercitate_abitualmente + reddito_da_attivita_lavoro_autonomo_non_esercitate_abitualmente + reddito_da_attivita_assunzioni_fare_nonfare_permettere + reddito_di_impresa_annuale
 
 

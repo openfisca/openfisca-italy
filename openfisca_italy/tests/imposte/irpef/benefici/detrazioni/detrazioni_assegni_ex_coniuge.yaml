@@ -1,0 +1,41 @@
+- name: Test per calcolare detrazione per assegni ex coniuge con reddito per detrazione inferiore a 8000
+  period: 2017
+  input_variables:
+    sono_stati_percepiti_redditi_per_assegni_da_ex_coniuge: True
+    reddito_per_detrazioni: 3500
+  output_variables:
+    detrazioni_per_assegni_percepiti_ex_coniuge: 1880.00
+
+- name: Test per calcolare detrazione per assegni ex coniuge con reddito per detrazione inferiore a 15000
+  period: 2017
+  input_variables:
+    sono_stati_percepiti_redditi_per_assegni_da_ex_coniuge: True
+    reddito_per_detrazioni: 12000
+  output_variables:
+    detrazioni_per_assegni_percepiti_ex_coniuge: 1546.87
+
+- name: Test per calcolare detrazione per assegni ex coniuge con reddito per detrazione inferiore a 55000
+  period: 2017
+  input_variables:
+    sono_stati_percepiti_redditi_per_assegni_da_ex_coniuge: True
+    reddito_per_detrazioni: 47000
+  output_variables:
+    detrazioni_per_assegni_percepiti_ex_coniuge: 259.4
+
+
+- name: Test per calcolare detrazione per assegni ex coniuge con reddito per detrazione superiore a 55000
+  period: 2017
+  input_variables:
+    sono_stati_percepiti_redditi_per_assegni_da_ex_coniuge: True
+    reddito_per_detrazioni: 56000
+  output_variables:
+    detrazioni_per_assegni_percepiti_ex_coniuge: 0
+
+
+- name: Test per calcolare detrazione per assegni ex coniuge non spettante
+  period: 2017
+  input_variables:
+    sono_stati_percepiti_redditi_per_assegni_da_ex_coniuge: 0
+    reddito_per_detrazioni: 47000
+  output_variables:
+    detrazioni_per_assegni_percepiti_ex_coniuge: 0
