@@ -1,0 +1,29 @@
+- name: Detrazione per per inquilini di alloggi adibiti ad abitazione principale con contratti a regime convenzionale con reddito per detrazioni inferiore a 15.493,71
+  period: 2017
+  input_variables:
+    inquilini_di_alloggi_adibiti_ad_abitazione_principale_con_contratti_a_regime_convenzionale_compilato: True
+    numero_giorni_dell_anno_inquilini_alloggi_adibiti_ad_abitazione_principale_con_contratti_a_regime_convenzionale: 200
+    numero_inquilini_relativo_a_inquilini_alloggi_adibiti_ad_abitazione_principale_con_contratti_a_regime_convenzionale: 2
+    reddito_per_detrazioni: 11000
+  output_variables:
+    detrazione_per_inquilini_alloggi_adibiti_ad_abitazione_principale_con_contratti_a_regime_convenzionale: 136
+
+- name: Detrazione per per inquilini di alloggi adibiti ad abitazione principale con contratti a regime convenzionale con reddito per detrazioni inferiore a 30.987,41
+  period: 2017
+  input_variables:
+    inquilini_di_alloggi_adibiti_ad_abitazione_principale_con_contratti_a_regime_convenzionale_compilato: True
+    numero_giorni_dell_anno_inquilini_alloggi_adibiti_ad_abitazione_principale_con_contratti_a_regime_convenzionale: 200
+    numero_inquilini_relativo_a_inquilini_alloggi_adibiti_ad_abitazione_principale_con_contratti_a_regime_convenzionale: 2
+    reddito_per_detrazioni: 25000
+  output_variables:
+    detrazione_per_inquilini_alloggi_adibiti_ad_abitazione_principale_con_contratti_a_regime_convenzionale: 68
+
+- name: Detrazione per per inquilini di alloggi adibiti ad abitazione principale con contratti a regime convenzionale con reddito per detrazioni maggiore a 30.987,41
+  period: 2017
+  input_variables:
+    inquilini_di_alloggi_adibiti_ad_abitazione_principale_con_contratti_a_regime_convenzionale_compilato: True
+    numero_giorni_dell_anno_inquilini_alloggi_adibiti_ad_abitazione_principale_con_contratti_a_regime_convenzionale: 200
+    numero_inquilini_relativo_a_inquilini_alloggi_adibiti_ad_abitazione_principale_con_contratti_a_regime_convenzionale: 2
+    reddito_per_detrazioni: 50000
+  output_variables:
+    detrazione_per_inquilini_alloggi_adibiti_ad_abitazione_principale_con_contratti_a_regime_convenzionale: 0
