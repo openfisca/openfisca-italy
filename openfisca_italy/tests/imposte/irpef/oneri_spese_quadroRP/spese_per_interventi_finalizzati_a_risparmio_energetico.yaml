@@ -1,0 +1,18 @@
+- name: Test 1 per crediti residui e detrazione fruita dopo il calcolo dell IRPEF lorda diminuita delle detrazioni per lavoro e carichi famigliari positiva e con detrazioni per locazione minore
+  period: 2017
+  input_variables:
+    spesa_per_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_55: 1000
+    spesa_per_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_65: 1500
+    spesa_per_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_70: 1450
+    spesa_per_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_75: 1550
+  output_variables:
+    importo_rate_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_55: 100
+    importo_rate_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_65: 150
+    importo_rate_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_70: 145
+    importo_rate_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_75: 155
+    importo_rate_per_spese_interventi_finalizzati_al_risparmio_energetico_totale_annue: 550
+    detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_55: 55
+    detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_65: 97.5
+    detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_70: 101.5
+    detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_75: 116.25
+    detrazioni_per_spese_per_interventi_finalizzati_al_risparmio_energetico_annue: 370.25

@@ -87,8 +87,14 @@ class detrazioni_per_spese_arredo_immobili_giovani_coppie_iva_acquisto_abitazion
         return round_((person('totale_rate_spesa_arredo_immobili_ristrutturati_gc_iva_acquisto_abitazione',period)*0.5),2)
 
 
-class detrazioni_per_spese_per_interventi_finalizzati_al_risparmio_energetico(Variable):
+class detrazioni_per_spese_per_interventi_finalizzati_al_risparmio_energetico_annue(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
     label = u"Detrazione per spese indicate nella sezione IV C del Quadro RP (arredo immobili ristrutturati, giovani coppie, IVA per acquisto abitazione classe energetica A o B) (Rigo RN16)"
+    def formula(person,period,parameters):
+        tipi_detrazioni_spese_risparmio_energetico = ['detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_55',
+                                                    'detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_65',
+                                                    'detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_70',
+                                                    'detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_75',]
+        return round_(sum(person(detrazione, period) for detrazione in tipi_detrazioni_spese_risparmio_energetico),2)

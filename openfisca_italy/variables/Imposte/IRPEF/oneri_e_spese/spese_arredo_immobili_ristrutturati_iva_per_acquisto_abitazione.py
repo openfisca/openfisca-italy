@@ -18,6 +18,7 @@ class totale_rate_spesa_arredo_immobili_ristrutturati_gc_iva_acquisto_abitazione
                                             'importo_rata_iva_per_acquisto_abitazione_classe_energetica',]
         return round_(sum(person(tipo_rata, period) for tipo_rata in tipi_rate_spese_arredo_immobili),2)
 
+#Sezione spese
 
 class spesa_arredo_immobili_ristrutturati(Variable):
     value_type = float
@@ -45,7 +46,7 @@ class iva_per_acquisto_abitazione_classe_energetica(Variable):
     label = "IVA per acquisto abitazione classe energetica A o B (Rigo RP59 col.2)"
     reference = "https://www.gbsoftware.it/legginotizia.asp?IdNews=2364"  # Always use the most official source
 
-# TODO calculate rate for previous expenses
+#Sezione rate
 
 class importo_rata_spesa_arredo_immobili_ristrutturati(Variable):
     value_type = float
@@ -56,7 +57,7 @@ class importo_rata_spesa_arredo_immobili_ristrutturati(Variable):
     reference = "https://www.gbsoftware.it/legginotizia.asp?IdNews=2364"  # Always use the most official source
 
     def formula(person,period,parameters):
-        return person('spesa_arredo_immobili_ristrutturati',period)
+        return person('spesa_arredo_immobili_ristrutturati',period) / 10.0
 
 class importo_rata_spesa_arredo_immobili_giovani_coppie(Variable):
     value_type = float
@@ -67,7 +68,7 @@ class importo_rata_spesa_arredo_immobili_giovani_coppie(Variable):
     reference = "https://www.gbsoftware.it/legginotizia.asp?IdNews=2364"  # Always use the most official source
 
     def formula(person,period,parameters):
-        return person('spesa_arredo_immobili_giovani_coppie',period)
+        return person('spesa_arredo_immobili_giovani_coppie',period) / 10.0
 
 class importo_rata_iva_per_acquisto_abitazione_classe_energetica(Variable):
     value_type = float
@@ -78,4 +79,4 @@ class importo_rata_iva_per_acquisto_abitazione_classe_energetica(Variable):
     reference = "https://www.gbsoftware.it/legginotizia.asp?IdNews=2364"  # Always use the most official source
 
     def formula(person,period,parameters):
-        return person('iva_per_acquisto_abitazione_classe_energetica',period)
+        return person('iva_per_acquisto_abitazione_classe_energetica',period) / 10.0
