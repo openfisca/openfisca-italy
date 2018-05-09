@@ -15,9 +15,9 @@ class detrazione_per_inquilini_alloggi_adibiti_ad_abitazione_principale_con_cont
 
     def formula(person, period, parameters):
         percentuale_di_spettanza = round_((1.00 / person('numero_inquilini_relativo_a_inquilini_alloggi_adibiti_ad_abitazione_principale_con_contratti_per_giovani_tra_20_e_30_anni',period)),2)
-        percentuale_giorni = round_((person('numero_giorni_dell_anno_inquilini_alloggi_adibiti_ad_abitazione_principale_con_contratti_per_giovani_tra_20_e_30_anni',period)/365.00),2)
+        percentuale_giorni = round_((person('numero_giorni_immobile_adibito_ad_abitazione_principale_con_contratti_per_giovani_tra_20_e_30_anni',period)/365.00),2)
         reddito_totale_lordo_annuale = person('reddito_totale_lordo_annuale',period)
-        detrazione_senza_percentuali = select([not_(person('inquilini_di_alloggi_adibiti_ad_abitazione_principale_per_giovani_tra_20_e_30_anni',period)),
+        detrazione_senza_percentuali = select([not_(person('canoni_di_locazione_relativi_a_contratti_di_locazione_per_abitazione_principale_per_giovani_tra_20_e_30_anni_compilato',period)),
                                                 reddito_totale_lordo_annuale<=15493.71,
                                                 reddito_totale_lordo_annuale>=15493.71],
                                                 [0,991.60,0])
@@ -25,7 +25,7 @@ class detrazione_per_inquilini_alloggi_adibiti_ad_abitazione_principale_con_cont
 
 
 
-class inquilini_di_alloggi_adibiti_ad_abitazione_principale_per_giovani_tra_20_e_30_anni(Variable):
+class canoni_di_locazione_relativi_a_contratti_di_locazione_per_abitazione_principale_per_giovani_tra_20_e_30_anni_compilato(Variable):
     value_type = bool
     entity = Persona
     definition_period = YEAR
@@ -33,7 +33,7 @@ class inquilini_di_alloggi_adibiti_ad_abitazione_principale_per_giovani_tra_20_e
     reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
 
-class numero_giorni_dell_anno_inquilini_alloggi_adibiti_ad_abitazione_principale_con_contratti_per_giovani_tra_20_e_30_anni(Variable):
+class numero_giorni_immobile_adibito_ad_abitazione_principale_con_contratti_per_giovani_tra_20_e_30_anni(Variable):
     value_type = int
     entity = Persona
     definition_period = YEAR
