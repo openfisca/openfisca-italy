@@ -4,6 +4,8 @@ from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
 from openfisca_italy.entita import *
 
+# This file contains all the variables that are the representation of the rows in the irpef
+# deduction calculation. A row could be the sum of some other deduction or a simple deduction calculation
 
 class detrazioni_per_carichi_famigliari(Variable):
     value_type = float
@@ -60,16 +62,33 @@ class detrazioni_per_oneri_detraibili_annuali(Variable):
 
 
 class detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_annue(Variable):
-        value_type = float
-        entity = Persona
-        definition_period = YEAR
-        label = u"Detrazioni per interventi di recupero del patrimonio edilizio e misure antisismiche totali (Rigo RN14)"
-        def formula(person,period,parameters):
-            detrazioni_scaglioni = ['detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_36',
-                                'detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_50',
-                                'detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_65',
-                                'detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_70',
-                                'detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_75',
-                                'detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_80',
-                                'detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_85',]
-            return round_(sum(person(detrazione, period) for detrazione in detrazioni_scaglioni),2)
+    value_type = float
+    entity = Persona
+    definition_period = YEAR
+    label = u"Detrazioni per interventi di recupero del patrimonio edilizio e misure antisismiche totali (Rigo RN14)"
+
+    def formula(person,period,parameters):
+        detrazioni_scaglioni = ['detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_36',
+                            'detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_50',
+                            'detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_65',
+                            'detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_70',
+                            'detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_75',
+                            'detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_80',
+                            'detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_85',]
+        return round_(sum(person(detrazione, period) for detrazione in detrazioni_scaglioni),2)
+
+
+class detrazioni_per_spese_arredo_immobili_giovani_coppie_iva_acquisto_abitazione_annue(Variable):
+    value_type = float
+    entity = Persona
+    definition_period = YEAR
+    label = u"DDetrazione per spese indicate nella sezione III C del Quadro RP (arredo immobili ristrutturati, giovani coppie, IVA per acquisto abitazione classe energetica A o B) (Rigo RN15)"
+    def formula(person,period,parameters):
+        return round_((person('totale_rate_spesa_arredo_immobili_ristrutturati_gc_iva_acquisto_abitazione',period)*0.5),2)
+
+
+class detrazioni_per_spese_per_interventi_finalizzati_al_risparmio_energetico(Variable):
+    value_type = float
+    entity = Persona
+    definition_period = YEAR
+    label = u"Detrazione per spese indicate nella sezione IV C del Quadro RP (arredo immobili ristrutturati, giovani coppie, IVA per acquisto abitazione classe energetica A o B) (Rigo RN16)"

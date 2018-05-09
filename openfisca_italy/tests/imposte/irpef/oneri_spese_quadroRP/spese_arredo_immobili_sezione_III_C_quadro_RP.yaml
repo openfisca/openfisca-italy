@@ -1,0 +1,12 @@
+- name: Test 1 per crediti residui e detrazione fruita dopo il calcolo dell IRPEF lorda diminuita delle detrazioni per lavoro e carichi famigliari positiva e con detrazioni per locazione minore
+  period: 2017
+  input_variables:
+    importo_rata_spesa_arredo_immobili_ristrutturati: 1000
+    spesa_arredo_immobili_giovani_coppie: 1500
+    iva_per_acquisto_abitazione_classe_energetica: 1450
+  output_variables:
+    importo_rata_spesa_arredo_immobili_ristrutturati: 1000
+    importo_rata_spesa_arredo_immobili_giovani_coppie: 1500
+    importo_rata_iva_per_acquisto_abitazione_classe_energetica: 1450
+    totale_rate_spesa_arredo_immobili_ristrutturati_gc_iva_acquisto_abitazione: 3950
+    detrazioni_per_spese_arredo_immobili_giovani_coppie_iva_acquisto_abitazione_annue: 1975
