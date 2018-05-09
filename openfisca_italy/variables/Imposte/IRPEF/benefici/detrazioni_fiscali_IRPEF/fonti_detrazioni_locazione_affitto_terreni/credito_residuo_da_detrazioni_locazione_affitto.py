@@ -28,6 +28,7 @@ class credito_residuo_da_detrazioni_locazione_affitto(Variable):
                     0
                     ])
 
+
 class detrazione_fruita_da_detrazioni_locazione_affitto(Variable):
     value_type = float
     entity = Persona

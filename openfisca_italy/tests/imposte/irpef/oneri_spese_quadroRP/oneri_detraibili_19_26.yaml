@@ -8,8 +8,12 @@
      spese_acquisto_cani_guida: 115
      spese_sanitarie_raetizzate_in_precedenza: 125
      interessi_mutui_ipotecari_acquisto_abitazione_principale: 250
+     spese_per_canoni_di_leasing: 100
      altre_spese_che_sono_soggette_a_detrazioni_al_19: 175
      altre_spese_che_sono_soggette_a_detrazioni_al_26: 2400
   output_variables:
-    totale_spese_per_detrazione_al_19: 2900.89
-    totale_spese_per_detrazione_al_26: 2400
+    oneri_detraibili_al_19: 3000.89
+    oneri_detraibili_al_26: 2400
+    detrazioni_per_oneri_detraibili_19_annuali: 570.17
+    detrazioni_per_oneri_detraibili_26_annuali: 624
+    detrazioni_per_oneri_detraibili_annuali: 1194.17
