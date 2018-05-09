@@ -1,0 +1,9 @@
+- name: Test semplice per calcolare il totale delle detrazioni da dcanonoi di locazione e affitto terreni
+  period: 2017
+  input_variables:
+    detrazioni_canoni_locazione_per_lavoratori_dipendenti_che_si_trasferiscono_per_lavoro: 1000
+    detrazione_per_inquilini_alloggi_adibiti_ad_abitazione_principale_con_contratti_a_regime_convenzionale: 2000
+    detrazione_per_inquilini_alloggi_adibiti_ad_abitazione_principale: 3500
+    detrazione_per_inquilini_alloggi_adibiti_ad_abitazione_principale_con_contratti_per_giovani_tra_20_e_30_anni: 2700
+  output_variables:
+    totale_detrazione_canoni_di_locazione_e_affitto_terreni_annuo: 9200
