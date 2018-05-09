@@ -40,3 +40,9 @@ class birth(Variable):
     reference = u"https://it.wiktionary.org/wiki/compleanno"
 
 
+class codice_fiscale(Variable):
+    value_type = str
+    entity = Persona
+    label = u"Codice Fiscale Persona"
+    definition_period = ETERNITY  # This variable cannot change over time.
+    reference = u"http://www.agenziaentrate.gov.it/wps/content/Nsilib/Nsi/Schede/Istanze/Richiesta+TS_CF/Verifica+codice+fiscale/?page=schedeistanze"
