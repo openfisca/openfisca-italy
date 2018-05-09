@@ -1,0 +1,33 @@
+- name: Test 1 per crediti residui e detrazione fruita dopo il calcolo dell'IRPEF lorda diminuita delle detrazioni per lavoro e carichi famigliari positiva e con detrazioni per locazione minore
+  period: 2017
+  input_variables:
+    irpef_lorda: 7500
+    detrazioni_per_carichi_famigliari: 1000
+    detrazione_per_lavoro: 700
+    detrazione_canoni_di_locazione_e_affitto_terreni_annuo: 2000
+  output_variables:
+    credito_residuo_da_detrazioni_locazione_affitto: 0
+    detrazione_fruita_da_detrazioni_locazione_affitto: 2000
+
+
+- name: Test 2 per crediti residui e detrazione fruita dopo il calcolo dell'IRPEF lorda diminuita delle detrazioni per lavoro e carichi famigliari negativa
+  period: 2017
+  input_variables:
+    irpef_lorda: 7500
+    detrazioni_per_carichi_famigliari: 5000
+    detrazione_per_lavoro: 2600
+    detrazione_canoni_di_locazione_e_affitto_terreni_annuo: 2000
+  output_variables:
+    credito_residuo_da_detrazioni_locazione_affitto: 2000
+    detrazione_fruita_da_detrazioni_locazione_affitto: 0
+
+- name: Test 3 per crediti residui e detrazione fruita dopo il calcolo dell'IRPEF lorda diminuita delle detrazioni per lavoro e carichi famigliari positiva ma con detrazioni per locazioni maggiore
+  period: 2017
+  input_variables:
+    irpef_lorda: 7500
+    detrazioni_per_carichi_famigliari: 5000
+    detrazione_per_lavoro: 1500
+    detrazione_canoni_di_locazione_e_affitto_terreni_annuo: 2000
+  output_variables:
+    credito_residuo_da_detrazioni_locazione_affitto: 1000
+    detrazione_fruita_da_detrazioni_locazione_affitto: 1000

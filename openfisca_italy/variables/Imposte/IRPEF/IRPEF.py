@@ -79,7 +79,7 @@ class irpef_netta (Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR  # This housing tax is defined for a year.
-    label = u"Imposta sul reddito delle persone fisiche"
+    label = u"Imposta sul reddito delle persone fisiche netta"
     reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf"  # Always use the most official source
 
     def formula(person, period, parameters):
