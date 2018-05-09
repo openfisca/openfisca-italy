@@ -15,7 +15,6 @@ class detrazioni_per_affitto_terreni_agricoli_ai_giovani(Variable):
     def formula(person, period, parameters):
         detrazione_spettante_teorica = 0.19 * person('spese_per_detrazione_affitto_terreni_agricoli_ai_giovani',period)
         detrazione_spettante_teorica = where(detrazione_spettante_teorica>1200, 1200,detrazione_spettante_teorica)
-        print detrazione_spettante_teorica
         detrazione_senza_percentuali = select([not_(person('spese_per_detrazione_affitto_terreni_agricoli_ai_giovani_compilato',period)),
                                                 True], # in all the other case
                                                 [0,detrazione_spettante_teorica])

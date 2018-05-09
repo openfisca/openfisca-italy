@@ -1,0 +1,9 @@
+- name: Test semplice per calcolare il totale delle detrazioni da carichi famigliari
+  period: 2017
+  input_variables:
+    detrazioni_per_assegni_percepiti_ex_coniuge: 1000
+    detrazioni_per_conigue_a_carico: 2000
+    detrazioni_per_figli_a_carico: 3500
+    detrazioni_per_altri_famigliari_a_carico: 500
+  output_variables:
+    totale_detrazione_carichi_famigliari: 7000
