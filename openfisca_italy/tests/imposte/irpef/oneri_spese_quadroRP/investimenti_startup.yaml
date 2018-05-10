@@ -1,0 +1,20 @@
+- name: Test 1 per vedere se con codice uno la persona deve compilare la colonna 4 e la colonna 5 (Dovrebbe poterlo fare)
+  period: 2017
+  input_variables:
+     tipi_investimenti_startup: codice_uno
+     ammontare_investimento_detraibile: 50000
+     ammontare_importo_detraibile_ricevuto_per_trasparenza: 1500
+  output_variables:
+    diritto_a_compilare_colonna_codice_e_ammontare_detrazione: True
+    detrazioni_investimenti_start_up: 15000
+
+- name: Test 1 per vedere se con codice uno la persona deve compilare la colonna 4 e la colonna 5 (Dovrebbe poterlo fare)
+  period: 2017
+  input_variables:
+     tipi_investimenti_startup: codice_quattro
+     ammontare_investimento_detraibile: 50000
+     ammontare_importo_detraibile_ricevuto_per_trasparenza: 1500
+  output_variables:
+    diritto_a_compilare_colonna_codice_e_ammontare_detrazione: False
+    ammontare_detrazioni: 0
+    detrazioni_investimenti_start_up: 1500

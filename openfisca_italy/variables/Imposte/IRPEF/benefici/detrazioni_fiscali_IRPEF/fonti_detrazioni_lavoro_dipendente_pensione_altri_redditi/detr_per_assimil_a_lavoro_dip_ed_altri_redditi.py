@@ -5,6 +5,9 @@ from openfisca_core.model_api import *
 from openfisca_italy.entita import *
 # import numpy
 import numpy as np
+
+
+
 class detrazione_per_redditi_assimilati_a_lavoro_dipendente_e_altri_redditi(Variable):
     value_type = float
     entity = Persona
