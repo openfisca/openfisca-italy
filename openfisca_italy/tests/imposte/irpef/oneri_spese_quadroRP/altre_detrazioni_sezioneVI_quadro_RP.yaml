@@ -4,7 +4,17 @@
      spese_mantenimento_cane_guida: True
      altre_detrazioni: 1500
      detrazioni_per_investimenti_startup: 2200
-     detrazioni_di_recupero_per_decadenza_startup: 1650
   output_variables:
     detrazioni_per_mantenimento_cane_guida: 516.46
-    altre_detrazioni_annue_totali: 5866.46
+    altre_detrazioni_annue_totali: 4216.46
+
+- name: Test altre detrazioni con altre detrazioni non dovute
+  period: 2017
+  input_variables:
+     spese_mantenimento_cane_guida: True
+     tipi_altre_detrazioni: nessun_codice_inserito
+     detrazioni_per_investimenti_startup: 2200
+  output_variables:
+    altre_detrazioni: 0
+    detrazioni_per_mantenimento_cane_guida: 516.46
+    altre_detrazioni_annue_totali: 2716.46

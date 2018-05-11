@@ -5,7 +5,7 @@ from openfisca_core.model_api import *
 from openfisca_italy.entita import *
 
 
-class ammontare_importo_detraibile_ricevuto_per_trasparenza(Variable):
+class ammontare_importo_detraibile_ricevuto_per_trasparenza_investimenti_startup(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
@@ -13,7 +13,7 @@ class ammontare_importo_detraibile_ricevuto_per_trasparenza(Variable):
     reference = "https://www.gbsoftware.it/legginotizia.asp?IdNews=2364"  # Always use the most official source
 
 
-class ammontare_detrazioni(Variable):
+class ammontare_detrazioni_investimenti_startup(Variable):
         value_type = float
         entity = Persona
         definition_period = YEAR
@@ -21,6 +21,6 @@ class ammontare_detrazioni(Variable):
         reference = "https://www.gbsoftware.it/legginotizia.asp?IdNews=2364"  # Always use the most official source
 
         def formula(person,period,parameters):
-            diritto_a_compilare_colonna_codice_e_ammontare_detrazione = person('diritto_a_compilare_colonna_codice_e_ammontare_detrazione',period)
-            ammontare_detrazioni = round_((person('ammontare_investimento_detraibile',period) * 0.30),2)
+            diritto_a_compilare_colonna_codice_e_ammontare_detrazione = person('diritto_a_compilare_colonna_codice_e_ammontare_detrazione_investimenti_startup',period)
+            ammontare_detrazioni = round_((person('ammontare_investimento_detraibile_investimenti_startup',period) * 0.30),2)
             return where(diritto_a_compilare_colonna_codice_e_ammontare_detrazione,ammontare_detrazioni,0)

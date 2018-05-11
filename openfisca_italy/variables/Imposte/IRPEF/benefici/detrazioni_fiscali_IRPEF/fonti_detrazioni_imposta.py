@@ -98,13 +98,3 @@ class detrazioni_per_spese_per_interventi_finalizzati_al_risparmio_energetico_an
                                                     'detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_70',
                                                     'detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_75',]
         return round_(sum(person(detrazione, period) for detrazione in tipi_detrazioni_spese_risparmio_energetico),2)
-
-
-class detrazioni_investimenti_start_up(Variable):
-    value_type = float
-    entity = Persona
-    definition_period = YEAR
-    label = u"Detrazione per investimenti in startup indicati nel quadro VI del Quadro RP (Detrazioni investimenti startup) (Rigo RN21)"
-    def formula(person,period,parameters):
-        diritto_a_compilare_colonna_codice_e_ammontare_detrazione = person('diritto_a_compilare_colonna_codice_e_ammontare_detrazione',period)
-        return where(diritto_a_compilare_colonna_codice_e_ammontare_detrazione,person('ammontare_detrazioni',period),round_(person('ammontare_importo_detraibile_ricevuto_per_trasparenza',period),2))

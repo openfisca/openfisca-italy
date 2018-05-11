@@ -6,6 +6,7 @@ from openfisca_italy.entita import *
 # import numpy
 import numpy as np
 
+
 class altre_detrazioni_annue_totali(Variable):
     value_type = float
     entity = Persona
@@ -17,8 +18,7 @@ class altre_detrazioni_annue_totali(Variable):
     def formula(person,period,parameters):
         tipi_altre_detrazioni=['detrazioni_per_mantenimento_cane_guida',
                                 'altre_detrazioni',
-                                'detrazioni_per_investimenti_startup',
-                                'detrazioni_di_recupero_per_decadenza_startup',]
+                                'detrazioni_per_investimenti_startup',]
         return round_(sum(person(detrazione, period) for detrazione in tipi_altre_detrazioni),2)
 
 
@@ -33,30 +33,13 @@ class detrazioni_per_mantenimento_cane_guida(Variable):
     def formula(person,period,parameters):
         return where (person('spese_mantenimento_cane_guida',period),np.array(516.46),np.array(0))
 
-# TODO: calcolare correttamente le altre detrazioni
-class altre_detrazioni(Variable):
-    value_type = float
-    entity = Persona
-    definition_period = YEAR
-    set_input = set_input_divide_by_period
-    label = "Detrazioni speciali per borse di studio e donazioni ad enti ospedalieri TODO"
-    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
-# TODO: calcolare correttametne le detrazioni per investimenti in startup e decadenza startup
-
+# Detrazioni investimenti startup
 class detrazioni_per_investimenti_startup(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
-    set_input = set_input_divide_by_period
-    label = "Detrazioni speciali per investimenti in startup TODO"
-    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
-
-
-class detrazioni_di_recupero_per_decadenza_startup(Variable):
-    value_type = float
-    entity = Persona
-    definition_period = YEAR
-    set_input = set_input_divide_by_period
-    label = "Detrazioni speciali per decadenza startup TODO"
-    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
+    label = u"Detrazione per investimenti in startup indicati nel quadro VI del Quadro RP (Detrazioni investimenti startup) (Rigo RN21)"
+    def formula(person,period,parameters):
+        diritto_a_compilare_colonna_codice_e_ammontare_detrazione = person('diritto_a_compilare_colonna_codice_e_ammontare_detrazione_investimenti_startup',period)
+        return where(diritto_a_compilare_colonna_codice_e_ammontare_detrazione,person('ammontare_detrazioni_investimenti_startup',period),round_(person('ammontare_importo_detraibile_ricevuto_per_trasparenza_investimenti_startup',period),2))

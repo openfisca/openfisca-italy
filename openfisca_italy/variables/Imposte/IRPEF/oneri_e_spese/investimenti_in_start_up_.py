@@ -26,7 +26,7 @@ class tipi_investimenti_startup(Variable):
     reference = "https://www.gbsoftware.it/legginotizia.asp?IdNews=2364"  # Always use the most official source
 
 
-class diritto_a_compilare_colonna_codice_e_ammontare_detrazione(Variable):
+class diritto_a_compilare_colonna_codice_e_ammontare_detrazione_investimenti_startup(Variable):
      value_type = bool
      entity = Persona
      definition_period = YEAR
@@ -39,7 +39,7 @@ class diritto_a_compilare_colonna_codice_e_ammontare_detrazione(Variable):
         return where (non_deve_compilare_colonna_4_5, False, True)
 
 
-class ammontare_investimento_detraibile(Variable):
+class ammontare_investimento_detraibile_investimenti_startup(Variable):
      value_type = float
      entity = Persona
      definition_period = YEAR

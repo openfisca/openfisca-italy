@@ -4,6 +4,7 @@ from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
 from openfisca_italy.entita import *
 
+
 class detrazioni_per_oneri_detraibili_19_annuali(Variable):
     value_type = float
     entity = Persona
