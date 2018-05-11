@@ -8,7 +8,7 @@ import numpy as np
 
 
 
-class startup_RPF_2017_RN47_relativo_a_RN21_2017(Variable):
+class startup_RPF_2017_RN47_col3(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
@@ -24,7 +24,7 @@ class residuo_detrazione_startup_2015(Variable):
     reference = "https://www.gbsoftware.it/legginotizia.asp?IdNews=2364"  # Always use the most official source
 
     def formula(person,period,parameters):
-        return person('startup_RPF_2017_RN47_relativo_a_RN21_2017',period) - person('eccedenza_detrazione_non_fruita_e_non_piu_spettante',period)
+        return person('startup_RPF_2017_RN47_col3',period) - person('eccedenza_detrazione_non_fruita_e_non_piu_spettante',period)
 
 
 class detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2015(Variable):
