@@ -102,9 +102,7 @@ class detrazioni_per_reddito_da_pensione_inferiore_8000(Variable):
     reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
     def formula(person,period,parameter):
-        print 'sono qui'
         detrazione_spettante =  round_(((1880 * ((person('giorni_in_cui_si_e_percepita_la_pensione',period) / 365.00)))),2)
-        print detrazione_spettante
         return where (detrazione_spettante>713,detrazione_spettante,713)
 
 

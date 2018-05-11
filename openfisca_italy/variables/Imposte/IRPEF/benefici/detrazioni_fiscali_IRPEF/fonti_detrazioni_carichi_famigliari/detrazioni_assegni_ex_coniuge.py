@@ -70,6 +70,5 @@ class detrazione_per_assegni_ex_coniuge_con_reddito_detrazione_inferiore_55000(V
 
     def formula(person,period,parameters):
         quoziente = round_(((55000.00-person('reddito_per_detrazioni',period))/40000.00),4)
-        print quoziente
         quoziente_valido = quoziente>0 * quoziente<1
         return where(quoziente_valido,round_((quoziente * 1297.00),2),np.array(0))

@@ -17,7 +17,7 @@ class detrazioni_per_carichi_famigliari(Variable):
 
     def formula (person,period,parameter):
         tipi_detrazioni_carichi_famigliari = ['detrazioni_per_assegni_percepiti_ex_coniuge','detrazioni_per_conigue_a_carico',
-        'detrazioni_per_figli_a_carico','detrazioni_per_altri_famigliari_a_carico']
+        'detrazioni_per_figli_a_carico','detrazioni_per_altri_famigliari_a_carico','detrazione_ulteriore_per_figli_a_carico']
         return round_(sum(person(detrazione, period) for detrazione in tipi_detrazioni_carichi_famigliari),2)
 
 

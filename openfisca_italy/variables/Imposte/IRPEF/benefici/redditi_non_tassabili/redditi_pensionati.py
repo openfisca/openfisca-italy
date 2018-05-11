@@ -16,7 +16,6 @@ class soglia_reddito_non_tassabile_per_reddito_da_pensione(Variable):
     reference = "http://www.aclimperia.it/documenti/la_dichiarazione_dei_redditi.pdf"  # Always use the most official source
     def formula(person,period,parameters):
         eta = person('age',period.last_month) <= 70
-        print('eta in soglia reddito non tassabile per reddito da pensione', eta)
         return where(eta,7500,8000)
 
 class irpef_non_dovuta_pensionati_e_terreni (Variable):
@@ -35,9 +34,6 @@ class irpef_non_dovuta_pensionati_e_terreni (Variable):
         # person have only income from fields and retirement
         # check that all other incomes are 0
         tutti_altri_redditi_sono_zero = person('solo_redditi_da_pensione_e_terreni',period)
-        print('reddito_da_pensione_sotto_la_soglia',reddito_da_pensione_sotto_la_soglia, 'con',person('reddito_pensioni_annuale',period),'e soglia',person('soglia_reddito_non_tassabile_per_reddito_da_pensione',period))
-        print('reddito_da_terreni_sotto_la_soglia',reddito_da_terreni_sotto_la_soglia, 'con',person('reddito_terreni_annuale',period),'e soglia',parameters(period).imposte.IRPEF.redditi_non_tassabili.reddito_terreni)
-        print('tutti altri redditi sono 0',tutti_altri_redditi_sono_zero)
         return where((reddito_da_pensione_sotto_la_soglia and reddito_da_terreni_sotto_la_soglia and tutti_altri_redditi_sono_zero and credito_per_fondi_comuni_compilato),True,False)
 
 

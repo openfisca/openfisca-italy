@@ -1,0 +1,48 @@
+- name: Test per residuo detrazione d imposta rigo RN 18 col 2 con residuo detrazione del 2014 minore di capienza
+  period: 2017
+  input_variables:
+    irpef_lorda: 5000
+    detrazioni_per_carichi_famigliari: 500
+    detrazione_fruita_da_detrazioni_locazione_affitto: 150
+    detrazioni_per_oneri_detraibili_19_annuali: 150
+    detrazioni_per_oneri_detraibili_26_annuali: 150
+    detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_annue: 150
+    detrazioni_per_spese_arredo_immobili_giovani_coppie_iva_acquisto_abitazione_annue: 150
+    detrazioni_per_spese_per_interventi_finalizzati_al_risparmio_energetico_annue: 150
+    altre_detrazioni_annue_totali: 150
+    residuo_detrazione_startup_2014: 200
+  output_variables:
+    detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2014: 200
+
+
+- name: Test per residuo detrazione d imposta rigo RN 18 col 2 con residuo detrazione del 2014 maggiore di capienza
+  period: 2017
+  input_variables:
+    irpef_lorda: 5000
+    detrazioni_per_carichi_famigliari: 500
+    detrazione_fruita_da_detrazioni_locazione_affitto: 300
+    detrazioni_per_oneri_detraibili_19_annuali: 1500
+    detrazioni_per_oneri_detraibili_26_annuali: 1500
+    detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_annue: 300
+    detrazioni_per_spese_arredo_immobili_giovani_coppie_iva_acquisto_abitazione_annue: 300
+    detrazioni_per_spese_per_interventi_finalizzati_al_risparmio_energetico_annue: 250
+    altre_detrazioni_annue_totali: 250
+    residuo_detrazione_startup_2014: 200
+  output_variables:
+    detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2014: 100
+
+- name: Test per residuo detrazione d imposta rigo RN 18 col 2 con capienza minore di 0
+  period: 2017
+  input_variables:
+    irpef_lorda: 5000
+    detrazioni_per_carichi_famigliari: 1500
+    detrazione_fruita_da_detrazioni_locazione_affitto: 1500
+    detrazioni_per_oneri_detraibili_19_annuali: 1500
+    detrazioni_per_oneri_detraibili_26_annuali: 150
+    detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_annue: 150
+    detrazioni_per_spese_arredo_immobili_giovani_coppie_iva_acquisto_abitazione_annue: 150
+    detrazioni_per_spese_per_interventi_finalizzati_al_risparmio_energetico_annue: 150
+    altre_detrazioni_annue_totali: 150
+    residuo_detrazione_startup_2014: 200
+  output_variables:
+    detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2014: 0

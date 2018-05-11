@@ -18,7 +18,7 @@ class altre_detrazioni_annue_totali(Variable):
     def formula(person,period,parameters):
         tipi_altre_detrazioni=['detrazioni_per_mantenimento_cane_guida',
                                 'altre_detrazioni',
-                                'detrazioni_per_investimenti_startup',]
+                                'detrazioni_per_investimenti_startup']
         return round_(sum(person(detrazione, period) for detrazione in tipi_altre_detrazioni),2)
 
 

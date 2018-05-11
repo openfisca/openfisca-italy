@@ -120,8 +120,6 @@ class detrazioni_per_reddito_da_lavoro_dipendente_inferiore_55000(Variable):
 
     def formula(person,period,parameter):
         quoziente = round_(((55000 -(person('reddito_per_detrazioni',period)))/27000),4)
-        print(quoziente)
         quoziente_valido = quoziente>0 * quoziente<1
         detrazione_spettante = round_(((978.00 * quoziente) * (person('numero_giorni_lavoro_dipendente',period) / 365.00)),2)
-        print(detrazione_spettante)
         return where (quoziente_valido,detrazione_spettante,0)

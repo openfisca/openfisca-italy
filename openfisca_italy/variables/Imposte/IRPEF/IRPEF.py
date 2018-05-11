@@ -16,7 +16,6 @@ class base_imponibile_netta (Variable):
     def formula(person, period, parameters):
         # In the IRPEF calculation the  gross base income calculation could be in two ways
         base_imponibile_lorda = person('reddito_totale_lordo_annuale',period)
-        print('base_imponibile_lorda',base_imponibile_lorda)
         oneri_deducibili = person('oneri_deducibili_totali_annuale',period)
         deduzione_abitazione_principale = person('deduzione_abitazione_principale_annuale',period)
         # this formula is fixed
@@ -68,10 +67,6 @@ class irpef_lorda (Variable):
 
         # this boolean indicate that are no situations for what the Irpef values if fixed to 0
         no_condizioni_redditi_non_tassabili = not np.array(any([irpef_non_dovuta_pensionati_e_terreni,irpef_non_dovuta_per_soli_terreni_e_fabbricati]))
-        print('pensione',irpef_non_dovuta_pensionati_e_terreni)
-        print('fabbricati',irpef_non_dovuta_per_soli_terreni_e_fabbricati)
-        print('insieme', no_condizioni_redditi_non_tassabili)
-
         return select([irpef_non_dovuta_pensionati_e_terreni, irpef_non_dovuta_per_soli_terreni_e_fabbricati, no_condizioni_redditi_non_tassabili], [0, 0, irpef_lorda])
 
 

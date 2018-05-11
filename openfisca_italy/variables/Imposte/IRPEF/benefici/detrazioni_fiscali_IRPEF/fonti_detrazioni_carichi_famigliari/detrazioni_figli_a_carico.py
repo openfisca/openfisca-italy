@@ -10,7 +10,7 @@ class detrazioni_per_figli_a_carico(Variable):
     entity = Persona
     definition_period = YEAR
     set_input = set_input_divide_by_period
-    label = "Detrazioni dovute per figli a carico teorica"
+    label = "Detrazioni dovute per figli a carico reale rigo RN6 col.2"
     reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf"  # Always use the most official source
 
     def formula(person,period,parameter):
@@ -18,9 +18,8 @@ class detrazioni_per_figli_a_carico(Variable):
         incremento = (person('numero_figli_a_carico',period)-1) * 15000
         quoziente = round_((((95000 + incremento) - reddito_per_detrazioni)/(95000 + incremento)),4)
         # deduction formula used if quoziente is valid
+        print 'detrazione teorica', person('detrazioni_per_figli_a_carico_teorica',period)
         detrazione_spettante = round_((person('detrazioni_per_figli_a_carico_teorica',period) * quoziente),2)
-        detrazione_fissa_per_numero_figli_dopo_il_terzo = where (person('numero_figli_a_carico',period),parameter(period).imposte.IRPEF.detrazioni.detrazioni_carichi_famigliari.detrazioni_tipi_figli.ulteriore_detrazione_figli_a_carico,0)
-        detrazione_spettante = detrazione_spettante + detrazione_fissa_per_numero_figli_dopo_il_terzo
         # check if quoziente is valid or not
         quoziente_valido = quoziente > 0 * quoziente < 1
         # if quoziente is less than 0 the deduction is 0 instead there is a formula to calculate it use the theoretical deduction
@@ -34,6 +33,16 @@ class detrazioni_per_figli_a_carico(Variable):
 # of the value of the theoretical deduction).
 # I can't evaluate the percentage of responsibility too.
 
+class detrazione_ulteriore_per_figli_a_carico(Variable):
+        value_type = float
+        entity = Persona
+        definition_period = YEAR
+        set_input = set_input_divide_by_period
+        label = "Ulteriore detrazione per figli a carico"
+        reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf"  # Always use the most official source
+
+        def formula(person,period,parameters):
+            return where (person('numero_figli_a_carico',period),parameters(period).imposte.IRPEF.detrazioni.detrazioni_carichi_famigliari.detrazioni_tipi_figli.ulteriore_detrazione_figli_a_carico,0)
 
 class detrazioni_per_figli_a_carico_teorica(Variable):
     value_type = float

@@ -8,7 +8,7 @@ class detrazioni_per_altri_famigliari_a_carico(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
-    set_input = set_input_divide_by_period  
+    set_input = set_input_divide_by_period
     label = "Detrazioni dovute per altri famigliari a carico"
     reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf"  # Always use the most official source
 
@@ -17,9 +17,7 @@ class detrazioni_per_altri_famigliari_a_carico(Variable):
         quoziente = round_(((80000.00 - reddito_per_detrazioni)/80000.00),4)
         detrazione_spettante = round_((person('detrazioni_per_altri_famigliari_a_carico_teorica',period) * quoziente),2)
         # check if quoziente is valid or not
-        print(quoziente)
         quoziente_valido = quoziente > 0 * quoziente < 1
-        print(quoziente_valido)
         # if quoziente is less than 0 the deduction is 0 instead there is a formula to calculate it use the theoretical deduction
         return select( [not_(quoziente_valido),quoziente_valido],[0,detrazione_spettante])
 

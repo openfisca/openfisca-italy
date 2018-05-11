@@ -10,7 +10,7 @@ class credito_residuo_da_detrazioni_locazione_affitto(Variable):
     entity = Persona
     definition_period = YEAR
     set_input = set_input_divide_by_period
-    label = "Credito residuo che non ha trovato capienza nell'imposta IRPEF in quanto l'ammontare delle detrazione da locazione e affitto erano maggiore dell'irpef lorda diminuita di detrazioni per lavoro e famiglia"
+    label = "Credito residuo che non ha trovato capienza nell'imposta IRPEF in quanto l'ammontare delle detrazione da locazione e affitto erano maggiore dell'irpef lorda diminuita di detrazioni per lavoro e famiglia (Rigo RN12 col 2)"
     reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
     def formula(person, period, parameters):
@@ -34,7 +34,7 @@ class detrazione_fruita_da_detrazioni_locazione_affitto(Variable):
     entity = Persona
     definition_period = YEAR
     set_input = set_input_divide_by_period
-    label = "Detrazione fruita nell'imposta IRPEF in quanto l'ammontare delle detrazione da locazione e affitto erano minori o uguali dell'irpef lorda diminuita di detrazioni per lavoro e famiglia"
+    label = "Detrazione fruita nell'imposta IRPEF in quanto l'ammontare delle detrazione da locazione e affitto erano minori o uguali dell'irpef lorda diminuita di detrazioni per lavoro e famiglia (Rigo RN12 col 3)"
     reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
     def formula(person, period, parameters):
