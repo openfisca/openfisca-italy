@@ -6,32 +6,11 @@ from openfisca_italy.entita import *
 # import numpy
 import numpy as np
 
-
-
-class startup_RPF_2017_RN47_relativo_a_RN20_2017(Variable):
+class residui_detrazioni_start_up_2016_RN19(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
-    label = u"Residui detrazioni e crediti d'imposta e deduzioni per startup del 2017 (Rigo RN47 col. 2 del modello REDDITI 2017)"
-    reference = "https://www.gbsoftware.it/legginotizia.asp?IdNews=2364"  # Always use the most official source
-
-
-class residuo_detrazione_startup_2014(Variable):
-    value_type = float
-    entity = Persona
-    definition_period = YEAR
-    label = u"Residui detrazioni startup per periodo d'imposta del 2014 (Rigo RN18 col. 1 quadro RN)"
-    reference = "https://www.gbsoftware.it/legginotizia.asp?IdNews=2364"  # Always use the most official source
-
-    def formula(person,period,parameters):
-        return person('startup_RPF_2017_RN47_relativo_a_RN20_2017',period) - person('eccedenza_detrazione_non_fruita_e_non_piu_spettante',period)
-
-
-class detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2014(Variable):
-    value_type = float
-    entity = Persona
-    definition_period = YEAR
-    label = u"Residui detrazioni startup per periodo d'imposta del 2014 (Rigo RN18 col. 2 quadro RN)"
+    label = u"Residui detrazioni startup del 2016 da riportare all'anno successivo (Rigo RN47 col. 1 del modello REDDITI attuale o del 2018)"
     reference = "https://www.gbsoftware.it/legginotizia.asp?IdNews=2364"  # Always use the most official source
 
     def formula(person,period,parameters):
@@ -42,13 +21,12 @@ class detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2014(Variable)
                                 'detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_annue',
                                 'detrazioni_per_spese_arredo_immobili_giovani_coppie_iva_acquisto_abitazione_annue',
                                 'detrazioni_per_spese_per_interventi_finalizzati_al_risparmio_energetico_annue',
-                                'altre_detrazioni_annue_totali'
+                                'altre_detrazioni_annue_totali',
+                                'detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2014'
                                 ]
         totale_da_sottrarre = round_(sum(person(detrazione, period) for detrazione in altre_detrazioni_da_sottrarre),2)
         capienza = irpef_lorda_diminuita_di_detrazioni_famiglia_lavoro - totale_da_sottrarre
         return select([capienza<=0,
-                        capienza >= person('residuo_detrazione_startup_2014',period),
-                        capienza < person('residuo_detrazione_startup_2014',period)],
-                        [0,
-                        person('residuo_detrazione_startup_2014',period),
-                        where(capienza<=person('residuo_detrazione_startup_2014',period),capienza,person('residuo_detrazione_startup_2014',period))])
+                        capienza<=person('residuo_detrazione_startup_2015',period)],
+                        [person('residuo_detrazione_startup_2015',period),
+                        (person('residuo_detrazione_startup_2015',period)-person('detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2015',period))])
