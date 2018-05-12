@@ -1,0 +1,6 @@
+description: Franchigia fissata da sottrarre alle spese mediche per poi calcolare la detrazione su di esse
+unit: currency
+values:
+ #Defined since 2010 because we do not know the previous legislation yet
+  2010-01-01:
+    value: 129.11
