@@ -1,0 +1,6 @@
+description: L’ammontare minimo per poter rateizzare la detrazione delle spese mediche dei righi RP1,RP2,RP3
+unit: currency
+values:
+ #Defined since 2010 because we do not know the previous legislation yet
+  2010-01-01:
+    value: 15493.71

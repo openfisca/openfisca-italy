@@ -1,0 +1,20 @@
+- name: Test per vedere se la selezione dei codici per il totale della spesa detraibile al 19 % funziona nella sezione altre spese nel quadro RP
+  period: 2017
+  input_variables:
+    # Codici
+    codice_altra_spesa_rigo_RP8: codice_23
+    codice_altra_spesa_rigo_RP9: codice_24
+    codice_altra_spesa_rigo_RP10: codice_10
+    codice_altra_spesa_rigo_RP11: codice_12
+    codice_altra_spesa_rigo_RP12: codice_41
+    codice_altra_spesa_rigo_RP13: nessun_codice
+    # Importi
+    importo_altra_spesa_rigo_RP8: 150
+    importo_altra_spesa_rigo_RP9: 150
+    importo_altra_spesa_rigo_RP10: 150
+    importo_altra_spesa_rigo_RP11: 150
+    importo_altra_spesa_rigo_RP12: 150
+    importo_altra_spesa_rigo_RP13: 150
+  output_variables:
+    altre_spese_che_sono_soggette_a_detrazioni_al_19: 600
+    altre_spese_che_sono_soggette_a_detrazioni_al_26: 150
