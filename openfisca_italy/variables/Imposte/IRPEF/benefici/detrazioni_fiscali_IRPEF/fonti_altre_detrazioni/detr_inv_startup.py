@@ -1,29 +1,28 @@
-# total gross income for one month and one year
+# -*- coding: utf-8 -*-
 # Import from openfisca-core the common python objects used to code the legislation in OpenFisca
 from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
 from openfisca_italy.entita import *
-# import numpy
-import numpy as np
 
-# Il rigo presente Rn20  utilizza le stesse variabili per il calcolo del residuo della detrazione per startup per il 2016 quindi le utilizzo
+# Questo file è relativo al calcolo delle detrazioni per investimenti in startup ma nel quadro RN e non RP (che invece è dettagliato nel file altre_detrazioni.py)
 
-class residuo_detrazione_startup_2016(Variable):
+
+class detrazioni_per_investimenti_startup(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
-    label = u"Residui detrazioni startup per periodo d'imposta del 2014 (Rigo RN19 col. 1 quadro RN)"
-    reference = "https://www.gbsoftware.it/legginotizia.asp?IdNews=2364"  # Always use the most official source
-
+    label = u"Detrazione per investimenti in startup indicati nella sezione VI del Quadro RP e riportato nel Rigo RN21 col.1"
     def formula(person,period,parameters):
-        return person('startup_RPF_2017_RN47_col3',period) - person('eccedenza_detrazione_non_fruita_e_non_piu_spettante',period)
+        totale_detrazioni_per_investimenti_startup = person('totale_detrazioni_per_investimenti_startup',period) # rigo RP80 col 6
+        return totale_detrazioni_per_investimenti_startup
 
 
-class detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2016(Variable):
+
+class detrazioni_per_investimenti_startup_utilizzata(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
-    label = u"Residui detrazioni startup per periodo d'imposta del 2016 (Rigo RN20 col. 2 quadro RN) dell'anno corrente"
+    label = u"Detrazioni effettivamente utilizzata per investimenti in startup (Rigo RN21 col. 2 quadro RN) dell'anno corrente"
     reference = "https://www.gbsoftware.it/legginotizia.asp?IdNews=2364"  # Always use the most official source
 
     def formula(person,period,parameters):
@@ -36,13 +35,15 @@ class detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2016(Variable)
                                 'detrazioni_per_spese_per_interventi_finalizzati_al_risparmio_energetico_annue',
                                 'altre_detrazioni_annue_totali',
                                 'detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2014',
-                                'detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2015'
+                                'detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2015',
+                                'detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2016'
                                 ]
         totale_da_sottrarre = round_(sum(person(detrazione, period) for detrazione in altre_detrazioni_da_sottrarre),2)
         capienza = irpef_lorda_diminuita_di_detrazioni_famiglia_lavoro - totale_da_sottrarre
+        print capienza
         return select([capienza<=0,
-                        capienza >= person('residuo_detrazione_startup_2016',period),
-                        capienza < person('residuo_detrazione_startup_2016',period)],
+                        capienza >= person('detrazioni_per_investimenti_startup',period),
+                        capienza < person('detrazioni_per_investimenti_startup',period)],
                         [0,
-                        person('residuo_detrazione_startup_2016',period),
-                        where(capienza<=person('residuo_detrazione_startup_2016',period),capienza,person('residuo_detrazione_startup_2016',period))])
+                        person('detrazioni_per_investimenti_startup',period),
+                        where(capienza<=person('detrazioni_per_investimenti_startup',period),capienza,person('detrazioni_per_investimenti_startup',period))])

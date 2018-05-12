@@ -3,7 +3,7 @@
   input_variables:
      spese_mantenimento_cane_guida: True
      altre_detrazioni: 1500
-     detrazioni_per_investimenti_startup: 2200
+     totale_detrazioni_per_investimenti_startup: 2200
   output_variables:
     detrazioni_per_mantenimento_cane_guida: 516.46
     altre_detrazioni_annue_totali: 4216.46
@@ -13,7 +13,7 @@
   input_variables:
      spese_mantenimento_cane_guida: True
      tipi_altre_detrazioni: nessun_codice_inserito
-     detrazioni_per_investimenti_startup: 2200
+     totale_detrazioni_per_investimenti_startup: 2200
   output_variables:
     altre_detrazioni: 0
     detrazioni_per_mantenimento_cane_guida: 516.46
