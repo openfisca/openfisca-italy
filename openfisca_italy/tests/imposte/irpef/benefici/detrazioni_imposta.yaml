@@ -1,39 +1,36 @@
-- name: Test  detrazione d'imposta deducibili annuali senza centesimi
+- name: Test  detrazione d'imposta deducibili annuali
   period: 2017
   input_variables:
-    detrazioni_per_carichi_famigliari: 150
-    detrazione_per_lavoro: 150
-    detrazioni_per_pensionati: 150
-    detrazioni_per_assegni_percepiti_ex_coniuge: 150
+   detrazioni_per_carichi_famigliari: 1200
+   detrazione_per_lavoro: 1200
+   detrazioni_per_assegni_percepiti_ex_coniuge: 1200
+   detrazione_canoni_di_locazione_e_affitto_terreni_annuo: 1200
+   detrazioni_per_oneri_detraibili_annuali: 1200
+   detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_annue: 1200.72
+   detrazioni_per_spese_arredo_immobili_giovani_coppie_iva_acquisto_abitazione_annue: 1200.25
+   detrazioni_per_spese_per_interventi_finalizzati_al_risparmio_energetico_annue: 1200
+   altre_detrazioni_annue_totali: 1200
+   detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2014: 1200
+   detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2015: 1200
+   detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2016: 1200
   output_variables:
-    detrazioni_imposta_annuale: 600
+    detrazioni_imposta_annuale: 14400.97
 
-- name: Test  detrazione d'imposta deducibili annuali con centesimi
-  period: 2017
-  input_variables:
-    detrazioni_per_carichi_famigliari: 150
-    detrazione_per_lavoro: 150.25
-    detrazioni_per_pensionati: 150
-    detrazioni_per_assegni_percepiti_ex_coniuge: 150.37
-  output_variables:
-    detrazioni_imposta_annuale: 600.62
-
-- name: Test  detrazione d'imposta deducibili mensili senza centesimi
-  period: 2017-01
-  input_variables:
-    detrazioni_per_carichi_famigliari: 150
-    detrazione_per_lavoro: 150
-    detrazioni_per_pensionati: 150
-    detrazioni_per_assegni_percepiti_ex_coniuge: 150
-  output_variables:
-    detrazioni_imposta_mensile: 50
 
 - name: Test  detrazione d'imposta deducibili mensili con centesimi
   period: 2017-01
   input_variables:
-    detrazioni_per_carichi_famigliari: 150
-    detrazione_per_lavoro: 150.25
-    detrazioni_per_pensionati: 150
-    detrazioni_per_assegni_percepiti_ex_coniuge: 150
+   detrazioni_per_carichi_famigliari: 1200
+   detrazione_per_lavoro: 1200
+   detrazioni_per_assegni_percepiti_ex_coniuge: 1200
+   detrazione_canoni_di_locazione_e_affitto_terreni_annuo: 1200
+   detrazioni_per_oneri_detraibili_annuali: 1200
+   detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_annue: 1200.72
+   detrazioni_per_spese_arredo_immobili_giovani_coppie_iva_acquisto_abitazione_annue: 1200.25
+   detrazioni_per_spese_per_interventi_finalizzati_al_risparmio_energetico_annue: 1200
+   altre_detrazioni_annue_totali: 1200
+   detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2014: 1200
+   detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2015: 1200
+   detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2016: 1200
   output_variables:
-    detrazioni_imposta_mensile: 50.02
+    detrazioni_imposta_mensile: 1200.08

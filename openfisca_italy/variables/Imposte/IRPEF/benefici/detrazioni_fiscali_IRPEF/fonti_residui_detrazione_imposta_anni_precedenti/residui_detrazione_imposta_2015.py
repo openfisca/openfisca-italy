@@ -31,6 +31,7 @@ class detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2015(Variable)
     value_type = float
     entity = Persona
     definition_period = YEAR
+    set_input = set_input_divide_by_period
     label = u"Residui detrazioni startup per periodo d'imposta del 2015 (Rigo RN19 col. 2 quadro RN) dell'anno corrente"
     reference = "https://www.gbsoftware.it/legginotizia.asp?IdNews=2364"  # Always use the most official source
 

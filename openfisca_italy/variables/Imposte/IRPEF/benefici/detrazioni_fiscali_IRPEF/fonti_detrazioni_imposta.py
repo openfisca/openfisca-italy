@@ -65,6 +65,7 @@ class detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismic
     value_type = float
     entity = Persona
     definition_period = YEAR
+    set_input = set_input_divide_by_period
     label = u"Detrazioni per interventi di recupero del patrimonio edilizio e misure antisismiche totali (Rigo RN14)"
 
     def formula(person,period,parameters):
@@ -82,6 +83,7 @@ class detrazioni_per_spese_arredo_immobili_giovani_coppie_iva_acquisto_abitazion
     value_type = float
     entity = Persona
     definition_period = YEAR
+    set_input = set_input_divide_by_period
     label = u"DDetrazione per spese indicate nella sezione III C del Quadro RP (arredo immobili ristrutturati, giovani coppie, IVA per acquisto abitazione classe energetica A o B) (Rigo RN15)"
     def formula(person,period,parameters):
         return round_((person('totale_rate_spesa_arredo_immobili_ristrutturati_gc_iva_acquisto_abitazione',period)*0.5),2)
@@ -91,6 +93,7 @@ class detrazioni_per_spese_per_interventi_finalizzati_al_risparmio_energetico_an
     value_type = float
     entity = Persona
     definition_period = YEAR
+    set_input = set_input_divide_by_period
     label = u"Detrazione per spese indicate nella sezione IV C del Quadro RP (arredo immobili ristrutturati, giovani coppie, IVA per acquisto abitazione classe energetica A o B) (Rigo RN16)"
     def formula(person,period,parameters):
         tipi_detrazioni_spese_risparmio_energetico = ['detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_55',
