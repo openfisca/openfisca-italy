@@ -6,7 +6,29 @@ from openfisca_italy.entita import *
 # import numpy
 import numpy as np
 
-# ONERI DETRAIBILI
+# Rigo RP15
+
+class si_vogliono_rateizzare_le_spese_relative_a_righi_RP1_RP2_RP3(Variable):
+    value_type = bool
+    entity = Persona
+    definition_period = YEAR
+    set_input = set_input_divide_by_period
+    label = "Si vogliono reatizzare le spese relativi ai righi RP1(Rigo RP15 col 4)"
+    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
+
+class si_possono_rateizzare_importo_spese_relative_a_righi_RP1_RP2_RP3(Variable):
+    value_type = bool
+    entity = Persona
+    definition_period = YEAR
+    set_input = set_input_divide_by_period
+    label = "Se si vogliono rateizzare le spese e l'importo di queste tre supera la soglia allora si può effettuare la rateatizzazione"
+    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
+
+    def formula(person,period,parameters):
+        si_vogliono_rateizzare_le_spese_relative_a_righi_RP1_RP2_RP3 = person('si_vogliono_rateizzare_le_spese_relative_a_righi_RP1_RP2_RP3',period)
+        spese = person('spese_sanitarie_annue',period) + person('spese_sanitarie_per_familiari_non_a_carico_affetti_da_patologie_esistenti_annue',period) + person('spese_sanitarie_per_persone_con_disabilita',period)
+        return where (si_vogliono_rateizzare_le_spese_relative_a_righi_RP1_RP2_RP3 * spese> )
+
 
 class oneri_detraibili_al_19(Variable):
     value_type = float
