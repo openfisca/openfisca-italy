@@ -172,7 +172,6 @@ class altre_spese_che_sono_soggette_a_detrazioni_al_19(Variable):
         'codice_altra_spesa_rigo_RP11','codice_altra_spesa_rigo_RP12','codice_altra_spesa_rigo_RP13']
         importi_righi = ['importo_altra_spesa_rigo_RP8','importo_altra_spesa_rigo_RP9','importo_altra_spesa_rigo_RP10',
         'importo_altra_spesa_rigo_RP11','importo_altra_spesa_rigo_RP12','importo_altra_spesa_rigo_RP13']
-        print codici_righi
         # cicliamo tutti i righi
         for codice_rigo,importo_rigo in zip(codici_righi,importi_righi):
             rigo_ha_codice_per_il_19 =  not_(person(codice_rigo,period) == CodiciAltreSpeseDetraibili.codice_42) * not_(person(codice_rigo,period) == CodiciAltreSpeseDetraibili.codice_41) * not_(person(codice_rigo,period) == CodiciAltreSpeseDetraibili.nessun_codice)
@@ -194,9 +193,24 @@ class altre_spese_che_sono_soggette_a_detrazioni_al_26(Variable):
         'codice_altra_spesa_rigo_RP11','codice_altra_spesa_rigo_RP12','codice_altra_spesa_rigo_RP13']
         importi_righi = ['importo_altra_spesa_rigo_RP8','importo_altra_spesa_rigo_RP9','importo_altra_spesa_rigo_RP10',
         'importo_altra_spesa_rigo_RP11','importo_altra_spesa_rigo_RP12','importo_altra_spesa_rigo_RP13']
-        print codici_righi
         # cicliamo tutti i righi
         for codice_rigo,importo_rigo in zip(codici_righi,importi_righi):
             rigo_ha_codice_per_il_26 =  (person(codice_rigo,period) == CodiciAltreSpeseDetraibili.codice_42) + (person(codice_rigo,period) == CodiciAltreSpeseDetraibili.codice_41)
             importo_totale_da_detrarre_altre_spese_al_26 = importo_totale_da_detrarre_altre_spese_al_26 + where(rigo_ha_codice_per_il_26,person(importo_rigo,period),0)
         return round_(importo_totale_da_detrarre_altre_spese_al_26,2)
+
+# variabile particolare utilizzata solo nel calcolo del totale delle spese
+class codice_29_trovato_nelle_altre_spese_da_RP8_a_RP13(Variable):
+        value_type = bool
+        entity = Persona
+        definition_period = YEAR
+        label = "Tra le altre spese nei Righi da RP8 a RP13 c'e' anche il codice 29"
+        reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
+
+        def formula(person,period,parameters):
+            altra_spesa_codice_29_trovata = np.array(False)
+            codici_righi = ['codice_altra_spesa_rigo_RP8','codice_altra_spesa_rigo_RP9','codice_altra_spesa_rigo_RP10',
+            'codice_altra_spesa_rigo_RP11','codice_altra_spesa_rigo_RP12','codice_altra_spesa_rigo_RP13']
+            for codice in codici_righi:
+                altra_spesa_codice_29_trovata = where(altra_spesa_codice_29_trovata,altra_spesa_codice_29_trovata,person(codice,period) == CodiciAltreSpeseDetraibili.codice_29)
+            return altra_spesa_codice_29_trovata

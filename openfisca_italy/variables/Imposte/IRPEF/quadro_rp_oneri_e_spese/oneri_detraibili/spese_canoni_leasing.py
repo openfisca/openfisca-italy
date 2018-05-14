@@ -7,24 +7,16 @@ from openfisca_italy.entita import *
 import numpy as np
 
 
-# Rigo RP14
-class spese_per_canoni_di_leasing(Variable):
-    value_type = float
-    entity = Persona
-    definition_period = YEAR
-    set_input = set_input_divide_by_period
-    label = "Spese per canoni di leasing(Rigo RP14)"
-    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
-
 class data_stipula_leasing_relativa_a_spese_per_canoni_di_leasing(Variable):
     value_type = date
+    default_value = date(1966, 1, 1)
     entity = Persona
-    definition_period = YEAR
-    set_input = set_input_divide_by_period
+    definition_period = ETERNITY
     label = "Data stipula leasing(Rigo RP14 col.1)"
     reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
-# TODO: vedere se c'è un limite di anni per cui si possa usufruire della detrazione
+
+# TODO: vedere se c'e' un limite di anni per cui si possa usufruire della detrazione
 class numero_anno_per_cui_il_soggetto_usufruisce_della_detrazione_per_spese_canoni_di_leasing(Variable):
     value_type = date
     entity = Persona
@@ -34,15 +26,23 @@ class numero_anno_per_cui_il_soggetto_usufruisce_della_detrazione_per_spese_cano
     reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
 
-class eta_persona_stipula_del_contratto(Variable):
+# Prendi eta' persona attuale, prendi la data della stipula e fai la differenza
+class eta_persona_stipula_del_contratto_leasing(Variable):
     value_type = float
     entity = Persona
-    definition_period = YEAR
-    set_input = set_input_divide_by_period
+    definition_period = ETERNITY
     label = "Eta' del soggetto quando ha stipulato il contratto di leasing"
     reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
-# TODO:  L’importo dei canoni di leasing non può superare: il limite di 8.000 euro annui se alla data di stipula del contratto di leasing il contribuente aveva meno di 35 anni; il limite di 4.000 euro annui se a tale data il contribuente aveva un età uguale o superiore a 35 anni.
+    def formula(person,period,parameters):
+        data_di_nascita = person('data_di_nascita',period)
+        data_di_nascita_year = data_di_nascita.astype('datetime64[Y]').astype(int) + 1970
+        data_stipula_leasing_relativa_a_spese_per_canoni_di_leasing = person('data_stipula_leasing_relativa_a_spese_per_canoni_di_leasing',period)
+        data_stipula_leasing_relativa_a_spese_per_canoni_di_leasing_year = data_stipula_leasing_relativa_a_spese_per_canoni_di_leasing.astype('datetime64[Y]').astype(int) + 1970
+        return data_stipula_leasing_relativa_a_spese_per_canoni_di_leasing_year - data_di_nascita_year
+
+
+# TODO:  L'importo dei canoni di leasing non puo' superare: il limite di 8.000 euro annui se alla data di stipula del contratto di leasing il contribuente aveva meno di 35 anni; il limite di 4.000 euro annui se a tale data il contribuente aveva un eta' uguale o superiore a 35 anni.
 class importo_canone_leasing_relativo_a_spese_per_canoni_di_leasing(Variable):
     value_type = float
     entity = Persona
@@ -52,11 +52,11 @@ class importo_canone_leasing_relativo_a_spese_per_canoni_di_leasing(Variable):
     reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
 
-# TODO: Il prezzo di riscatto non può superare: il limite di 20.000 euro se alla data di stipula del contratto di leasing il contribuente aveva meno di 35 anni; il limite di 10.000 euro se a tale data il contribuente aveva un età uguale o superiore a 35 anni.
+# TODO: Il prezzo di riscatto non puo' superare: il limite di 20.000 euro se alla data di stipula del contratto di leasing il contribuente aveva meno di 35 anni; il limite di 10.000 euro se a tale data il contribuente aveva un eta' uguale o superiore a 35 anni.
 class prezzo_di_riscatto_relativo_a_spese_per_canoni_di_leasing(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
     set_input = set_input_divide_by_period
-    label = "Eta' del soggetto quando ha stipulato il contratto di leasing"
+    label = "Importo del prezzo di riscatto (Rigo RP14 col.4)"
     reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source

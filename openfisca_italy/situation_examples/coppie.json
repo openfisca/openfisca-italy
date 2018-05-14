@@ -1,7 +1,7 @@
 {
     "persons": {
         "Alice": {
-            "birth": {
+            "data_di_nascita": {
                 "ETERNITY": "1980-01-01"
             },
             "reddito_lavoro_dipendente": {
@@ -12,7 +12,7 @@
             }
         },
         "Giacomo": {
-            "birth": {
+            "data_di_nascita": {
                 "ETERNITY": "1984-01-01"
             },
             "reddito_lavoro_dipendente": {

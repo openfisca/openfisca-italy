@@ -1,0 +1,52 @@
+- name: Test per vedere se funziona il meccanismo della rateizzazione e in generale la compilazione del Rigo RP15 col.2. Situazione con rateizzazione non permessa.
+  period: 2017
+  input_variables:
+    # Codici
+    spese_sanitarie_comprensive_di_franchigia_rigo_RP1: 150
+    spese_patologie_esenti_sostenute_da_familiare: 500
+    si_vogliono_rateizzare_le_spese_relative_a_righi_RP1_RP2_RP3: True
+    spese_sanitarie_per_familiari_non_a_carico_affetti_da_patologie_esistenti_annue: 200
+    spese_sanitarie_per_persone_con_disabilita: 200
+  output_variables:
+    si_possono_rateizzare_importo_spese_relative_a_righi_RP1_RP2_RP3: False
+    casella_1_totale_spese_su_cui_determinare_la_detrazione_barrata: False
+    casella_2_importo_rata_o_somma_RP1_RP2_RP3: 420.89
+
+- name: Test per vedere se funziona il meccanismo della rateizzazione e in generale la compilazione del Rigo RP15 col.2. Situazione con rateizzazione permessa.
+  period: 2017
+  input_variables:
+    # Codici
+    spese_sanitarie_comprensive_di_franchigia_rigo_RP1: 5000
+    spese_patologie_esenti_sostenute_da_familiare: 5000
+    si_vogliono_rateizzare_le_spese_relative_a_righi_RP1_RP2_RP3: True
+    spese_sanitarie_per_familiari_non_a_carico_affetti_da_patologie_esistenti_annue: 5000
+    spese_sanitarie_per_persone_con_disabilita: 5000
+  output_variables:
+    si_possono_rateizzare_importo_spese_relative_a_righi_RP1_RP2_RP3: True
+    casella_1_totale_spese_su_cui_determinare_la_detrazione_barrata: True
+    casella_2_importo_rata_o_somma_RP1_RP2_RP3: 4967.72
+
+- name: Test per vedere se il calcolo della colonna 3 del rigo RP15 funziona bene relativo alle altre spese al 19%
+  period: 2017
+  input_variables:
+    # Codici
+    codice_altra_spesa_rigo_RP8: codice_23
+    codice_altra_spesa_rigo_RP9: codice_29
+    codice_altra_spesa_rigo_RP10: codice_10
+    codice_altra_spesa_rigo_RP11: codice_12
+    codice_altra_spesa_rigo_RP12: codice_41
+    codice_altra_spesa_rigo_RP13: nessun_codice
+    # Importi
+    importo_altra_spesa_rigo_RP8: 150
+    importo_altra_spesa_rigo_RP9: 150
+    importo_altra_spesa_rigo_RP10: 150
+    importo_altra_spesa_rigo_RP11: 150
+    importo_altra_spesa_rigo_RP12: 150
+    importo_altra_spesa_rigo_RP13: 150
+    # Costi canoni di leasing
+    importo_canone_leasing_relativo_a_spese_per_canoni_di_leasing: 1000
+    prezzo_di_riscatto_relativo_a_spese_per_canoni_di_leasing: 2000
+  output_variables:
+    altre_spese_che_sono_soggette_a_detrazioni_al_19: 600
+    altre_spese_che_sono_soggette_a_detrazioni_al_26: 150
+    altre_spese_al_19_colonna_3_rigo_RP15: 3470.89

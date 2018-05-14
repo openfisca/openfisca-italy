@@ -1,7 +1,7 @@
 {
     "persons": {
         "Alice": {
-            "birth": {
+            "data_di_nascita": {
                 "2017-01": null
             },
             "disposable_income": {

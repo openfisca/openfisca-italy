@@ -1,0 +1,8 @@
+- name: Test per vedere se funziona il meccanismo della rateizzazione e in generale la compilazione del Rigo RP15 col.2. Situazione con rateizzazione non permessa.
+  period: 2017
+  input_variables:
+    # Codici
+    data_stipula_leasing_relativa_a_spese_per_canoni_di_leasing: 1985-01-01
+    data_di_nascita: 1960-01-01
+  output_variables:
+    eta_persona_stipula_del_contratto_leasing: 25

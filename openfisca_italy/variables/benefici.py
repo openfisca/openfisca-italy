@@ -51,7 +51,7 @@ class pension(Variable):
     reference = [u"https://www.inps.it/nuovoportaleinps/default.aspx?itemdir=46023"]
     def formula(person, period):
         '''
-        A person's pension depends on its birth date.
+        A person's pension depends on its data_di_nascita date.
 		In Italy: Pensionable age depends on sex, type of work and type of pension required (anticipata/non anticipata)
         '''
         age_condition = person('age', period) >= parameters(period).eta.eta_pensionamento

@@ -12,14 +12,15 @@ class age(Variable):
     entity = Persona
     definition_period = MONTH
     label = u"Eta' della persona (in anni)"
-    # A person's age is computed according to its birth date.
+    # A person's age is computed according to its data_di_nascita date.
     def formula(person, period, parameters):
-        birth = person('birth', period)
-        birth_year = birth.astype('datetime64[Y]').astype(int) + 1970
-        birth_month = birth.astype('datetime64[M]').astype(int) % 12 + 1
-        birth_day = (birth - birth.astype('datetime64[M]') + 1).astype(int)
+        data_di_nascita = person('data_di_nascita', period)
+        birth_year = data_di_nascita.astype('datetime64[Y]').astype(int) + 1970
+        birth_month = data_di_nascita.astype('datetime64[M]').astype(int) % 12 + 1
+        birth_day = (data_di_nascita - data_di_nascita.astype('datetime64[M]') + 1).astype(int)
         is_birthday_past = (birth_month <= period.start.month) + (birth_month == period.start.month) * (birth_day <= period.start.day)
         return (period.start.year - birth_year) - where(is_birthday_past, 0, 1)  # If the birthday is not passed this year, substract one year
+
 
 class age_year(Variable):
     value_type = int
@@ -30,8 +31,9 @@ class age_year(Variable):
     def formula(person,period,parameters):
         return person('age',period)
 
+
 # This variable is a pure input: it doesn't have a formula
-class birth(Variable):
+class data_di_nascita(Variable):
     value_type = date
     default_value = date(1970, 1, 1)  # By default, is no value is set for a simulation, we consider the people involed in a simulation to be born on the 1st of Jan 1970.
     entity = Persona
