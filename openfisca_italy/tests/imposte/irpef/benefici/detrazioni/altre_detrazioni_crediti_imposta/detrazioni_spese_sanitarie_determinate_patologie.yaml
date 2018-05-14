@@ -1,0 +1,41 @@
+- name: Test per spese detrazioni sanitarie con casella 1 barrata
+  period: 2017
+  input_variables:
+    casella_1_totale_spese_su_cui_determinare_la_detrazione_barrata: True
+    spese_sanitarie_comprensive_di_franchigia_rigo_RP1: 100
+    spese_sanitarie_per_familiari_non_a_carico_affetti_da_patologie_esistenti_annue: 50
+    spese_patologie_esenti_sostenute_da_familiare: 150
+  output_variables:
+    detrazioni_spese_sanitarie_per_determinate_patologie: 0
+
+- name: Test per spese detrazioni sanitarie con casella 1 non barrata e ma con RP1.col2 e RP2 non compilate
+  period: 2017
+  input_variables:
+    casella_1_totale_spese_su_cui_determinare_la_detrazione_barrata: False
+    spese_sanitarie_comprensive_di_franchigia_rigo_RP1: 0
+    spese_sanitarie_per_familiari_non_a_carico_affetti_da_patologie_esistenti_annue: 0
+    spese_patologie_esenti_sostenute_da_familiare: 150
+  output_variables:
+    detrazioni_spese_sanitarie_per_determinate_patologie: 3.97
+
+
+- name: Test per spese detrazioni sanitarie con casella 1 non barrata e ma con RP1.col2 e RP2  compilate e maggiori della franchigia
+  period: 2017
+  input_variables:
+    casella_1_totale_spese_su_cui_determinare_la_detrazione_barrata: False
+    spese_sanitarie_comprensive_di_franchigia_rigo_RP1: 100
+    spese_sanitarie_per_familiari_non_a_carico_affetti_da_patologie_esistenti_annue: 50
+    spese_patologie_esenti_sostenute_da_familiare: 150
+  output_variables:
+    detrazioni_spese_sanitarie_per_determinate_patologie: 28.5
+
+
+- name: Test per spese detrazioni sanitarie con casella 1 non barrata e ma con RP1.col2 e RP2  compilate e minori della franchigia
+  period: 2017
+  input_variables:
+    casella_1_totale_spese_su_cui_determinare_la_detrazione_barrata: False
+    spese_sanitarie_comprensive_di_franchigia_rigo_RP1: 100
+    spese_sanitarie_per_familiari_non_a_carico_affetti_da_patologie_esistenti_annue: 10
+    spese_patologie_esenti_sostenute_da_familiare: 150
+  output_variables:
+    detrazioni_spese_sanitarie_per_determinate_patologie: 24.87
