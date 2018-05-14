@@ -12,7 +12,7 @@ class oneri_deducibili_totali_mensili(Variable):
     definition_period = MONTH
     label = "Oneri deducibili mensili da sottrarre al reddito lordo mensile per il calcolo dell'IRPEF"
     reference = "http://www.aclimperia.it/documenti/la_dichiarazione_dei_redditi.pdf"  # Some variables represent quantities used in economic models, and not defined by law. Always give the source of your definition.
-   
+
     def formula(person, period, parameters):
         tipi_deduzione = ['contributi_previdenziali_assistenziali','assegni_periodo_coniuge','contributi_addetti_servizi_domestici_e_familiari',
         'erogazioni_istituzioni_religiose','spese_mediche_e_assistenza_disabili','contributi_previdenza_complementare']
