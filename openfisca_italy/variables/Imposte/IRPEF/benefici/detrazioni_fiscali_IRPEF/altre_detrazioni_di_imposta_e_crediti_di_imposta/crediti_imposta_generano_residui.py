@@ -4,7 +4,8 @@ from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
 from openfisca_italy.entita import *
 
-# TODO: definire il calcolo del vari crediti d'imposta in base ai valori del quadro
+# TODO: definire il calcolo del vari crediti d'imposta in base ai valori del quadro CR ed LM una volta che questi saranno definiti
+
 
 class totale_crediti_imposta_generano_requisiti(Variable):
     value_type = float

@@ -5,7 +5,7 @@
     reddito_totale_da_pensioni: 6000
     reddito_terreni_annuale: 150
     giorni_in_cui_si_e_percepita_la_pensione: 150
-    credito_per_fondi_comuni_compilato: True
+    credito_per_fondi_comuni_compilato: False
   output_variables:
     irpef_non_dovuta_pensionati_e_terreni: True
     reddito_pensioni_annuale: 2465.75
@@ -15,6 +15,6 @@
   period: 2017
   input_variables:
     reddito_fondiari_annuale: 485
-    credito_per_fondi_comuni_compilato: False
+    credito_per_fondi_comuni_compilato: True
   output_variables:
-    irpef_non_dovuta_per_soli_terreni_e_fabbricati: True
+    irpef_non_dovuta_per_soli_terreni_e_fabbricati: False

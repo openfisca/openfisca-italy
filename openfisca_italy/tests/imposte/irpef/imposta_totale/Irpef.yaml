@@ -1,4 +1,4 @@
-- name: Calcolo IRPEF 1
+- name: 1 - Calcolo IRPEF lorda con le agevolazioni spettanti
   period: 2017
   input_variables:
     # redditi percepiti
@@ -14,15 +14,12 @@
     possiede_diritto_agevolazione_per_attivita_sportive: True
     compensi_con_ritenuta_a_titolo_di_imposta: 150
     # agevolazione per investimenti in startup
-    possiede_diritto_agevolazione_per_recupero_detrazione_startup: True
-    interessi_su_detrazione_fruita: 150
-    # detrazioni d'imposta
-    detrazioni_imposta_annuale: 600.62
+    detrazione_effettivamente_fruita_e_interessi_legali_per_investimenti_startup: 150
   output_variables:
     base_imponibile_netta: 45280
     irpef_lorda: 13607.40
 
-- name: Calcolo IRPEF 2
+- name: 2 -Calcolo IRPEF lorda con nessuna agevolazione
   period: 2017
   input_variables:
     # redditi percepiti
@@ -38,15 +35,12 @@
     possiede_diritto_agevolazione_per_attivita_sportive: False
     compensi_con_ritenuta_a_titolo_di_imposta: 150
     # agevolazione per investimenti in startup
-    possiede_diritto_agevolazione_per_recupero_detrazione_startup: False
-    interessi_su_detrazione_fruita: 150
-    # detrazioni d'imposta
-    detrazioni_imposta_annuale: 600.62
+    detrazione_effettivamente_fruita_negli_anni_precedenti_per_investimenti_in_startup: 0
   output_variables:
     base_imponibile_netta: 44980
     irpef_lorda: 13412.4
 
-- name: Test speciale per IRPEF non dovuta a persone con reddito da sola pensione e terreni sotto la soglia
+- name: 3 - Test speciale per IRPEF non dovuta a persone con reddito da sola pensione e terreni sotto la soglia
   period: 2017
   input_variables:
     # deduzione abitazione principale
@@ -60,20 +54,19 @@
     possiede_diritto_agevolazione_per_attivita_sportive: False
     compensi_con_ritenuta_a_titolo_di_imposta: 150
     # agevolazione per investimenti in startup
-    possiede_diritto_agevolazione_per_recupero_detrazione_startup: False
-    interessi_su_detrazione_fruita: 150
+    detrazione_effettivamente_fruita_negli_anni_precedenti_per_investimenti_in_startup: 150
     # da inserire detrazioni d'imposta una volta stabilito se irpef possa andare sotto lo 0 oppure no
     # variabili che comportano una irpef nulla
     reddito_pensioni_annuale: 6000
     giorni_in_cui_si_e_percepita_la_pensione: 365
     reddito_terreni_annuale: 150
-    credito_per_fondi_comuni_compilato: True
+    credito_per_fondi_comuni_compilato: False
   output_variables:
     irpef_non_dovuta_pensionati_e_terreni: True
     base_imponibile_netta: 3130
     irpef_lorda: 0
 
-- name: Test speciale per IRPEF non dovuta a persone con reddito da soli fabbricati sotto la soglia
+- name: 4 - Test speciale per IRPEF non dovuta a persone con reddito da soli fabbricati sotto la soglia
   period: 2017
   input_variables:
     # deduzione abitazione principale
@@ -87,8 +80,7 @@
     possiede_diritto_agevolazione_per_attivita_sportive: False
     compensi_con_ritenuta_a_titolo_di_imposta: 150
     # agevolazione per investimenti in startup
-    possiede_diritto_agevolazione_per_recupero_detrazione_startup: False
-    interessi_su_detrazione_fruita: 150
+    detrazione_effettivamente_fruita_negli_anni_precedenti_per_investimenti_in_startup: 150
     # da inserire detrazioni d'imposta una volta stabilito se irpef possa andare sotto lo 0 oppure no
     # variabili che comportano una irpef nulla
     reddito_fondiari_annuale: 485

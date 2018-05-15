@@ -27,16 +27,19 @@ class irpef_non_dovuta_pensionati_e_terreni (Variable):
 
     def formula(person,period,parameters):
         # check if the person has only retirement income under the threshold and fields income under the threshold
-        reddito_da_pensione_sotto_la_soglia = person('reddito_pensioni_annuale',period) < person('soglia_reddito_non_tassabile_per_reddito_da_pensione',period)
-        reddito_da_terreni_sotto_la_soglia = person('reddito_terreni_annuale',period) < parameters(period).imposte.IRPEF.redditi_non_tassabili.reddito_terreni
+        reddito_da_pensione_sotto_la_soglia = (person('reddito_pensioni_annuale',period) < person('soglia_reddito_non_tassabile_per_reddito_da_pensione',period)) * (person('reddito_pensioni_annuale',period) > 0)
+        reddito_da_terreni_sotto_la_soglia = (person('reddito_terreni_annuale',period) < parameters(period).imposte.IRPEF.redditi_non_tassabili.reddito_terreni) * (person('reddito_terreni_annuale',period) > 0)
         # check that user has compiled the section credito_per_fondi_comuni_compilato in the income declaration
         credito_per_fondi_comuni_compilato = person('credito_per_fondi_comuni_compilato',period)
         # person have only income from fields and retirement
         # check that all other incomes are 0
+        print 'in irpef non dovuta ai pensionati: reddio pensionati sotto la soglia', reddito_da_pensione_sotto_la_soglia
+        print 'in irpef non dovuta ai pensionati: reddito_da_terreni_sotto_la_soglia', reddito_da_terreni_sotto_la_soglia
+        print 'in irpef non dovuta ai pensionati: credito per fondi comuni compilato', credito_per_fondi_comuni_compilato
         tutti_altri_redditi_sono_zero = person('solo_redditi_da_pensione_e_terreni',period)
-        return where((reddito_da_pensione_sotto_la_soglia and reddito_da_terreni_sotto_la_soglia and tutti_altri_redditi_sono_zero and credito_per_fondi_comuni_compilato),True,False)
+        return where((reddito_da_pensione_sotto_la_soglia and reddito_da_terreni_sotto_la_soglia and tutti_altri_redditi_sono_zero and not_(credito_per_fondi_comuni_compilato)),True,False)
 
-
+# TODO: aggiornare il parametro del credito per fondi comuni compilato quando verrà definito il rigo RN1
 class credito_per_fondi_comuni_compilato (Variable):
     value_type = bool
     entity = Persona

@@ -28,7 +28,7 @@ class detrazione_effettivamente_fruita_e_interessi_legali_per_investimenti_start
     value_type = float
     entity = Persona
     definition_period = YEAR
-    label = u"La detrazione effettivamente fruita negli anni precedenti per investimenti in startup con gli interessi legati relativi (Rigo RP80 col.8). Questa somma va ad incrementare l'imposta lorda del periodo in esame"
+    label = u"Questa rappresenta la colonna 8 che è data dalla detrazione più gli interessi (Rigo RP80 col.8). Questa somma va ad incrementare l'imposta lorda del periodo in esame"
     reference = "http://www.gazzettaufficiale.it/eli/id/2016/04/11/16A02786/sg"  # Always use the most official source
 
     def formula(person,period,parameters):

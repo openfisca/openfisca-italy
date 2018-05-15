@@ -36,7 +36,7 @@ class altre_detrazioni(Variable):
     entity = Persona
     definition_period = YEAR
     set_input = set_input_divide_by_period
-    label = "Detrazioni speciali per borse di studio e donazioni ad enti ospedalieri "
+    label = "Detrazioni speciali per borse di studio e donazioni ad enti ospedalieri relativo a rigo RP83 "
     reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
     def formula(person,period,parameters):
