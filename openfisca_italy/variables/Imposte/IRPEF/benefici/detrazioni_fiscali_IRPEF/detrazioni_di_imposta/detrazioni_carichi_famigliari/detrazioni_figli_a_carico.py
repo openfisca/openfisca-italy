@@ -18,7 +18,6 @@ class detrazioni_per_figli_a_carico(Variable):
         incremento = (person('numero_figli_a_carico',period)-1) * 15000
         quoziente = round_((((95000 + incremento) - reddito_per_detrazioni)/(95000 + incremento)),4)
         # deduction formula used if quoziente is valid
-        print 'detrazione teorica', person('detrazioni_per_figli_a_carico_teorica',period)
         detrazione_spettante = round_((person('detrazioni_per_figli_a_carico_teorica',period) * quoziente),2)
         # check if quoziente is valid or not
         quoziente_valido = quoziente > 0 * quoziente < 1

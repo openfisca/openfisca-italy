@@ -65,9 +65,6 @@ class irpef_lorda (Variable):
 
         # this boolean indicate that are no situations for what the Irpef values if fixed to 0
         no_condizioni_redditi_non_tassabili = not np.array(any([irpef_non_dovuta_pensionati_e_terreni,irpef_non_dovuta_per_soli_terreni_e_fabbricati]))
-        print 'condizione pensionati esenti', irpef_non_dovuta_pensionati_e_terreni
-        print 'condizione terreni esenti', irpef_non_dovuta_per_soli_terreni_e_fabbricati
-        print 'nessuna condizione', no_condizioni_redditi_non_tassabili
         return select([irpef_non_dovuta_pensionati_e_terreni, irpef_non_dovuta_per_soli_terreni_e_fabbricati, no_condizioni_redditi_non_tassabili], [0, 0, irpef_lorda])
 
 # TODO: definire quadro TR per poter compilare la colonna 1 del rigo RN 26

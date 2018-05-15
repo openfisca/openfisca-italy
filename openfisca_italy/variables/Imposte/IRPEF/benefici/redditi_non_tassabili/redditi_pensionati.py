@@ -33,9 +33,6 @@ class irpef_non_dovuta_pensionati_e_terreni (Variable):
         credito_per_fondi_comuni_compilato = person('credito_per_fondi_comuni_compilato',period)
         # person have only income from fields and retirement
         # check that all other incomes are 0
-        print 'in irpef non dovuta ai pensionati: reddio pensionati sotto la soglia', reddito_da_pensione_sotto_la_soglia
-        print 'in irpef non dovuta ai pensionati: reddito_da_terreni_sotto_la_soglia', reddito_da_terreni_sotto_la_soglia
-        print 'in irpef non dovuta ai pensionati: credito per fondi comuni compilato', credito_per_fondi_comuni_compilato
         tutti_altri_redditi_sono_zero = person('solo_redditi_da_pensione_e_terreni',period)
         return where((reddito_da_pensione_sotto_la_soglia and reddito_da_terreni_sotto_la_soglia and tutti_altri_redditi_sono_zero and not_(credito_per_fondi_comuni_compilato)),True,False)
 

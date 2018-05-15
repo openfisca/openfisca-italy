@@ -40,7 +40,6 @@ class detrazioni_per_investimenti_startup_utilizzata(Variable):
                                 ]
         totale_da_sottrarre = round_(sum(person(detrazione, period) for detrazione in altre_detrazioni_da_sottrarre),2)
         capienza = irpef_lorda_diminuita_di_detrazioni_famiglia_lavoro - totale_da_sottrarre
-        print capienza
         return select([capienza<=0,
                         capienza >= person('detrazioni_per_investimenti_startup',period),
                         capienza < person('detrazioni_per_investimenti_startup',period)],
