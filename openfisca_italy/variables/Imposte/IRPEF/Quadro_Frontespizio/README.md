@@ -11,7 +11,7 @@ Il frontespizio del modello dei redditi delle Persone Fisiche si compone di vari
 * Tipo di dichiarazione;
 * Dati del contribuente.
 Questo quadro è il primo che dev'essere compilato e viene utilizzato per conoscere dei parametri utili al fine della compilazione del modello dei redditi.
-Per un maggiori dettagli  visionare la
+Per un maggiori dettagli consultare la
  [documentazione](https://infoprecompilata.agenziaentrate.gov.it/portale/compilazione-del-frontespizio) o in alternativa visionare il [quadro](quadro_frontespizio.pdf) presente in questa sezione.
 ## Feature
 ### Obiettivi finali da raggiungere
