@@ -1,4 +1,4 @@
-# Imposta-IRPEF-Sezione Redditi - Quadro Ra
+# Imposta-IRPEF-Sezione Redditi - Quadro RA
 ![Build Status](https://circleci.com/gh/openfisca/openfisca-italy.svg?style=shield&circle-token=:circle-token)
 ## [EN] Introduction
 Land income is distinguished in Dominican income and agricultural income. To the owner of the land or to the holder of other real rights, the dominican income is the agricultural income, in the case in which the same directly carries out the agricultural activity. If the agricultural activity is exercised by another person, the dominical income belongs, in any case, to the owner, while the agricultural income belongs to whoever carries out the agricultural activity. For more information, consult the[documentazione](https://infoprecompilata.agenziaentrate.gov.it/portale/sl/quadro-ra-redditi-dei-terreni1) (Use google to translate this page in English!).
