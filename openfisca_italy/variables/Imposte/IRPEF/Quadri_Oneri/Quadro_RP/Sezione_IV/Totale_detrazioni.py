@@ -4,7 +4,6 @@ from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
 from openfisca_italy.entita import *
 
-
 class detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_55(Variable):
     value_type = float
     entity = Persona
