@@ -1,9 +1,8 @@
 - name: Detrazione per canone di locazione spettante ai lavoratori dipendenti che trasferiscono la propria residenza per motivi di lavoro con reddito per detrazioni inferiore a 15.493,71
   period: 2017
   input_variables:
-    canone_di_locazione_spettante_ai_lavoratori_dipendenti_che_trasferiscono_la_propria_residenza_per_motivi_di_lavoro_compilato: True
-    numero_giorni_dell_anno_immobile_adibito_ad_abitazione_principale_con_canone_di_locazione_spettante_ai_lavoratori_dipendenti: 200
-    numero_inquilini_relativo_a_immobile_adibito_ad_abitazione_principale_con_canone_di_locazione_spettante_ai_lavoratori_dipendenti: 2
+    numero_giorni_in_cui_immobile_e_stato_adibito_ad_abitazione_principale_lavoratori_dipendenti_che_si_trasferiscono_per_motivi_di_lavoro: 200
+    percentuale_di_spettanza_relativa_a_lavoratori_dipendenti_che_si_trasferiscono_per_motivi_di_lavoro: 50
     reddito_per_detrazioni: 11000
   output_variables:
     detrazioni_canoni_locazione_per_lavoratori_dipendenti_che_si_trasferiscono_per_lavoro: 273
@@ -11,9 +10,8 @@
 - name: Detrazione per canone di locazione spettante ai lavoratori dipendenti che trasferiscono la propria residenza per motivi di lavoro con reddito per detrazioni inferiore a 30.987,41
   period: 2017
   input_variables:
-    canone_di_locazione_spettante_ai_lavoratori_dipendenti_che_trasferiscono_la_propria_residenza_per_motivi_di_lavoro_compilato: True
-    numero_giorni_dell_anno_immobile_adibito_ad_abitazione_principale_con_canone_di_locazione_spettante_ai_lavoratori_dipendenti: 200
-    numero_inquilini_relativo_a_immobile_adibito_ad_abitazione_principale_con_canone_di_locazione_spettante_ai_lavoratori_dipendenti: 2
+    numero_giorni_in_cui_immobile_e_stato_adibito_ad_abitazione_principale_lavoratori_dipendenti_che_si_trasferiscono_per_motivi_di_lavoro: 200
+    percentuale_di_spettanza_relativa_a_lavoratori_dipendenti_che_si_trasferiscono_per_motivi_di_lavoro: 50
     reddito_per_detrazioni: 25000
   output_variables:
     detrazioni_canoni_locazione_per_lavoratori_dipendenti_che_si_trasferiscono_per_lavoro: 136
@@ -21,19 +19,15 @@
 - name: Detrazione per canone di locazione spettante ai lavoratori dipendenti che trasferiscono la propria residenza per motivi di lavoro con reddito per detrazioni inferiore a 15.493,71
   period: 2017
   input_variables:
-    canone_di_locazione_spettante_ai_lavoratori_dipendenti_che_trasferiscono_la_propria_residenza_per_motivi_di_lavoro_compilato: True
-    numero_giorni_dell_anno_immobile_adibito_ad_abitazione_principale_con_canone_di_locazione_spettante_ai_lavoratori_dipendenti: 200
-    numero_inquilini_relativo_a_immobile_adibito_ad_abitazione_principale_con_canone_di_locazione_spettante_ai_lavoratori_dipendenti: 2
+    numero_giorni_in_cui_immobile_e_stato_adibito_ad_abitazione_principale_lavoratori_dipendenti_che_si_trasferiscono_per_motivi_di_lavoro: 200
+    percentuale_di_spettanza_relativa_a_lavoratori_dipendenti_che_si_trasferiscono_per_motivi_di_lavoro: 50
     reddito_per_detrazioni: 40000
   output_variables:
     detrazioni_canoni_locazione_per_lavoratori_dipendenti_che_si_trasferiscono_per_lavoro: 0
 
-- name: Detrazione per canone di locazione spettante ai lavoratori dipendenti che trasferiscono la propria residenza per motivi di lavoro con reddito per detrazioni inferiore a 15.493,71
+- name: Detrazione per canone di locazione spettante ai lavoratori dipendenti che trasferiscono la propria residenza per motivi di lavoro non dovuta
   period: 2017
   input_variables:
-    canone_di_locazione_spettante_ai_lavoratori_dipendenti_che_trasferiscono_la_propria_residenza_per_motivi_di_lavoro_compilato: False
-    numero_giorni_dell_anno_immobile_adibito_ad_abitazione_principale_con_canone_di_locazione_spettante_ai_lavoratori_dipendenti: 200
-    numero_inquilini_relativo_a_immobile_adibito_ad_abitazione_principale_con_canone_di_locazione_spettante_ai_lavoratori_dipendenti: 2
     reddito_per_detrazioni: 11000
   output_variables:
     detrazioni_canoni_locazione_per_lavoratori_dipendenti_che_si_trasferiscono_per_lavoro: 0

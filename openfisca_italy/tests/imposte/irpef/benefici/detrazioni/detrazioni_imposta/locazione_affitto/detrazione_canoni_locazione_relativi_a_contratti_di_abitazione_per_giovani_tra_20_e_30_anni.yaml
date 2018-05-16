@@ -1,9 +1,9 @@
 - name: Detrazione per canoni di locazione relativi a contratti di locazione per abitazione principale per i giovani di età compresa tra i 20 ed i 30 anni con reddito inferiore a 15.493,71
   period: 2017
   input_variables:
-    canoni_di_locazione_relativi_a_contratti_di_locazione_per_abitazione_principale_per_giovani_tra_20_e_30_anni_compilato: True
-    numero_giorni_immobile_adibito_ad_abitazione_principale_con_contratti_per_giovani_tra_20_e_30_anni: 200
-    numero_inquilini_relativo_a_inquilini_alloggi_adibiti_ad_abitazione_principale_con_contratti_per_giovani_tra_20_e_30_anni: 2
+    tipologia_di_detrazione_inquilini_alloggi_adibiti_abitazione_principale_rigo_rp71: codice_tre
+    numero_giorni_in_cui_immobile_e_stato_adibito_ad_abitazione_principale: 200
+    percentuale_di_spettanza_relativa_a_inquilini_alloggi_adibiti_abitazione_principale: 50
     reddito_totale_lordo_annuale: 11000
   output_variables:
     detrazione_per_inquilini_alloggi_adibiti_ad_abitazione_principale_con_contratti_per_giovani_tra_20_e_30_anni: 273
@@ -11,19 +11,19 @@
 - name: Detrazione per canoni di locazione relativi a contratti di locazione per abitazione principale per i giovani di età compresa tra i 20 ed i 30 anni con reddito maggiore a 15.493,71
   period: 2017
   input_variables:
-    canoni_di_locazione_relativi_a_contratti_di_locazione_per_abitazione_principale_per_giovani_tra_20_e_30_anni_compilato: True
-    numero_giorni_immobile_adibito_ad_abitazione_principale_con_contratti_per_giovani_tra_20_e_30_anni: 200
-    numero_inquilini_relativo_a_inquilini_alloggi_adibiti_ad_abitazione_principale_con_contratti_per_giovani_tra_20_e_30_anni: 2
+    tipologia_di_detrazione_inquilini_alloggi_adibiti_abitazione_principale_rigo_rp71: codice_tre
+    numero_giorni_in_cui_immobile_e_stato_adibito_ad_abitazione_principale: 200
+    percentuale_di_spettanza_relativa_a_inquilini_alloggi_adibiti_abitazione_principale: 50
     reddito_totale_lordo_annuale: 30000
   output_variables:
     detrazione_per_inquilini_alloggi_adibiti_ad_abitazione_principale_con_contratti_per_giovani_tra_20_e_30_anni: 0
 
-- name: Detrazione per canoni di locazione relativi a contratti di locazione per abitazione principale per i giovani di età compresa tra i 20 ed i 30 anni non dovuto
+- name: Detrazione per canoni di locazione relativi a contratti di locazione per abitazione principale per i giovani di età compresa tra i 20 ed i 30 anni con codice non inserito
   period: 2017
   input_variables:
-    canoni_di_locazione_relativi_a_contratti_di_locazione_per_abitazione_principale_per_giovani_tra_20_e_30_anni_compilato: False
-    numero_giorni_immobile_adibito_ad_abitazione_principale_con_contratti_per_giovani_tra_20_e_30_anni: 200
-    numero_inquilini_relativo_a_inquilini_alloggi_adibiti_ad_abitazione_principale_con_contratti_per_giovani_tra_20_e_30_anni: 2
-    reddito_totale_lordo_annuale: 50000
+    tipologia_di_detrazione_inquilini_alloggi_adibiti_abitazione_principale_rigo_rp71: nessun_codice
+    numero_giorni_in_cui_immobile_e_stato_adibito_ad_abitazione_principale: 200
+    percentuale_di_spettanza_relativa_a_inquilini_alloggi_adibiti_abitazione_principale: 50
+    reddito_totale_lordo_annuale: 11000
   output_variables:
     detrazione_per_inquilini_alloggi_adibiti_ad_abitazione_principale_con_contratti_per_giovani_tra_20_e_30_anni: 0

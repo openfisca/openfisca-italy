@@ -5,27 +5,19 @@ from openfisca_core.model_api import *
 from openfisca_italy.entita import *
 
 
-class inquilini_di_alloggi_adibiti_ad_abitazione_principale_compilato(Variable):
-    value_type = bool
-    entity = Persona
-    definition_period = YEAR
-    label = "E' stato indicato il codice “1” nella colonna 1 del rigo RP71 "
-    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
-
-
-class numero_giorni_dell_anno_inquilini_alloggi_adibiti_ad_abitazione_principale(Variable):
+class numero_giorni_in_cui_immobile_e_stato_adibito_ad_abitazione_principale_lavoratori_dipendenti_che_si_trasferiscono_per_motivi_di_lavoro(Variable):
     value_type = int
     entity = Persona
     definition_period = YEAR
     set_input = set_input_divide_by_period
-    label = "Numero di giorni per cui è valso il contratto tra inquilini alloggi_adibiti_ad_abitazione_principale"
+    label = "Numero di  giorni dell’anno in cui l’immobile è stato adibito ad abitazione principale relativo a Detrazione per canone di locazione spettante ai lavoratori dipendenti che trasferiscono la propria residenza per motivi di lavoro (Rigo RP72 col.1)"
     reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
 
-class numero_inquilini_relativo_a_inquilini_alloggi_adibiti_ad_abitazione_principale(Variable):
+class percentuale_di_spettanza_relativa_a_lavoratori_dipendenti_che_si_trasferiscono_per_motivi_di_lavoro(Variable):
     value_type = int
     entity = Persona
     definition_period = YEAR
     set_input = set_input_divide_by_period
-    label = "Numero di inquilini per cui è valso il contratto tra inquilini alloggi_adibiti_ad_abitazione_principale"
+    label = "Percentuale di spettanza relativa a Lavoratori dipendenti che trasferiscono la residenza per motivi di lavoro Rigo RP72 col.2"
     reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
