@@ -7,7 +7,6 @@ from openfisca_italy.entita import *
 import numpy as np
 
 
-
 class startup_RPF_2017_RN47_col3(Variable):
     value_type = float
     entity = Persona
