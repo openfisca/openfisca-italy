@@ -22,7 +22,7 @@ class residui_detrazioni_start_up_2016_RN19(Variable):
                                 'detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_annue',
                                 'detrazioni_per_spese_arredo_immobili_giovani_coppie_iva_acquisto_abitazione_annue',
                                 'detrazioni_per_spese_per_interventi_finalizzati_al_risparmio_energetico_annue',
-                                'altre_detrazioni_annue_totali',
+                                'totale_detrazione_oneri_Sez_VI_quadro_RP',
                                 'detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2014'
                                 ]
         totale_da_sottrarre = round_(sum(person(detrazione, period) for detrazione in altre_detrazioni_da_sottrarre),2)
@@ -48,7 +48,7 @@ class residui_detrazioni_start_up_2017_RN20(Variable):
                                     'detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_annue',
                                     'detrazioni_per_spese_arredo_immobili_giovani_coppie_iva_acquisto_abitazione_annue',
                                     'detrazioni_per_spese_per_interventi_finalizzati_al_risparmio_energetico_annue',
-                                    'altre_detrazioni_annue_totali',
+                                    'totale_detrazione_oneri_Sez_VI_quadro_RP',
                                     'detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2014',
                                     'detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2015'
                                     ]
@@ -75,7 +75,7 @@ class residui_detrazioni_start_up_2018_RN21(Variable):
                                     'detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_annue',
                                     'detrazioni_per_spese_arredo_immobili_giovani_coppie_iva_acquisto_abitazione_annue',
                                     'detrazioni_per_spese_per_interventi_finalizzati_al_risparmio_energetico_annue',
-                                    'altre_detrazioni_annue_totali',
+                                    'totale_detrazione_oneri_Sez_VI_quadro_RP',
                                     'detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2014',
                                     'detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2015',
                                     'detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2016'

@@ -5,7 +5,7 @@
      altre_detrazioni: 1500
   output_variables:
     detrazioni_per_mantenimento_cane_guida: 516.46
-    altre_detrazioni_annue_totali: 2016.46
+    totale_detrazione_oneri_Sez_VI_quadro_RP: 2016.46
 
 - name: Test altre detrazioni con altre detrazioni non dovute
   period: 2017
@@ -15,4 +15,4 @@
   output_variables:
     altre_detrazioni: 0
     detrazioni_per_mantenimento_cane_guida: 516.46
-    altre_detrazioni_annue_totali:  516.46
+    totale_detrazione_oneri_Sez_VI_quadro_RP:  516.46

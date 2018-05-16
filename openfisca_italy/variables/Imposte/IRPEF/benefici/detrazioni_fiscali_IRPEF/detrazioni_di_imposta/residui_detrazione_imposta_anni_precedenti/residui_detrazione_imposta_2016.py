@@ -35,7 +35,7 @@ class detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2016(Variable)
                                 'detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_annue',
                                 'detrazioni_per_spese_arredo_immobili_giovani_coppie_iva_acquisto_abitazione_annue',
                                 'detrazioni_per_spese_per_interventi_finalizzati_al_risparmio_energetico_annue',
-                                'altre_detrazioni_annue_totali',
+                                'totale_detrazione_oneri_Sez_VI_quadro_RP',
                                 'detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2014',
                                 'detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2015'
                                 ]
