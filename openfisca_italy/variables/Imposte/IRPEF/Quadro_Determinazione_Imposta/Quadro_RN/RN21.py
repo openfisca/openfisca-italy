@@ -11,7 +11,7 @@ class detrazioni_per_investimenti_startup(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
-    label = u"Detrazione per investimenti in startup indicati nella sezione VI del Quadro RP e riportato nel Rigo RN21 col.1"
+    label = u"Detrazione per investimenti in startup indicata nel rigo RP80 col. 6 e riportata nel Rigo RN21 col.1"
     def formula(person,period,parameters):
         totale_detrazioni_per_investimenti_startup = person('totale_detrazioni_per_investimenti_startup',period) # rigo RP80 col 6
         return totale_detrazioni_per_investimenti_startup
