@@ -1,7 +1,7 @@
 - name: Test per altre detrazioni sezione VI quadro RP
   period: 2017
   input_variables:
-     spese_mantenimento_cane_guida: True
+     sostenute_spese_mantenimento_cane_guida: True
      altre_detrazioni: 1500
   output_variables:
     detrazioni_per_mantenimento_cane_guida: 516.46
@@ -10,7 +10,7 @@
 - name: Test altre detrazioni con altre detrazioni non dovute
   period: 2017
   input_variables:
-     spese_mantenimento_cane_guida: True
+     sostenute_spese_mantenimento_cane_guida: True
      tipi_altre_detrazioni: nessun_codice_inserito
   output_variables:
     altre_detrazioni: 0

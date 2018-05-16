@@ -1,4 +1,4 @@
-# total gross income for one month and one year
+# coding=utf-8
 # Import from openfisca-core the common python objects used to code the legislation in OpenFisca
 from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
@@ -9,7 +9,7 @@ class deduzione_abitazione_principale_annuale(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
-    set_input = set_input_divide_by_period  
+    set_input = set_input_divide_by_period
     label = "Deduzione abitazione principale annuale"
     reference = "https://www.guidafisco.it/deduzione-abitazione-principale-730-unico-rendita-catastale-1356"  # Always use the most official source
 
@@ -18,7 +18,7 @@ class deduzione_abitazione_principale_mensile(Variable):
     value_type = float
     entity = Persona
     definition_period = MONTH
-    set_input = set_input_divide_by_period  
+    set_input = set_input_divide_by_period
     label = "Deduzione abitazione principale mensile"
     reference = "https://www.guidafisco.it/deduzione-abitazione-principale-730-unico-rendita-catastale-1356"  # Always use the most official source
     def formula(person,period,parameter):
