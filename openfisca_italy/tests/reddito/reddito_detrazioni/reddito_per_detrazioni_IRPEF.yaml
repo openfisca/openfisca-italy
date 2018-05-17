@@ -1,7 +1,7 @@
 - name: Test con importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore positivo
   period: 2017
   input_variables:
-    reddito_totale_lordo_annuale: 10000
+    reddito_complessivo: 10000
     deduzione_abitazione_principale_annuale: 2000
     importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore: 100
   output_variables:
@@ -10,7 +10,7 @@
 - name: Test con importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore negativo
   period: 2017
   input_variables:
-    reddito_totale_lordo_annuale: 10000
+    reddito_complessivo: 10000
     deduzione_abitazione_principale_annuale: 2000
     importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore: -100
   output_variables:

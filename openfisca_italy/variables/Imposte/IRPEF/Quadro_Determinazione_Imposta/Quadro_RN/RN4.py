@@ -6,7 +6,7 @@ from openfisca_italy.entita import *
 # Import numpy
 import numpy as np
 
-class base_imponibile_netta (Variable):
+class reddito_imponibile (Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR  # This housing tax is defined for a year.
@@ -15,17 +15,17 @@ class base_imponibile_netta (Variable):
 
     def formula(person, period, parameters):
         # In the IRPEF calculation the  gross base income calculation could be in two ways
-        base_imponibile_lorda = person('reddito_totale_lordo_annuale',period)
+        base_imponibile_lorda = person('reddito_complessivo',period)
         oneri_deducibili = person('oneri_deducibili_totali_annuale',period)
         deduzione_abitazione_principale = person('deduzione_abitazione_principale_annuale',period)
         # this formula is fixed
-        base_imponibile_netta = base_imponibile_lorda - deduzione_abitazione_principale - oneri_deducibili
+        reddito_imponibile = base_imponibile_lorda - deduzione_abitazione_principale - oneri_deducibili
         # agevolazione ACE section that is optional depending on possiede_diritto_agevolazione_ACE (optional)
         importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore = person('importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore',period)
         possiede_diritto_agevolazione_ACE = person('possiede_diritto_agevolazione_ACE',period)
-        base_imponibile_netta = where (possiede_diritto_agevolazione_ACE,(base_imponibile_netta + importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore),base_imponibile_netta)
+        reddito_imponibile = where (possiede_diritto_agevolazione_ACE,(reddito_imponibile + importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore),reddito_imponibile)
         # fees for amateur sports activities is optional
         compensi_con_ritenuta_a_titolo_di_imposta = person('compensi_con_ritenuta_a_titolo_di_imposta',period)
         possiede_diritto_agevolazione_per_attivita_sportive = person('possiede_diritto_agevolazione_per_attivita_sportive',period)
-        base_imponibile_netta = where (possiede_diritto_agevolazione_per_attivita_sportive,(base_imponibile_netta + compensi_con_ritenuta_a_titolo_di_imposta),base_imponibile_netta)
-        return base_imponibile_netta
+        reddito_imponibile = where (possiede_diritto_agevolazione_per_attivita_sportive,(reddito_imponibile + compensi_con_ritenuta_a_titolo_di_imposta),reddito_imponibile)
+        return where (reddito_imponibile >= 0, reddito_imponibile, np.array(0))

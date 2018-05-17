@@ -2,7 +2,7 @@
   period: 2017
   input_variables:
     # redditi percepiti
-    reddito_totale_lordo_annuale: 48000
+    reddito_complessivo: 48000
     # deduzione abitazione principale
     deduzione_abitazione_principale_annuale: 2000
     #oneri deducibili
@@ -16,14 +16,14 @@
     # agevolazione per investimenti in startup
     detrazione_effettivamente_fruita_e_interessi_legali_per_investimenti_startup: 150
   output_variables:
-    base_imponibile_netta: 45280
+    reddito_imponibile: 45280
     irpef_lorda: 13607.40
 
 - name: 2 -Calcolo IRPEF lorda con nessuna agevolazione
   period: 2017
   input_variables:
     # redditi percepiti
-    reddito_totale_lordo_annuale: 48000
+    reddito_complessivo: 48000
     # deduzione abitazione principale
     deduzione_abitazione_principale_annuale: 2000
     #oneri deducibili
@@ -37,7 +37,7 @@
     # agevolazione per investimenti in startup
     detrazione_effettivamente_fruita_negli_anni_precedenti_per_investimenti_in_startup: 0
   output_variables:
-    base_imponibile_netta: 44980
+    reddito_imponibile: 44980
     irpef_lorda: 13412.4
 
 - name: 3 - Test speciale per IRPEF non dovuta a persone con reddito da sola pensione e terreni sotto la soglia
@@ -63,7 +63,7 @@
     credito_per_fondi_comuni_compilato: False
   output_variables:
     irpef_non_dovuta_pensionati_e_terreni: True
-    base_imponibile_netta: 3130
+    reddito_imponibile: 3130
     irpef_lorda: 0
 
 - name: 4 - Test speciale per IRPEF non dovuta a persone con reddito da soli fabbricati sotto la soglia
@@ -87,5 +87,5 @@
     credito_per_fondi_comuni_compilato: False
   output_variables:
     irpef_non_dovuta_per_soli_terreni_e_fabbricati: True
-    base_imponibile_netta: 405
+    reddito_imponibile: 405
     irpef_lorda: 0

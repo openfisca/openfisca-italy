@@ -7,6 +7,13 @@ from openfisca_italy.entita import *
 import numpy as np
 
 
+class codice_fiscale_relativo_a_investimenti_startup(Variable):
+        value_type = str
+        entity = Persona
+        definition_period = YEAR
+        label = u"Col.3 Indicare il codice fiscale della startup in cui si è deciso di investire"
+
+
 class TipiInvestimentiStartup(Enum):
     nessun_codice_inserito=u'Non sono stati fatti investimenti in startup'
     codice_uno = u'Investimento diretto'

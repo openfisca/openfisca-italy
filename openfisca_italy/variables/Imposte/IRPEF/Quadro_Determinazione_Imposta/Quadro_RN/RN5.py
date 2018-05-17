@@ -15,9 +15,9 @@ class irpef_lorda (Variable):
 
     def formula(person, period, parameters):
         # In the IRPEF calculation the  gross base income calculation could be in two ways
-        base_imponibile_netta = person('base_imponibile_netta',period)
+        reddito_imponibile = person('reddito_imponibile',period)
         # this is a fixed calculation
-        irpef_lorda = round_(parameters(period).imposte.IRPEF.aliquote_scaglioni_IRPEF.calc(base_imponibile_netta),2)
+        irpef_lorda = round_(parameters(period).imposte.IRPEF.aliquote_scaglioni_IRPEF.calc(reddito_imponibile),2)
 
         # agevolazione ACE section that is optional depending on possiede_diritto_agevolazione_ACE (optional)
         importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore = person('importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore',period)
@@ -42,18 +42,3 @@ class irpef_lorda (Variable):
         # this boolean indicate that are no situations for what the Irpef values if fixed to 0
         no_condizioni_redditi_non_tassabili = not np.array(any([irpef_non_dovuta_pensionati_e_terreni,irpef_non_dovuta_per_soli_terreni_e_fabbricati]))
         return select([irpef_non_dovuta_pensionati_e_terreni, irpef_non_dovuta_per_soli_terreni_e_fabbricati, no_condizioni_redditi_non_tassabili], [0, 0, irpef_lorda])
-
-# TODO: definire quadro TR per poter compilare la colonna 1 del rigo RN 26
-class irpef_netta (Variable):
-    value_type = float
-    entity = Persona
-    definition_period = YEAR  # This housing tax is defined for a year.
-    label = u"Imposta sul reddito delle persone fisiche netta Rigo RN26 col.2"
-    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf"  # Always use the most official source
-
-    def formula(person, period, parameters):
-        irpef_lorda = person('irpef_lorda',period)
-        detrazioni_imposta_annuale = person('detrazioni_imposta_annuale',period)
-        totale_altre_detrazioni_crediti_di_imposta = person('totale_altre_detrazioni_crediti_di_imposta',period)
-        irpef_netta = irpef_lorda - detrazioni_imposta_annuale - totale_altre_detrazioni_crediti_di_imposta
-        return where (irpef_netta>0,np.array(round_(irpef_netta,2),np.array(0)))
