@@ -14,5 +14,5 @@ class detrazione_per_lavoro(Variable):
 
     def formula(person,period,parameters):
         tipi_detrazioni_lavoro = ['detrazioni_per_lavoro_dipendente','detrazione_per_redditi_assimilati_a_lavoro_dipendente_e_altri_redditi',
-        'detrazioni_per_pensionati']
+        'detrazioni_per_pensionati','detrazioni_per_assegni_percepiti_ex_coniuge']
         return round_(sum(person(detrazione, period) for detrazione in tipi_detrazioni_lavoro),2)

@@ -4,12 +4,12 @@ from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
 from openfisca_italy.entita import *
 
-class totale_altre_detrazioni_crediti_di_imposta(Variable):
+class totale_altre_detrazioni_crediti_imposta(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
     set_input = set_input_divide_by_period
-    label = "Somma Rigo RN23 Rigo RN24 quadro RN"
+    label = "Totale altre detrazioni e crediti d'imposta Rigo RN25"
     reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf"  # Always use the most official source
 
     def formula(person,period,parameters):

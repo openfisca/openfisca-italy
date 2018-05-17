@@ -11,7 +11,7 @@ class detrazioni_per_assegni_percepiti_ex_coniuge(Variable):
     entity = Persona
     definition_period = YEAR
     set_input = set_input_divide_by_period
-    label = "Detrazioni dovute per carichi di famiglia rigo RN6"
+    label = "Detrazioni per assegni ex coniuge "
     reference = "https://www.gbsoftware.it/legginotizia.asp?IdNews=2364"  # Always use the most official source
 
     def formula(person,period,parameters):

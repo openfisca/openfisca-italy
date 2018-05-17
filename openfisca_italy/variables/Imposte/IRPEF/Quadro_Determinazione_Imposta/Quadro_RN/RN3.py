@@ -14,8 +14,8 @@ class oneri_deducibili_totali_mensili(Variable):
     reference = "http://www.aclimperia.it/documenti/la_dichiarazione_dei_redditi.pdf"  # Some variables represent quantities used in economic models, and not defined by law. Always give the source of your definition.
 
     def formula(person, period, parameters):
-        tipi_deduzione = ['contributi_previdenziali_assistenziali','assegni_periodo_coniuge','contributi_addetti_servizi_domestici_e_familiari',
-        'erogazioni_istituzioni_religiose','spese_mediche_e_assistenza_disabili','contributi_previdenza_complementare']
+        tipi_deduzione = ['contributi_previdenziali_assistenziali','assegno_periodico_al_coniuge','contributi_addetti_servizi_domestici_e_familiari',
+        'erogazioni_liberali_a_istituzioni_religiose','spese_mediche_e_assistenza_disabili','altri_oneri_e_spese_deducibili','contributi_previdenza_complementare']
         totale_oneri_deducibili_mensile = round_(sum(person(deduzione, period,options=[DIVIDE]) for deduzione in tipi_deduzione),2)
         return np.array(totale_oneri_deducibili_mensile)
 
@@ -27,7 +27,7 @@ class oneri_deducibili_totali_annuale(Variable):
     label = "Oneri deducibili annuali da sottrarre al reddito lordo annuale per il calcolo dell'IRPEF"
     reference = "http://www.aclimperia.it/documenti/la_dichiarazione_dei_redditi.pdf"  # Some variables represent quantities used in economic models, and not defined by law. Always give the source of your definition.
     def formula(person, period, parameters):
-        tipi_deduzione = ['contributi_previdenziali_assistenziali','assegni_periodo_coniuge','contributi_addetti_servizi_domestici_e_familiari',
-        'erogazioni_istituzioni_religiose','spese_mediche_e_assistenza_disabili','contributi_previdenza_complementare']
+        tipi_deduzione = ['contributi_previdenziali_assistenziali','assegno_periodico_al_coniuge','contributi_addetti_servizi_domestici_e_familiari',
+        'erogazioni_liberali_a_istituzioni_religiose','spese_mediche_e_assistenza_disabili','altri_oneri_e_spese_deducibili','contributi_previdenza_complementare']
         totale_oneri_deducibili_mensile = round_(sum(person(deduzione, period) for deduzione in tipi_deduzione),2)
         return np.array(totale_oneri_deducibili_mensile)

@@ -64,7 +64,6 @@ class detrazioni_per_figli_a_carico_teorica(Variable):
         detrazione_per_numero_figli_maggiore_tre_anni_a_carico = numero_figli_maggiore_tre_anni_a_carico * parameter(period).imposte.IRPEF.detrazioni.detrazioni_carichi_famigliari.detrazioni_tipi_figli.detrazione_figli_eta_maggiore_tre
         detrazione_per_numero_figli_se_possiede_piu_di_3_figli = numero_totale_figli * parameter(period).imposte.IRPEF.detrazioni.detrazioni_carichi_famigliari.detrazioni_tipi_figli.detrazione_aggiuntiva_per_figlio_dopo_terzo
         detrazione_per_numero_figli_maggiore_disabili_a_carico = numero_figli_maggiore_disabili_a_carico * parameter(period).imposte.IRPEF.detrazioni.detrazioni_carichi_famigliari.detrazioni_tipi_figli.detrazione_figli_handicap
-
         return detrazione_per_numero_figli_inferiore_tre_anni_a_carico + detrazione_per_numero_figli_maggiore_tre_anni_a_carico + detrazione_per_numero_figli_se_possiede_piu_di_3_figli + detrazione_per_numero_figli_maggiore_disabili_a_carico
 
 
