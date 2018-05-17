@@ -25,7 +25,7 @@ class anno_rata_sulla_detrazione_per_spese_rateizzate_in_precedenza(Variable):
     entity = Persona
     definition_period = YEAR
     label = "Anno della rata da indicare nel rigo RP6 col.1"
-    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
+    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=54"  # Always use the most official source
 
 
 class spese_sanitarie_raetizzate_in_precedenza(Variable):
@@ -34,4 +34,4 @@ class spese_sanitarie_raetizzate_in_precedenza(Variable):
     definition_period = YEAR
     set_input = set_input_divide_by_period
     label = "Spese sanitarie rateizzate in precedenza (Rigo RP6 col.2): Indicare l'importo della rata spettante per quest'anno (reperibile nei modelli dei redditi precedenti)"
-    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
+    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=54"  # Always use the most official source

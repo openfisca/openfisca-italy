@@ -41,7 +41,7 @@ class detrazione_ulteriore_per_figli_a_carico(Variable):
         reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf"  # Always use the most official source
 
         def formula(person,period,parameters):
-            return where (person('numero_figli_a_carico',period),parameters(period).imposte.IRPEF.detrazioni.detrazioni_carichi_famigliari.detrazioni_tipi_figli.ulteriore_detrazione_figli_a_carico,0)
+            return where (person('numero_figli_a_carico',period),parameters(period).imposte.IRPEF.QuadroRN.detrazioni_carichi_famigliari.detrazioni_tipi_figli.ulteriore_detrazione_figli_a_carico,0)
 
 class detrazioni_per_figli_a_carico_teorica(Variable):
     value_type = float
@@ -60,10 +60,10 @@ class detrazioni_per_figli_a_carico_teorica(Variable):
         # if user set that child with disability are more than the total number of child, result that it have a number of son with disabilities like the number of sons
         numero_figli_maggiore_disabili_a_carico =  where ( person('numero_figli_maggiore_disabili_a_carico',period)<=numero_totale_figli, person('numero_figli_maggiore_disabili_a_carico',period),numero_totale_figli )
         # evaluation
-        detrazione_per_numero_figli_inferiore_tre_anni_a_carico = numero_figli_inferiore_tre_anni_a_carico * parameter(period).imposte.IRPEF.detrazioni.detrazioni_carichi_famigliari.detrazioni_tipi_figli.detrazione_figli_eta_minore_tre
-        detrazione_per_numero_figli_maggiore_tre_anni_a_carico = numero_figli_maggiore_tre_anni_a_carico * parameter(period).imposte.IRPEF.detrazioni.detrazioni_carichi_famigliari.detrazioni_tipi_figli.detrazione_figli_eta_maggiore_tre
-        detrazione_per_numero_figli_se_possiede_piu_di_3_figli = numero_totale_figli * parameter(period).imposte.IRPEF.detrazioni.detrazioni_carichi_famigliari.detrazioni_tipi_figli.detrazione_aggiuntiva_per_figlio_dopo_terzo
-        detrazione_per_numero_figli_maggiore_disabili_a_carico = numero_figli_maggiore_disabili_a_carico * parameter(period).imposte.IRPEF.detrazioni.detrazioni_carichi_famigliari.detrazioni_tipi_figli.detrazione_figli_handicap
+        detrazione_per_numero_figli_inferiore_tre_anni_a_carico = numero_figli_inferiore_tre_anni_a_carico * parameter(period).imposte.IRPEF.QuadroRN.detrazioni_carichi_famigliari.detrazioni_tipi_figli.detrazione_figli_eta_minore_tre
+        detrazione_per_numero_figli_maggiore_tre_anni_a_carico = numero_figli_maggiore_tre_anni_a_carico * parameter(period).imposte.IRPEF.QuadroRN.detrazioni_carichi_famigliari.detrazioni_tipi_figli.detrazione_figli_eta_maggiore_tre
+        detrazione_per_numero_figli_se_possiede_piu_di_3_figli = numero_totale_figli * parameter(period).imposte.IRPEF.QuadroRN.detrazioni_carichi_famigliari.detrazioni_tipi_figli.detrazione_aggiuntiva_per_figlio_dopo_terzo
+        detrazione_per_numero_figli_maggiore_disabili_a_carico = numero_figli_maggiore_disabili_a_carico * parameter(period).imposte.IRPEF.QuadroRN.detrazioni_carichi_famigliari.detrazioni_tipi_figli.detrazione_figli_handicap
         return detrazione_per_numero_figli_inferiore_tre_anni_a_carico + detrazione_per_numero_figli_maggiore_tre_anni_a_carico + detrazione_per_numero_figli_se_possiede_piu_di_3_figli + detrazione_per_numero_figli_maggiore_disabili_a_carico
 
 

@@ -11,4 +11,4 @@ class contributi_previdenziali_assistenziali(Variable):
     definition_period = YEAR
     set_input = set_input_divide_by_period
     label = "Contributi previdenziali e assistenziali"
-    reference = "http://www.agenziaentrate.gov.it/wps/content/Nsilib/Nsi/Schede/Comunicazioni/Dati+relativi+ai+contributi+previdenziali+%28dal+2015%29/InfoGen+DatiContributiPrevidenzialidal2015/?page=schedecomunicazioni"  # Always use the most official source
+    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=62"  # Always use the most official source

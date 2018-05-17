@@ -10,4 +10,4 @@ class erogazioni_liberali_a_istituzioni_religiose(Variable):
     definition_period = YEAR
     set_input = set_input_divide_by_period
     label = "Erogazioni liberali a favore di istituzioni religiose"
-    reference = "http://www.fiscooggi.it/normativa-e-prassi/articolo/erogazioni-istituzioni-religiosededucibili-se-quietanzate-dallente"  # Always use the most official source
+    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=63"  # Always use the most official source

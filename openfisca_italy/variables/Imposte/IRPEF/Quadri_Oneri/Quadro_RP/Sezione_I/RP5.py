@@ -32,4 +32,4 @@ class anno_rata_sulla_detrazione_per_spese_veicoli_per_acquisto_cani_guida(Varia
     entity = Persona
     definition_period = YEAR
     label = "Anno della rata da indicare nel rigo RP5 se si e' deciso quest'anno di rateizzare o se l'importo e' stato rateizzato fino a tre anni fa e l'anno corrente e' il quarto"
-    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
+    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=54"  # Always use the most official source

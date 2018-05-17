@@ -3,7 +3,7 @@
   input_variables:
     # Codici
     spese_sanitarie_comprensive_di_franchigia_rigo_RP1: 150
-    spese_patologie_esenti_sostenute_da_familiare: 500
+    spese_patologie_esenti_sostenute_da_familiare: 200
     si_vogliono_rateizzare_le_spese_relative_a_righi_RP1_RP2_RP3: True
     spese_sanitarie_per_familiari_non_a_carico_affetti_da_patologie_esistenti_annue: 200
     spese_sanitarie_per_persone_con_disabilita: 200

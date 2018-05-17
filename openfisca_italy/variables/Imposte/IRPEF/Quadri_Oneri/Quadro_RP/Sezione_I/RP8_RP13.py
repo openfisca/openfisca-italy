@@ -51,7 +51,7 @@ class codice_altra_spesa_rigo_RP8(Variable):
     entity = Persona
     definition_period = YEAR
     label = "Codice di altra spesa indicato nel Rigo RP8 col.1"
-    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
+    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=56"  # Always use the most official source
 
 
 class codice_altra_spesa_rigo_RP9(Variable):
@@ -61,7 +61,7 @@ class codice_altra_spesa_rigo_RP9(Variable):
     entity = Persona
     definition_period = YEAR
     label = "Codice di altra spesa indicato nel Rigo RP9 col.1"
-    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
+    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=56"  # Always use the most official source
 
 
 class codice_altra_spesa_rigo_RP10(Variable):
@@ -71,7 +71,7 @@ class codice_altra_spesa_rigo_RP10(Variable):
     entity = Persona
     definition_period = YEAR
     label = "Codice di altra spesa indicato nel Rigo RP10 col.1"
-    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
+    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=56"  # Always use the most official source
 
 
 class codice_altra_spesa_rigo_RP11(Variable):
@@ -81,7 +81,7 @@ class codice_altra_spesa_rigo_RP11(Variable):
     entity = Persona
     definition_period = YEAR
     label = "Codice di altra spesa indicato nel Rigo RP11 col.1"
-    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
+    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=56"  # Always use the most official source
 
 
 class codice_altra_spesa_rigo_RP12(Variable):
@@ -91,7 +91,7 @@ class codice_altra_spesa_rigo_RP12(Variable):
     entity = Persona
     definition_period = YEAR
     label = "Codice di altra spesa indicato nel Rigo RP12 col.1"
-    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
+    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=56"  # Always use the most official source
 
 
 class codice_altra_spesa_rigo_RP13(Variable):
@@ -101,7 +101,7 @@ class codice_altra_spesa_rigo_RP13(Variable):
     entity = Persona
     definition_period = YEAR
     label = "Codice di altra spesa indicato nel Rigo RP13 col.1"
-    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
+    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=56"  # Always use the most official source
 
 # COLONNE 2 RIGHI RP8-RP13
 
@@ -110,7 +110,7 @@ class importo_altra_spesa_rigo_RP8(Variable):
     entity = Persona
     definition_period = YEAR
     label = "Importo indicato nel Rigo RP8 col.2"
-    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
+    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=56"  # Always use the most official source
 
 
 class importo_altra_spesa_rigo_RP9(Variable):
@@ -118,7 +118,7 @@ class importo_altra_spesa_rigo_RP9(Variable):
     entity = Persona
     definition_period = YEAR
     label = "Importo indicato nel Rigo RP9 col.2"
-    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
+    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=56"  # Always use the most official source
 
 
 class importo_altra_spesa_rigo_RP10(Variable):
@@ -126,7 +126,7 @@ class importo_altra_spesa_rigo_RP10(Variable):
     entity = Persona
     definition_period = YEAR
     label = "Importo indicato nel Rigo RP10 col.2"
-    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
+    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=56"  # Always use the most official source
 
 
 class importo_altra_spesa_rigo_RP11(Variable):
@@ -134,7 +134,7 @@ class importo_altra_spesa_rigo_RP11(Variable):
     entity = Persona
     definition_period = YEAR
     label = "Importo indicato nel Rigo RP11 col.2"
-    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
+    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=56"  # Always use the most official source
 
 
 class importo_altra_spesa_rigo_RP12(Variable):
@@ -142,7 +142,7 @@ class importo_altra_spesa_rigo_RP12(Variable):
     entity = Persona
     definition_period = YEAR
     label = "Importo indicato nel Rigo RP12 col.2"
-    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
+    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=56"  # Always use the most official source
 
 
 class importo_altra_spesa_rigo_RP13(Variable):
@@ -150,7 +150,7 @@ class importo_altra_spesa_rigo_RP13(Variable):
     entity = Persona
     definition_period = YEAR
     label = "Importo indicato nel Rigo RP13 col.2"
-    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
+    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=56"  # Always use the most official source
 
 
 # Esistono al massimo 6 spese RP13-RP8 ognuna delle quali puo' essere assoggettata al 19% o al 26% di detrazioni a seconda del codice
@@ -163,7 +163,7 @@ class altre_spese_che_sono_soggette_a_detrazioni_al_19(Variable):
     definition_period = YEAR
     set_input = set_input_divide_by_period
     label = "Altre spese soggette a detrazione per il 19% (Rigo RP8-Rigo RP13)"
-    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
+    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=56"  # Always use the most official source
 
     def formula(person,period,parameters):
         importo_totale_da_detrarre_altre_spese_al_19 = 0
@@ -184,7 +184,7 @@ class altre_spese_che_sono_soggette_a_detrazioni_al_26(Variable):
     definition_period = YEAR
     set_input = set_input_divide_by_period
     label = "Altre spese soggette a detrazione per il 26% (Rigo RP8-Rigo RP13)"
-    reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
+    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=56"  # Always use the most official source
 
     def formula(person,period,parameters):
         importo_totale_da_detrarre_altre_spese_al_26 = 0
@@ -201,16 +201,16 @@ class altre_spese_che_sono_soggette_a_detrazioni_al_26(Variable):
 
 # variabile particolare utilizzata solo nel calcolo del totale delle spese
 class codice_29_trovato_nelle_altre_spese_da_RP8_a_RP13(Variable):
-        value_type = bool
-        entity = Persona
-        definition_period = YEAR
-        label = "Tra le altre spese nei Righi da RP8 a RP13 c'e' anche il codice 29"
-        reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
+    value_type = bool
+    entity = Persona
+    definition_period = YEAR
+    label = "Tra le altre spese nei Righi da RP8 a RP13 c'e' anche il codice 29"
+    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=56"  # Always use the most official source
 
-        def formula(person,period,parameters):
-            altra_spesa_codice_29_trovata = np.array(False)
-            codici_righi = ['codice_altra_spesa_rigo_RP8','codice_altra_spesa_rigo_RP9','codice_altra_spesa_rigo_RP10',
-            'codice_altra_spesa_rigo_RP11','codice_altra_spesa_rigo_RP12','codice_altra_spesa_rigo_RP13']
-            for codice in codici_righi:
-                altra_spesa_codice_29_trovata = where(altra_spesa_codice_29_trovata,altra_spesa_codice_29_trovata,person(codice,period) == CodiciAltreSpeseDetraibili.codice_29)
-            return altra_spesa_codice_29_trovata
+    def formula(person,period,parameters):
+        altra_spesa_codice_29_trovata = np.array(False)
+        codici_righi = ['codice_altra_spesa_rigo_RP8','codice_altra_spesa_rigo_RP9','codice_altra_spesa_rigo_RP10',
+        'codice_altra_spesa_rigo_RP11','codice_altra_spesa_rigo_RP12','codice_altra_spesa_rigo_RP13']
+        for codice in codici_righi:
+            altra_spesa_codice_29_trovata = where(altra_spesa_codice_29_trovata,altra_spesa_codice_29_trovata,person(codice,period) == CodiciAltreSpeseDetraibili.codice_29)
+        return altra_spesa_codice_29_trovata
