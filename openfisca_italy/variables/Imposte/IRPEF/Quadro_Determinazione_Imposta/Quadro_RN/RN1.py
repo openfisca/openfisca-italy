@@ -4,6 +4,9 @@ from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
 from openfisca_italy.entita import *
 
+# TODO: Inserire reddito complessivo da quello già creato
+
+# Il reddito per detrazione non fa parte del reddito complessivo ma viene utilizzato per il calcolo delle detrazioni, per cui lo inserisco in questo file
 class reddito_per_detrazioni(Variable):
     value_type = float
     entity = Persona
