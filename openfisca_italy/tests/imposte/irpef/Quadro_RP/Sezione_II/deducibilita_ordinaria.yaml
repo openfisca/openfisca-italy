@@ -1,0 +1,17 @@
+- name: Test 1 per vedere se funziona il meccanismo di compilazione rigo RP27
+  period: 2017
+  input_variables:
+    contributi_deducibilita_ordinaria_dedotti_dal_sostituto: 500
+    importo_punto_413_certificazione_unica_per_calcolo_RigoRP27_col_2: 400
+    somme_versate_forme_pensionistiche_per_calcolo_RigoRP27_col_2: 250
+  output_variables:
+    contributi_deducibilita_ordinaria_non_dedotti_dal_sostituto: 650
+
+- name: Test 2 per vedere se funziona il meccanismo di compilazione rigo RP27
+  period: 2017
+  input_variables:
+    contributi_deducibilita_ordinaria_dedotti_dal_sostituto: 7500 # ha superato il limite massimo
+    importo_punto_413_certificazione_unica_per_calcolo_RigoRP27_col_2: 400
+    somme_versate_forme_pensionistiche_per_calcolo_RigoRP27_col_2: 250
+  output_variables:
+    contributi_deducibilita_ordinaria_non_dedotti_dal_sostituto: 0

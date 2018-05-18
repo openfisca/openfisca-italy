@@ -1,0 +1,5 @@
+description: Importo massimo deducibile per Rigo RP28 Contributi versati da lavoratori di prima occupazione
+unit: currency
+values:
+  2010-01-01:
+    value: 5164.57
