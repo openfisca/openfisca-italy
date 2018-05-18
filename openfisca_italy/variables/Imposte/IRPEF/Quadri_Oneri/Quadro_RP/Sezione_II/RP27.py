@@ -31,7 +31,6 @@ class contributi_deducibilita_ordinaria_non_dedotti_dal_sostituto(Variable):
     reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=66"  # Always use the most official source
 
     def formula(person,period,parameters):
-        # vedere se uno dei righi tra RP27 e RP31 e' stato compilato
         # restituire il minor importo tra
         oneri_di_previdenza_complementare_per_i_quali_si_chiede_la_deduzione = person('importo_punto_413_certificazione_unica',period) + person('somme_versate_forme_pensionistiche_per_calcolo_RigoRP27_col_2',period)
         limite_deducibilita_per_contributi_deducibilita_ordinaria_dedotti_dal_sostituto = parameters(period).imposte.IRPEF.QuadroRP.Sezione_II.limite_importo_deducibile_contributi_deducibilita_ordinaria - person('contributi_deducibilita_ordinaria_dedotti_dal_sostituto',period)

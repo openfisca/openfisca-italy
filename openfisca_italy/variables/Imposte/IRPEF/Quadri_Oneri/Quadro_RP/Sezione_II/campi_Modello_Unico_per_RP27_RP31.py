@@ -41,6 +41,23 @@ class importo_punto_422_certificazione_unica(Variable):
     reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=66"  # Always use the most official source
 
 
+class importo_punto_423_certificazione_unica(Variable):
+    value_type = float
+    entity = Persona
+    definition_period = YEAR
+    set_input = set_input_divide_by_period
+    label = "Punto 423 della Certificazione Unica 2017 "
+    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=66"  # Always use the most official source
+
+
+class importo_punto_414_certificazione_unica(Variable):
+    value_type = float
+    entity = Persona
+    definition_period = YEAR
+    set_input = set_input_divide_by_period
+    label = "Punto 414 della Certificazione Unica 2017 "
+    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=66"  # Always use the most official source
+
 class importo_punto_413_certificazione_unica(Variable):
     value_type = float
     entity = Persona

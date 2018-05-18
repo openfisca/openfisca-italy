@@ -15,7 +15,7 @@ class oneri_deducibili_totali_mensili(Variable):
 
     def formula(person, period, parameters):
         tipi_deduzione = ['contributi_previdenziali_assistenziali','assegno_periodico_al_coniuge','contributi_addetti_servizi_domestici_e_familiari',
-        'erogazioni_liberali_a_istituzioni_religiose','spese_mediche_e_assistenza_disabili','altri_oneri_e_spese_deducibili','contributi_previdenza_complementare']
+        'erogazioni_liberali_a_istituzioni_religiose','spese_mediche_e_assistenza_disabili','altri_oneri_e_spese_deducibili'] #TODO inserire contributi previdenza complementare
         totale_oneri_deducibili_mensile = round_(sum(person(deduzione, period,options=[DIVIDE]) for deduzione in tipi_deduzione),2)
         return np.array(totale_oneri_deducibili_mensile)
 
@@ -28,6 +28,6 @@ class oneri_deducibili_totali_annuale(Variable):
     reference = "http://www.aclimperia.it/documenti/la_dichiarazione_dei_redditi.pdf"  # Some variables represent quantities used in economic models, and not defined by law. Always give the source of your definition.
     def formula(person, period, parameters):
         tipi_deduzione = ['contributi_previdenziali_assistenziali','assegno_periodico_al_coniuge','contributi_addetti_servizi_domestici_e_familiari',
-        'erogazioni_liberali_a_istituzioni_religiose','spese_mediche_e_assistenza_disabili','altri_oneri_e_spese_deducibili','contributi_previdenza_complementare']
+        'erogazioni_liberali_a_istituzioni_religiose','spese_mediche_e_assistenza_disabili','altri_oneri_e_spese_deducibili']#TODO inserire contributi previdenza complementare
         totale_oneri_deducibili_mensile = round_(sum(person(deduzione, period) for deduzione in tipi_deduzione),2)
         return np.array(totale_oneri_deducibili_mensile)

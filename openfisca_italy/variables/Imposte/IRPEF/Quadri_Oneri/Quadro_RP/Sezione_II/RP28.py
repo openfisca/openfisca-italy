@@ -31,6 +31,7 @@ class contributi_per_lavoratori_prima_occupazione_non_dedotti_dal_sostituto(Vari
         reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=66"  # Always use the most official source
 
         def formula(person,period,parameters):
+
                 # vedere se uno dei righi tra RP27 e RP31 e' stato compilato
                 importo_punto_413_certificazione_unica = person('importo_punto_413_certificazione_unica',period)
                 operazione_limite_deducibilita = parameters(period).imposte.IRPEF.QuadroRP.Sezione_II.limite_importo_deducibile_contributi_versati_lavoratori_prima_occupazione - person('contributi_per_lavoratori_prima_occupazione_dedotti_dal_sostituto',period)
