@@ -14,7 +14,7 @@ class contributi_fondo_pensione_negoziale_dipendenti_pubblici_dedotti_dal_sostit
         reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=66"  # Always use the most official source
 
         def formula(person,period,parameters):
-            codice_campo_411_valido = person('codice_inserito_campo_411_modello_unico',period) == 5
+            codice_campo_411_valido = person('codice_inserito_campo_411_modello_unico',period) == 2
             return where (codice_campo_411_valido, person('importo_punto_412_certificazione_unica',period) , np.array(0))
 
 
@@ -23,23 +23,154 @@ class contributi_fondo_pensione_negoziale_dipendenti_pubblici_quota_TFR(Variable
         entity = Persona
         definition_period = YEAR
         set_input = set_input_divide_by_period
-        label = "Indicare l’importo dela quota TFR per Contributi Fondo pensione negoziale dipendenti pubblici che il sostituto d’imposta ha dedotto dall’imponibile, relativi al punto 411 codice 4. della certificazione Unica. Rigo RP31 col.2"
+        label = "Indicare l’importo dela quota TFR per Contributi Fondo pensione negoziale dipendenti pubblici, relativi al punto 411 codice 4. della certificazione Unica. Rigo RP31 col.2"
         reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=66"  # Always use the most official source
 
         def formula(person,period,parameters):
-            codice_campo_411_valido = person('codice_inserito_campo_411_modello_unico',period) == 5
+            codice_campo_411_valido = person('codice_inserito_campo_411_modello_unico',period) == 2
             return where (codice_campo_411_valido, person('importo_punto_414_certificazione_unica',period) , np.array(0))
-
+# Column 3 section
 # La classe contributi_fondo_pensione_negoziale_dipendenti_pubblici_non_dedotti_dal_sostituto segue un prospetto nelle appendici,essendo complessa sara' composta da più variabili
 class contributi_fondo_pensione_negoziale_dipendenti_pubblici_non_dedotti_dal_sostituto(Variable):
         value_type = float
         entity = Persona
         definition_period = YEAR
         set_input = set_input_divide_by_period
-        label = "Indicare l’importo dei contributi per Contributi Fondo pensione negoziale dipendenti pubblici che il sostituto d’imposta non ha dedotto dall’imponibile, relativi al punto 411 codice 4. della certificazione Unica. Rigo RP31 col.1"
-        reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=66"  # Always use the most official source
+        label = "Indicare l’importo dei contributi per Contributi Fondo pensione negoziale dipendenti pubblici che il sostituto d’imposta non ha dedotto dall’imponibile, relativi al punto 411 codice 4. della certificazione Unica. Rigo RP31 col.3"
+        reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=120"  # Always use the most official source
 
         def formula(person,period,parameters):
             # controllare che sia stato compilato uno dei vari righi
-            codice_campo_411_valido = person('codice_inserito_campo_411_modello_unico',period) == 5
-            return where (codice_campo_411_valido, person('importo_punto_412_certificazione_unica',period) , np.array(0))
+            codice_campo_411_valido = person('codice_inserito_campo_411_modello_unico',period) == 2
+            return where (codice_campo_411_valido, person('casella_11_prospetto_compilazione_Rigo_RP31',period) , np.array(0))
+
+ #prospetto
+class casella_1_prospetto_compilazione_Rigo_RP31(Variable):
+     value_type = float
+     entity = Persona
+     definition_period = YEAR
+     label = "Casella 1 prospetto compilazione rigo rp31"
+     reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=120"  # Always use the most official source
+
+     def formula(person,period,parameters):
+        return person('contributi_fondo_pensione_negoziale_dipendenti_pubblici_dedotti_dal_sostituto',period)
+
+
+class casella_2_prospetto_compilazione_Rigo_RP31(Variable):
+        value_type = float
+        entity = Persona
+        definition_period = YEAR
+        label = "Casella 2 prospetto compilazione rigo rp31"
+        reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=120"  # Always use the most official source
+
+        def formula(person,period,parameters):
+            return person('contributi_fondo_pensione_negoziale_dipendenti_pubblici_quota_TFR',period)
+
+
+class casella_3_prospetto_compilazione_Rigo_RP31(Variable):
+        value_type = float
+        entity = Persona
+        definition_period = YEAR
+        label = "Casella 3 prospetto compilazione rigo rp31"
+        reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=120"  # Always use the most official source
+
+        def formula(person,period,parameters):
+            # caso 1
+            casella_411_certificazione_unica_compilata = not_(person('codice_inserito_campo_411_modello_unico',period) == 5) #nessun codice
+            importo_punto_413_certificazione_unica = person('importo_punto_413_certificazione_unica',period)
+            # caso 2
+            nella_casella_411_certificazione_unica_compilata_presente_codice_uno = person('codice_inserito_campo_411_modello_unico',period) == 4
+            codice_inserito_campo_421_modello_unico = not_(person('importo_punto_421_certificazione_unica',period) == 0)
+            importo_punto_423_certificazione_unica = person('importo_punto_423_certificazione_unica',period)
+            return select([nella_casella_411_certificazione_unica_compilata_presente_codice_uno*codice_inserito_campo_421_modello_unico,
+                            casella_411_certificazione_unica_compilata],
+                            [importo_punto_413_certificazione_unica-importo_punto_423_certificazione_unica,
+                            importo_punto_413_certificazione_unica])
+
+
+class casella_4_prospetto_compilazione_Rigo_RP31(Variable):
+        value_type = float
+        entity = Persona
+        definition_period = YEAR
+        label = "Casella  4 prospetto compilazione rigo rp31"
+        reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=120"  # Always use the most official source
+        def formula(person,period,parameters):
+            return person('reddito_complessivo',period)
+
+
+class casella_5_prospetto_compilazione_Rigo_RP31(Variable):
+        value_type = float
+        entity = Persona
+        definition_period = YEAR
+        label = "Casella 5 prospetto compilazione rigo rp31"
+        reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=120"  # Always use the most official source
+        def formula(person,period,parameters):
+            return person('reddito_lavoro_dipendente_annuale',period)
+
+
+class casella_6_prospetto_compilazione_Rigo_RP31(Variable):
+        value_type = float
+        entity = Persona
+        definition_period = YEAR
+        label = "Casella 6 prospetto compilazione rigo rp31"
+        reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=120"  # Always use the most official source
+
+        def formula(person,period,parameters):
+            minimo_colonna_2_colonna_5 = min_(person('casella_5_prospetto_compilazione_Rigo_RP31',period),(2*person('casella_2_prospetto_compilazione_Rigo_RP31',period)))
+            importo = minimo_colonna_2_colonna_5 - person('casella_1_prospetto_compilazione_Rigo_RP31',period)
+            return where(importo>0,importo,np.array(0))
+
+
+class casella_7_prospetto_compilazione_Rigo_RP31(Variable):
+        value_type = float
+        entity = Persona
+        definition_period = YEAR
+        label = "Casella 7 prospetto compilazione rigo rp31"
+        reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=120"  # Always use the most official source
+        def formula(person,period,parameters):
+            return person('casella_4_prospetto_compilazione_Rigo_RP31',period) - person('casella_5_prospetto_compilazione_Rigo_RP31',period)
+
+
+class casella_8_prospetto_compilazione_Rigo_RP31(Variable):
+        value_type = float
+        entity = Persona
+        definition_period = YEAR
+        label = "Casella 8 prospetto compilazione rigo rp31"
+        reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=120"  # Always use the most official source
+        def formula(person,period,parameters):
+            return person('casella_6_prospetto_compilazione_Rigo_RP31',period) + person('casella_7_prospetto_compilazione_Rigo_RP31',period)
+
+
+class casella_9_prospetto_compilazione_Rigo_RP31(Variable):
+        value_type = float
+        entity = Persona
+        definition_period = YEAR
+        label = "Casella 9 prospetto compilazione rigo rp31"
+        reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=120"  # Always use the most official source
+        def formula(person,period,parameters):
+            return parameters(period).imposte.IRPEF.QuadroRP.Sezione_II.limite_importo_deducibile_contributi_versati_fondi_pensione_negoziali_dip_pubblici - person('casella_1_prospetto_compilazione_Rigo_RP31',period)
+
+
+class casella_10_prospetto_compilazione_Rigo_RP31(Variable):
+        value_type = float
+        entity = Persona
+        definition_period = YEAR
+        label = "Casella 10 prospetto compilazione rigo rp31"
+        reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=120"  # Always use the most official source
+        def formula(person,period,parameters):
+            return (person('reddito_di_riferimento_per_agevolazioni_fiscali',period)*0.12) - person('casella_1_prospetto_compilazione_Rigo_RP31',period)
+
+
+class casella_11_prospetto_compilazione_Rigo_RP31(Variable):
+        value_type = float
+        entity = Persona
+        definition_period = YEAR
+        label = "Casella 11 prospetto compilazione rigo rp31"
+        reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=120"  # Always use the most official source
+        def formula(person,period,parameters):
+            minimo = person('casella_3_prospetto_compilazione_Rigo_RP31',period) #prima casella da controllare
+            caselle_da_controllare = ['casella_8_prospetto_compilazione_Rigo_RP31',
+                                    'casella_9_prospetto_compilazione_Rigo_RP31','casella_10_prospetto_compilazione_Rigo_RP31']
+            for caselle in caselle_da_controllare:
+                minimo = where(minimo<person(caselle,period),minimo,person(caselle,period))
+            return minimo
