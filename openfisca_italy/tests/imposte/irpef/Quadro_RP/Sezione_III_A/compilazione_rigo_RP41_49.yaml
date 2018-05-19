@@ -1,0 +1,11 @@
+- name: Test per vedere se funziona la compilazione del rigo RP41
+  period: 2017
+  input_variables:
+    RP41_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2008
+    RP41_codice_2012_2013_2017_antisismico: codice_due
+    RP41_interventi_particolari: codice_uno
+    RP41_acquisto_ereditarieta_donazione: codice_quattro
+    RP41_Anno_rata: codice_uno
+    RP41_importo_spesa: 1000
+  output_variables:
+    RP41_importo_rata: 100

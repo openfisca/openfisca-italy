@@ -5,7 +5,6 @@ from openfisca_core.model_api import *
 from openfisca_italy.entita import *
 # import numpt
 import numpy as np
-# TODO: Inserire reddito complessivo da quello già creato
 
 class reddito_di_riferimento_per_agevolazioni_fiscali(Variable):
     value_type = float
