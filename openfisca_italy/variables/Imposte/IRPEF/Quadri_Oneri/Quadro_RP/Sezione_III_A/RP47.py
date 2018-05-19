@@ -5,7 +5,7 @@ from openfisca_core.model_api import *
 from openfisca_italy.entita import *
 
 
-class TipiSpesaSostenutaPerRecuperoPatrimonioEdilizioInterventiAntisismici(Enum):
+class RP47TipiSpesaSostenutaPerRecuperoPatrimonioEdilizioInterventiAntisismici(Enum):
     nessun_codice = u"Non è stata sostenuta nessuna spesa per interventi di recupero del patrimonio edilizio e misure antisismiche "
     codice_due = u"Spese sostenute dal 1° gennaio al 25 giugno 2012 (detrazione del 36%)"
     codice_tre = u"Spese sostenute dal 26 giugno al 31 dicembre 2012 (detrazione del 50%)"
@@ -19,18 +19,18 @@ class TipiSpesaSostenutaPerRecuperoPatrimonioEdilizioInterventiAntisismici(Enum)
     codice_undici =  u"Spese sostenute dal 1° gennaio 2017 al 31 dicembre 2017 per l’acquisto di unità immobiliari facenti parte di edifici ricostruiti ricadenti nelle zone classificate a rischio sismico 1 ai sensi dell’ordinanza del Presidente del Consiglio dei ministri n. 3519 del 28 aprile 2006, pubblicata nella Gazzetta Ufficiale n. 108 dell’11 maggio 2006, la cui ricostruzione ha comportato il passaggio a due classi di rischio inferiore (detrazione dell’85%)"
 
 
-class TipiInterventiParticolariPerRecuperoPatrimonioEdilizioInterventiAntisismici(Enum):
+class RP47TipiInterventiParticolariPerRecuperoPatrimonioEdilizioInterventiAntisismici(Enum):
     nessun_codice = u"Non è stata sostenuta nessuna spesa per interventi particolari di recupero del patrimonio edilizio e misure antisismiche "
     codice_uno = u"Nel caso in cui le spese relative ad un singolo intervento siano state sostenute in più anni. Per calcolare il limite massimo di spesa detraibile occorre tenere conto delle spese sostenute negli anni precedenti"
     codice_quattro = u"-nel caso di spese sostenute per l’acquisto o assegnazione di immobili che fanno parte di edifici ristrutturati. La detrazione spetta su un importo pari al 25 per cento del prezzo di vendita o di assegnazione dell’immobile"
 
 
-class TipiCodiceEreditarietaInterventiDonazioniPerRecuperoPatrimonioEdilizioInterventiAntisismici(Enum):
+class RP47TipiCodiceEreditarietaInterventiDonazioniPerRecuperoPatrimonioEdilizioInterventiAntisismici(Enum):
     nessun_codice = u"Non è stato indicato come il soggetto abbia ricevuto l'immobile "
     codice_quattro = u"Nel caso in cui il contribuente, nell’anno 2017 ha ereditato, acquistato o ricevuto in donazione l’immobile da un soggetto che aveva ripartito la spesa, sostenuta in anni precedenti, in 10 rate."
 
 
-class NumeriRateInterventiDonazioniPerRecuperoPatrimonioEdilizioInterventiAntisismici(Enum):
+class RP47NumeriRateInterventiDonazioniPerRecuperoPatrimonioEdilizioInterventiAntisismici(Enum):
         nessun_codice = u"Non è stato inserito il numero della rata"
         codice_uno = u"Primo anno che il contribuente utilizza della rata"
         codice_due = u"Secondo anno che il contribuente utilizza della rata"
@@ -44,75 +44,75 @@ class NumeriRateInterventiDonazioniPerRecuperoPatrimonioEdilizioInterventiAntisi
         codice_dieci = u"Decimo anno che il contribuente utilizza della rata"
 
 
-class RP41_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici(Variable):
+class RP47_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici(Variable):
     value_type = int
     entity = Persona
     definition_period = YEAR # tra il 2008 e il 2017
-    label = u"RP41 Col.1 - Indicare l’anno in cui sono state sostenute le spese per interventi di recupero del patrimonio edilizio e misure antisismiche"
+    label = u"RP47 Col.1 - Indicare l’anno in cui sono state sostenute le spese per interventi di recupero del patrimonio edilizio e misure antisismiche"
 
 
-class RP41_codice_2012_2013_2017_antisismico(Variable):
+class RP47_codice_2012_2013_2017_antisismico(Variable):
     value_type = Enum
-    possible_values = TipiSpesaSostenutaPerRecuperoPatrimonioEdilizioInterventiAntisismici
-    default_value = TipiSpesaSostenutaPerRecuperoPatrimonioEdilizioInterventiAntisismici.nessun_codice
+    possible_values = RP47TipiSpesaSostenutaPerRecuperoPatrimonioEdilizioInterventiAntisismici
+    default_value = RP47TipiSpesaSostenutaPerRecuperoPatrimonioEdilizioInterventiAntisismici.nessun_codice
     entity = Persona
     definition_period = YEAR
-    label = u"RP41 Col.2 - Indicare codice della spesa"
+    label = u"RP47 Col.2 - Indicare codice della spesa"
 
 
-class RP41_codice_fiscale(Variable):
+class RP47_codice_fiscale(Variable):
     value_type = str
     entity = Persona
     definition_period = YEAR
-    label = u"RP41 Col.3 - Indicare il codice fiscale relativo a spese per interventi di recupero del patrimonio edilizio e misure antisismiche"
+    label = u"RP47 Col.3 - Indicare il codice fiscale relativo a spese per interventi di recupero del patrimonio edilizio e misure antisismiche"
 
 
-class RP41_interventi_particolari(Variable):
+class RP47_interventi_particolari(Variable):
     value_type = Enum
-    possible_values = TipiInterventiParticolariPerRecuperoPatrimonioEdilizioInterventiAntisismici
-    default_value = TipiInterventiParticolariPerRecuperoPatrimonioEdilizioInterventiAntisismici.nessun_codice
+    possible_values = RP47TipiInterventiParticolariPerRecuperoPatrimonioEdilizioInterventiAntisismici
+    default_value = RP47TipiInterventiParticolariPerRecuperoPatrimonioEdilizioInterventiAntisismici.nessun_codice
     entity = Persona
     definition_period = YEAR
-    label = u"RP41 Col.4 - Indicare codice intervento particolare"
+    label = u"RP47 Col.4 - Indicare codice intervento particolare"
 
 
-class RP41_acquisto_ereditarieta_donazione(Variable):
+class RP47_acquisto_ereditarieta_donazione(Variable):
     value_type = Enum
-    possible_values = TipiCodiceEreditarietaInterventiDonazioniPerRecuperoPatrimonioEdilizioInterventiAntisismici
-    default_value = TipiCodiceEreditarietaInterventiDonazioniPerRecuperoPatrimonioEdilizioInterventiAntisismici.nessun_codice
+    possible_values = RP47TipiCodiceEreditarietaInterventiDonazioniPerRecuperoPatrimonioEdilizioInterventiAntisismici
+    default_value = RP47TipiCodiceEreditarietaInterventiDonazioniPerRecuperoPatrimonioEdilizioInterventiAntisismici.nessun_codice
     entity = Persona
     definition_period = YEAR
-    label = u"RP41 Col.5 - Indicare codice acquisto eraditarietà donazione"
+    label = u"RP47 Col.5 - Indicare codice acquisto eraditarietà donazione"
 
 
-class RP41_Anno_rata(Variable):
+class RP47_Anno_rata(Variable):
     value_type = Enum
-    possible_values = NumeriRateInterventiDonazioniPerRecuperoPatrimonioEdilizioInterventiAntisismici
-    default_value = NumeriRateInterventiDonazioniPerRecuperoPatrimonioEdilizioInterventiAntisismici.nessun_codice
+    possible_values = RP47NumeriRateInterventiDonazioniPerRecuperoPatrimonioEdilizioInterventiAntisismici
+    default_value = RP47NumeriRateInterventiDonazioniPerRecuperoPatrimonioEdilizioInterventiAntisismici.nessun_codice
     entity = Persona
     definition_period = YEAR
-    label = u"RP41 Col.8 - indicare il numero della rata che il contribuente utilizza per il 2017. Per le spese sostenute nel 2017 va obbligatoriamente indicato il numero ‘1’"
+    label = u"RP47 Col.8 - indicare il numero della rata che il contribuente utilizza per il 2017. Per le spese sostenute nel 2017 va obbligatoriamente indicato il numero ‘1’"
 
 
-class RP41_importo_spesa(Variable):
+class RP47_importo_spesa(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
-    label = u"RP41 Col.9 -indicare l’intero importo delle spese sostenute nell’anno riportato in colonna 1"
+    label = u"RP47 Col.9 -indicare l’intero importo delle spese sostenute nell’anno riportato in colonna 1"
 
 
-class RP41_importo_rata(Variable):
+class RP47_importo_rata(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
-    label = u"RP41 Col.10 -indicare l’importo di ciascuna rata delle spese sostenute. Tale importo si ottiene dividendo l’ammontare di colonna 9 (spesa sostenuta nei limiti sopra indicati), per dieci"
+    label = u"RP47 Col.10 -indicare l’importo di ciascuna rata delle spese sostenute. Tale importo si ottiene dividendo l’ammontare di colonna 9 (spesa sostenuta nei limiti sopra indicati), per dieci"
 
     def formula(person,period,parameters):
-         return person('RP41_importo_spesa',period)/10.0
+         return person('RP47_importo_spesa',period)/10.0
 
 
-class RP41_numero_ordine(Variable):
+class RP47_numero_ordine(Variable):
     value_type = str
     entity = Persona
     definition_period = YEAR
-    label = u"RP41 Col.11 -Nella presente colonna 11 va indicato un numero progressivo per identificare l’immobile oggetto degli interventi di ristrutturazione. Riportare lo stesso numero anche nella colonna 1 della seguente sezione III-B."
+    label = u"RP47 Col.11 -Nella presente colonna 11 va indicato un numero progressivo per identificare l’immobile oggetto degli interventi di ristrutturazione. Riportare lo stesso numero anche nella colonna 1 della seguente sezione III-B."

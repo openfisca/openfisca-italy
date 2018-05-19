@@ -1,0 +1,87 @@
+- name: Test per vedere se funziona la compilazione del rigo RP41
+  period: 2017
+  input_variables:
+    RP41_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2008
+    RP41_codice_2012_2013_2017_antisismico: codice_due
+    RP41_interventi_particolari: codice_uno
+    RP41_acquisto_ereditarieta_donazione: codice_quattro
+    RP41_Anno_rata: codice_uno
+    RP41_importo_spesa: 1000
+  output_variables:
+    RP41_importo_rata: 100
+
+- name: Test per vedere se funziona la compilazione del rigo RP42
+  period: 2017
+  input_variables:
+    RP42_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2009
+    RP42_codice_2012_2013_2017_antisismico: codice_due
+    RP42_interventi_particolari: codice_uno
+    RP42_acquisto_ereditarieta_donazione: codice_quattro
+    RP42_Anno_rata: codice_uno
+    RP42_importo_spesa: 1000
+  output_variables:
+    RP42_importo_rata: 100
+
+- name: Test per vedere se funziona la compilazione del rigo RP43
+  period: 2017
+  input_variables:
+    RP43_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2009
+    RP43_codice_2012_2013_2017_antisismico: codice_due
+    RP43_interventi_particolari: codice_uno
+    RP43_acquisto_ereditarieta_donazione: codice_quattro
+    RP43_Anno_rata: codice_uno
+    RP43_importo_spesa: 1000
+  output_variables:
+    RP43_importo_rata: 100
+
+
+- name: Test per vedere se funziona la compilazione del rigo RP44
+  period: 2017
+  input_variables:
+    RP44_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2009
+    RP44_codice_2012_2013_2017_antisismico: codice_due
+    RP44_interventi_particolari: codice_uno
+    RP44_acquisto_ereditarieta_donazione: codice_quattro
+    RP44_Anno_rata: codice_uno
+    RP44_importo_spesa: 1000
+  output_variables:
+    RP44_importo_rata: 100
+
+
+- name: Test per vedere se funziona la compilazione del rigo RP45
+  period: 2017
+  input_variables:
+    RP45_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2009
+    RP45_codice_2012_2013_2017_antisismico: codice_due
+    RP45_interventi_particolari: codice_uno
+    RP45_acquisto_ereditarieta_donazione: codice_quattro
+    RP45_Anno_rata: codice_uno
+    RP45_importo_spesa: 1000
+  output_variables:
+    RP45_importo_rata: 100
+
+
+- name: Test per vedere se funziona la compilazione del rigo RP46
+  period: 2017
+  input_variables:
+    RP46_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2009
+    RP46_codice_2012_2013_2017_antisismico: codice_due
+    RP46_interventi_particolari: codice_uno
+    RP46_acquisto_ereditarieta_donazione: codice_quattro
+    RP46_Anno_rata: codice_uno
+    RP46_importo_spesa: 1000
+  output_variables:
+    RP46_importo_rata: 100
+
+
+- name: Test per vedere se funziona la compilazione del rigo RP47
+  period: 2017
+  input_variables:
+    RP47_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2009
+    RP47_codice_2012_2013_2017_antisismico: codice_due
+    RP47_interventi_particolari: codice_uno
+    RP47_acquisto_ereditarieta_donazione: codice_quattro
+    RP47_Anno_rata: codice_uno
+    RP47_importo_spesa: 1000
+  output_variables:
+    RP47_importo_rata: 100
