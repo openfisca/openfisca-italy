@@ -1,0 +1,7 @@
+- name: Test per vedere se funziona il meccanismo di compilazione del rigo RP33
+  period: 2017
+  input_variables:
+    somme_restituite_anno_Rigo_RP33: 1500
+    residuo_precedente_dichiarazione_Rigo_RP33: 1200
+  output_variables:
+    totale_restuzione_somme_al_soggetto_erogatore_rigo_RP33: 2700

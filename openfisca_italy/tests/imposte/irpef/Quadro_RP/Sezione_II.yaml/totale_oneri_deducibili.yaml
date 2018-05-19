@@ -1,0 +1,22 @@
+- name: Test per vedere se gli oneri deducibili sono inclusi nel totale nella maniera giusta
+  period: 2017
+  input_variables:
+    contributi_previdenziali_assistenziali: 150
+    assegno_periodico_al_coniuge: 150
+    contributi_addetti_servizi_domestici_e_familiari: 150
+    erogazioni_liberali_a_istituzioni_religiose: 150
+    spese_mediche_e_assistenza_disabili: 150
+    altri_oneri_e_spese_deducibili: 150
+    contributi_deducibilita_ordinaria_non_dedotti_dal_sostituto: 150
+    contributi_per_lavoratori_prima_occupazione_non_dedotti_dal_sostituto: 150
+    contributi_per_fondi_in_squilibrio_finanziario_non_dedotti_dal_sostituto: 150
+    contributi_versati_per_familiari_a_carico_non_dedotti_dal_sostituto: 150
+    contributi_fondo_pensione_negoziale_dipendenti_pubblici_non_dedotti_dal_sostituto: 150
+    totale_importo_deducibile_abitazione_data_in_locazione: 150
+    totale_restuzione_somme_al_soggetto_erogatore_rigo_RP33: 150
+    totale_importo_RPF_2018_Rigo_RP34: 150
+    importo_residuo_RPF_2017_Rigo_RP34: 150
+    importo_residuo_RPF_2016_Rigo_RP34: 150
+    importo_residuo_RPF_2015_Rigo_RP34: 150
+  output_variables:
+    RP_39_totale_oneri_deducibili: 2550
