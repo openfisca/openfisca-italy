@@ -1,0 +1,216 @@
+- name: Test per vedere se funziona la compilazione del rigo RP48 sezione 36
+  period: 2017
+  input_variables:
+    RP41_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2012
+    RP42_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2012
+    RP43_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2012
+    RP44_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2012
+    RP45_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2012
+    RP46_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2015
+    RP47_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2012
+
+    RP41_codice_2012_2013_2017_antisismico: codice_due
+    RP42_codice_2012_2013_2017_antisismico: codice_quattro
+    RP43_codice_2012_2013_2017_antisismico: codice_due
+    RP44_codice_2012_2013_2017_antisismico: codice_due
+    RP45_codice_2012_2013_2017_antisismico: codice_due
+    RP46_codice_2012_2013_2017_antisismico: codice_due
+    RP47_codice_2012_2013_2017_antisismico: codice_due
+
+    RP41_importo_rata: 1500
+    RP42_importo_rata: 1500
+    RP43_importo_rata: 1500
+    RP44_importo_rata: 1500
+    RP45_importo_rata: 1500
+    RP46_importo_rata: 1500
+    RP47_importo_rata: 1500
+
+  output_variables:
+    importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_36: 7500
+
+- name: Test per vedere se funziona la compilazione del rigo RP48 sezione 50
+  period: 2017
+  input_variables:
+    RP41_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2012
+    RP42_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2012
+    RP43_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2012
+    RP44_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2017
+    RP45_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2012
+    RP46_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2015
+    RP47_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2012
+
+    RP41_codice_2012_2013_2017_antisismico: nessun_codice
+    RP42_codice_2012_2013_2017_antisismico: codice_tre
+    RP43_codice_2012_2013_2017_antisismico: nessun_codice
+    RP44_codice_2012_2013_2017_antisismico: codice_cinque
+    RP45_codice_2012_2013_2017_antisismico: nessun_codice
+    RP46_codice_2012_2013_2017_antisismico: nessun_codice
+    RP47_codice_2012_2013_2017_antisismico: nessun_codice
+
+    RP41_importo_rata: 1500
+    RP42_importo_rata: 1500
+    RP43_importo_rata: 1500
+    RP44_importo_rata: 1500
+    RP45_importo_rata: 1500
+    RP46_importo_rata: 1500
+    RP47_importo_rata: 1500
+
+  output_variables:
+    importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_50: 3000
+
+
+
+- name: Test per vedere se funziona la compilazione del rigo RP48 sezione 65
+  period: 2017
+  input_variables:
+    RP41_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2013
+    RP42_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2012
+    RP43_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2012
+    RP44_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2016
+    RP45_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2012
+    RP46_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2015
+    RP47_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2012
+
+    RP41_codice_2012_2013_2017_antisismico: codice_quattro
+    RP42_codice_2012_2013_2017_antisismico: nessun_codice
+    RP43_codice_2012_2013_2017_antisismico: nessun_codice
+    RP44_codice_2012_2013_2017_antisismico: codice_quattro
+    RP45_codice_2012_2013_2017_antisismico: nessun_codice
+    RP46_codice_2012_2013_2017_antisismico: codice_quattro
+    RP47_codice_2012_2013_2017_antisismico: nessun_codice
+
+    RP41_importo_rata: 1500
+    RP42_importo_rata: 1500
+    RP43_importo_rata: 1500
+    RP44_importo_rata: 1500
+    RP45_importo_rata: 1500
+    RP46_importo_rata: 1500
+    RP47_importo_rata: 1500
+
+  output_variables:
+    importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_65: 4500
+
+
+
+- name: Test per vedere se funziona la compilazione del rigo RP48 sezione 70
+  period: 2017
+  input_variables:
+    RP41_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2013
+    RP42_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2012
+    RP43_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2017
+    RP44_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2016
+    RP45_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2017
+    RP46_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2015
+    RP47_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2017
+
+    RP41_codice_2012_2013_2017_antisismico: codice_quattro
+    RP42_codice_2012_2013_2017_antisismico: nessun_codice
+    RP43_codice_2012_2013_2017_antisismico: codice_sei
+    RP44_codice_2012_2013_2017_antisismico: codice_quattro
+    RP45_codice_2012_2013_2017_antisismico: codice_sei
+    RP46_codice_2012_2013_2017_antisismico: codice_quattro
+    RP47_codice_2012_2013_2017_antisismico: codice_quattro
+
+    RP41_importo_rata: 1500
+    RP42_importo_rata: 1500
+    RP43_importo_rata: 1500
+    RP44_importo_rata: 1500
+    RP45_importo_rata: 1500
+    RP46_importo_rata: 1500
+    RP47_importo_rata: 1500
+
+  output_variables:
+    importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_70: 3000
+
+
+- name: Test per vedere se funziona la compilazione del rigo RP48 sezione 75
+  period: 2017
+  input_variables:
+    RP41_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2017
+    RP42_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2017
+    RP43_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2017
+    RP44_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2017
+    RP45_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2017
+    RP46_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2017
+    RP47_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2017
+
+    RP41_codice_2012_2013_2017_antisismico: codice_quattro
+    RP42_codice_2012_2013_2017_antisismico: codice_sei
+    RP43_codice_2012_2013_2017_antisismico: codice_otto
+    RP44_codice_2012_2013_2017_antisismico: codice_dieci
+    RP45_codice_2012_2013_2017_antisismico: codice_dieci
+    RP46_codice_2012_2013_2017_antisismico: codice_quattro
+    RP47_codice_2012_2013_2017_antisismico: codice_otto
+
+    RP41_importo_rata: 1500
+    RP42_importo_rata: 1500
+    RP43_importo_rata: 1500
+    RP44_importo_rata: 1500
+    RP45_importo_rata: 1500
+    RP46_importo_rata: 1500
+    RP47_importo_rata: 1500
+
+  output_variables:
+    importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_75: 6000
+
+
+- name: Test per vedere se funziona la compilazione del rigo RP48 sezione 80
+  period: 2017
+  input_variables:
+    RP41_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2017
+    RP42_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2017
+    RP43_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2017
+    RP44_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2017
+    RP45_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2017
+    RP46_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2017
+    RP47_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2017
+
+    RP41_codice_2012_2013_2017_antisismico: nessun_codice
+    RP42_codice_2012_2013_2017_antisismico: nessun_codice
+    RP43_codice_2012_2013_2017_antisismico: nessun_codice
+    RP44_codice_2012_2013_2017_antisismico: nessun_codice
+    RP45_codice_2012_2013_2017_antisismico: codice_sette
+    RP46_codice_2012_2013_2017_antisismico: codice_sette
+    RP47_codice_2012_2013_2017_antisismico: nessun_codice
+
+    RP41_importo_rata: 1500
+    RP42_importo_rata: 1500
+    RP43_importo_rata: 1500
+    RP44_importo_rata: 1500
+    RP45_importo_rata: 1500
+    RP46_importo_rata: 1500
+    RP47_importo_rata: 1500
+
+  output_variables:
+    importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_80: 3000
+
+
+- name: Test per vedere se funziona la compilazione del rigo RP48 sezione 85
+  period: 2017
+  input_variables:
+    RP41_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2017
+    RP42_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2017
+    RP43_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2017
+    RP44_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2017
+    RP45_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2017
+    RP46_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2017
+    RP47_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2017
+
+    RP41_codice_2012_2013_2017_antisismico: codice_undici
+    RP42_codice_2012_2013_2017_antisismico: codice_nove
+    RP43_codice_2012_2013_2017_antisismico: nessun_codice
+    RP44_codice_2012_2013_2017_antisismico: nessun_codice
+    RP45_codice_2012_2013_2017_antisismico: codice_nove
+    RP46_codice_2012_2013_2017_antisismico: codice_sette
+    RP47_codice_2012_2013_2017_antisismico: codice_undici
+
+    RP41_importo_rata: 1500
+    RP42_importo_rata: 1500
+    RP43_importo_rata: 1500
+    RP44_importo_rata: 1500
+    RP45_importo_rata: 1500
+    RP46_importo_rata: 1500
+    RP47_importo_rata: 1500
+
+  output_variables:
+    importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_85: 6000
