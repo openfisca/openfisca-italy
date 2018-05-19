@@ -1,0 +1,7 @@
+- name: Test 1 per vedere se funziona il calcolo dellla spesa per acquisto o costruzioni di abitazioni date in locazione
+  period: 2017
+  input_variables:
+    spesa_acquisto_costruzione_abitazione_data_in_locazione: 450000
+    interessi_passivi_sui_mutui_abitazione_data_in_locazione: 150000
+  output_variables:
+    totale_importo_deducibile_abitazione_data_in_locazione: 2
