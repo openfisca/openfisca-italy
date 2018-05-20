@@ -64,7 +64,7 @@ class RP45_codice_fiscale(Variable):
     value_type = str
     entity = Persona
     definition_period = YEAR
-    label = u"RP45 Col.3 - Indicare il codice fiscale relativo a spese per interventi di recupero del patrimonio edilizio e misure antisismiche"
+    label = u"RP45 Col.3 - Indicare il codice fiscale relativo a spese per interventi di recupero del patrimonio edilizio e misure antisismiche nel caso di lavori a condomini."
 
 
 class RP45_interventi_particolari(Variable):
