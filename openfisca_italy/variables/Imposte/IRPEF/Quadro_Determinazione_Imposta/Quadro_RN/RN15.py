@@ -15,4 +15,4 @@ class detrazioni_per_spese_arredo_immobili_giovani_coppie_iva_acquisto_abitazion
     set_input = set_input_divide_by_period
     label = u"DDetrazione per spese indicate nella sezione III C del Quadro RP (arredo immobili ristrutturati, giovani coppie, IVA per acquisto abitazione classe energetica A o B) (Rigo RN15)"
     def formula(person,period,parameters):
-        return round_((person('totale_rate_spesa_arredo_immobili_ristrutturati_gc_iva_acquisto_abitazione',period)*0.5),2)
+        return round_((person('RP60_totale_rate_spesa_arredo_immobili_ristrutturati_gc_iva_acquisto_abitazione',period)*0.5),2)
