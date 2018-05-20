@@ -4,6 +4,7 @@ from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
 from openfisca_italy.entita import *
 import numpy as np
+
 class RP61TipiInterventiFinalizzatiRisparmioEnergetico(Enum):
     nessun_codice = "Non è stato compilato nessun codice per il RIGO RP61 col.1"
     codice_uno = "Interventi di riqualificazione energetica di edifici esistenti"
@@ -81,6 +82,7 @@ class RP61_numero_rata(Variable):
     label = "RP61 Col.7 - indicare il numero della rata che il contribuente utilizza per il 2017. Ad esempio, indicare 3 per le spese sostenute nel 2015, 2 per le spese del 2016 e 1 per le spese del 2017."
     reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=78"  # Always use the most official source
 
+
 class RP61RangeSpesaDate(Enum):
     nessun_codice = "Non e' stata inserita alcuna spesa"
     codice_uno = "spese sostenute fino al 5 giugno 2013 (55%)"
@@ -137,6 +139,7 @@ class RP61_spesa_totale(Variable):
     reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=78"  # Always use the most official source
     #TODO: Quando la funzionalità sara' implementata, mettere come limite massimo indicabile quello calcolato nelle variabili di questo file
 
+
 class RP61_importo_rata(Variable):
     value_type = float
     entity = Persona
@@ -144,4 +147,7 @@ class RP61_importo_rata(Variable):
     label = "RP61 Col.9 - indicare l’importo di ciascuna rata delle spese sostenute. Tale importo si ottiene dividendo l’ammontare della spesa sostenuta (colonna 8), per 10"
     reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=78"  # Always use the most official source
     def formula(person,period,parameters):
-        return person('RP61_spesa_totale',period) / 10.0
+        rideterminazione_rata_compilato = not_(person('RP61_periodo_2008_rideterminazione_rate',period) == 0)
+        rate_utilizzate = (8 - person('RP61_numero_rata',period)) * (person('RP61_spesa_totale',period)/person('RP61_periodo_2008_rideterminazione_rate',period))
+        importo_rata_calcolato_con_rideterminazione =  (person('RP61_spesa_totale',period) - rate_utilizzate) / 10.0
+        return where(rideterminazione_rata_compilato,importo_rata_calcolato_con_rideterminazione,person('RP61_spesa_totale',period) / 10.0)

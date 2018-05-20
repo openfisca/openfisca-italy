@@ -12,7 +12,7 @@ class detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_det
     reference = "https://www.gbsoftware.it/legginotizia.asp?IdNews=2364"  # Always use the most official source
 
     def formula(person,period,parameters):
-        return round_((person('importo_rate_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_55',period) * 0.55),2)
+        return round_((person('RP_65_importo_rate_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_55',period) * 0.55),2)
 
 
 class detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_65(Variable):
@@ -23,7 +23,7 @@ class detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_det
     reference = "https://www.gbsoftware.it/legginotizia.asp?IdNews=2364"  # Always use the most official source
 
     def formula(person,period,parameters):
-        return round_((person('importo_rate_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_65',period) * 0.65),2)
+        return round_((person('RP_65_importo_rate_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_65',period) * 0.65),2)
 
 
 class detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_70(Variable):
@@ -34,7 +34,7 @@ class detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_det
     reference = "https://www.gbsoftware.it/legginotizia.asp?IdNews=2364"  # Always use the most official source
 
     def formula(person,period,parameters):
-        return round_((person('importo_rate_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_70',period) * 0.70),2)
+        return round_((person('RP_65_importo_rate_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_70',period) * 0.70),2)
 
 
 class detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_75(Variable):
@@ -45,4 +45,4 @@ class detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_det
     reference = "https://www.gbsoftware.it/legginotizia.asp?IdNews=2364"  # Always use the most official source
 
     def formula(person,period,parameters):
-        return round_((person('importo_rate_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_75',period) * 0.75),2)
+        return round_((person('RP_65_importo_rate_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_75',period) * 0.75),2)
