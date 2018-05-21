@@ -57,5 +57,4 @@ Persona = build_entity(
     ''',
     is_person = True,
     )
-
 entities = [Famiglia, Persona]
