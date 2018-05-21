@@ -3,19 +3,19 @@
   input_variables:
     RP41_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2012
     RP42_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2012
-    RP43_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2012
+    RP43_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2009
     RP44_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2012
     RP45_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2012
     RP46_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2015
-    RP47_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2012
+    RP47_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2010
 
     RP41_codice_2012_2013_2017_antisismico: codice_due
     RP42_codice_2012_2013_2017_antisismico: codice_quattro
-    RP43_codice_2012_2013_2017_antisismico: codice_due
+    RP43_codice_2012_2013_2017_antisismico: nessun_codice
     RP44_codice_2012_2013_2017_antisismico: codice_due
     RP45_codice_2012_2013_2017_antisismico: codice_due
     RP46_codice_2012_2013_2017_antisismico: codice_due
-    RP47_codice_2012_2013_2017_antisismico: codice_due
+    RP47_codice_2012_2013_2017_antisismico: nessun_codice
 
     RP41_importo_rata: 1500
     RP42_importo_rata: 1500
@@ -33,7 +33,7 @@
   input_variables:
     RP41_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2012
     RP42_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2012
-    RP43_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2012
+    RP43_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2015
     RP44_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2017
     RP45_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2012
     RP46_anno_in_cui_sono_state_sostenute_spese_per_recupero_patrimonio_edilizio_interventi_antisismici: 2015
@@ -56,7 +56,7 @@
     RP47_importo_rata: 1500
 
   output_variables:
-    importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_50: 3000
+    importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_50: 6000
 
 
 
