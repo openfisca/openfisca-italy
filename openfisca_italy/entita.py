@@ -55,6 +55,16 @@ Persona = build_entity(
 
     For more information, see: http://openfisca.org/doc/coding-the-legislation/50_entities.html
     ''',
-    is_person = True,
+    is_person = True
     )
-entities = [Famiglia, Persona]
+
+Immobile = build_entity(
+    key = "real_estate",
+    plural = "real_estates",
+    label = u'ekgrhrgerihiei',
+    doc = u'''
+        blablabla
+    '''
+    )
+
+entities = [Famiglia, Immobile, Persona]

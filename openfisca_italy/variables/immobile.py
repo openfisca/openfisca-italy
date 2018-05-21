@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
-#https://www.amministrazionicomunali.it/imu/categorie_catastali.php
 # Import from openfisca-core the common python objects used to code the legislation in OpenFisca
 from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
 from openfisca_italy.entita import *
 
-
+#https://www.amministrazionicomunali.it/imu/categorie_catastali.php
 class categoria_catastale(Enum):
     #I - IMMOBILI A DESTINAZIONE ORDINARIA - Gruppo A - B - C
     A1 = u'Abitazioni di tipo signorile'
