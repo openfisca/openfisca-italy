@@ -32,8 +32,8 @@ class irpef_lorda (Variable):
         irpef_lorda = where(possiede_diritto_agevolazione_per_attivita_sportive, (np.array(irpef_lorda - valore_da_sottrarre_in_caso_di_diritto_attivita_sportive)),(np.array(irpef_lorda)))
 
         # incremento dell'irpef lorda nel caso di decadimento investimenti in startup
-        detrazione_effettivamente_fruita_e_interessi_legali_per_investimenti_startup = person('detrazione_effettivamente_fruita_e_interessi_legali_per_investimenti_startup',period)
-        irpef_lorda = where (detrazione_effettivamente_fruita_e_interessi_legali_per_investimenti_startup>0,(irpef_lorda + detrazione_effettivamente_fruita_e_interessi_legali_per_investimenti_startup),irpef_lorda)
+        RP80_detrazione_effettivamente_fruita_e_interessi_legali_per_investimenti_startup = person('RP80_detrazione_effettivamente_fruita_e_interessi_legali_per_investimenti_startup',period)
+        irpef_lorda = where (RP80_detrazione_effettivamente_fruita_e_interessi_legali_per_investimenti_startup>0,(irpef_lorda + RP80_detrazione_effettivamente_fruita_e_interessi_legali_per_investimenti_startup),irpef_lorda)
 
          # conditions for what the Irpef values if fixed to 0
         irpef_non_dovuta_pensionati_e_terreni = person('irpef_non_dovuta_pensionati_e_terreni',period)

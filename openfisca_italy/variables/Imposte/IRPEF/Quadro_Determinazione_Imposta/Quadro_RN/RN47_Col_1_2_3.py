@@ -16,7 +16,7 @@ class residui_detrazioni_start_up_2016_RN19(Variable):
 
     def formula(person,period,parameters):
         irpef_lorda_diminuita_di_detrazioni_famiglia_lavoro = person('irpef_lorda',period) - (person('detrazioni_per_carichi_famigliari',period) + person('detrazione_per_lavoro',period) - person('detrazione_ulteriore_per_figli_a_carico',period))
-        altre_detrazioni_da_sottrarre = ['detrazione_fruita_da_detrazioni_locazione_affitto',
+        RP83_altre_detrazioni_da_sottrarre = ['detrazione_fruita_da_detrazioni_locazione_affitto',
                                 'detrazioni_per_oneri_detraibili_19_annuali',
                                 'detrazioni_per_oneri_detraibili_26_annuali',
                                 'detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_annue',
@@ -25,7 +25,7 @@ class residui_detrazioni_start_up_2016_RN19(Variable):
                                 'totale_detrazione_oneri_Sez_VI_quadro_RP',
                                 'detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2014'
                                 ]
-        totale_da_sottrarre = round_(sum(person(detrazione, period) for detrazione in altre_detrazioni_da_sottrarre),2)
+        totale_da_sottrarre = round_(sum(person(detrazione, period) for detrazione in RP83_altre_detrazioni_da_sottrarre),2)
         capienza = irpef_lorda_diminuita_di_detrazioni_famiglia_lavoro - totale_da_sottrarre
         return select([capienza<=0,
                         capienza<=person('residuo_detrazione_startup_2015',period)],
@@ -42,7 +42,7 @@ class residui_detrazioni_start_up_2017_RN20(Variable):
 
     def formula(person,period,parameters):
             irpef_lorda_diminuita_di_detrazioni_famiglia_lavoro = person('irpef_lorda',period) - (person('detrazioni_per_carichi_famigliari',period) + person('detrazione_per_lavoro',period) - person('detrazione_ulteriore_per_figli_a_carico',period))
-            altre_detrazioni_da_sottrarre = ['detrazione_fruita_da_detrazioni_locazione_affitto',
+            RP83_altre_detrazioni_da_sottrarre = ['detrazione_fruita_da_detrazioni_locazione_affitto',
                                     'detrazioni_per_oneri_detraibili_19_annuali',
                                     'detrazioni_per_oneri_detraibili_26_annuali',
                                     'detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_annue',
@@ -52,7 +52,7 @@ class residui_detrazioni_start_up_2017_RN20(Variable):
                                     'detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2014',
                                     'detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2015'
                                     ]
-            totale_da_sottrarre = round_(sum(person(detrazione, period) for detrazione in altre_detrazioni_da_sottrarre),2)
+            totale_da_sottrarre = round_(sum(person(detrazione, period) for detrazione in RP83_altre_detrazioni_da_sottrarre),2)
             capienza = irpef_lorda_diminuita_di_detrazioni_famiglia_lavoro - totale_da_sottrarre
             return select([capienza<=0,
                             capienza<=person('residuo_detrazione_startup_2016',period)],
@@ -69,7 +69,7 @@ class residui_detrazioni_start_up_2018_RN21(Variable):
 
     def formula(person,period,parameters):
             irpef_lorda_diminuita_di_detrazioni_famiglia_lavoro = person('irpef_lorda',period) - (person('detrazioni_per_carichi_famigliari',period) + person('detrazione_per_lavoro',period) - person('detrazione_ulteriore_per_figli_a_carico',period))
-            altre_detrazioni_da_sottrarre = ['detrazione_fruita_da_detrazioni_locazione_affitto',
+            RP83_altre_detrazioni_da_sottrarre = ['detrazione_fruita_da_detrazioni_locazione_affitto',
                                     'detrazioni_per_oneri_detraibili_19_annuali',
                                     'detrazioni_per_oneri_detraibili_26_annuali',
                                     'detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_annue',
@@ -80,7 +80,7 @@ class residui_detrazioni_start_up_2018_RN21(Variable):
                                     'detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2015',
                                     'detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2016'
                                     ]
-            totale_da_sottrarre = round_(sum(person(detrazione, period) for detrazione in altre_detrazioni_da_sottrarre),2)
+            totale_da_sottrarre = round_(sum(person(detrazione, period) for detrazione in RP83_altre_detrazioni_da_sottrarre),2)
             capienza = irpef_lorda_diminuita_di_detrazioni_famiglia_lavoro - totale_da_sottrarre
             return select([capienza<=0,
                             capienza<=person('detrazioni_per_investimenti_startup',period)],

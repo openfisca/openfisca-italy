@@ -1,31 +1,31 @@
 - name: Test 1 per vedere se con codice uno la persona deve compilare la colonna 4 e la colonna 5 (Dovrebbe poterlo fare)
   period: 2017
   input_variables:
-     tipi_investimenti_startup: codice_uno
-     ammontare_investimento_detraibile_investimenti_startup: 50000
-     ammontare_importo_detraibile_ricevuto_per_trasparenza_investimenti_startup: 1500
+     RP80_tipi_investimenti_startup: codice_uno
+     RP80_ammontare_investimento_startup: 50000
+     RP80_ammontare_importo_detraibile_ricevuto_per_trasparenza_investimenti_startup: 1500
   output_variables:
-    diritto_a_compilare_colonna_codice_e_ammontare_detrazione_investimenti_startup: True
-    totale_detrazioni_per_investimenti_startup: 15000
+    RP80_diritto_a_compilare_colonna_codice_e_ammontare_detrazione_investimenti_startup: True
+    RP80_totale_detrazioni_per_investimenti_startup: 15000
 
 - name: Test 2 per vedere se con codice uno la persona deve compilare la colonna 4 e la colonna 5 (Non deve poterlo fare)
   period: 2017
   input_variables:
-     tipi_investimenti_startup: codice_quattro
-     ammontare_investimento_detraibile_investimenti_startup: 50000
-     ammontare_importo_detraibile_ricevuto_per_trasparenza_investimenti_startup: 1500
+     RP80_tipi_investimenti_startup: codice_quattro
+     RP80_ammontare_investimento_startup: 50000
+     RP80_ammontare_importo_detraibile_ricevuto_per_trasparenza_investimenti_startup: 1500
   output_variables:
-    diritto_a_compilare_colonna_codice_e_ammontare_detrazione_investimenti_startup: False
-    ammontare_detrazioni_investimenti_startup: 0
-    totale_detrazioni_per_investimenti_startup: 1500
+    RP80_diritto_a_compilare_colonna_codice_e_ammontare_detrazione_investimenti_startup: False
+    RP80_ammontare_detrazioni_investimenti_startup: 1500
+    RP80_totale_detrazioni_per_investimenti_startup: 1500
 
-- name: Test 3 per vedere se con totale_detrazioni_per_investimenti_startup > capienza calcoli portano
+- name: Test 3 per vedere se con RP80_totale_detrazioni_per_investimenti_startup > capienza calcoli portano
   period: 2017
   input_variables:
     # Parte delle detrazioni per investimenti in startup rigo RP80
-    tipi_investimenti_startup: codice_uno
-    ammontare_investimento_detraibile_investimenti_startup: 50000
-    ammontare_importo_detraibile_ricevuto_per_trasparenza_investimenti_startup: 1500
+    RP80_tipi_investimenti_startup: codice_uno
+    RP80_ammontare_investimento_startup: 50000
+    RP80_ammontare_importo_detraibile_ricevuto_per_trasparenza_investimenti_startup: 1500
     # Parte dell'irpef lorda diminuita di tutte le altre detrazioni
     irpef_lorda: 5000
     detrazioni_per_carichi_famigliari: 500
@@ -41,20 +41,20 @@
     detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2016: 100
   output_variables:
     # output relativi a rigo RP80
-    diritto_a_compilare_colonna_codice_e_ammontare_detrazione_investimenti_startup: True
-    totale_detrazioni_per_investimenti_startup: 15000
+    RP80_diritto_a_compilare_colonna_codice_e_ammontare_detrazione_investimenti_startup: True
+    RP80_totale_detrazioni_per_investimenti_startup: 15000
     # output relativi a rigo RN21
     detrazioni_per_investimenti_startup_utilizzata: 3150
     residui_detrazioni_start_up_2018_RN21: 11850
 
 
-- name: Test 4 per vedere se con totale_detrazioni_per_investimenti_startup < capienza calcoli portano
+- name: Test 4 per vedere se con RP80_totale_detrazioni_per_investimenti_startup < capienza calcoli portano
   period: 2017
   input_variables:
     # Parte delle detrazioni per investimenti in startup rigo RP80
-    tipi_investimenti_startup: codice_uno
-    ammontare_investimento_detraibile_investimenti_startup: 7000
-    ammontare_importo_detraibile_ricevuto_per_trasparenza_investimenti_startup: 1500
+    RP80_tipi_investimenti_startup: codice_uno
+    RP80_ammontare_investimento_startup: 7000
+    RP80_ammontare_importo_detraibile_ricevuto_per_trasparenza_investimenti_startup: 1500
     # Parte dell'irpef lorda diminuita di tutte le altre detrazioni
     irpef_lorda: 5000
     detrazioni_per_carichi_famigliari: 500
@@ -70,8 +70,8 @@
     detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2016: 100
   output_variables:
     # output relativi a rigo RP80
-    diritto_a_compilare_colonna_codice_e_ammontare_detrazione_investimenti_startup: True
-    totale_detrazioni_per_investimenti_startup: 2100
+    RP80_diritto_a_compilare_colonna_codice_e_ammontare_detrazione_investimenti_startup: True
+    RP80_totale_detrazioni_per_investimenti_startup: 2100
     # output relativi a rigo RN21
     detrazioni_per_investimenti_startup_utilizzata: 2100
     residui_detrazioni_start_up_2018_RN21: 0
@@ -81,9 +81,9 @@
   period: 2017
   input_variables:
     # Parte delle detrazioni per investimenti in startup rigo RP80
-    tipi_investimenti_startup: codice_uno
-    ammontare_investimento_detraibile_investimenti_startup: 7000
-    ammontare_importo_detraibile_ricevuto_per_trasparenza_investimenti_startup: 1500
+    RP80_tipi_investimenti_startup: codice_uno
+    RP80_ammontare_investimento_startup: 7000
+    RP80_ammontare_importo_detraibile_ricevuto_per_trasparenza_investimenti_startup: 1500
     # Parte dell'irpef lorda diminuita di tutte le altre detrazioni
     irpef_lorda: 1500
     detrazioni_per_carichi_famigliari: 500
@@ -99,8 +99,8 @@
     detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2016: 100
   output_variables:
     # output relativi a rigo RP80
-    diritto_a_compilare_colonna_codice_e_ammontare_detrazione_investimenti_startup: True
-    totale_detrazioni_per_investimenti_startup: 2100
+    RP80_diritto_a_compilare_colonna_codice_e_ammontare_detrazione_investimenti_startup: True
+    RP80_totale_detrazioni_per_investimenti_startup: 2100
     # output relativi a rigo RN21
     detrazioni_per_investimenti_startup_utilizzata: 0
     residui_detrazioni_start_up_2018_RN21: 2100
@@ -109,9 +109,9 @@
   period: 2017
   input_variables:
     # Parte delle detrazioni per investimenti in startup rigo RP80
-    tipi_investimenti_startup: codice_uno
-    ammontare_investimento_detraibile_investimenti_startup: 7000
-    ammontare_importo_detraibile_ricevuto_per_trasparenza_investimenti_startup: 1500
+    RP80_tipi_investimenti_startup: codice_uno
+    RP80_ammontare_investimento_startup: 7000
+    RP80_ammontare_importo_detraibile_ricevuto_per_trasparenza_investimenti_startup: 1500
     # Parte dell'irpef lorda diminuita di tutte le altre detrazioni
     irpef_lorda: 3950
     detrazioni_per_carichi_famigliari: 500
@@ -127,8 +127,8 @@
     detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2016: 100
   output_variables:
     # output relativi a rigo RP80
-    diritto_a_compilare_colonna_codice_e_ammontare_detrazione_investimenti_startup: True
-    totale_detrazioni_per_investimenti_startup: 2100
+    RP80_diritto_a_compilare_colonna_codice_e_ammontare_detrazione_investimenti_startup: True
+    RP80_totale_detrazioni_per_investimenti_startup: 2100
     # output relativi a rigo RN21
     detrazioni_per_investimenti_startup_utilizzata: 2100
     residui_detrazioni_start_up_2018_RN21: 0

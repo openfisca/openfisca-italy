@@ -14,7 +14,7 @@
     possiede_diritto_agevolazione_per_attivita_sportive: True
     compensi_con_ritenuta_a_titolo_di_imposta: 150
     # agevolazione per investimenti in startup
-    detrazione_effettivamente_fruita_e_interessi_legali_per_investimenti_startup: 150
+    RP80_detrazione_effettivamente_fruita_e_interessi_legali_per_investimenti_startup: 150
   output_variables:
     reddito_imponibile: 45280
     irpef_lorda: 13607.40
@@ -35,7 +35,7 @@
     possiede_diritto_agevolazione_per_attivita_sportive: False
     compensi_con_ritenuta_a_titolo_di_imposta: 150
     # agevolazione per investimenti in startup
-    detrazione_effettivamente_fruita_negli_anni_precedenti_per_investimenti_in_startup: 0
+    RP80_detrazione_effettivamente_fruita_negli_anni_precedenti_per_investimenti_in_startup: 0
   output_variables:
     reddito_imponibile: 44980
     irpef_lorda: 13412.4
@@ -54,7 +54,7 @@
     possiede_diritto_agevolazione_per_attivita_sportive: False
     compensi_con_ritenuta_a_titolo_di_imposta: 150
     # agevolazione per investimenti in startup
-    detrazione_effettivamente_fruita_negli_anni_precedenti_per_investimenti_in_startup: 150
+    RP80_detrazione_effettivamente_fruita_negli_anni_precedenti_per_investimenti_in_startup: 150
     # da inserire detrazioni d'imposta una volta stabilito se irpef possa andare sotto lo 0 oppure no
     # variabili che comportano una irpef nulla
     reddito_pensioni_annuale: 6000
@@ -80,7 +80,7 @@
     possiede_diritto_agevolazione_per_attivita_sportive: False
     compensi_con_ritenuta_a_titolo_di_imposta: 150
     # agevolazione per investimenti in startup
-    detrazione_effettivamente_fruita_negli_anni_precedenti_per_investimenti_in_startup: 150
+    RP80_detrazione_effettivamente_fruita_negli_anni_precedenti_per_investimenti_in_startup: 150
     # da inserire detrazioni d'imposta una volta stabilito se irpef possa andare sotto lo 0 oppure no
     # variabili che comportano una irpef nulla
     reddito_fondiari_annuale: 485

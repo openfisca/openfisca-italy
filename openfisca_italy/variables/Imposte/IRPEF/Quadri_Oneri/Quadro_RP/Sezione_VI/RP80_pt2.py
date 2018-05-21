@@ -8,7 +8,7 @@ from openfisca_italy.entita import *
 # Informazioni più dettagliata riguardo la decadenza delle detrazioni per investimenti in startup qua http://www.gazzettaufficiale.it/eli/id/2016/04/11/16A02786/sg
 
 
-class interessi_legali_su_imposta_non_versata_per_detrazioni_invesimenti_startup(Variable):
+class RP80_interessi_legali_su_imposta_non_versata_per_detrazioni_investimenti_startup(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
@@ -16,7 +16,7 @@ class interessi_legali_su_imposta_non_versata_per_detrazioni_invesimenti_startup
     reference = "http://www.gazzettaufficiale.it/eli/id/2016/04/11/16A02786/sg"  # Always use the most official source
 
 
-class detrazione_effettivamente_fruita_negli_anni_precedenti_per_investimenti_in_startup(Variable):
+class RP80_detrazione_effettivamente_fruita_negli_anni_precedenti_per_investimenti_in_startup(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
@@ -24,7 +24,7 @@ class detrazione_effettivamente_fruita_negli_anni_precedenti_per_investimenti_in
     reference = "http://www.gazzettaufficiale.it/eli/id/2016/04/11/16A02786/sg"  # Always use the most official source
 
 
-class detrazione_effettivamente_fruita_e_interessi_legali_per_investimenti_startup(Variable):
+class RP80_detrazione_effettivamente_fruita_e_interessi_legali_per_investimenti_startup(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
@@ -32,10 +32,10 @@ class detrazione_effettivamente_fruita_e_interessi_legali_per_investimenti_start
     reference = "http://www.gazzettaufficiale.it/eli/id/2016/04/11/16A02786/sg"  # Always use the most official source
 
     def formula(person,period,parameters):
-        return person('interessi_legali_su_imposta_non_versata_per_detrazioni_invesimenti_startup',period) +person('detrazione_effettivamente_fruita_negli_anni_precedenti_per_investimenti_in_startup',period)
+        return person('RP80_interessi_legali_su_imposta_non_versata_per_detrazioni_investimenti_startup',period) +person('RP80_detrazione_effettivamente_fruita_negli_anni_precedenti_per_investimenti_in_startup',period)
 
 
-class eccedenza_detrazione_non_fruita_e_non_piu_spettante(Variable):
+class RP80_eccedenza_detrazione_non_fruita_e_non_piu_spettante(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR

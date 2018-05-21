@@ -17,6 +17,6 @@ class irpef_netta (Variable):
     def formula(person, period, parameters):
         irpef_lorda = person('irpef_lorda',period)
         detrazioni_imposta_annuale = person('detrazioni_imposta_annuale',period)
-        totale_altre_detrazioni_crediti_di_imposta = person('totale_altre_detrazioni_crediti_di_imposta',period)
-        irpef_netta = irpef_lorda - detrazioni_imposta_annuale - totale_altre_detrazioni_crediti_di_imposta
+        totale_RP83_altre_detrazioni_crediti_di_imposta = person('totale_RP83_altre_detrazioni_crediti_di_imposta',period)
+        irpef_netta = irpef_lorda - detrazioni_imposta_annuale - totale_RP83_altre_detrazioni_crediti_di_imposta
         return where (irpef_netta>0,np.array(round_(irpef_netta,2),np.array(0)))

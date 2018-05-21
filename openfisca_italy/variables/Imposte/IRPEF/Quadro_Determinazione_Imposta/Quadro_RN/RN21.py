@@ -4,7 +4,7 @@ from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
 from openfisca_italy.entita import *
 
-# Questo file è relativo al calcolo delle detrazioni per investimenti in startup ma nel quadro RN e non RP (che invece è dettagliato nel file altre_detrazioni.py)
+# Questo file è relativo al calcolo delle detrazioni per investimenti in startup ma nel quadro RN e non RP (che invece è dettagliato nel file RP83_altre_detrazioni.py)
 
 
 class detrazioni_per_investimenti_startup(Variable):
@@ -13,8 +13,8 @@ class detrazioni_per_investimenti_startup(Variable):
     definition_period = YEAR
     label = u"Detrazione per investimenti in startup indicata nel rigo RP80 col. 6 e riportata nel Rigo RN21 col.1"
     def formula(person,period,parameters):
-        totale_detrazioni_per_investimenti_startup = person('totale_detrazioni_per_investimenti_startup',period) # rigo RP80 col 6
-        return totale_detrazioni_per_investimenti_startup
+        RP80_totale_detrazioni_per_investimenti_startup = person('RP80_totale_detrazioni_per_investimenti_startup',period) # rigo RP80 col 6
+        return RP80_totale_detrazioni_per_investimenti_startup
 
 
 
@@ -27,7 +27,7 @@ class detrazioni_per_investimenti_startup_utilizzata(Variable):
 
     def formula(person,period,parameters):
         irpef_lorda_diminuita_di_detrazioni_famiglia_lavoro = person('irpef_lorda',period) - (person('detrazioni_per_carichi_famigliari',period) + person('detrazione_per_lavoro',period) - person('detrazione_ulteriore_per_figli_a_carico',period))
-        altre_detrazioni_da_sottrarre = ['detrazione_fruita_da_detrazioni_locazione_affitto',
+        RP83_altre_detrazioni_da_sottrarre = ['detrazione_fruita_da_detrazioni_locazione_affitto',
                                 'detrazioni_per_oneri_detraibili_19_annuali',
                                 'detrazioni_per_oneri_detraibili_26_annuali',
                                 'detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_annue',
@@ -38,7 +38,7 @@ class detrazioni_per_investimenti_startup_utilizzata(Variable):
                                 'detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2015',
                                 'detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2016'
                                 ]
-        totale_da_sottrarre = round_(sum(person(detrazione, period) for detrazione in altre_detrazioni_da_sottrarre),2)
+        totale_da_sottrarre = round_(sum(person(detrazione, period) for detrazione in RP83_altre_detrazioni_da_sottrarre),2)
         capienza = irpef_lorda_diminuita_di_detrazioni_famiglia_lavoro - totale_da_sottrarre
         return select([capienza<=0,
                         capienza >= person('detrazioni_per_investimenti_startup',period),

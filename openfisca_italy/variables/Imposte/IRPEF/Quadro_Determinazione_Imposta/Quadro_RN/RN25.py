@@ -4,7 +4,7 @@ from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
 from openfisca_italy.entita import *
 
-class totale_altre_detrazioni_crediti_imposta(Variable):
+class totale_RP83_altre_detrazioni_crediti_imposta(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR

@@ -15,6 +15,6 @@ class totale_detrazione_oneri_Sez_VI_quadro_RP(Variable):
     reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
     def formula(person,period,parameters):
-        tipi_altre_detrazioni=['detrazioni_per_mantenimento_cane_guida',
-                                'altre_detrazioni']
-        return round_(sum(person(detrazione, period) for detrazione in tipi_altre_detrazioni),2)
+        RP83_tipi_RP83_altre_detrazioni=['RP82_detrazioni_per_mantenimento_cane_guida',
+                                'RP83_altre_detrazioni']
+        return round_(sum(person(detrazione, period) for detrazione in RP83_tipi_RP83_altre_detrazioni),2)

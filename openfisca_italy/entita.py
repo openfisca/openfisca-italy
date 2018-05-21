@@ -58,13 +58,4 @@ Persona = build_entity(
     is_person = True
     )
 
-Immobile = build_entity(
-    key = "real_estate",
-    plural = "real_estates",
-    label = u'ekgrhrgerihiei',
-    doc = u'''
-        blablabla
-    '''
-    )
-
-entities = [Famiglia, Immobile, Persona]
+entities = [Famiglia,Persona]

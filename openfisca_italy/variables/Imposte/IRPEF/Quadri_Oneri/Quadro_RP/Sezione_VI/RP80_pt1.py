@@ -7,14 +7,14 @@ from openfisca_italy.entita import *
 import numpy as np
 
 
-class codice_fiscale_relativo_a_investimenti_startup(Variable):
+class RP80_codice_fiscale_relativo_a_investimenti_startup(Variable):
         value_type = str
         entity = Persona
         definition_period = YEAR
-        label = u"Col.3 Indicare il codice fiscale della startup in cui si è deciso di investire"
+        label = u"RP80 Col.1 Indicare il codice fiscale della startup in cui si è deciso di investire"
 
 
-class TipiInvestimentiStartup(Enum):
+class RP80_TipiInvestimentiStartup(Enum):
     nessun_codice_inserito=u'Non sono stati fatti investimenti in startup'
     codice_uno = u'Investimento diretto'
     codice_due = u'Investimento indiretto mediante un organismo di investimento collettivo del risparmio'
@@ -23,17 +23,17 @@ class TipiInvestimentiStartup(Enum):
     codice_cinque= u'I contribuenti che partecipano a società di persone per il tramite di società che abbiano optato per la trasparenza fiscale ai sensi dell art. 116'
 
 
-class tipi_investimenti_startup(Variable):
+class RP80_tipi_investimenti_startup(Variable):
     value_type = Enum
-    possible_values = TipiInvestimentiStartup
-    default_value = TipiInvestimentiStartup.nessun_codice_inserito  # The default is codice_uno
+    possible_values = RP80_TipiInvestimentiStartup
+    default_value = RP80_TipiInvestimentiStartup.nessun_codice_inserito  # The default is codice_uno
     entity = Persona
     definition_period = YEAR
-    label = u"Residui detrazioni e crediti d'imposta e deduzioni per startup del 2017 (Rigo RN47 col. 2 del modello REDDITI 2017)"
+    label = u"RP80 col.2 Residui detrazioni e crediti d'imposta e deduzioni per startup del 2017 (Rigo RN47 col. 2 del modello REDDITI 2017)"
     reference = "https://www.gbsoftware.it/legginotizia.asp?IdNews=2364"  # Always use the most official source
 
 
-class diritto_a_compilare_colonna_codice_e_ammontare_detrazione_investimenti_startup(Variable):
+class RP80_diritto_a_compilare_colonna_codice_e_ammontare_detrazione_investimenti_startup(Variable):
      value_type = bool
      entity = Persona
      definition_period = YEAR
@@ -41,64 +41,63 @@ class diritto_a_compilare_colonna_codice_e_ammontare_detrazione_investimenti_sta
      reference = "https://www.gbsoftware.it/legginotizia.asp?IdNews=2364"  # Always use the most official source
 
      def formula(person,period,parameter):
-        tipo_investimento = person('tipi_investimenti_startup',period)
-        non_deve_compilare_colonna_4_5 = (tipo_investimento == TipiInvestimentiStartup.nessun_codice_inserito) + (tipo_investimento == TipiInvestimentiStartup.codice_quattro) + (tipo_investimento == TipiInvestimentiStartup.codice_cinque)
+        tipo_investimento = person('RP80_tipi_investimenti_startup',period)
+        non_deve_compilare_colonna_4_5 = (tipo_investimento == RP80_TipiInvestimentiStartup.nessun_codice_inserito) + (tipo_investimento == RP80_TipiInvestimentiStartup.codice_quattro) + (tipo_investimento == RP80_TipiInvestimentiStartup.codice_cinque)
         return where (non_deve_compilare_colonna_4_5, False, True)
 
 
-class ammontare_investimento_detraibile_investimenti_startup(Variable):
+class RP80_ammontare_investimento_startup(Variable):
      value_type = float
      entity = Persona
      definition_period = YEAR
-     label = "Ammontare dell'importo detraibile di investimenti in startup (Rigo RP80 col.4 ) che non può essere comunque superiore a 1000000 di euro (regolato nel calcolo delle detrazioni)"
+     label = "Rigo RP80 col.3 Ammontare dell'importo detraibile di investimenti in startup che non può essere comunque superiore a 1000000 di euro (regolato nel calcolo delle detrazioni)"
      reference = "https://www.gbsoftware.it/legginotizia.asp?IdNews=2364"  # Always use the most official source
 
 
-class TipiInvestimentiStartupPerPercentualeDetrazioni(Enum):
+class RP80_TipiInvestimentiStartupPerPercentualeDetrazioni(Enum):
     nessun_codice_inserito = u'Non sono stati fatti investimenti in startup'
     codice_uno = u'Investimento è stato effettuato in start-up innovativa'
     codice_due = u'Investimento è stato effettuato in PMI innovativa di cui all’art. 4, comma 9, del decreto-legge 24 gennaio 2015, n. 3'
 
 
-class tipi_investimenti_startup_per_percentuale_detrazioni(Variable):
+class RP80_tipi_investimenti_startup_per_percentuale_detrazioni(Variable):
     value_type = Enum
-    possible_values = TipiInvestimentiStartupPerPercentualeDetrazioni
-    default_value = TipiInvestimentiStartupPerPercentualeDetrazioni.nessun_codice_inserito  # The default is codice_uno
+    possible_values = RP80_TipiInvestimentiStartupPerPercentualeDetrazioni
+    default_value = RP80_TipiInvestimentiStartupPerPercentualeDetrazioni.nessun_codice_inserito  # The default is codice_uno
     entity = Persona
     definition_period = YEAR
-    label = u"Residui detrazioni e crediti d'imposta e deduzioni per startup del 2017 (Rigo RN47 col. 2 del modello REDDITI 2017)"
+    label = u"RP80 col.4 -  Indicare il codice che identifica il tipo di investimento per determinare la percentuale di detrazione"
     reference = "https://www.gbsoftware.it/legginotizia.asp?IdNews=2364"  # Always use the most official source
 
 
 # Detrazioni investimenti startup
 
 
-class ammontare_importo_detraibile_ricevuto_per_trasparenza_investimenti_startup(Variable):
+class RP80_ammontare_importo_detraibile_ricevuto_per_trasparenza_investimenti_startup(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
-    label = u"Importo che esiste solamente se persona ha effettuato un tipo di investimento con codice 4 o 5 (Se esiste va scritto direttamentenel Rigo RP80 col. 6)"
+    label = u"RP80 possibile colonna 6 - Importo che esiste solamente se persona ha effettuato un tipo di investimento con codice 4 o 5"
     reference = "https://www.gbsoftware.it/legginotizia.asp?IdNews=2364"  # Always use the most official source
 
 
-class ammontare_detrazioni_investimenti_startup(Variable):
+class RP80_ammontare_detrazioni_investimenti_startup(Variable):
         value_type = float
         entity = Persona
         definition_period = YEAR
-        label = u"Importo che esiste solamente se persona non ha effettuato un tipo di investimento con codice 4 o 5 (Rigo RP80 col. 5)"
+        label = u"RP80 Col. 5 - Importo che esiste solamente se persona non ha effettuato un tipo di investimento con codice 4 o 5"
         reference = "https://www.gbsoftware.it/legginotizia.asp?IdNews=2364"  # Always use the most official source
 
         def formula(person,period,parameters):
-            diritto_a_compilare_colonna_codice_e_ammontare_detrazione = person('diritto_a_compilare_colonna_codice_e_ammontare_detrazione_investimenti_startup',period)
-            ammontare_detrazioni = round_((person('ammontare_investimento_detraibile_investimenti_startup',period) * 0.30),2)
-            return where(diritto_a_compilare_colonna_codice_e_ammontare_detrazione,ammontare_detrazioni,0)
+            diritto_a_compilare_colonna_codice_e_ammontare_detrazione = person('RP80_diritto_a_compilare_colonna_codice_e_ammontare_detrazione_investimenti_startup',period)
+            ammontare_detrazioni = round_((person('RP80_ammontare_investimento_startup',period) * 0.30),2)
+            return where(diritto_a_compilare_colonna_codice_e_ammontare_detrazione,ammontare_detrazioni,round_(person('RP80_ammontare_importo_detraibile_ricevuto_per_trasparenza_investimenti_startup',period),2))
 
 
-class totale_detrazioni_per_investimenti_startup(Variable):
+class RP80_totale_detrazioni_per_investimenti_startup(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
-    label = u"Detrazione per investimenti in startup indicati nel quadro VI del Quadro RP (Detrazioni investimenti startup) (Rigo RP80 col.6)"
+    label = u"RP80 Col.6 - Detrazione per investimenti in startup indicati nel quadro VI del Quadro RP (Detrazioni investimenti startup)"
     def formula(person,period,parameters):
-        diritto_a_compilare_colonna_codice_e_ammontare_detrazione = person('diritto_a_compilare_colonna_codice_e_ammontare_detrazione_investimenti_startup',period)
-        return where(diritto_a_compilare_colonna_codice_e_ammontare_detrazione,person('ammontare_detrazioni_investimenti_startup',period),round_(person('ammontare_importo_detraibile_ricevuto_per_trasparenza_investimenti_startup',period),2))
+        return person('RP80_ammontare_detrazioni_investimenti_startup',period)
