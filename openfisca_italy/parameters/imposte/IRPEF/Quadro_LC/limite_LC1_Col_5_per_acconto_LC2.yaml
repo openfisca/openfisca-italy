@@ -1,0 +1,5 @@
+description: Limite per LC1 col.5 quadro LC al di sotto del quale non sono dovuti acconti LC2
+reference: http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=82
+values:
+  2010-01-01:
+    value: 51.65
