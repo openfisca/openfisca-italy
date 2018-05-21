@@ -28,7 +28,7 @@ class irpef_non_dovuta_pensionati_e_terreni (Variable):
     def formula(person,period,parameters):
         # check if the person has only retirement income under the threshold and fields income under the threshold
         reddito_da_pensione_sotto_la_soglia = (person('reddito_pensioni_annuale',period) < person('soglia_reddito_non_tassabile_per_reddito_da_pensione',period)) * (person('reddito_pensioni_annuale',period) > 0)
-        reddito_da_terreni_sotto_la_soglia = (person('reddito_terreni_annuale',period) < parameters(period).imposte.IRPEF.Redditi_Non_Tassabili.reddito_terreni) * (person('reddito_terreni_annuale',period) > 0)
+        reddito_da_terreni_sotto_la_soglia = (person('reddito_terreni_annuale',period) < parameters(period).imposte.IRPEF.redditi_non_tassabili.reddito_terreni) * (person('reddito_terreni_annuale',period) > 0)
         # check that user has compiled the section credito_per_fondi_comuni_compilato in the income declaration
         credito_per_fondi_comuni_compilato = person('credito_per_fondi_comuni_compilato',period)
         # person have only income from fields and retirement

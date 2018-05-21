@@ -15,7 +15,7 @@ class irpef_non_dovuta_per_soli_terreni_e_fabbricati (Variable):
     reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf"
     def formula(person,period,parameters):
         # check if lands and buildings income is under the threshold
-        reddito_fondiario_sotto_la_soglia = person('reddito_fondiari_annuale',period) < parameters(period).imposte.IRPEF.Redditi_Non_Tassabili.reddito_solo_terreni_e_fabbricati and person('reddito_fondiari_annuale',period)>0
+        reddito_fondiario_sotto_la_soglia = person('reddito_fondiari_annuale',period) < parameters(period).imposte.IRPEF.redditi_non_tassabili.reddito_solo_terreni_e_fabbricati and person('reddito_fondiari_annuale',period)>0
         # check if the person has only field and lands and buildings income
         solo_redditi_da_terreni_e_fabbricati = person('solo_redditi_da_terreni_e_fabbricati',period)
         # check that user hasn't compiled the section credito_per_fondi_comuni_compilato in the income declaration
