@@ -73,12 +73,21 @@ class moltiplicatori_catastali(Variable):
     #Not implemented for E and F because they are real estate of State.
     def formula(person, period, parameters):
         immobile_categoria_catastale_temp = person('immobile_categoria_catastale',period)
+<<<<<<< HEAD
+        c1               =  (immobile_categoria_catastale_temp == CategoriaCatastale.C1)
+
+        d1_10_tranne_d5  =  ((immobile_categoria_catastale_temp == CategoriaCatastale.D1) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.D2) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.D3) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.D4) +
+=======
         c1               =  immobile_categoria_catastale_temp == CategoriaCatastale.C1
 
         d1_10_tranne_d5  =  ((immobile_categoria_catastale_temp == CategoriaCatastale.D1) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.D2) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.D4) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.D3) +
+>>>>>>> 3dab958ab51e098d3771a73b81d54312d16f8b87
                             (immobile_categoria_catastale_temp == CategoriaCatastale.D6) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.D7) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.D8) +
@@ -91,22 +100,37 @@ class moltiplicatori_catastali(Variable):
         c3_c4_c5_b       =  ((immobile_categoria_catastale_temp == CategoriaCatastale.C3) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.C4) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.C5) +
+<<<<<<< HEAD
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.B1) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.B2) +
+=======
                             (immobile_categoria_catastale_temp == CategoriaCatastale.B2) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.B1) +
+>>>>>>> 3dab958ab51e098d3771a73b81d54312d16f8b87
                             (immobile_categoria_catastale_temp == CategoriaCatastale.B3) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.B4) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.B5) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.B6) +
+<<<<<<< HEAD
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.B7) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.B8))
+=======
                             (immobile_categoria_catastale_temp == CategoriaCatastale.B8) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.B7))
+>>>>>>> 3dab958ab51e098d3771a73b81d54312d16f8b87
 
         c2_c6_c7_a1_9    =  ((immobile_categoria_catastale_temp == CategoriaCatastale.C2) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.C6) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.C7) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.A1) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.A2) +
+<<<<<<< HEAD
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.A3) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.A4) +
+=======
                             (immobile_categoria_catastale_temp == CategoriaCatastale.A4) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.A3) +
+>>>>>>> 3dab958ab51e098d3771a73b81d54312d16f8b87
                             (immobile_categoria_catastale_temp == CategoriaCatastale.A5) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.A6) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.A7) +
@@ -235,6 +259,7 @@ class base_imponibile(Variable):
         is_scontato_75_percento = where(    is_scontato_25_percento*is_scontato_50_percento,
                                             True,False)
         other_case = not_(is_scontato_25_percento)+not_(is_scontato_50_percento)+not_(is_scontato_75_percento)
+
         base_imponibile = person('valore_immobile_rivalutato',period) * person('moltiplicatori_catastali',period)
         return select(  [
                             is_scontato_25_percento,
@@ -337,6 +362,8 @@ class is_interesse_storico_artistico(Variable):
     label = u"Se l'immobile ha un interesse storico/artistico"
     reference = u"Decreto del presidente della Repubblica 28 dicembre 2000, n. 445"
 
+
+#I can't control the range of this variable if it's an input.
 class aliquota_imu(Variable):
     value_type = float
     entity = Persona
@@ -346,16 +373,41 @@ class aliquota_imu(Variable):
 
     def formula(person, period, parameters):
         immobile_categoria_catastale_temp = person('immobile_categoria_catastale',period)
+<<<<<<< HEAD
+        a1_a8_a9 =  ((immobile_categoria_catastale_temp == CategoriaCatastale.A1)+
+                    (immobile_categoria_catastale_temp == CategoriaCatastale.A8)+
+                    (immobile_categoria_catastale_temp == CategoriaCatastale.A9))
+=======
         a1_a8_a9 = ((immobile_categoria_catastale_temp == CategoriaCatastale.A1) +
                    (immobile_categoria_catastale_temp == CategoriaCatastale.A8) +
                    (immobile_categoria_catastale_temp == CategoriaCatastale.A9))
+>>>>>>> 3dab958ab51e098d3771a73b81d54312d16f8b87
         other_case = not_(a1_a8_a9)
         #A1,A8,A9 hanno l'aliquota del 4 per mille
         return select(
                             [a1_a8_a9,  other_case  ]
                             ,
-                            [(4/1000),  (7.6/1000)  ]
+                            [(4),  (7.6)  ]
                     )
+
+class percentuale_possesso(Variable):
+    value_type = float
+    entity = Persona
+    definition_period = MONTH
+    default_value = 100
+    set_input = set_input_divide_by_period
+    label = u"Percentuale di possesso di un immobile"
+
+
+class mesi_di_possesso(Variable):
+    value_type = int
+    entity = Persona
+    definition_period = MONTH
+    default_value = 12
+    set_input = set_input_divide_by_period
+    label = u"Mesi di possesso di un immobile"
+
+
 class imposta_imu(Variable):
     value_type = float
     entity = Persona
@@ -371,7 +423,9 @@ class imposta_imu(Variable):
                             person('is_fabbricati_rurali_ad_uso_strumentale_in_comuni_montani',period)
                         ,True,False)
         other_case = not_(is_esenti)
-        return select([is_esenti,other_case],[0,person('base_imponibile',period) * person('aliquota_imu',period)])
+        risultato_imposta = select([is_esenti,other_case],[0,person('base_imponibile',period) * (person('aliquota_imu',period)/1000)])
+        risultato_imposta_divisa_per_possesso = risultato_imposta * (person('percentuale_possesso',period)/100) * (person('mesi_di_possesso',period)/12)
+        return risultato_imposta_divisa_per_possesso
 
 class importo_imu(Variable):
     value_type = float
@@ -388,7 +442,7 @@ class importo_imu(Variable):
                             person('is_fabbricati_rurali_ad_uso_strumentale_in_comuni_montani',period)
                         ,True,False)
         #se è esente ritorna 0 altrimenti calcola il risultato
-        return where(is_esenti,0,person('base_imponibile',period) * person('aliquota_imu',period))
+        return where(is_esenti,0,person('imposta_imu',period) - person('detrazioni_imu',period))
 
 
 class detrazioni_imu(Variable):
@@ -407,10 +461,17 @@ class detrazioni_imu(Variable):
                             person('is_svolgimento_attivita_non_commerciali_di_un_determinato_tipo',period)+
                             person('is_fabbricati_rurali_ad_uso_strumentale_in_comuni_montani',period)
                         ,True,False)
+<<<<<<< HEAD
+        a1_a8_a9_case = ((immobile_categoria_catastale_temp == CategoriaCatastale.A1)+
+                        (immobile_categoria_catastale_temp == CategoriaCatastale.A8)+
+                        (immobile_categoria_catastale_temp == CategoriaCatastale.A9))
+        other_case = not_(a1_a8_a9_case) + not_(is_esenti)
+=======
         a1_a8_a9_case = ((immobile_categoria_catastale_temp == CategoriaCatastale.A1) +
                         (immobile_categoria_catastale_temp == CategoriaCatastale.A8) +
                         (immobile_categoria_catastale_temp == CategoriaCatastale.A9))
         other_case = not_(a1_a2_a9_case)+not_(is_esenti)
+>>>>>>> 3dab958ab51e098d3771a73b81d54312d16f8b87
         return select( [
                             is_esenti,
                             a1_a8_a9_case,

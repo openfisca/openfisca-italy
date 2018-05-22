@@ -1,0 +1,13 @@
+- name: Test con categoria A6 di una seconda casa con aliquota imu standard con valore immobile di 10'000 e posseduta 100% 12 mesi all'anno
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 10000
+    immobile_categoria_catastale: A6
+    percentuale_possesso: 100
+    mesi_di_possesso: 12
+    aliquota_imu: 7.6
+    is_interesse_storico_artistico: False
+  output_variables:
+    imposta_imu: 12768
+    detrazioni_imu: 0
+    importo_imu: 12768
