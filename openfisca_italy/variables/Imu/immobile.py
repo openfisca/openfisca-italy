@@ -73,6 +73,7 @@ class moltiplicatori_catastali(Variable):
     #Not implemented for E and F because they are real estate of State.
     def formula(person, period, parameters):
         immobile_categoria_catastale_temp = person('immobile_categoria_catastale',period)
+<<<<<<< HEAD
         c1               =  (immobile_categoria_catastale_temp == CategoriaCatastale.C1)
 
         d1_10_tranne_d5  =  ((immobile_categoria_catastale_temp == CategoriaCatastale.D1) +
@@ -99,6 +100,7 @@ class moltiplicatori_catastali(Variable):
         c3_c4_c5_b       =  ((immobile_categoria_catastale_temp == CategoriaCatastale.C3) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.C4) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.C5) +
+<<<<<<< HEAD
                             (immobile_categoria_catastale_temp == CategoriaCatastale.B1) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.B2) +
 =======
@@ -109,6 +111,7 @@ class moltiplicatori_catastali(Variable):
                             (immobile_categoria_catastale_temp == CategoriaCatastale.B4) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.B5) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.B6) +
+<<<<<<< HEAD
                             (immobile_categoria_catastale_temp == CategoriaCatastale.B7) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.B8))
 =======
@@ -121,6 +124,7 @@ class moltiplicatori_catastali(Variable):
                             (immobile_categoria_catastale_temp == CategoriaCatastale.C7) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.A1) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.A2) +
+<<<<<<< HEAD
                             (immobile_categoria_catastale_temp == CategoriaCatastale.A3) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.A4) +
 =======
@@ -369,6 +373,7 @@ class aliquota_imu(Variable):
 
     def formula(person, period, parameters):
         immobile_categoria_catastale_temp = person('immobile_categoria_catastale',period)
+<<<<<<< HEAD
         a1_a8_a9 =  ((immobile_categoria_catastale_temp == CategoriaCatastale.A1)+
                     (immobile_categoria_catastale_temp == CategoriaCatastale.A8)+
                     (immobile_categoria_catastale_temp == CategoriaCatastale.A9))
@@ -456,6 +461,7 @@ class detrazioni_imu(Variable):
                             person('is_svolgimento_attivita_non_commerciali_di_un_determinato_tipo',period)+
                             person('is_fabbricati_rurali_ad_uso_strumentale_in_comuni_montani',period)
                         ,True,False)
+<<<<<<< HEAD
         a1_a8_a9_case = ((immobile_categoria_catastale_temp == CategoriaCatastale.A1)+
                         (immobile_categoria_catastale_temp == CategoriaCatastale.A8)+
                         (immobile_categoria_catastale_temp == CategoriaCatastale.A9))
