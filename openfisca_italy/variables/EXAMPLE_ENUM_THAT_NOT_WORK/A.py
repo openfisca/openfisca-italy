@@ -3,11 +3,7 @@
 from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
 from openfisca_italy.entita import *
-
-
-class SimpleEnum(Enum):
-    code_one = "Value for code one"
-    code_two = "Value for code two"
+from openfisca_italy.variables.common import *
 
 
 class code_used(Variable):
