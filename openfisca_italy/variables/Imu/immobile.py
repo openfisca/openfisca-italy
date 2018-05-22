@@ -75,43 +75,43 @@ class moltiplicatori_catastali(Variable):
         immobile_categoria_catastale_temp = person('immobile_categoria_catastale',period)
         c1               =  immobile_categoria_catastale_temp == CategoriaCatastale.C1
 
-        d1_10_tranne_d5  =  immobile_categoria_catastale_temp == CategoriaCatastale.D1 +
-                            immobile_categoria_catastale_temp == CategoriaCatastale.D2 +
-                            immobile_categoria_catastale_temp == CategoriaCatastale.D3 +
-                            immobile_categoria_catastale_temp == CategoriaCatastale.D4 +
-                            immobile_categoria_catastale_temp == CategoriaCatastale.D6 +
-                            immobile_categoria_catastale_temp == CategoriaCatastale.D7 +
-                            immobile_categoria_catastale_temp == CategoriaCatastale.D8 +
-                            immobile_categoria_catastale_temp == CategoriaCatastale.D9 +
-                            immobile_categoria_catastale_temp == CategoriaCatastale.D10
+        d1_10_tranne_d5  =  ((immobile_categoria_catastale_temp == CategoriaCatastale.D1) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.D2) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.D4) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.D3) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.D6) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.D7) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.D8) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.D9) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.D10))
 
-        a10_d5           =  immobile_categoria_catastale_temp == CategoriaCatastale.A10 +
-                            immobile_categoria_catastale_temp == CategoriaCatastale.D5
+        a10_d5           =  ((immobile_categoria_catastale_temp == CategoriaCatastale.A10) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.D5))
 
-        c3_c4_c5_b       =  immobile_categoria_catastale_temp == CategoriaCatastale.C3 +
-                            immobile_categoria_catastale_temp == CategoriaCatastale.C4 +
-                            immobile_categoria_catastale_temp == CategoriaCatastale.C5 +
-                            immobile_categoria_catastale_temp == CategoriaCatastale.B1 +
-                            immobile_categoria_catastale_temp == CategoriaCatastale.B2 +
-                            immobile_categoria_catastale_temp == CategoriaCatastale.B3 +
-                            immobile_categoria_catastale_temp == CategoriaCatastale.B4 +
-                            immobile_categoria_catastale_temp == CategoriaCatastale.B5 +
-                            immobile_categoria_catastale_temp == CategoriaCatastale.B6 +
-                            immobile_categoria_catastale_temp == CategoriaCatastale.B7 +
-                            immobile_categoria_catastale_temp == CategoriaCatastale.B8
+        c3_c4_c5_b       =  ((immobile_categoria_catastale_temp == CategoriaCatastale.C3) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.C4) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.C5) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.B2) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.B1) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.B3) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.B4) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.B5) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.B6) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.B8) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.B7))
 
-        c2_c6_c7_a1_9    =  immobile_categoria_catastale_temp == CategoriaCatastale.C2 +
-                            immobile_categoria_catastale_temp == CategoriaCatastale.C6 +
-                            immobile_categoria_catastale_temp == CategoriaCatastale.C7 +
-                            immobile_categoria_catastale_temp == CategoriaCatastale.A1 +
-                            immobile_categoria_catastale_temp == CategoriaCatastale.A2 +
-                            immobile_categoria_catastale_temp == CategoriaCatastale.A3 +
-                            immobile_categoria_catastale_temp == CategoriaCatastale.A4 +
-                            immobile_categoria_catastale_temp == CategoriaCatastale.A5 +
-                            immobile_categoria_catastale_temp == CategoriaCatastale.A6 +
-                            immobile_categoria_catastale_temp == CategoriaCatastale.A7 +
-                            immobile_categoria_catastale_temp == CategoriaCatastale.A8 +
-                            immobile_categoria_catastale_temp == CategoriaCatastale.A9
+        c2_c6_c7_a1_9    =  ((immobile_categoria_catastale_temp == CategoriaCatastale.C2) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.C6) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.C7) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.A1) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.A2) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.A4) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.A3) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.A5) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.A6) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.A7) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.A8) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.A9))
 
         terreno_cd_iap    = (person('is_immobile_posseduto_da_CD',period) + person('is_immobile_posseduto_da_IAP',period)) * immobile_categoria_catastale_temp == CategoriaCatastale.T
         terreno_normale   = not_(person('is_immobile_posseduto_da_CD',period) + person('is_immobile_posseduto_da_IAP',period)) * immobile_categoria_catastale_temp == CategoriaCatastale.T
@@ -248,8 +248,6 @@ class base_imponibile(Variable):
                             base_imponibile
                         ])
 
-                        class X(Variable):
-                            blablalba
 
 class immobile_categoria_catastale(Variable):
     value_type = Enum
@@ -348,10 +346,9 @@ class aliquota_imu(Variable):
 
     def formula(person, period, parameters):
         immobile_categoria_catastale_temp = person('immobile_categoria_catastale',period)
-        a1_a8_a9 =
-                        immobile_categoria_catastale_temp == CategoriaCatastale.A1+
-                        immobile_categoria_catastale_temp == CategoriaCatastale.A8+
-                        immobile_categoria_catastale_temp == CategoriaCatastale.A9
+        a1_a8_a9 = ((immobile_categoria_catastale_temp == CategoriaCatastale.A1) +
+                   (immobile_categoria_catastale_temp == CategoriaCatastale.A8) +
+                   (immobile_categoria_catastale_temp == CategoriaCatastale.A9))
         other_case = not_(a1_a8_a9)
         #A1,A8,A9 hanno l'aliquota del 4 per mille
         return select(
@@ -410,9 +407,9 @@ class detrazioni_imu(Variable):
                             person('is_svolgimento_attivita_non_commerciali_di_un_determinato_tipo',period)+
                             person('is_fabbricati_rurali_ad_uso_strumentale_in_comuni_montani',period)
                         ,True,False)
-        a1_a8_a9_case = immobile_categoria_catastale_temp == CategoriaCatastale.A1+
-                        immobile_categoria_catastale_temp == CategoriaCatastale.A8+
-                        immobile_categoria_catastale_temp == CategoriaCatastale.A9
+        a1_a8_a9_case = ((immobile_categoria_catastale_temp == CategoriaCatastale.A1) +
+                        (immobile_categoria_catastale_temp == CategoriaCatastale.A8) +
+                        (immobile_categoria_catastale_temp == CategoriaCatastale.A9))
         other_case = not_(a1_a2_a9_case)+not_(is_esenti)
         return select( [
                             is_esenti,
