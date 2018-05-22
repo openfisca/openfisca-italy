@@ -79,6 +79,14 @@ class moltiplicatori_catastali(Variable):
                             (immobile_categoria_catastale_temp == CategoriaCatastale.D2) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.D3) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.D4) +
+=======
+        c1               =  immobile_categoria_catastale_temp == CategoriaCatastale.C1
+
+        d1_10_tranne_d5  =  ((immobile_categoria_catastale_temp == CategoriaCatastale.D1) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.D2) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.D4) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.D3) +
+>>>>>>> 3dab958ab51e098d3771a73b81d54312d16f8b87
                             (immobile_categoria_catastale_temp == CategoriaCatastale.D6) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.D7) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.D8) +
@@ -93,12 +101,20 @@ class moltiplicatori_catastali(Variable):
                             (immobile_categoria_catastale_temp == CategoriaCatastale.C5) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.B1) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.B2) +
+=======
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.B2) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.B1) +
+>>>>>>> 3dab958ab51e098d3771a73b81d54312d16f8b87
                             (immobile_categoria_catastale_temp == CategoriaCatastale.B3) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.B4) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.B5) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.B6) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.B7) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.B8))
+=======
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.B8) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.B7))
+>>>>>>> 3dab958ab51e098d3771a73b81d54312d16f8b87
 
         c2_c6_c7_a1_9    =  ((immobile_categoria_catastale_temp == CategoriaCatastale.C2) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.C6) +
@@ -107,6 +123,10 @@ class moltiplicatori_catastali(Variable):
                             (immobile_categoria_catastale_temp == CategoriaCatastale.A2) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.A3) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.A4) +
+=======
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.A4) +
+                            (immobile_categoria_catastale_temp == CategoriaCatastale.A3) +
+>>>>>>> 3dab958ab51e098d3771a73b81d54312d16f8b87
                             (immobile_categoria_catastale_temp == CategoriaCatastale.A5) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.A6) +
                             (immobile_categoria_catastale_temp == CategoriaCatastale.A7) +
@@ -352,6 +372,11 @@ class aliquota_imu(Variable):
         a1_a8_a9 =  ((immobile_categoria_catastale_temp == CategoriaCatastale.A1)+
                     (immobile_categoria_catastale_temp == CategoriaCatastale.A8)+
                     (immobile_categoria_catastale_temp == CategoriaCatastale.A9))
+=======
+        a1_a8_a9 = ((immobile_categoria_catastale_temp == CategoriaCatastale.A1) +
+                   (immobile_categoria_catastale_temp == CategoriaCatastale.A8) +
+                   (immobile_categoria_catastale_temp == CategoriaCatastale.A9))
+>>>>>>> 3dab958ab51e098d3771a73b81d54312d16f8b87
         other_case = not_(a1_a8_a9)
         #A1,A8,A9 hanno l'aliquota del 4 per mille
         return select(
@@ -435,6 +460,12 @@ class detrazioni_imu(Variable):
                         (immobile_categoria_catastale_temp == CategoriaCatastale.A8)+
                         (immobile_categoria_catastale_temp == CategoriaCatastale.A9))
         other_case = not_(a1_a8_a9_case) + not_(is_esenti)
+=======
+        a1_a8_a9_case = ((immobile_categoria_catastale_temp == CategoriaCatastale.A1) +
+                        (immobile_categoria_catastale_temp == CategoriaCatastale.A8) +
+                        (immobile_categoria_catastale_temp == CategoriaCatastale.A9))
+        other_case = not_(a1_a2_a9_case)+not_(is_esenti)
+>>>>>>> 3dab958ab51e098d3771a73b81d54312d16f8b87
         return select( [
                             is_esenti,
                             a1_a8_a9_case,

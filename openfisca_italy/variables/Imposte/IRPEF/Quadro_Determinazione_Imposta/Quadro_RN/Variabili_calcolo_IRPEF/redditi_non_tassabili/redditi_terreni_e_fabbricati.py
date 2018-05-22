@@ -19,7 +19,7 @@ class irpef_non_dovuta_per_soli_terreni_e_fabbricati (Variable):
         # check if the person has only field and lands and buildings income
         solo_redditi_da_terreni_e_fabbricati = person('solo_redditi_da_terreni_e_fabbricati',period)
         # check that user hasn't compiled the section credito_per_fondi_comuni_compilato in the income declaration
-        credito_per_fondi_comuni_compilato_non_compilato = not person('credito_per_fondi_comuni_compilato',period)
+        credito_per_fondi_comuni_compilato_non_compilato = person('credito_per_fondi_comuni',period) == 0
         # check that all other incomes are 0
         tutti_altri_redditi_sono_zero = person('solo_redditi_da_terreni_e_fabbricati',period)
         return where((reddito_fondiario_sotto_la_soglia and solo_redditi_da_terreni_e_fabbricati and credito_per_fondi_comuni_compilato_non_compilato),True,False)

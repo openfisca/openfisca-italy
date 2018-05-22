@@ -15,11 +15,7 @@ class reddito_imponibile (Variable):
 
     def formula(person, period, parameters):
         # In the IRPEF calculation the  gross base income calculation could be in two ways
-        base_imponibile_lorda = person('reddito_complessivo',period)
-        oneri_deducibili = person('oneri_deducibili_totali_annuale',period)
-        deduzione_abitazione_principale = person('deduzione_abitazione_principale_annuale',period)
-        # this formula is fixed
-        reddito_imponibile = base_imponibile_lorda - deduzione_abitazione_principale - oneri_deducibili
+        reddito_imponibile = person('reddito_complessivo',period) + person('credito_per_fondi_comuni',period) - person('perdite_compensabili_con_crediti_per_fondi_comuni',period) - person('deduzione_abitazione_principale_annuale',period) - person('oneri_deducibili_totali_annuale',period)
         # agevolazione ACE section that is optional depending on possiede_diritto_agevolazione_ACE (optional)
         importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore = person('importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore',period)
         possiede_diritto_agevolazione_ACE = person('possiede_diritto_agevolazione_ACE',period)

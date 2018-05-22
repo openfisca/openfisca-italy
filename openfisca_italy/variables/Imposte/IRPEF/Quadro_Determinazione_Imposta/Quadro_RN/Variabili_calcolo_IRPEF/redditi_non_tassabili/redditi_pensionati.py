@@ -30,7 +30,7 @@ class irpef_non_dovuta_pensionati_e_terreni (Variable):
         reddito_da_pensione_sotto_la_soglia = (person('reddito_pensioni_annuale',period) < person('soglia_reddito_non_tassabile_per_reddito_da_pensione',period)) * (person('reddito_pensioni_annuale',period) > 0)
         reddito_da_terreni_sotto_la_soglia = (person('reddito_terreni_annuale',period) < parameters(period).imposte.IRPEF.redditi_non_tassabili.reddito_terreni) * (person('reddito_terreni_annuale',period) > 0)
         # check that user has compiled the section credito_per_fondi_comuni_compilato in the income declaration
-        credito_per_fondi_comuni_compilato = person('credito_per_fondi_comuni_compilato',period)
+        credito_per_fondi_comuni_compilato = not_(person('credito_per_fondi_comuni',period) == 0)
         # person have only income from fields and retirement
         # check that all other incomes are 0
         tutti_altri_redditi_sono_zero = person('solo_redditi_da_pensione_e_terreni',period)
@@ -58,4 +58,4 @@ class solo_redditi_da_pensione_e_terreni(Variable):
         tutti_altri_redditi_sono_zero = [person(reddito, period)==0 for reddito in altri_redditi]
         # check that all values in tutti_altri_redditi_sono_zero are true and set in the same variables
         tutti_altri_redditi_sono_zero = all(tutti_altri_redditi_sono_zero)
-        return where(tutti_altri_redditi_sono_zero,True,False)
+        return np.array(tutti_altri_redditi_sono_zero)
