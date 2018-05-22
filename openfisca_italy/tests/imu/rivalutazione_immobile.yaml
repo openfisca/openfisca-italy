@@ -1,0 +1,35 @@
+- name: Test di rivalutazione di un immobile di tipo A1 che costa 525 euro
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 500
+    immobile_categoria_catastale: A1
+  output_variables:
+    valore_immobile_rivalutato: 525
+- name: Test di rivalutazione di un immobile di tipo A1 che costa 0 euro
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 0
+    immobile_categoria_catastale: A1
+  output_variables:
+    valore_immobile_rivalutato: 0
+- name: Test di rivalutazione di un immobile di tipo A1 che costa 1000 euro
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 1000
+    immobile_categoria_catastale: A1
+  output_variables:
+    valore_immobile_rivalutato: 1050
+- name: Test di rivalutazione di un immobile di tipo T che costa 1000 euro
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 1000
+    immobile_categoria_catastale: T
+  output_variables:
+    valore_immobile_rivalutato: 1250
+- name: Test di rivalutazione di un immobile di tipo T che costa 0 euro
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 0
+    immobile_categoria_catastale: T
+  output_variables:
+    valore_immobile_rivalutato: 0

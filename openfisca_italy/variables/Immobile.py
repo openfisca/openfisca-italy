@@ -155,14 +155,14 @@ class immobile_categoria_catastale(Variable):
     possible_values = CategoriaCatastale
     default_value = CategoriaCatastale.A4  #default: Abitazione popolare
     entity = Persona
-    definition_period = YEAR
+    definition_period = MONTH
     label = u"E' l'indice ufficiale utilizzato in Italia per classificare i beni immobili, e determinarne le rendite"
 
 class is_immobile_prima_casa(Variable):
     value_type = bool
     entity = Persona
     default_value = False
-    definition_period = YEAR
+    definition_period = MONTH
     #set_input = set_input_divide_by_period
     label = u"Se l'immobile è prima casa"
     reference = u""
@@ -171,7 +171,7 @@ class is_immobile_abitazione_principale(Variable):
     value_type = bool
     entity = Persona
     default_value = False
-    definition_period = YEAR
+    definition_period = MONTH
     #set_input = set_input_divide_by_period
     label = u"Se l'immobile è abitazione principale"
     reference = u"http://www.normattiva.it/atto/caricaArticolo?art.progressivo=0&art.idArticolo=15&art.versione=22&art.codiceRedazionale=086U0917&art.dataPubblicazioneGazzetta=1986-12-31&atto.tipoProvvedimento=DECRETO%20DEL%20PRESIDENTE%20DELLA%20REPUBBLICA&art.idGruppo=1&art.idSottoArticolo1=10&art.idSottoArticolo=1&art.flagTipoArticolo=0#art"
@@ -180,7 +180,7 @@ class is_immobile_casa_di_lusso(Variable):
     value_type = bool
     entity = Persona
     default_value = False
-    definition_period = YEAR
+    definition_period = MONTH
     label = u"Se l'immobile è una casa di lusso"
     reference = u""
     #an "immobile" is categorized as "lusso" if entered in category A1 or A8 or A9
@@ -192,7 +192,7 @@ class is_immobile_appartenente_cooperativa_edilizia(Variable):
     value_type = bool
     entity = Persona
     default_value = False
-    definition_period = YEAR
+    definition_period = MONTH
     label = u"Se l'immobile appartiene a cooperative edilizie a proprietà indivisa, adibite ad abitazione principale e relative pertinenze dei soci assegnatari"
     reference = u""
 
@@ -200,7 +200,6 @@ class is_immobile_destinato_ad_alloggi_sociali(Variable):
     value_type = bool
     entity = Persona
     default_value = False
-    definition_period = YEAR
+    definition_period = MONTH
     label = u"Se l'immobile è destinato ad alloggi sociali"
     reference = u""
-
