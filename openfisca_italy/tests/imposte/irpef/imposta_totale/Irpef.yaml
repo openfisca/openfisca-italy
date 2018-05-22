@@ -60,7 +60,6 @@
     reddito_pensioni_annuale: 6000
     giorni_in_cui_si_e_percepita_la_pensione: 365
     reddito_terreni_annuale: 150
-    credito_per_fondi_comuni_compilato: False
   output_variables:
     irpef_non_dovuta_pensionati_e_terreni: True
     reddito_imponibile: 3130
@@ -84,7 +83,6 @@
     # da inserire detrazioni d'imposta una volta stabilito se irpef possa andare sotto lo 0 oppure no
     # variabili che comportano una irpef nulla
     reddito_fondiari_annuale: 485
-    credito_per_fondi_comuni_compilato: False
   output_variables:
     irpef_non_dovuta_per_soli_terreni_e_fabbricati: True
     reddito_imponibile: 405
