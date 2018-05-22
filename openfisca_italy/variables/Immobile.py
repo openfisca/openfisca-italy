@@ -70,10 +70,12 @@ class moltiplicatori_catastali(Variable):
     label = u""
     reference = u""
 
+    #Not implemented for E and F because they are real estate of State.
     def formula(person, period, parameters):
         immobile_categoria_catastale_temp = person('immobile_categoria_catastale',period)
-        return select(  [   immobile_categoria_catastale_temp == CategoriaCatastale.C1,         #1
-                            immobile_categoria_catastale_temp == CategoriaCatastale.D1 +        #2
+        c1               =  immobile_categoria_catastale_temp == CategoriaCatastale.C1
+
+        d1_10_tranne_d5  =  immobile_categoria_catastale_temp == CategoriaCatastale.D1 +
                             immobile_categoria_catastale_temp == CategoriaCatastale.D2 +
                             immobile_categoria_catastale_temp == CategoriaCatastale.D3 +
                             immobile_categoria_catastale_temp == CategoriaCatastale.D4 +
@@ -81,10 +83,12 @@ class moltiplicatori_catastali(Variable):
                             immobile_categoria_catastale_temp == CategoriaCatastale.D7 +
                             immobile_categoria_catastale_temp == CategoriaCatastale.D8 +
                             immobile_categoria_catastale_temp == CategoriaCatastale.D9 +
-                            immobile_categoria_catastale_temp == CategoriaCatastale.D10,
-                            immobile_categoria_catastale_temp == CategoriaCatastale.A10 +       #3
-                            immobile_categoria_catastale_temp == CategoriaCatastale.D5,
-                            immobile_categoria_catastale_temp == CategoriaCatastale.C3 +        #4
+                            immobile_categoria_catastale_temp == CategoriaCatastale.D10
+
+        a10_d5           =  immobile_categoria_catastale_temp == CategoriaCatastale.A10 +
+                            immobile_categoria_catastale_temp == CategoriaCatastale.D5
+
+        c3_c4_c5_b       =  immobile_categoria_catastale_temp == CategoriaCatastale.C3 +
                             immobile_categoria_catastale_temp == CategoriaCatastale.C4 +
                             immobile_categoria_catastale_temp == CategoriaCatastale.C5 +
                             immobile_categoria_catastale_temp == CategoriaCatastale.B1 +
@@ -94,8 +98,9 @@ class moltiplicatori_catastali(Variable):
                             immobile_categoria_catastale_temp == CategoriaCatastale.B5 +
                             immobile_categoria_catastale_temp == CategoriaCatastale.B6 +
                             immobile_categoria_catastale_temp == CategoriaCatastale.B7 +
-                            immobile_categoria_catastale_temp == CategoriaCatastale.B8,         #5
-                            immobile_categoria_catastale_temp == CategoriaCatastale.C2 +
+                            immobile_categoria_catastale_temp == CategoriaCatastale.B8
+
+        c2_c6_c7_a1_9    =  immobile_categoria_catastale_temp == CategoriaCatastale.C2 +
                             immobile_categoria_catastale_temp == CategoriaCatastale.C6 +
                             immobile_categoria_catastale_temp == CategoriaCatastale.C7 +
                             immobile_categoria_catastale_temp == CategoriaCatastale.A1 +
@@ -107,15 +112,90 @@ class moltiplicatori_catastali(Variable):
                             immobile_categoria_catastale_temp == CategoriaCatastale.A7 +
                             immobile_categoria_catastale_temp == CategoriaCatastale.A8 +
                             immobile_categoria_catastale_temp == CategoriaCatastale.A9
+
+        terreno_cd_iap    = (person('is_immobile_posseduto_da_CD',period) + person('is_immobile_posseduto_da_IAP',period)) * immobile_categoria_catastale_temp == CategoriaCatastale.T
+        terreno_normale   = not_(person('is_immobile_posseduto_da_CD',period) + person('is_immobile_posseduto_da_IAP',period)) * immobile_categoria_catastale_temp == CategoriaCatastale.T
+        return select(  [   c1,
+                            d1_10_tranne_d5,
+                            a10_d5,
+                            c3_c4_c5_b,
+                            c2_c6_c7_a1_9,
+                            terreno_cd_iap,
+                            terreno_normale
+
                         ],
                         [
-                            55,                                                                 #1
-                            65,                                                                 #2
-                            80,                                                                 #3
-                            140,                                                                #4
-                            160                                                                 #5
+                            55,
+                            65,
+                            80,
+                            140,
+                            160,
+                            110,
+                            135
                         ])
 
+class is_destinazione_ad_usi_culturali(Variable):
+    value_type = bool
+    entity = Persona
+    default_value = False
+    definition_period = MONTH
+    label = u"Immobile con destinazione ad usi culturali?"
+    reference = u"art. 5-bis del D.P.R. 29 settembre 1973, n. 601"
+
+class is_destinazione_ad_uso_di_culto(Variable):
+    value_type = bool
+    entity = Persona
+    default_value = False
+    definition_period = MONTH
+    label = u"Immobile con destinazione ad usi di culto?"
+    reference = u"artt. 8 e 19 della Costituzione"
+
+class is_proprieta_santa_sede(Variable):
+    value_type = bool
+    entity = Persona
+    default_value = False
+    definition_period = MONTH
+    label = u"Immobile appartentente alla Santa Sede?"
+    reference = u"artt. 13, 14, 15 e 16 del Trattato lateranense, sottoscritto l’11 febbraio 1929 e reso esecutivo con legge 27 maggio 1929, n. 810"
+
+#i fabbricati appartenenti agli Stati esteri e alle organizzazioni internazionali
+#per i quali è prevista l’esenzione dall’imposta locale sul reddito dei fabbricati
+#in base ad accordi internazionali resi esecutivi in Italia
+class is_svolgimento_attivita_non_commerciali_di_un_determinato_tipo(Variable):
+    value_type = bool
+    entity = Persona
+    default_value = False
+    definition_period = MONTH
+    label = u"Immobile con destinazione: attività assistenziali, previdenziali, sanitarie, didattiche, ricettive, culturali, ricreative e sportive"
+    reference = u"art. 16, lett. a), della legge 20 maggio 1985, n. 222 e all’art. 73, comma 1, lett. c), del TUIR"
+
+class is_fabbricati_rurali_ad_uso_strumentale_in_comuni_montani(Variable):
+    value_type = bool
+    entity = Persona
+    default_value = False
+    definition_period = MONTH
+    label = u"Immobile ubicati nei comuni classificati montani o parzialmente montani di cui all’elenco dei comuni italiani predisposto dall’ISTAT"
+    reference = u"all’art. 9, comma 3-bis, del D. L. n. 557 del 1993, lista comuni esenti: https://www.istat.it/it/archivio/6789"
+
+
+
+
+#Terreni (anche non coltivati) posseduti da coltivatori diretti (CD)
+class is_immobile_posseduto_da_CD(Variable):
+    value_type = bool
+    entity = Persona
+    default_value = False
+    definition_period = MONTH
+    label = u"L'immobile è posseduto da un coltivatore diretto?"
+    reference = u""
+#Terreni (anche non coltivati) posseduti da imprenditori agricoli professionali iscritti nella previdenza agricola (IAP)
+class is_immobile_posseduto_da_IAP(Variable):
+    value_type = bool
+    entity = Persona
+    default_value = False
+    definition_period = MONTH
+    label = u"L'immobile è posseduto da un imprenditore agricolo professionale?"
+    reference = u""
 
 class valore_immobile_non_rivalutato(Variable):
     value_type = float
@@ -147,8 +227,29 @@ class base_imponibile(Variable):
     label = u"Base imponibile dell'immobile"
 
     def formula(person, period, parameters):
-        return person('valore_immobile_rivalutato',period) * person('moltiplicatori_catastali',period)
+        is_scontato_50_percento = where(    person('is_interesse_storico_artistico',period)+
+                                            person('is_inagibile_accertato',period),
+                                            True,False)
+        is_scontato_25_percento = where(    person('is_canone_concordato',period),
+                                            True,False)
+        is_scontato_75_percento = where(    is_scontato_25_percento*is_scontato_50_percento,
+                                            True,False)
+        other_case = not_(is_scontato_25_percento)+not_(is_scontato_50_percento)+not_(is_scontato_75_percento)
+        base_imponibile = person('valore_immobile_rivalutato',period) * person('moltiplicatori_catastali',period)
+        return select(  [
+                            is_scontato_25_percento,
+                            is_scontato_50_percento,
+                            is_scontato_75_percento,
+                            other_case
+                        ],[
+                            base_imponibile-(base_imponibile*25/100),
+                            base_imponibile-(base_imponibile*50/100),
+                            base_imponibile-(base_imponibile*75/100),
+                            base_imponibile
+                        ])
 
+                        class X(Variable):
+                            blablalba
 
 class immobile_categoria_catastale(Variable):
     value_type = Enum
@@ -165,6 +266,24 @@ class is_immobile_prima_casa(Variable):
     definition_period = MONTH
     #set_input = set_input_divide_by_period
     label = u"Se l'immobile è prima casa"
+    reference = u""
+
+class is_canone_concordato(Variable):
+    value_type = bool
+    entity = Persona
+    default_value = False
+    definition_period = MONTH
+    #set_input = set_input_divide_by_period
+    label = u"Se l'immobile è in canone concordato"
+    reference = u"commi 53 e 54 dell’articolo 1 della legge 208/2015, definiti dalla legge 431 del 1998"
+
+class is_comodato_uso_gratuito_genitori_figli(Variable):
+    value_type = bool
+    entity = Persona
+    default_value = False
+    definition_period = MONTH
+    #set_input = set_input_divide_by_period
+    label = u"Se l'immobile è in comodato d'uso gratuito genitori-figli"
     reference = u""
 
 class is_immobile_abitazione_principale(Variable):
@@ -203,3 +322,105 @@ class is_immobile_destinato_ad_alloggi_sociali(Variable):
     definition_period = MONTH
     label = u"Se l'immobile è destinato ad alloggi sociali"
     reference = u""
+
+class is_inagibile_accertato(Variable):
+    value_type = bool
+    entity = Persona
+    default_value = False
+    definition_period = MONTH
+    label = u"Se l'immobile è inagibile"
+    reference = u"Decreto del presidente della Repubblica 28 dicembre 2000, n. 445"
+
+class is_interesse_storico_artistico(Variable):
+    value_type = bool
+    entity = Persona
+    default_value = False
+    definition_period = MONTH
+    label = u"Se l'immobile ha un interesse storico/artistico"
+    reference = u"Decreto del presidente della Repubblica 28 dicembre 2000, n. 445"
+
+class aliquota_imu(Variable):
+    value_type = float
+    entity = Persona
+    definition_period = MONTH
+    set_input = set_input_divide_by_period
+    label = u"Aliquota IMU che cambia a seconda della categoria"
+
+    def formula(person, period, parameters):
+        immobile_categoria_catastale_temp = person('immobile_categoria_catastale',period)
+        a1_a8_a9 =
+                        immobile_categoria_catastale_temp == CategoriaCatastale.A1+
+                        immobile_categoria_catastale_temp == CategoriaCatastale.A8+
+                        immobile_categoria_catastale_temp == CategoriaCatastale.A9
+        other_case = not_(a1_a8_a9)
+        #A1,A8,A9 hanno l'aliquota del 4 per mille
+        return select(
+                            [a1_a8_a9,  other_case  ]
+                            ,
+                            [(4/1000),  (7.6/1000)  ]
+                    )
+class imposta_imu(Variable):
+    value_type = float
+    entity = Persona
+    definition_period = MONTH
+    set_input = set_input_divide_by_period
+    label = u"Imposta IMU, risultato della moltiplicazione tra la base imponibile e l'aliquota imu"
+
+    def formula(person, period, parameters):
+        is_esenti = where(  person('is_destinazione_ad_uso_di_culto',period)+
+                            person('is_destinazione_ad_usi_culturali',period)+
+                            person('is_proprieta_santa_sede',period)+
+                            person('is_svolgimento_attivita_non_commerciali_di_un_determinato_tipo',period)+
+                            person('is_fabbricati_rurali_ad_uso_strumentale_in_comuni_montani',period)
+                        ,True,False)
+        other_case = not_(is_esenti)
+        return select([is_esenti,other_case],[0,person('base_imponibile',period) * person('aliquota_imu',period)])
+
+class importo_imu(Variable):
+    value_type = float
+    entity = Persona
+    definition_period = MONTH
+    set_input = set_input_divide_by_period
+    label = u"Importo IMU, la differenza tra l'imposta imu e le detrazioni"
+
+    def formula(person, period, parameters):
+        is_esenti = where(  person('is_destinazione_ad_uso_di_culto',period)+
+                            person('is_destinazione_ad_usi_culturali',period)+
+                            person('is_proprieta_santa_sede',period)+
+                            person('is_svolgimento_attivita_non_commerciali_di_un_determinato_tipo',period)+
+                            person('is_fabbricati_rurali_ad_uso_strumentale_in_comuni_montani',period)
+                        ,True,False)
+        #se è esente ritorna 0 altrimenti calcola il risultato
+        return where(is_esenti,0,person('base_imponibile',period) * person('aliquota_imu',period))
+
+
+class detrazioni_imu(Variable):
+    value_type = float
+    entity = Persona
+    definition_period = MONTH
+    set_input = set_input_divide_by_period
+    label = u"Detrazioni applicate all'imposta imu"
+
+    def formula(person, period, parameters):
+        immobile_categoria_catastale_temp = person('immobile_categoria_catastale',period)
+
+        is_esenti = where(  person('is_destinazione_ad_uso_di_culto',period)+
+                            person('is_destinazione_ad_usi_culturali',period)+
+                            person('is_proprieta_santa_sede',period)+
+                            person('is_svolgimento_attivita_non_commerciali_di_un_determinato_tipo',period)+
+                            person('is_fabbricati_rurali_ad_uso_strumentale_in_comuni_montani',period)
+                        ,True,False)
+        a1_a8_a9_case = immobile_categoria_catastale_temp == CategoriaCatastale.A1+
+                        immobile_categoria_catastale_temp == CategoriaCatastale.A8+
+                        immobile_categoria_catastale_temp == CategoriaCatastale.A9
+        other_case = not_(a1_a2_a9_case)+not_(is_esenti)
+        return select( [
+                            is_esenti,
+                            a1_a8_a9_case,
+                            other_case
+                        ],
+                        [
+                            0,
+                            200,    #A1,A8,A9 hanno una detrazione fissa di 200 euro
+                            0
+                        ])
