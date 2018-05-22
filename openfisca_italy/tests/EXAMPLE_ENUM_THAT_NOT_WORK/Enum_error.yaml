@@ -1,0 +1,13 @@
+- name: Test 1 per vedere se funziona enum
+  period: 2017
+  input_variables:
+    code_used: code_one
+  output_variables:
+    Variable_A: True
+
+- name: Test 2 per vedere se funziona enum
+  period: 2017
+  input_variables:
+    code_used: code_two
+  output_variables:
+    Variable_A: True
