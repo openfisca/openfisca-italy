@@ -1,13 +1,13 @@
 - name: Test calcolo oneri deducibili annuali senza centesimi
   period: 2017
   input_variables:
-    contributi_previdenziali_assistenziali: 150
-    assegno_periodico_al_coniuge: 150
-    contributi_addetti_servizi_domestici_e_familiari: 150
-    erogazioni_liberali_a_istituzioni_religiose: 150
-    spese_mediche_e_assistenza_disabili: 150
-    altri_oneri_e_spese_deducibili: 150
-    contributi_deducibilita_ordinaria_non_dedotti_dal_sostituto: 150
+    RP21_contributi_previdenziali_assistenziali: 150
+    RP22_assegno_periodico_al_coniuge: 150
+    RP23_contributi_addetti_servizi_domestici_e_familiari: 150
+    RP24_erogazioni_liberali_a_istituzioni_religiose: 150
+    RP25_spese_mediche_e_assistenza_disabili: 150
+    RP26_altri_oneri_e_spese_deducibili: 150
+    RP27_contributi_deducibilita_ordinaria_non_dedotti_dal_sostituto: 150
     contributi_per_lavoratori_prima_occupazione_non_dedotti_dal_sostituto: 150
     contributi_per_fondi_in_squilibrio_finanziario_non_dedotti_dal_sostituto: 150
     contributi_versati_per_familiari_a_carico_non_dedotti_dal_sostituto: 150

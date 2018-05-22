@@ -6,7 +6,7 @@ from openfisca_italy.entita import *
 
 
 
-class assegno_periodico_al_coniuge(Variable):
+class RP22_assegno_periodico_al_coniuge(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR

@@ -41,3 +41,17 @@
   output_variables:
     contributi_per_lavoratori_prima_occupazione_dedotti_dal_sostituto: 0
     contributi_per_lavoratori_prima_occupazione_non_dedotti_dal_sostituto: 0
+
+- name: Test 5 per vedere se funziona il meccanismo si maggiorazione
+  period: 2017
+  input_variables:
+    importo_punto_412_certificazione_unica: 4000
+    importo_punto_413_certificazione_unica: 400
+    codice_inserito_campo_411_modello_unico: codice_tre
+    importo_punto_417_certificazione_unica: 1500
+    RP28_contributi_versati_nei_primi_5_anni_per_maggior_limite_deducibilita: 25000
+    RP28_hanno_diritto_a_maggior_limite_di_deducibilita: True
+  output_variables:
+    contributi_per_lavoratori_prima_occupazione_dedotti_dal_sostituto: 5500
+    contributi_per_lavoratori_prima_occupazione_non_dedotti_dal_sostituto: 400
+    RP_28_importo_deducibile_contributi_per_lavoratori_prima_occupazione_non_dedotti_dal_sostituto: 400

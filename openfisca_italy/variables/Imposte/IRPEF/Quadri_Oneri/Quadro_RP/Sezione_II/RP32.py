@@ -3,6 +3,7 @@
 from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
 from openfisca_italy.entita import *
+
 import numpy as np
 
 class TipoSpesaPerAcquistoCostruzioneAbitazioniDateInLocazione(Enum):

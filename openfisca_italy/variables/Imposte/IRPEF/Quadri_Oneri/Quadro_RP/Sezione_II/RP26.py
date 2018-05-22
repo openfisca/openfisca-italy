@@ -4,7 +4,7 @@ from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
 from openfisca_italy.entita import *
 
-class altri_oneri_e_spese_deducibili(Variable):
+class RP26_altri_oneri_e_spese_deducibili(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
@@ -12,7 +12,7 @@ class altri_oneri_e_spese_deducibili(Variable):
     label = "Altri oneri e spese deducibili Rigo Rp26 col.2"
     reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=64"  # Always use the most official source
 
-class TipiAltriOneriESpeseDeducibili(Enum):
+class RP26_TipiAltriOneriESpeseDeducibili(Enum):
     nessun_codice = u"Nessun codice è stato inserito, il campo non compilato"
     codice_sei = u"Contributi versati ai fondi integrativi al Servizio sanitario nazionale"
     codice_sette = u" i contributi, le donazioni e le oblazioni erogate alle organizzazioni non governative (ONG) riconosciute idonee, che operano nel campo della cooperazione con i Paesi in via di sviluppo"

@@ -5,7 +5,7 @@ from openfisca_core.model_api import *
 from openfisca_italy.entita import *
 
 
-class contributi_previdenziali_assistenziali(Variable):
+class RP21_contributi_previdenziali_assistenziali(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR

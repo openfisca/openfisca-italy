@@ -3,6 +3,8 @@
 from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
 from openfisca_italy.entita import *
+from openfisca_italy.variables.Imposte.IRPEF.Quadri_Oneri.Quadro_RP.Sezione_II_common import *
+
 import numpy as np
 
 class contributi_fondo_pensione_negoziale_dipendenti_pubblici_dedotti_dal_sostituto(Variable):
@@ -14,7 +16,7 @@ class contributi_fondo_pensione_negoziale_dipendenti_pubblici_dedotti_dal_sostit
         reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=66"  # Always use the most official source
 
         def formula(person,period,parameters):
-            codice_campo_411_valido = person('codice_inserito_campo_411_modello_unico',period) == 2
+            codice_campo_411_valido = person('codice_inserito_campo_411_modello_unico',period) == TipiCodiciCampo411ModelloUnico.codice_quattro
             return where (codice_campo_411_valido, person('importo_punto_412_certificazione_unica',period) , np.array(0))
 
 
@@ -27,7 +29,7 @@ class contributi_fondo_pensione_negoziale_dipendenti_pubblici_quota_TFR(Variable
         reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=66"  # Always use the most official source
 
         def formula(person,period,parameters):
-            codice_campo_411_valido = person('codice_inserito_campo_411_modello_unico',period) == 2
+            codice_campo_411_valido = person('codice_inserito_campo_411_modello_unico',period) == TipiCodiciCampo411ModelloUnico.codice_quattro
             return where (codice_campo_411_valido, person('importo_punto_414_certificazione_unica',period) , np.array(0))
 # Column 3 section
 # La classe contributi_fondo_pensione_negoziale_dipendenti_pubblici_non_dedotti_dal_sostituto segue un prospetto nelle appendici,essendo complessa sara' composta da più variabili
@@ -41,7 +43,7 @@ class contributi_fondo_pensione_negoziale_dipendenti_pubblici_non_dedotti_dal_so
 
         def formula(person,period,parameters):
             # controllare che sia stato compilato uno dei vari righi
-            codice_campo_411_valido = person('codice_inserito_campo_411_modello_unico',period) == 2
+            codice_campo_411_valido = person('codice_inserito_campo_411_modello_unico',period) == TipiCodiciCampo411ModelloUnico.codice_quattro
             return where (codice_campo_411_valido, person('casella_11_prospetto_compilazione_Rigo_RP31',period) , np.array(0))
 
  #prospetto
@@ -76,10 +78,10 @@ class casella_3_prospetto_compilazione_Rigo_RP31(Variable):
 
         def formula(person,period,parameters):
             # caso 1
-            casella_411_certificazione_unica_compilata = not_(person('codice_inserito_campo_411_modello_unico',period) == 5) #nessun codice
+            casella_411_certificazione_unica_compilata = not_(person('codice_inserito_campo_411_modello_unico',period) == TipiCodiciCampo411ModelloUnico.nessun_codice) #nessun codice
             importo_punto_413_certificazione_unica = person('importo_punto_413_certificazione_unica',period)
             # caso 2
-            nella_casella_411_certificazione_unica_compilata_presente_codice_uno = person('codice_inserito_campo_411_modello_unico',period) == 4
+            nella_casella_411_certificazione_unica_compilata_presente_codice_uno = person('codice_inserito_campo_411_modello_unico',period) == TipiCodiciCampo411ModelloUnico.codice_uno
             codice_inserito_campo_421_modello_unico = not_(person('importo_punto_421_certificazione_unica',period) == 0)
             importo_punto_423_certificazione_unica = person('importo_punto_423_certificazione_unica',period)
             return select([nella_casella_411_certificazione_unica_compilata_presente_codice_uno*codice_inserito_campo_421_modello_unico,

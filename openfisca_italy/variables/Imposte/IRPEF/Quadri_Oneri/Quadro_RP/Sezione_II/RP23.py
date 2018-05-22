@@ -5,7 +5,7 @@ from openfisca_core.model_api import *
 from openfisca_italy.entita import *
 
 
-class contributi_addetti_servizi_domestici_e_familiari(Variable):
+class RP23_contributi_addetti_servizi_domestici_e_familiari(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR

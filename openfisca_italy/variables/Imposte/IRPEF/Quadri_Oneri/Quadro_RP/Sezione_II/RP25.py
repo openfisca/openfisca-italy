@@ -4,7 +4,7 @@ from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
 from openfisca_italy.entita import *
 
-class spese_mediche_e_assistenza_disabili(Variable):
+class RP25_spese_mediche_e_assistenza_disabili(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR

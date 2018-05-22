@@ -3,6 +3,8 @@
 from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
 from openfisca_italy.entita import *
+from openfisca_italy.variables.Imposte.IRPEF.Quadri_Oneri.Quadro_RP.Sezione_II_common import *
+
 import numpy as np
 
 
@@ -15,7 +17,7 @@ class contributi_per_fondi_in_squilibrio_finanziario_dedotti_dal_sostituto(Varia
         reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=66"  # Always use the most official source
 
         def formula(person,period,parameters):
-            codice_campo_411_valido = person('codice_inserito_campo_411_modello_unico',period) == 1
+            codice_campo_411_valido = person('codice_inserito_campo_411_modello_unico',period) == TipiCodiciCampo411ModelloUnico.codice_due
             importo = person('importo_punto_412_certificazione_unica',period)
             return where (codice_campo_411_valido,importo, np.array(0))
 
@@ -30,5 +32,5 @@ class contributi_per_fondi_in_squilibrio_finanziario_non_dedotti_dal_sostituto(V
 
         def formula(person,period,parameters):
             importo_punto_413_certificazione_unica = person('importo_punto_413_certificazione_unica',period)
-            codice_campo_411_valido = person('codice_inserito_campo_411_modello_unico',period) == 1
+            codice_campo_411_valido = person('codice_inserito_campo_411_modello_unico',period) == TipiCodiciCampo411ModelloUnico.codice_due
             return where (codice_campo_411_valido, importo_punto_413_certificazione_unica ,0)
