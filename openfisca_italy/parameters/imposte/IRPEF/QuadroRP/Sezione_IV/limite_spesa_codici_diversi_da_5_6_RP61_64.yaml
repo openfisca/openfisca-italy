@@ -55,12 +55,12 @@ codice_cinque:
       description: "Rigo RP61_64 col. 8 - Spese sostenute fino al 5 giugno 2013 (55%) con Codice 4 in colonna 1"
       values:
         2010-01-01:
-          value: 54545.45
+          value: 0
     importo_spese_sostenute_dal_6_giugno_2013_al_21_dicembre_2017:
       description: "Rigo RP61_64 col. 8 - Spese sostenute dal 6 giugno 2013 al 31 dicembre 2017 (65%) con Codice 4 in colonna 1"
       values:
         2010-01-01:
-          value:  46153.84
+          value:  0
 
 
 codice_sei:

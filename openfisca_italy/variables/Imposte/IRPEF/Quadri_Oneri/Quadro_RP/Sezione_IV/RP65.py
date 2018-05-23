@@ -3,6 +3,8 @@
 from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
 from openfisca_italy.entita import *
+#import common
+from openfisca_italy.variables.Imposte.IRPEF.Quadri_Oneri.Quadro_RP.Sezione_IV_common import *
 # Import numpy
 import numpy as np
 
@@ -38,7 +40,7 @@ class RP_65_importo_rate_per_spese_interventi_finalizzati_al_risparmio_energetic
         codici_periodo_2013_da_controllare = ['RP61_periodo_2013','RP62_periodo_2013','RP63_periodo_2013','RP64_periodo_2013']
         importi_rata = ['RP61_importo_rata','RP62_importo_rata','RP63_importo_rata','RP64_importo_rata']
         for codice_anno, codice_periodo_2013 , importo_rata in zip(codici_righi_anni_da_controllare,codici_periodo_2013_da_controllare,importi_rata):
-            condizione_vera = (person(codice_anno,period) < 2013) + ((person(codice_anno,period) == 2013) * (person(codice_periodo_2013,period) == 1))
+            condizione_vera = (person(codice_anno,period) < 2013) + ((person(codice_anno,period) == 2013) * (person(codice_periodo_2013,period) == TipiPeriodo2013FinalizzatiRisparmioEnergetico.codice_uno))
             importo_rata_al_55 = where (condizione_vera, importo_rata_al_55 + person(importo_rata,period) ,importo_rata_al_55)
         return importo_rata_al_55
 
@@ -58,7 +60,17 @@ class RP_65_importo_rate_per_spese_interventi_finalizzati_al_risparmio_energetic
         codice_tipo_intevento_da_controllare = ['RP61_tipo_intervento','RP62_tipo_intervento','RP63_tipo_intervento','RP64_tipo_intervento',]
         importi_rata = ['RP61_importo_rata','RP62_importo_rata','RP63_importo_rata','RP64_importo_rata']
         for codice_anno, codice_periodo_2013 , codice_tipo_intervento, importo_rata in zip(codici_righi_anni_da_controllare,codici_periodo_2013_da_controllare,codice_tipo_intevento_da_controllare,importi_rata):
-            condizione_vera = (person(codice_anno,period) == 2014) + (person(codice_anno,period) == 2015) + (person(codice_anno,period) == 2016) + ((person(codice_anno,period) == 2013) * (person(codice_periodo_2013,period) == 2)) + ((person(codice_anno,period) == 2017) * (person(codice_tipo_intervento,period) == 1)) + ((person(codice_anno,period) == 2017) * (person(codice_tipo_intervento,period) == 2)) + ((person(codice_anno,period) == 2017) * (person(codice_tipo_intervento,period) == 3)) + ((person(codice_anno,period) == 2017) * (person(codice_tipo_intervento,period) == 4)) + ((person(codice_anno,period) == 2017) * (person(codice_tipo_intervento,period) == 5)) + ((person(codice_anno,period) == 2017) * (person(codice_tipo_intervento,period) == 6)) + ((person(codice_anno,period) == 2017) * (person(codice_tipo_intervento,period) == 9))
+            condizione_vera =   ((person(codice_anno,period) == 2014) +
+                                (person(codice_anno,period) == 2015) +
+                                (person(codice_anno,period) == 2016) +
+                                ((person(codice_anno,period) == 2013) * (person(codice_periodo_2013,period) == TipiPeriodo2013FinalizzatiRisparmioEnergetico.codice_due)) +
+                                ((person(codice_anno,period) == 2017) * (person(codice_tipo_intervento,period) == TipiInterventiFinalizzatiRisparmioEnergetico.codice_uno)) +
+                                ((person(codice_anno,period) == 2017) * (person(codice_tipo_intervento,period) == TipiInterventiFinalizzatiRisparmioEnergetico.codice_due)) +
+                                ((person(codice_anno,period) == 2017) * (person(codice_tipo_intervento,period) == TipiInterventiFinalizzatiRisparmioEnergetico.codice_tre)) +
+                                ((person(codice_anno,period) == 2017) * (person(codice_tipo_intervento,period) == TipiInterventiFinalizzatiRisparmioEnergetico.codice_quattro)) +
+                                ((person(codice_anno,period) == 2017) * (person(codice_tipo_intervento,period) == TipiInterventiFinalizzatiRisparmioEnergetico.codice_cinque)) +
+                                ((person(codice_anno,period) == 2017) * (person(codice_tipo_intervento,period) == TipiInterventiFinalizzatiRisparmioEnergetico.codice_sei)) +
+                                ((person(codice_anno,period) == 2017) * (person(codice_tipo_intervento,period) == TipiInterventiFinalizzatiRisparmioEnergetico.codice_sette)))
             importo_rata_al_65 = where (condizione_vera, importo_rata_al_65 + person(importo_rata,period) ,importo_rata_al_65)
         return importo_rata_al_65
 
@@ -78,8 +90,7 @@ class RP_65_importo_rate_per_spese_interventi_finalizzati_al_risparmio_energetic
         codice_tipo_intevento_da_controllare = ['RP61_tipo_intervento','RP62_tipo_intervento','RP63_tipo_intervento','RP64_tipo_intervento',]
         importi_rata = ['RP61_importo_rata','RP62_importo_rata','RP63_importo_rata','RP64_importo_rata']
         for codice_anno, codice_tipo_intervento, importo_rata in zip(codici_righi_anni_da_controllare,codice_tipo_intevento_da_controllare,importi_rata):
-            condizione_vera = ((person(codice_anno,period) == 2017) * (person(codice_tipo_intervento,period) == 7))
-            print person(codice_tipo_intervento,period)
+            condizione_vera = ((person(codice_anno,period) == 2017) * (person(codice_tipo_intervento,period) == TipiInterventiFinalizzatiRisparmioEnergetico.codice_otto))
             importo_rata_al_70 = where (condizione_vera, importo_rata_al_70 + person(importo_rata,period) ,importo_rata_al_70)
         return importo_rata_al_70
 
@@ -98,7 +109,6 @@ class RP_65_importo_rate_per_spese_interventi_finalizzati_al_risparmio_energetic
         codice_tipo_intevento_da_controllare = ['RP61_tipo_intervento','RP62_tipo_intervento','RP63_tipo_intervento','RP64_tipo_intervento',]
         importi_rata = ['RP61_importo_rata','RP62_importo_rata','RP63_importo_rata','RP64_importo_rata']
         for codice_anno, codice_tipo_intervento, importo_rata in zip(codici_righi_anni_da_controllare,codice_tipo_intevento_da_controllare,importi_rata):
-            condizione_vera = ((person(codice_anno,period) == 2017) * (person(codice_tipo_intervento,period) == 0))
-            print person(codice_tipo_intervento,period)
+            condizione_vera = ((person(codice_anno,period) == 2017) * (person(codice_tipo_intervento,period) == TipiInterventiFinalizzatiRisparmioEnergetico.nove))
             importo_rata_al_75 = where (condizione_vera, importo_rata_al_75 + person(importo_rata,period) ,importo_rata_al_75)
         return importo_rata_al_75
