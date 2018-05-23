@@ -5,6 +5,7 @@ from openfisca_core.model_api import *
 from openfisca_italy.entita import *
 # import numpt
 import numpy as np
+from openfisca_italy.variables.Imposte.IRPEF.Quadri_Oneri.Quadro_RP.Sezione_III_B_common import *
 
 #Dovrei prendere un codice relativo alla Sezione III A nelle colonne 11. Il problema e' che nella sezione III a ci sono 7 righi e qui solo due. Quindi c'è un problema.
 class RP51_numero_ordine_immobile(Variable):
@@ -29,17 +30,11 @@ class RP51_codice_comune(Variable):
     reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=74"
 
 
-class RP51TipiTerreniUrbani(Enum):
-    nessun_codice = "Nessun codice inserito"
-    codice_T = "Immobile è censito nel catasto terreni"
-    codice_U = "Immobile è censito nel catasto edilizio urbano"
-
-
 class RP51_terreni_Urbani(Variable):
     value_type = Enum
     entity = Persona
-    possible_values = RP51TipiTerreniUrbani
-    default_value = RP51TipiTerreniUrbani.nessun_codice
+    possible_values = TipiTerreniUrbani
+    default_value = TipiTerreniUrbani.nessun_codice
     definition_period = YEAR
     label = u"RP51 Col.4 -Nella presente colonna 4 indicare: ‘T’ se l’immobile è censito nel catasto terreni; ‘U’ se l’immobile è censito nel catasto edilizio urbano."
     reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=74"

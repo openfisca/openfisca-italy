@@ -32,13 +32,19 @@ class RP27_contributi_deducibilita_ordinaria_non_dedotti_dal_sostituto(Variable)
     reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=66"  # Always use the most official source
 
     def formula(person,period,parameters):
+        #uno solo tra i campi RP27 e RP28 deve essere compilato
+        RP27_col_1_compilato = person.get_holder('RP27_contributi_deducibilita_ordinaria_dedotti_dal_sostituto').get_array(period)
+        almeno_un_campo_compilato = not_(RP27_col_1_compilato is None)
+        print almeno_un_campo_compilato
         # restituire il minor importo tra
         oneri_di_previdenza_complementare_per_i_quali_si_chiede_la_deduzione = person('importo_punto_413_certificazione_unica',period) + person('somme_versate_forme_pensionistiche_per_calcolo_RigoRP27_col_2',period)
         limite_deducibilita_per_RP27_contributi_deducibilita_ordinaria_dedotti_dal_sostituto = parameters(period).imposte.IRPEF.QuadroRP.Sezione_II.limite_importo_deducibile_contributi_deducibilita_ordinaria - person('RP27_contributi_deducibilita_ordinaria_dedotti_dal_sostituto',period)
         limite_deducibilita_per_RP27_contributi_deducibilita_ordinaria_dedotti_dal_sostituto = where(limite_deducibilita_per_RP27_contributi_deducibilita_ordinaria_dedotti_dal_sostituto>0,limite_deducibilita_per_RP27_contributi_deducibilita_ordinaria_dedotti_dal_sostituto,np.array(0))
         importo =  round_(min_(oneri_di_previdenza_complementare_per_i_quali_si_chiede_la_deduzione,limite_deducibilita_per_RP27_contributi_deducibilita_ordinaria_dedotti_dal_sostituto),2)
         codice_campo_411_valido = person('codice_inserito_campo_411_modello_unico',period) == TipiCodiciCampo411ModelloUnico.codice_uno
-        return where (codice_campo_411_valido, importo ,0)
+        print codice_campo_411_valido
+        print 'importo',importo
+        return where ((almeno_un_campo_compilato * codice_campo_411_valido), importo ,0)
 
 class somme_versate_forme_pensionistiche_per_calcolo_RigoRP27_col_2(Variable):
     value_type = float
