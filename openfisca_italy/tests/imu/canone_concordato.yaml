@@ -1,0 +1,30 @@
+- name: Test con categoria A6 con canone concordato
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 10000
+    is_immobile_prima_casa: False
+    immobile_categoria_catastale: A6
+    percentuale_possesso: 100
+    mesi_di_possesso: 12
+    aliquota_imu: 7.6
+    is_canone_concordato: True
+  output_variables:
+    imposta_imu: 9576
+    detrazioni_imu: 0
+    importo_imu: 9576
+
+#dato che è bene di lusso non avviene lo sconto
+- name: Test con categoria A1 con canone concordato
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 10000
+    is_immobile_prima_casa: False
+    immobile_categoria_catastale: A1
+    percentuale_possesso: 100
+    mesi_di_possesso: 12
+    aliquota_imu: 7.6
+    is_canone_concordato: True
+  output_variables:
+    imposta_imu: 12768
+    detrazioni_imu: 200
+    importo_imu: 12568

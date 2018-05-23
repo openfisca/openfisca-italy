@@ -1,0 +1,59 @@
+- name: Test con categoria A6 di una seconda casa con aliquota imu standard con valore immobile di 10'000 e posseduta 100% 12 mesi all'anno
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 10000
+    is_immobile_prima_casa: False
+    immobile_categoria_catastale: A6
+    percentuale_possesso: 100
+    mesi_di_possesso: 12
+    aliquota_imu: 7.6
+    is_interesse_storico_artistico: False
+  output_variables:
+    imposta_imu: 12768
+    detrazioni_imu: 0
+    importo_imu: 12768
+
+- name: Test con categoria A6 di una seconda casa con aliquota imu standard con valore immobile di 10'000 e posseduta 50% 12 mesi all'anno
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 10000
+    is_immobile_prima_casa: False
+    immobile_categoria_catastale: A6
+    percentuale_possesso: 50
+    mesi_di_possesso: 12
+    aliquota_imu: 7.6
+    is_interesse_storico_artistico: False
+  output_variables:
+    imposta_imu: 6384
+    detrazioni_imu: 0
+    importo_imu: 6384
+
+- name: Test con categoria A6 di una seconda casa con aliquota imu standard con valore immobile di 10'000 e posseduta 50% 6 mesi all'anno
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 10000
+    is_immobile_prima_casa: False
+    immobile_categoria_catastale: A6
+    percentuale_possesso: 50
+    mesi_di_possesso: 6
+    aliquota_imu: 7.6
+    is_interesse_storico_artistico: False
+  output_variables:
+    imposta_imu: 3192
+    detrazioni_imu: 0
+    importo_imu: 3192
+
+- name: Test con categoria A6 di una seconda casa con aliquota imu standard con valore immobile di 10'000 e posseduta 0% 12 mesi all'anno
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 10000
+    is_immobile_prima_casa: False
+    immobile_categoria_catastale: A6
+    percentuale_possesso: 0
+    mesi_di_possesso: 12
+    aliquota_imu: 7.6
+    is_interesse_storico_artistico: False
+  output_variables:
+    imposta_imu: 0
+    detrazioni_imu: 0
+    importo_imu: 0

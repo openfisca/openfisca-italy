@@ -120,7 +120,6 @@ class moltiplicatori_catastali(Variable):
                             a10_d5,
                             c3_c4_c5_b,
                             c2_c6_c7_a1_9,
-                            terreno_cd_iap,
                             terreno_normale
 
                         ],
@@ -130,7 +129,6 @@ class moltiplicatori_catastali(Variable):
                             80,
                             140,
                             160,
-                            110,
                             135
                         ])
 
@@ -158,9 +156,9 @@ class is_proprieta_santa_sede(Variable):
     label = u"Immobile appartentente alla Santa Sede?"
     reference = u"artt. 13, 14, 15 e 16 del Trattato lateranense, sottoscritto l’11 febbraio 1929 e reso esecutivo con legge 27 maggio 1929, n. 810"
 
-#i fabbricati appartenenti agli Stati esteri e alle organizzazioni internazionali
-#per i quali è prevista l’esenzione dall’imposta locale sul reddito dei fabbricati
-#in base ad accordi internazionali resi esecutivi in Italia
+#attività assistenziali, previdenziali,
+#sanitarie, didattiche, ricettive, culturali, ricreative e sportive,
+#nonché delle attività di religione o culto
 class is_svolgimento_attivita_non_commerciali_di_un_determinato_tipo(Variable):
     value_type = bool
     entity = Persona
@@ -230,8 +228,12 @@ class base_imponibile(Variable):
         is_scontato_50_percento = where(    person('is_interesse_storico_artistico',period)+
                                             person('is_inagibile_accertato',period),
                                             True,False)
-        is_scontato_25_percento = where(    person('is_canone_concordato',period),
-                                            True,False)
+        is_scontato_25_percento = where(    person('is_canone_concordato',period)*
+                                            not_(
+                                                (person('immobile_categoria_catastale',period) == CategoriaCatastale.A1)+
+                                                (person('immobile_categoria_catastale',period) == CategoriaCatastale.A8)+
+                                                (person('immobile_categoria_catastale',period) == CategoriaCatastale.A9)
+                                                ),True,False)
         is_scontato_75_percento = where(    is_scontato_25_percento*is_scontato_50_percento,
                                             True,False)
         other_case = not_(is_scontato_25_percento)+not_(is_scontato_50_percento)+not_(is_scontato_75_percento)
@@ -243,9 +245,9 @@ class base_imponibile(Variable):
                             is_scontato_75_percento,
                             other_case
                         ],[
-                            base_imponibile-(base_imponibile*25/100),
-                            base_imponibile-(base_imponibile*50/100),
-                            base_imponibile-(base_imponibile*75/100),
+                            base_imponibile-(base_imponibile*25/100.00),
+                            base_imponibile-(base_imponibile*50/100.00),
+                            base_imponibile-(base_imponibile*75/100.00),
                             base_imponibile
                         ])
 
@@ -391,11 +393,17 @@ class imposta_imu(Variable):
                             person('is_destinazione_ad_usi_culturali',period)+
                             person('is_proprieta_santa_sede',period)+
                             person('is_svolgimento_attivita_non_commerciali_di_un_determinato_tipo',period)+
-                            person('is_fabbricati_rurali_ad_uso_strumentale_in_comuni_montani',period)
+                            person('is_fabbricati_rurali_ad_uso_strumentale_in_comuni_montani',period)+
+                            person('is_immobile_posseduto_da_CD',period)+
+                            person('is_immobile_posseduto_da_IAP',period)
                         ,True,False)
         other_case = not_(is_esenti)
-        risultato_imposta = select([is_esenti,other_case],[0,person('base_imponibile',period) * (person('aliquota_imu',period)/1000)])
-        risultato_imposta_divisa_per_possesso = risultato_imposta * (person('percentuale_possesso',period)/100) * (person('mesi_di_possesso',period)/12)
+        risultato_imposta = select([is_esenti == True,other_case == True],[0,person('base_imponibile',period) * (person('aliquota_imu',period)/1000.00)])
+        risultato_imposta_divisa_per_possesso = risultato_imposta * (person('percentuale_possesso',period)/100.00) * (person('mesi_di_possesso',period)/12.00)
+        print(risultato_imposta)
+        print(person('percentuale_possesso',period))
+        print(person('mesi_di_possesso',period))
+        print(risultato_imposta_divisa_per_possesso)
         return risultato_imposta_divisa_per_possesso
 
 class importo_imu(Variable):

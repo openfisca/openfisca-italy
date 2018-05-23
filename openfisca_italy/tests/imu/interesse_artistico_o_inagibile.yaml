@@ -1,0 +1,45 @@
+- name: Test con immobile categoria A5 inagibile
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 10000
+    is_immobile_prima_casa: False
+    immobile_categoria_catastale: A5
+    percentuale_possesso: 100
+    mesi_di_possesso: 12
+    aliquota_imu: 7.6
+    is_inagibile_accertato: True
+  output_variables:
+    imposta_imu: 6384
+    detrazioni_imu: 0
+    importo_imu: 6384
+
+- name: Test con immobile categoria A5 con interesse storico/artistico
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 10000
+    is_immobile_prima_casa: False
+    immobile_categoria_catastale: A5
+    percentuale_possesso: 100
+    mesi_di_possesso: 12
+    aliquota_imu: 7.6
+    is_interesse_storico_artistico: True
+  output_variables:
+    imposta_imu: 6384
+    detrazioni_imu: 0
+    importo_imu: 6384
+
+- name: Test con immobile categoria A5 con interesse storico/artistico e inagibile
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 10000
+    is_immobile_prima_casa: False
+    immobile_categoria_catastale: A5
+    percentuale_possesso: 100
+    mesi_di_possesso: 12
+    aliquota_imu: 7.6
+    is_interesse_storico_artistico: True
+    is_inagibile_accertato: True
+  output_variables:
+    imposta_imu: 6384
+    detrazioni_imu: 0
+    importo_imu: 6384

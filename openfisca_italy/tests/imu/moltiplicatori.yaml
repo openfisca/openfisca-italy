@@ -1,0 +1,222 @@
+- name: Test A1
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: A1
+  output_variables:
+    moltiplicatori_catastali: 160
+- name: Test A2
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: A2
+  output_variables:
+    moltiplicatori_catastali: 160
+- name: Test A3
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: A3
+  output_variables:
+    moltiplicatori_catastali: 160
+- name: Test A4
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: A4
+  output_variables:
+    moltiplicatori_catastali: 160
+- name: Test A5
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: A5
+  output_variables:
+    moltiplicatori_catastali: 160
+- name: Test A6
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: A6
+  output_variables:
+    moltiplicatori_catastali: 160
+- name: Test A7
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: A7
+  output_variables:
+    moltiplicatori_catastali: 160
+- name: Test A8
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: A8
+  output_variables:
+    moltiplicatori_catastali: 160
+- name: Test A9
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: A9
+  output_variables:
+    moltiplicatori_catastali: 160
+- name: Test A10
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: A10
+  output_variables:
+    moltiplicatori_catastali: 80
+- name: Test A11
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: A11
+  output_variables:
+    moltiplicatori_catastali:
+- name: Test B1
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: B1
+  output_variables:
+    moltiplicatori_catastali: 140
+- name: Test B2
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: B2
+  output_variables:
+    moltiplicatori_catastali: 140
+- name: Test B3
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: B3
+  output_variables:
+    moltiplicatori_catastali: 140
+- name: Test B4
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: B4
+  output_variables:
+    moltiplicatori_catastali: 140
+- name: Test B5
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: B5
+  output_variables:
+    moltiplicatori_catastali: 140
+- name: Test B6
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: B6
+  output_variables:
+    moltiplicatori_catastali: 140
+- name: Test B7
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: B7
+  output_variables:
+    moltiplicatori_catastali: 140
+- name: Test B8
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: B8
+  output_variables:
+    moltiplicatori_catastali: 140
+- name: Test C1
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: C1
+  output_variables:
+    moltiplicatori_catastali: 55
+- name: Test C2
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: C2
+  output_variables:
+    moltiplicatori_catastali: 160
+- name: Test C3
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: C3
+  output_variables:
+    moltiplicatori_catastali: 140
+- name: Test C4
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: C4
+  output_variables:
+    moltiplicatori_catastali: 140
+- name: Test C5
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: C5
+  output_variables:
+    moltiplicatori_catastali: 140
+- name: Test C6
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: C6
+  output_variables:
+    moltiplicatori_catastali: 160
+- name: Test C7
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: C7
+  output_variables:
+    moltiplicatori_catastali: 160
+- name: Test D1
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: D1
+  output_variables:
+    moltiplicatori_catastali: 65
+- name: Test D2
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: D2
+  output_variables:
+    moltiplicatori_catastali: 65
+- name: Test D3
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: D3
+  output_variables:
+    moltiplicatori_catastali: 65
+- name: Test D4
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: D4
+  output_variables:
+    moltiplicatori_catastali: 65
+- name: Test D5
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: D5
+  output_variables:
+    moltiplicatori_catastali: 80
+- name: Test D6
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: D6
+  output_variables:
+    moltiplicatori_catastali: 65
+- name: Test D7
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: D7
+  output_variables:
+    moltiplicatori_catastali: 65
+- name: Test D8
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: D8
+  output_variables:
+    moltiplicatori_catastali: 65
+- name: Test D9
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: D9
+  output_variables:
+    moltiplicatori_catastali: 65
+- name: Test D10
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: D10
+  output_variables:
+    moltiplicatori_catastali: 65
+- name: Test T
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: T
+  output_variables:
+    moltiplicatori_catastali: 135
