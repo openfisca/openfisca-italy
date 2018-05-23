@@ -7,12 +7,12 @@ from openfisca_italy.variables.Imposte.IRPEF.Quadri_Oneri.Quadro_RP.Sezione_II_c
 
 import numpy as np
 
-class contributi_fondo_pensione_negoziale_dipendenti_pubblici_dedotti_dal_sostituto(Variable):
+class RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_dedotti_dal_sostituto(Variable):
         value_type = float
         entity = Persona
         definition_period = YEAR
         set_input = set_input_divide_by_period
-        label = "Indicare l’importo dei contributi per Contributi Fondo pensione negoziale dipendenti pubblici che il sostituto d’imposta ha dedotto dall’imponibile, relativi al punto 411 codice 4. della certificazione Unica. Rigo RP31 col.1"
+        label = "Rigo RP31 col.1 - Indicare l’importo dei contributi per Contributi Fondo pensione negoziale dipendenti pubblici che il sostituto d’imposta ha dedotto dall’imponibile, relativi al punto 411 codice 4. della certificazione Unica."
         reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=66"  # Always use the most official source
 
         def formula(person,period,parameters):
@@ -20,25 +20,26 @@ class contributi_fondo_pensione_negoziale_dipendenti_pubblici_dedotti_dal_sostit
             return where (codice_campo_411_valido, person('importo_punto_412_certificazione_unica',period) , np.array(0))
 
 
-class contributi_fondo_pensione_negoziale_dipendenti_pubblici_quota_TFR(Variable):
+class RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_quota_TFR(Variable):
         value_type = float
         entity = Persona
         definition_period = YEAR
         set_input = set_input_divide_by_period
-        label = "Indicare l’importo dela quota TFR per Contributi Fondo pensione negoziale dipendenti pubblici, relativi al punto 411 codice 4. della certificazione Unica. Rigo RP31 col.2"
+        label = "Rigo RP31 col.2 - Indicare l’importo dela quota TFR per Contributi Fondo pensione negoziale dipendenti pubblici, relativi al punto 411 codice 4. della certificazione Unica."
         reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=66"  # Always use the most official source
 
         def formula(person,period,parameters):
             codice_campo_411_valido = person('codice_inserito_campo_411_modello_unico',period) == TipiCodiciCampo411ModelloUnico.codice_quattro
             return where (codice_campo_411_valido, person('importo_punto_414_certificazione_unica',period) , np.array(0))
+
 # Column 3 section
-# La classe contributi_fondo_pensione_negoziale_dipendenti_pubblici_non_dedotti_dal_sostituto segue un prospetto nelle appendici,essendo complessa sara' composta da più variabili
-class contributi_fondo_pensione_negoziale_dipendenti_pubblici_non_dedotti_dal_sostituto(Variable):
+# La classe RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_non_dedotti_dal_sostituto segue un prospetto nelle appendici,essendo complessa sara' composta da più variabili
+class RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_non_dedotti_dal_sostituto(Variable):
         value_type = float
         entity = Persona
         definition_period = YEAR
         set_input = set_input_divide_by_period
-        label = "Indicare l’importo dei contributi per Contributi Fondo pensione negoziale dipendenti pubblici che il sostituto d’imposta non ha dedotto dall’imponibile, relativi al punto 411 codice 4. della certificazione Unica. Rigo RP31 col.3"
+        label = " Rigo RP31 col.3 - Indicare l’importo dei contributi per Contributi Fondo pensione negoziale dipendenti pubblici che il sostituto d’imposta non ha dedotto dall’imponibile, relativi al punto 411 codice 4. della certificazione Unica."
         reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=120"  # Always use the most official source
 
         def formula(person,period,parameters):
@@ -55,7 +56,7 @@ class casella_1_prospetto_compilazione_Rigo_RP31(Variable):
      reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=120"  # Always use the most official source
 
      def formula(person,period,parameters):
-        return person('contributi_fondo_pensione_negoziale_dipendenti_pubblici_dedotti_dal_sostituto',period)
+        return person('RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_dedotti_dal_sostituto',period)
 
 
 class casella_2_prospetto_compilazione_Rigo_RP31(Variable):
@@ -66,7 +67,7 @@ class casella_2_prospetto_compilazione_Rigo_RP31(Variable):
         reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=120"  # Always use the most official source
 
         def formula(person,period,parameters):
-            return person('contributi_fondo_pensione_negoziale_dipendenti_pubblici_quota_TFR',period)
+            return person('RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_quota_TFR',period)
 
 
 class casella_3_prospetto_compilazione_Rigo_RP31(Variable):

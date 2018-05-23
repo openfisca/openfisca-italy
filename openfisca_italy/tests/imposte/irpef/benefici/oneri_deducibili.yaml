@@ -8,15 +8,15 @@
     RP25_spese_mediche_e_assistenza_disabili: 150
     RP26_altri_oneri_e_spese_deducibili: 150
     RP27_contributi_deducibilita_ordinaria_non_dedotti_dal_sostituto: 150
-    contributi_per_lavoratori_prima_occupazione_non_dedotti_dal_sostituto: 150
-    contributi_per_fondi_in_squilibrio_finanziario_non_dedotti_dal_sostituto: 150
-    contributi_versati_per_familiari_a_carico_non_dedotti_dal_sostituto: 150
-    contributi_fondo_pensione_negoziale_dipendenti_pubblici_non_dedotti_dal_sostituto: 150
-    totale_importo_deducibile_abitazione_data_in_locazione: 150
-    totale_restuzione_somme_al_soggetto_erogatore_rigo_RP33: 150
-    totale_importo_RPF_2018_Rigo_RP34: 150
-    importo_residuo_RPF_2017_Rigo_RP34: 150
-    importo_residuo_RPF_2016_Rigo_RP34: 150
-    importo_residuo_RPF_2015_Rigo_RP34: 150
+    RP28_contributi_per_lavoratori_prima_occupazione_non_dedotti_dal_sostituto: 150
+    RP29_contributi_per_fondi_in_squilibrio_finanziario_non_dedotti_dal_sostituto: 150
+    RP30_contributi_versati_per_familiari_a_carico_non_dedotti_dal_sostituto: 150
+    RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_non_dedotti_dal_sostituto: 150
+    RP32_totale_importo_deducibile_abitazione_data_in_locazione: 150
+    RP33_totale_restituzione_somme_al_soggetto_erogatore: 150
+    RP34_totale_importo_RPF_2018: 150
+    RP34_importo_residuo_RPF_2017: 150
+    RP34_importo_residuo_RPF_2016: 150
+    RP34_importo_residuo_RPF_2015: 150
   output_variables:
     oneri_deducibili_totali_annuale: 2550

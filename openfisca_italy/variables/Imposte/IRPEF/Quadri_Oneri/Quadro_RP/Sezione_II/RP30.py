@@ -8,7 +8,7 @@ from openfisca_italy.variables.Imposte.IRPEF.Quadri_Oneri.Quadro_RP.Sezione_II_c
 import numpy as np
 
 
-class contributi_versati_per_familiari_a_carico_dedotti_dal_sostituto(Variable):
+class RP30_contributi_versati_per_familiari_a_carico_dedotti_dal_sostituto(Variable):
         value_type = float
         entity = Persona
         definition_period = YEAR
@@ -21,7 +21,7 @@ class contributi_versati_per_familiari_a_carico_dedotti_dal_sostituto(Variable):
             return where(punto_421_certificazione_unica_compilato,person('importo_punto_422_certificazione_unica',period),np.array(0))
 
 
-class contributi_versati_per_familiari_a_carico_non_dedotti_dal_sostituto(Variable):
+class RP30_contributi_versati_per_familiari_a_carico_non_dedotti_dal_sostituto(Variable):
         value_type = float
         entity = Persona
         definition_period = YEAR
@@ -32,7 +32,7 @@ class contributi_versati_per_familiari_a_carico_non_dedotti_dal_sostituto(Variab
         def formula(person,period,parameters):
             # controlla uno dei righi RP27 a RP31 compilato
             importo_punto_423_certificazione_unica = person('importo_punto_423_certificazione_unica',period)
-            importo_limite_deducibilita = parameters(period).imposte.IRPEF.QuadroRP.Sezione_II.limite_importo_deducibile_contributi_versati_familiari_carico - person('contributi_versati_per_familiari_a_carico_dedotti_dal_sostituto',period)
+            importo_limite_deducibilita = parameters(period).imposte.IRPEF.QuadroRP.Sezione_II.limite_importo_deducibile_contributi_versati_familiari_carico - person('RP30_contributi_versati_per_familiari_a_carico_dedotti_dal_sostituto',period)
             importo_limite_deducibilita = where(importo_limite_deducibilita>0,importo_limite_deducibilita,np.array(0))
             importo = min_(importo_punto_423_certificazione_unica,importo_limite_deducibilita)
             punto_421_certificazione_unica_compilato = not_(person('importo_punto_421_certificazione_unica',period)==0)

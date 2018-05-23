@@ -8,7 +8,7 @@ from openfisca_italy.variables.Imposte.IRPEF.Quadri_Oneri.Quadro_RP.Sezione_II_c
 import numpy as np
 
 
-class contributi_per_fondi_in_squilibrio_finanziario_dedotti_dal_sostituto(Variable):
+class RP29_contributi_per_fondi_in_squilibrio_finanziario_dedotti_dal_sostituto(Variable):
         value_type = float
         entity = Persona
         definition_period = YEAR
@@ -22,7 +22,7 @@ class contributi_per_fondi_in_squilibrio_finanziario_dedotti_dal_sostituto(Varia
             return where (codice_campo_411_valido,importo, np.array(0))
 
 
-class contributi_per_fondi_in_squilibrio_finanziario_non_dedotti_dal_sostituto(Variable):
+class RP29_contributi_per_fondi_in_squilibrio_finanziario_non_dedotti_dal_sostituto(Variable):
         value_type = float
         entity = Persona
         definition_period = YEAR

@@ -5,8 +5,8 @@
     codice_inserito_campo_411_modello_unico: codice_due
     importo_punto_413_certificazione_unica: 250
   output_variables:
-    contributi_per_fondi_in_squilibrio_finanziario_dedotti_dal_sostituto: 7500
-    contributi_per_fondi_in_squilibrio_finanziario_non_dedotti_dal_sostituto: 250
+    RP29_contributi_per_fondi_in_squilibrio_finanziario_dedotti_dal_sostituto: 7500
+    RP29_contributi_per_fondi_in_squilibrio_finanziario_non_dedotti_dal_sostituto: 250
 
 
 - name: Test 2 per vedere se funziona il meccanismo di compilazione rigo RP29 codice non valido
@@ -16,5 +16,5 @@
     codice_inserito_campo_411_modello_unico: codice_quattro
     importo_punto_413_certificazione_unica: 250
   output_variables:
-    contributi_per_fondi_in_squilibrio_finanziario_dedotti_dal_sostituto: 0
-    contributi_per_fondi_in_squilibrio_finanziario_non_dedotti_dal_sostituto: 0
+    RP29_contributi_per_fondi_in_squilibrio_finanziario_dedotti_dal_sostituto: 0
+    RP29_contributi_per_fondi_in_squilibrio_finanziario_non_dedotti_dal_sostituto: 0

@@ -75,3 +75,12 @@ class importo_punto_417_certificazione_unica(Variable):
         set_input = set_input_divide_by_period
         label = "Punto 417 della Certificazione Unica"
         reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=66"  # Always use the most official source
+
+
+class importo_punto_440_certificazione_unica(Variable):
+        value_type = float
+        entity = Persona
+        definition_period = YEAR
+        set_input = set_input_divide_by_period
+        label = "Punto 440 della Certificazione Unica"
+        reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=66"  # Always use the most official source

@@ -11,8 +11,8 @@
     reddito_lavoro_dipendente_annuale: 1500
     reddito_di_riferimento_per_agevolazioni_fiscali: 1600
   output_variables:
-    contributi_fondo_pensione_negoziale_dipendenti_pubblici_dedotti_dal_sostituto: 150
-    contributi_fondo_pensione_negoziale_dipendenti_pubblici_quota_TFR: 145
+    RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_dedotti_dal_sostituto: 150
+    RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_quota_TFR: 145
     casella_1_prospetto_compilazione_Rigo_RP31: 150
     casella_2_prospetto_compilazione_Rigo_RP31: 145
     casella_3_prospetto_compilazione_Rigo_RP31: 135
@@ -24,7 +24,7 @@
     casella_9_prospetto_compilazione_Rigo_RP31: 5014.57
     casella_10_prospetto_compilazione_Rigo_RP31: 42
     casella_11_prospetto_compilazione_Rigo_RP31: 42
-    contributi_fondo_pensione_negoziale_dipendenti_pubblici_non_dedotti_dal_sostituto: 42
+    RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_non_dedotti_dal_sostituto: 42
 
 - name: Test 2 rigo RP31 con codice valido
   period: 2017
@@ -39,8 +39,8 @@
     reddito_lavoro_dipendente_annuale: 1500
     reddito_di_riferimento_per_agevolazioni_fiscali: 1600
   output_variables:
-    contributi_fondo_pensione_negoziale_dipendenti_pubblici_dedotti_dal_sostituto: 150
-    contributi_fondo_pensione_negoziale_dipendenti_pubblici_quota_TFR: 145
+    RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_dedotti_dal_sostituto: 150
+    RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_quota_TFR: 145
     casella_1_prospetto_compilazione_Rigo_RP31: 150
     casella_2_prospetto_compilazione_Rigo_RP31: 145
     casella_3_prospetto_compilazione_Rigo_RP31: 30
@@ -52,7 +52,7 @@
     casella_9_prospetto_compilazione_Rigo_RP31: 5014.57
     casella_10_prospetto_compilazione_Rigo_RP31: 42
     casella_11_prospetto_compilazione_Rigo_RP31: 30
-    contributi_fondo_pensione_negoziale_dipendenti_pubblici_non_dedotti_dal_sostituto: 30
+    RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_non_dedotti_dal_sostituto: 30
 
 - name: Test 3 rigo RP31 con codice non valido
   period: 2017
@@ -67,6 +67,6 @@
     reddito_lavoro_dipendente_annuale: 1500
     reddito_di_riferimento_per_agevolazioni_fiscali: 1600
   output_variables:
-    contributi_fondo_pensione_negoziale_dipendenti_pubblici_dedotti_dal_sostituto: 0
-    contributi_fondo_pensione_negoziale_dipendenti_pubblici_quota_TFR: 0
-    contributi_fondo_pensione_negoziale_dipendenti_pubblici_non_dedotti_dal_sostituto: 0
+    RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_dedotti_dal_sostituto: 0
+    RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_quota_TFR: 0
+    RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_non_dedotti_dal_sostituto: 0

@@ -1,0 +1,27 @@
+- name: Test 1 per vedere se funziona il meccanismo che limita la deducibilita
+  period: 2017
+  input_variables:
+    RP28_contributi_versati_nei_primi_5_anni_per_maggior_limite_deducibilita: 20000
+    RP28_hanno_diritto_a_maggior_limite_di_deducibilita: True
+    RP27_contributi_deducibilita_ordinaria_dedotti_dal_sostituto: 220
+    RP28_contributi_per_lavoratori_prima_occupazione_dedotti_dal_sostituto: 250
+    RP27_contributi_deducibilita_ordinaria_non_dedotti_dal_sostituto: 1000
+    RP28_contributi_per_lavoratori_prima_occupazione_non_dedotti_dal_sostituto: 200
+    RP30_contributi_versati_per_familiari_a_carico_non_dedotti_dal_sostituto: 500
+    RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_non_dedotti_dal_sostituto: 100
+  output_variables:
+    RP27_30_31_limite_importo_deducibile: 1600
+
+- name: Test 2 per vedere se funziona il meccanismo che limita la deducibilita
+  period: 2017
+  input_variables:
+    RP28_contributi_versati_nei_primi_5_anni_per_maggior_limite_deducibilita: 20000
+    RP28_hanno_diritto_a_maggior_limite_di_deducibilita: True
+    RP27_contributi_deducibilita_ordinaria_dedotti_dal_sostituto: 220
+    RP28_contributi_per_lavoratori_prima_occupazione_dedotti_dal_sostituto: 250
+    RP27_contributi_deducibilita_ordinaria_non_dedotti_dal_sostituto: 4200
+    RP28_contributi_per_lavoratori_prima_occupazione_non_dedotti_dal_sostituto: 200
+    RP30_contributi_versati_per_familiari_a_carico_non_dedotti_dal_sostituto: 500
+    RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_non_dedotti_dal_sostituto: 100
+  output_variables:
+    RP27_30_31_limite_importo_deducibile: 4494.57
