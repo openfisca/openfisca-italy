@@ -1,0 +1,25 @@
+- name: Test seconda casa posseduta al 25% per 12 mesi di categoria A6
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 10000
+    is_immobile_prima_casa: False
+    immobile_categoria_catastale: A6
+    percentuale_possesso: 25
+    mesi_di_possesso: 12
+    aliquota_imu: 7.6
+  output_variables:
+    imposta_imu: 3192
+    importo_imu: 3192
+
+- name: Test seconda casa posseduta al 25% per 12 mesi di categoria A1
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 10000
+    is_immobile_prima_casa: False
+    immobile_categoria_catastale: A1
+    percentuale_possesso: 25
+    mesi_di_possesso: 12
+    aliquota_imu: 7.6
+  output_variables:
+    imposta_imu: 3192
+    importo_imu: 3192

@@ -1,0 +1,17 @@
+- name: Test - area fabbricabile con valore_immobile_non_rivalutato con aliquota 7.6
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 10000
+    aliquota_imu: 7.6
+    is_area_fabbricabile: True
+  output_variables:
+    importo_imu: 76
+
+- name: Test - area fabbricabile con valore_immobile_non_rivalutato con aliquota 5
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 10000
+    aliquota_imu: 5
+    is_area_fabbricabile: True
+  output_variables:
+    importo_imu: 50
