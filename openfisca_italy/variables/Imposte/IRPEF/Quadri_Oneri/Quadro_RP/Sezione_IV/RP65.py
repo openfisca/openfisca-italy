@@ -109,6 +109,6 @@ class RP_65_importo_rate_per_spese_interventi_finalizzati_al_risparmio_energetic
         codice_tipo_intevento_da_controllare = ['RP61_tipo_intervento','RP62_tipo_intervento','RP63_tipo_intervento','RP64_tipo_intervento',]
         importi_rata = ['RP61_importo_rata','RP62_importo_rata','RP63_importo_rata','RP64_importo_rata']
         for codice_anno, codice_tipo_intervento, importo_rata in zip(codici_righi_anni_da_controllare,codice_tipo_intevento_da_controllare,importi_rata):
-            condizione_vera = ((person(codice_anno,period) == 2017) * (person(codice_tipo_intervento,period) == TipiInterventiFinalizzatiRisparmioEnergetico.nove))
+            condizione_vera = ((person(codice_anno,period) == 2017) * (person(codice_tipo_intervento,period) == TipiInterventiFinalizzatiRisparmioEnergetico.codice_nove))
             importo_rata_al_75 = where (condizione_vera, importo_rata_al_75 + person(importo_rata,period) ,importo_rata_al_75)
         return importo_rata_al_75

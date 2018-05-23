@@ -32,16 +32,16 @@ class detrazione_per_inquilini_alloggi_adibiti_ad_abitazione_principale_con_cont
     reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
     def formula(person, period, parameters):
-        tipologia_di_detrazione_inquilini_alloggi_adibiti_abitazione_principale_rigo_rp71 = person('tipologia_di_detrazione_inquilini_alloggi_adibiti_abitazione_principale_rigo_rp71',period) # Col.1 RP71
-        percentuale_di_spettanza_relativa_a_inquilini_alloggi_adibiti_abitazione_principale = person('percentuale_di_spettanza_relativa_a_inquilini_alloggi_adibiti_abitazione_principale',period) / 100.00 # Col.3 RP71
-        percentuale_giorni = round_((person('numero_giorni_in_cui_immobile_e_stato_adibito_ad_abitazione_principale',period)/365.00),2) # Col.2 RP71 su 365 giorni
+        RP71_tipologia_di_detrazione_inquilini_alloggi_adibiti_abitazione_principale = person('RP71_tipologia_di_detrazione_inquilini_alloggi_adibiti_abitazione_principale',period) # Col.1 RP71
+        RP71_percentuale_di_spettanza_relativa_a_inquilini_alloggi_adibiti_abitazione_principale = person('RP71_percentuale_di_spettanza_relativa_a_inquilini_alloggi_adibiti_abitazione_principale',period) / 100.00 # Col.3 RP71
+        percentuale_giorni = round_((person('RP71_numero_giorni_in_cui_immobile_e_stato_adibito_ad_abitazione_principale',period)/365.00),2) # Col.2 RP71 su 365 giorni
         reddito_per_detrazioni = person('reddito_per_detrazioni',period)
-        detrazione_senza_percentuali = select([not_(tipologia_di_detrazione_inquilini_alloggi_adibiti_abitazione_principale_rigo_rp71 == 2),
+        detrazione_senza_percentuali = select([not_(RP71_tipologia_di_detrazione_inquilini_alloggi_adibiti_abitazione_principale == 2),
                                                 reddito_per_detrazioni<=15493.71,
                                                 reddito_per_detrazioni<=30987.41,
                                                 reddito_per_detrazioni>=30987.41], # in all the other case
                                                 [0,495.80,247.90,0])
-        return round_((detrazione_senza_percentuali * percentuale_di_spettanza_relativa_a_inquilini_alloggi_adibiti_abitazione_principale * percentuale_giorni),0)
+        return round_((detrazione_senza_percentuali * RP71_percentuale_di_spettanza_relativa_a_inquilini_alloggi_adibiti_abitazione_principale * percentuale_giorni),0)
 
 
 class detrazione_per_inquilini_alloggi_adibiti_ad_abitazione_principale_con_contratti_per_giovani_tra_20_e_30_anni(Variable):
@@ -53,15 +53,15 @@ class detrazione_per_inquilini_alloggi_adibiti_ad_abitazione_principale_con_cont
     reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
     def formula(person, period, parameters):
-        tipologia_di_detrazione_inquilini_alloggi_adibiti_abitazione_principale_rigo_rp71 = person('tipologia_di_detrazione_inquilini_alloggi_adibiti_abitazione_principale_rigo_rp71',period) # Col.1 RP71
-        percentuale_di_spettanza_relativa_a_inquilini_alloggi_adibiti_abitazione_principale = person('percentuale_di_spettanza_relativa_a_inquilini_alloggi_adibiti_abitazione_principale',period) / 100.00 # Col.3 RP71
-        percentuale_giorni = round_((person('numero_giorni_in_cui_immobile_e_stato_adibito_ad_abitazione_principale',period)/365.00),2) # Col.2 RP71 su 365 giorni
+        RP71_tipologia_di_detrazione_inquilini_alloggi_adibiti_abitazione_principale = person('RP71_tipologia_di_detrazione_inquilini_alloggi_adibiti_abitazione_principale',period) # Col.1 RP71
+        RP71_percentuale_di_spettanza_relativa_a_inquilini_alloggi_adibiti_abitazione_principale = person('RP71_percentuale_di_spettanza_relativa_a_inquilini_alloggi_adibiti_abitazione_principale',period) / 100.00 # Col.3 RP71
+        percentuale_giorni = round_((person('RP71_numero_giorni_in_cui_immobile_e_stato_adibito_ad_abitazione_principale',period)/365.00),2) # Col.2 RP71 su 365 giorni
         reddito_complessivo = person('reddito_complessivo',period)
-        detrazione_senza_percentuali = select([not_(tipologia_di_detrazione_inquilini_alloggi_adibiti_abitazione_principale_rigo_rp71 == 0), # 0 è il corrispondente di codice_tre
+        detrazione_senza_percentuali = select([not_(RP71_tipologia_di_detrazione_inquilini_alloggi_adibiti_abitazione_principale == 0), # 0 è il corrispondente di codice_tre
                                                 reddito_complessivo<=15493.71,
                                                 reddito_complessivo>=15493.71],
                                                 [0,991.60,0])
-        return round_((detrazione_senza_percentuali * percentuale_di_spettanza_relativa_a_inquilini_alloggi_adibiti_abitazione_principale * percentuale_giorni),0)
+        return round_((detrazione_senza_percentuali * RP71_percentuale_di_spettanza_relativa_a_inquilini_alloggi_adibiti_abitazione_principale * percentuale_giorni),0)
 
 
 class detrazione_per_inquilini_alloggi_adibiti_ad_abitazione_principale(Variable):
@@ -73,16 +73,16 @@ class detrazione_per_inquilini_alloggi_adibiti_ad_abitazione_principale(Variable
     reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
     def formula(person, period, parameters):
-        tipologia_di_detrazione_inquilini_alloggi_adibiti_abitazione_principale_rigo_rp71 = person('tipologia_di_detrazione_inquilini_alloggi_adibiti_abitazione_principale_rigo_rp71',period) # Col.1 RP71
-        percentuale_di_spettanza_relativa_a_inquilini_alloggi_adibiti_abitazione_principale = person('percentuale_di_spettanza_relativa_a_inquilini_alloggi_adibiti_abitazione_principale',period) / 100.00 # Col.3 RP71
-        percentuale_giorni = round_((person('numero_giorni_in_cui_immobile_e_stato_adibito_ad_abitazione_principale',period)/365.00),2) # Col.2 RP71 su 365 giorni
+        RP71_tipologia_di_detrazione_inquilini_alloggi_adibiti_abitazione_principale = person('RP71_tipologia_di_detrazione_inquilini_alloggi_adibiti_abitazione_principale',period) # Col.1 RP71
+        RP71_percentuale_di_spettanza_relativa_a_inquilini_alloggi_adibiti_abitazione_principale = person('RP71_percentuale_di_spettanza_relativa_a_inquilini_alloggi_adibiti_abitazione_principale',period) / 100.00 # Col.3 RP71
+        percentuale_giorni = round_((person('RP71_numero_giorni_in_cui_immobile_e_stato_adibito_ad_abitazione_principale',period)/365.00),2) # Col.2 RP71 su 365 giorni
         reddito_per_detrazioni = person('reddito_per_detrazioni',period)
-        detrazione_senza_percentuali = select([not_(tipologia_di_detrazione_inquilini_alloggi_adibiti_abitazione_principale_rigo_rp71 == 1),
+        detrazione_senza_percentuali = select([not_(RP71_tipologia_di_detrazione_inquilini_alloggi_adibiti_abitazione_principale == 1),
                                                 reddito_per_detrazioni<=15493.71,
                                                 reddito_per_detrazioni<=30987.41,
                                                 reddito_per_detrazioni>=30987.41], # in all the other case
                                                 [0,300,150,0])
-        return round_((detrazione_senza_percentuali * percentuale_di_spettanza_relativa_a_inquilini_alloggi_adibiti_abitazione_principale * percentuale_giorni),0)
+        return round_((detrazione_senza_percentuali * RP71_percentuale_di_spettanza_relativa_a_inquilini_alloggi_adibiti_abitazione_principale * percentuale_giorni),0)
 
 # Detrazioni relative a rigo RP72
 
@@ -95,15 +95,15 @@ class detrazioni_canoni_locazione_per_lavoratori_dipendenti_che_si_trasferiscono
     reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
     def formula(person, period, parameters):
-        percentuale_di_spettanza_relativa_a_lavoratori_dipendenti_che_si_trasferiscono_per_motivi_di_lavoro = person('percentuale_di_spettanza_relativa_a_lavoratori_dipendenti_che_si_trasferiscono_per_motivi_di_lavoro',period) / 100.00
-        percentuale_giorni = round_((person('numero_giorni_in_cui_immobile_e_stato_adibito_ad_abitazione_principale_lavoratori_dipendenti_che_si_trasferiscono_per_motivi_di_lavoro',period)/365.00),2)
+        RP72_percentuale_di_spettanza_relativa_a_lavoratori_dipendenti_che_si_trasferiscono_per_motivi_di_lavoro = person('RP72_percentuale_di_spettanza_relativa_a_lavoratori_dipendenti_che_si_trasferiscono_per_motivi_di_lavoro',period) / 100.00
+        percentuale_giorni = round_((person('RP72_numero_giorni_in_cui_immobile_e_stato_adibito_ad_abitazione_principale_lavoratori_dipendenti_che_si_trasferiscono_per_motivi_di_lavoro',period)/365.00),2)
         reddito_per_detrazioni = person('reddito_per_detrazioni',period)
         # non importa sapere se il rigo è stato compilato, in quanto la percentuale di spettanza e i giorni hanno valore di default 0 e quindi se il rigo non viene compilato il risultato sara' 0
         detrazione_senza_percentuali = select([reddito_per_detrazioni<=15493.71,
                                                 reddito_per_detrazioni<=30987.41,
                                                 reddito_per_detrazioni>=30987.41], # in all the other case
                                                 [991.60,495.80,0])
-        return round_((detrazione_senza_percentuali * percentuale_di_spettanza_relativa_a_lavoratori_dipendenti_che_si_trasferiscono_per_motivi_di_lavoro * percentuale_giorni),0)
+        return round_((detrazione_senza_percentuali * RP72_percentuale_di_spettanza_relativa_a_lavoratori_dipendenti_che_si_trasferiscono_per_motivi_di_lavoro * percentuale_giorni),0)
 
 # Colonna 2
 

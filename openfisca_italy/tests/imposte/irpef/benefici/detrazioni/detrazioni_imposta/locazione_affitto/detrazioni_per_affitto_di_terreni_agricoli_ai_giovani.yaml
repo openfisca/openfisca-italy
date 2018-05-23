@@ -1,23 +1,23 @@
 - name: Detrazione per l’affitto di terreni agricoli ai giovani con 19% minore di 1200
   period: 2017
   input_variables:
-    spese_per_detrazione_affitto_terreni_agricoli_ai_giovani: 1500
-    spese_per_detrazione_affitto_terreni_agricoli_ai_giovani_compilato: True
+    RP73_spese_per_detrazione_affitto_terreni_agricoli_ai_giovani: 1500
+    RP73_spese_per_detrazione_affitto_terreni_agricoli_ai_giovani_compilato: True
   output_variables:
     detrazioni_per_affitto_terreni_agricoli_ai_giovani: 285
 
 - name: Detrazione per l’affitto di terreni agricoli ai giovani con 19% maggiore di 1200
   period: 2017
   input_variables:
-    spese_per_detrazione_affitto_terreni_agricoli_ai_giovani: 100000
-    spese_per_detrazione_affitto_terreni_agricoli_ai_giovani_compilato: True
+    RP73_spese_per_detrazione_affitto_terreni_agricoli_ai_giovani: 100000
+    RP73_spese_per_detrazione_affitto_terreni_agricoli_ai_giovani_compilato: True
   output_variables:
-    detrazioni_per_affitto_terreni_agricoli_ai_giovani: 1200
+    detrazioni_per_affitto_terreni_agricoli_ai_giovani: 1166
 
 - name: Detrazione per l’affitto di terreni agricoli ai giovani non dovuta
   period: 2017
   input_variables:
-    spese_per_detrazione_affitto_terreni_agricoli_ai_giovani: 100000
-    spese_per_detrazione_affitto_terreni_agricoli_ai_giovani_compilato: False
+    RP73_spese_per_detrazione_affitto_terreni_agricoli_ai_giovani: 100000
+    RP73_spese_per_detrazione_affitto_terreni_agricoli_ai_giovani_compilato: False
   output_variables:
     detrazioni_per_affitto_terreni_agricoli_ai_giovani: 0

@@ -1,9 +1,9 @@
 - name: Detrazione per per inquilini di alloggi adibiti ad abitazione principale con reddito per detrazioni inferiore a 15.493,71
   period: 2017
   input_variables:
-    tipologia_di_detrazione_inquilini_alloggi_adibiti_abitazione_principale_rigo_rp71: codice_uno
-    numero_giorni_in_cui_immobile_e_stato_adibito_ad_abitazione_principale: 200
-    percentuale_di_spettanza_relativa_a_inquilini_alloggi_adibiti_abitazione_principale: 50
+    RP71_tipologia_di_detrazione_inquilini_alloggi_adibiti_abitazione_principale: codice_uno
+    RP71_numero_giorni_in_cui_immobile_e_stato_adibito_ad_abitazione_principale: 200
+    RP71_percentuale_di_spettanza_relativa_a_inquilini_alloggi_adibiti_abitazione_principale: 50
     reddito_per_detrazioni: 11000
   output_variables:
     detrazione_per_inquilini_alloggi_adibiti_ad_abitazione_principale: 82
@@ -11,9 +11,9 @@
 - name: Detrazione per per inquilini di alloggi adibiti ad abitazione principale con reddito per detrazioni inferiore a 30.987,41
   period: 2017
   input_variables:
-    tipologia_di_detrazione_inquilini_alloggi_adibiti_abitazione_principale_rigo_rp71: codice_uno
-    numero_giorni_in_cui_immobile_e_stato_adibito_ad_abitazione_principale: 200
-    percentuale_di_spettanza_relativa_a_inquilini_alloggi_adibiti_abitazione_principale: 50
+    RP71_tipologia_di_detrazione_inquilini_alloggi_adibiti_abitazione_principale: codice_uno
+    RP71_numero_giorni_in_cui_immobile_e_stato_adibito_ad_abitazione_principale: 200
+    RP71_percentuale_di_spettanza_relativa_a_inquilini_alloggi_adibiti_abitazione_principale: 50
     reddito_per_detrazioni: 25000
   output_variables:
     detrazione_per_inquilini_alloggi_adibiti_ad_abitazione_principale: 41
@@ -21,9 +21,9 @@
 - name: Detrazione per per inquilini di alloggi adibiti ad abitazione principale con reddito per detrazioni maggiore a 30.987,41
   period: 2017
   input_variables:
-    tipologia_di_detrazione_inquilini_alloggi_adibiti_abitazione_principale_rigo_rp71: codice_uno
-    numero_giorni_in_cui_immobile_e_stato_adibito_ad_abitazione_principale: 200
-    percentuale_di_spettanza_relativa_a_inquilini_alloggi_adibiti_abitazione_principale: 50
+    RP71_tipologia_di_detrazione_inquilini_alloggi_adibiti_abitazione_principale: codice_uno
+    RP71_numero_giorni_in_cui_immobile_e_stato_adibito_ad_abitazione_principale: 200
+    RP71_percentuale_di_spettanza_relativa_a_inquilini_alloggi_adibiti_abitazione_principale: 50
     reddito_per_detrazioni: 40000
   output_variables:
     detrazione_per_inquilini_alloggi_adibiti_ad_abitazione_principale: 0
@@ -31,9 +31,9 @@
 - name: Detrazione per per inquilini di alloggi adibiti ad abitazione principale con codice non inserito
   period: 2017
   input_variables:
-    tipologia_di_detrazione_inquilini_alloggi_adibiti_abitazione_principale_rigo_rp71: nessun_codice
-    numero_giorni_in_cui_immobile_e_stato_adibito_ad_abitazione_principale: 200
-    percentuale_di_spettanza_relativa_a_inquilini_alloggi_adibiti_abitazione_principale: 50
+    RP71_tipologia_di_detrazione_inquilini_alloggi_adibiti_abitazione_principale: nessun_codice
+    RP71_numero_giorni_in_cui_immobile_e_stato_adibito_ad_abitazione_principale: 200
+    RP71_percentuale_di_spettanza_relativa_a_inquilini_alloggi_adibiti_abitazione_principale: 50
     reddito_per_detrazioni: 40000
   output_variables:
     detrazione_per_inquilini_alloggi_adibiti_ad_abitazione_principale: 0

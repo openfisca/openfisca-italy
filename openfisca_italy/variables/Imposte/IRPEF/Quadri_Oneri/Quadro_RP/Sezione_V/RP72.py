@@ -5,7 +5,7 @@ from openfisca_core.model_api import *
 from openfisca_italy.entita import *
 
 
-class numero_giorni_in_cui_immobile_e_stato_adibito_ad_abitazione_principale_lavoratori_dipendenti_che_si_trasferiscono_per_motivi_di_lavoro(Variable):
+class RP72_numero_giorni_in_cui_immobile_e_stato_adibito_ad_abitazione_principale_lavoratori_dipendenti_che_si_trasferiscono_per_motivi_di_lavoro(Variable):
     value_type = int
     entity = Persona
     definition_period = YEAR
@@ -14,7 +14,7 @@ class numero_giorni_in_cui_immobile_e_stato_adibito_ad_abitazione_principale_lav
     reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
 
-class percentuale_di_spettanza_relativa_a_lavoratori_dipendenti_che_si_trasferiscono_per_motivi_di_lavoro(Variable):
+class RP72_percentuale_di_spettanza_relativa_a_lavoratori_dipendenti_che_si_trasferiscono_per_motivi_di_lavoro(Variable):
     value_type = int
     entity = Persona
     definition_period = YEAR
