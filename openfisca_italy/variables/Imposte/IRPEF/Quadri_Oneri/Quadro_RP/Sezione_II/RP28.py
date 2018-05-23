@@ -49,6 +49,15 @@ class RP28_contributi_per_lavoratori_prima_occupazione_non_dedotti_dal_sostituto
 
         def formula(person,period,parameters):
                 # vedere se uno dei righi tra RP27 e RP31 e' stato compilato
+                lista_campi_da_controllare = ['RP27_contributi_deducibilita_ordinaria_dedotti_dal_sostituto','RP28_contributi_per_lavoratori_prima_occupazione_dedotti_dal_sostituto','RP27_contributi_deducibilita_ordinaria_non_dedotti_dal_sostituto',
+                'RP29_contributi_per_fondi_in_squilibrio_finanziario_dedotti_dal_sostituto','RP29_contributi_per_fondi_in_squilibrio_finanziario_non_dedotti_dal_sostituto','RP30_contributi_versati_per_familiari_a_carico_dedotti_dal_sostituto',
+                'RP30_contributi_versati_per_familiari_a_carico_non_dedotti_dal_sostituto',
+                'RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_dedotti_dal_sostituto','RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_quota_TFR','RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_non_dedotti_dal_sostituto']
+                # conto campi compilati
+                almeno_un_campo_compilato = False
+                for campo in lista_campi_da_controllare:
+                    almeno_un_campo_compilato = where(almeno_un_campo_compilato,almeno_un_campo_compilato,not_(person.get_holder(campo).get_array(period) is None))
+                # calcolo importo
                 importo_punto_413_certificazione_unica = person('importo_punto_413_certificazione_unica',period)
                 limite_deducibilita = parameters(period).imposte.IRPEF.QuadroRP.Sezione_II.limite_importo_deducibile_contributi_versati_lavoratori_prima_occupazione #limite di deducibilità normale
                 # eventuale maggiorazione del limite di deduciblità
@@ -59,4 +68,4 @@ class RP28_contributi_per_lavoratori_prima_occupazione_non_dedotti_dal_sostituto
                 operazione_limite_deducibilita = where(operazione_limite_deducibilita>0,operazione_limite_deducibilita,np.array(0))
                 importo = round_(min_(importo_punto_413_certificazione_unica,operazione_limite_deducibilita),2)
                 codice_campo_411_valido = person('codice_inserito_campo_411_modello_unico',period) == TipiCodiciCampo411ModelloUnico.codice_tre
-                return where (codice_campo_411_valido, importo ,0)
+                return where ((almeno_un_campo_compilato * codice_campo_411_valido), importo ,0)

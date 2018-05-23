@@ -33,17 +33,20 @@ class RP27_contributi_deducibilita_ordinaria_non_dedotti_dal_sostituto(Variable)
 
     def formula(person,period,parameters):
         #uno solo tra i campi RP27 e RP28 deve essere compilato
-        RP27_col_1_compilato = person.get_holder('RP27_contributi_deducibilita_ordinaria_dedotti_dal_sostituto').get_array(period)
-        almeno_un_campo_compilato = not_(RP27_col_1_compilato is None)
-        print almeno_un_campo_compilato
+        lista_campi_da_controllare = ['RP27_contributi_deducibilita_ordinaria_dedotti_dal_sostituto','RP28_contributi_per_lavoratori_prima_occupazione_dedotti_dal_sostituto','RP28_contributi_per_lavoratori_prima_occupazione_non_dedotti_dal_sostituto',
+        'RP29_contributi_per_fondi_in_squilibrio_finanziario_dedotti_dal_sostituto','RP29_contributi_per_fondi_in_squilibrio_finanziario_non_dedotti_dal_sostituto','RP30_contributi_versati_per_familiari_a_carico_dedotti_dal_sostituto',
+        'RP30_contributi_versati_per_familiari_a_carico_non_dedotti_dal_sostituto',
+        'RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_dedotti_dal_sostituto','RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_quota_TFR','RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_non_dedotti_dal_sostituto']
+        # conto campi compilati
+        almeno_un_campo_compilato = False
+        for campo in lista_campi_da_controllare:
+            almeno_un_campo_compilato = where(almeno_un_campo_compilato,almeno_un_campo_compilato,not_(person.get_holder(campo).get_array(period) is None))
         # restituire il minor importo tra
         oneri_di_previdenza_complementare_per_i_quali_si_chiede_la_deduzione = person('importo_punto_413_certificazione_unica',period) + person('somme_versate_forme_pensionistiche_per_calcolo_RigoRP27_col_2',period)
         limite_deducibilita_per_RP27_contributi_deducibilita_ordinaria_dedotti_dal_sostituto = parameters(period).imposte.IRPEF.QuadroRP.Sezione_II.limite_importo_deducibile_contributi_deducibilita_ordinaria - person('RP27_contributi_deducibilita_ordinaria_dedotti_dal_sostituto',period)
         limite_deducibilita_per_RP27_contributi_deducibilita_ordinaria_dedotti_dal_sostituto = where(limite_deducibilita_per_RP27_contributi_deducibilita_ordinaria_dedotti_dal_sostituto>0,limite_deducibilita_per_RP27_contributi_deducibilita_ordinaria_dedotti_dal_sostituto,np.array(0))
         importo =  round_(min_(oneri_di_previdenza_complementare_per_i_quali_si_chiede_la_deduzione,limite_deducibilita_per_RP27_contributi_deducibilita_ordinaria_dedotti_dal_sostituto),2)
         codice_campo_411_valido = person('codice_inserito_campo_411_modello_unico',period) == TipiCodiciCampo411ModelloUnico.codice_uno
-        print codice_campo_411_valido
-        print 'importo',importo
         return where ((almeno_un_campo_compilato * codice_campo_411_valido), importo ,0)
 
 class somme_versate_forme_pensionistiche_per_calcolo_RigoRP27_col_2(Variable):
