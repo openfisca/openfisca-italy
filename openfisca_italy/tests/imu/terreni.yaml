@@ -1,0 +1,49 @@
+#https://www.guidafisco.it/detrazione-imu-agricola-terreni-agricoli-iap-coltivatori-diretti-1364
+- name: Test terreno normale (tra cui area edificabile)
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 10000
+    immobile_categoria_catastale: T
+    percentuale_possesso: 100
+    mesi_di_possesso: 12
+    aliquota_imu: 7.6
+  output_variables:
+    importo_imu: 12825
+
+- name: Test terreno posseduti e condotti da coltivatori diretti
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 10000
+    immobile_categoria_catastale: T
+    percentuale_possesso: 100
+    mesi_di_possesso: 12
+    aliquota_imu: 7.6
+    is_immobile_posseduto_da_CD: True
+  output_variables:
+    importo_imu: 0
+
+- name: Test terreno posseduti e condotti da IAP
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 10000
+    immobile_categoria_catastale: T
+    percentuale_possesso: 100
+    mesi_di_possesso: 12
+    aliquota_imu: 7.6
+    is_immobile_posseduto_da_IAP: True
+  output_variables:
+    importo_imu: 0
+
+
+- name: Test esempio terreno con aliquota indetta dal comune
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 1300
+    immobile_categoria_catastale: T
+    percentuale_possesso: 100
+    mesi_di_possesso: 12
+    aliquota_imu: 1.76 #indetto dal comune
+  output_variables:
+    valore_immobile_rivalutato: 1625
+    base_imponibile: 219375
+    importo_imu: 386.1
