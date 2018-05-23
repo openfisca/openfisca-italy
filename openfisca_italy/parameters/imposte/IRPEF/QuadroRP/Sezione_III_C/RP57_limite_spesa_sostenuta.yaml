@@ -1,0 +1,5 @@
+description: Importo massimo deducibile per Rigo RP57 Spesa arredo immobile
+unit: currency
+values:
+  2010-01-01:
+    value: 10000

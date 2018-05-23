@@ -1,0 +1,23 @@
+- name: Test 1 per vedere se funziona la compilazione del rigo RP 57
+  period: 2017
+  input_variables:
+    RP57_col2_spesa_arredo_immobili_ristrutturati: 15000
+    RP57_col5_spesa_arredo_immobili_ristrutturati: 1500
+  output_variables:
+    RP57_col3_importo_rata_spesa_arredo_immobili_ristrutturati: 1000
+    RP57_col6_importo_rata_spesa_arredo_immobili_ristrutturati: 150
+
+- name: Test 2 per vedere se funziona la compilazione del rigo RP 58
+  period: 2017
+  input_variables:
+    RP58_spesa_arredo_immobili_giovani_coppie: 20000
+  output_variables:
+    RP58_importo_rata_spesa_arredo_immobili_giovani_coppie: 1600
+
+
+- name: Test 3 per vedere se funziona la compilazione del rigo RP 59
+  period: 2017
+  input_variables:
+    RP59_iva_per_acquisto_abitazione_classe_energetica: 20000
+  output_variables:
+    RP59_importo_rata_iva_per_acquisto_abitazione_classe_energetica: 2000

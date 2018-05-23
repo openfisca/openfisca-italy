@@ -13,7 +13,7 @@ class RP60_totale_rate_spesa_arredo_immobili_ristrutturati_gc_iva_acquisto_abita
     reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=75"  # Always use the most official source
 
     def formula(person,period,parameters):
-        tipi_rate_spese_arredo_immobili = ['RP57_importo_rata_spesa_arredo_immobili_ristrutturati',
+        tipi_rate_spese_arredo_immobili = ['RP57_col3_importo_rata_spesa_arredo_immobili_ristrutturati','RP57_col6_importo_rata_spesa_arredo_immobili_ristrutturati',
                                             'RP58_importo_rata_spesa_arredo_immobili_giovani_coppie',
-                                            'RP59_importo_rata_iva_per_acquisto_abitazione_classe_energetica',]
+                                            'RP59_importo_rata_iva_per_acquisto_abitazione_classe_energetica']
         return round_(sum(person(tipo_rata, period) for tipo_rata in tipi_rate_spese_arredo_immobili),2)
