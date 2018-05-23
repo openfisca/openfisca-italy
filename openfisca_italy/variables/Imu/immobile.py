@@ -66,6 +66,7 @@ class CategoriaCatastale(Enum):
 class moltiplicatori_catastali(Variable):
     value_type = int
     entity = Persona
+    default_value = 160
     definition_period = ETERNITY
     label = u""
     reference = u""
@@ -167,13 +168,21 @@ class is_svolgimento_attivita_non_commerciali_di_un_determinato_tipo(Variable):
     label = u"Immobile con destinazione: attività assistenziali, previdenziali, sanitarie, didattiche, ricettive, culturali, ricreative e sportive"
     reference = u"art. 16, lett. a), della legge 20 maggio 1985, n. 222 e all’art. 73, comma 1, lett. c), del TUIR"
 
-class is_fabbricati_rurali_ad_uso_strumentale_in_comuni_montani(Variable):
+class is_immobile_rurale_ad_uso_strumentale_in_comune_montano(Variable):
     value_type = bool
     entity = Persona
     default_value = False
     definition_period = MONTH
     label = u"Immobile ubicati nei comuni classificati montani o parzialmente montani di cui all’elenco dei comuni italiani predisposto dall’ISTAT"
     reference = u"all’art. 9, comma 3-bis, del D. L. n. 557 del 1993, lista comuni esenti: https://www.istat.it/it/archivio/6789"
+
+class is_immobile_merce(Variable):  #magazzino
+    value_type = bool
+    entity = Persona
+    default_value = False
+    definition_period = MONTH
+    label = u"Fabbricati costruiti e destinati dall’impresa costruttrice alla vendita, fintanto che permanga tale destinazione e non siano in ogni caso locati "
+    reference = u"art.2, comma 2, del D.L. 31 agosto 2013, n. 102, convertito, con modificazioni, dalla L. 28 ottobre 2013, n. 124"
 
 
 
@@ -198,6 +207,7 @@ class is_immobile_posseduto_da_IAP(Variable):
 class valore_immobile_non_rivalutato(Variable):
     value_type = float
     entity = Persona
+    default_value = 0
     definition_period = MONTH
     set_input = set_input_divide_by_period
     label = u"Valore dell'immobile non rivalutato"
@@ -206,6 +216,7 @@ class valore_immobile_non_rivalutato(Variable):
 class valore_immobile_rivalutato(Variable):
     value_type = float
     entity = Persona
+    default_value = 0
     definition_period = MONTH
     set_input = set_input_divide_by_period
     label = u"Valore dell'immobile rivalutato"
@@ -220,6 +231,7 @@ class valore_immobile_rivalutato(Variable):
 class base_imponibile(Variable):
     value_type = float
     entity = Persona
+    default_value = 0
     definition_period = MONTH
     set_input = set_input_divide_by_period
     label = u"Base imponibile dell'immobile"
@@ -332,6 +344,17 @@ class is_inagibile_accertato(Variable):
     label = u"Se l'immobile è inagibile"
     reference = u"Decreto del presidente della Repubblica 28 dicembre 2000, n. 445"
 
+#c'è semplicemente da fare: RenditaCatastaleNonRivalutata*Imu
+class is_area_fabbricabile(Variable):
+    value_type = bool
+    entity = Persona
+    default_value = False
+    definition_period = MONTH
+    label = u"Se l'area è fabbricabile"
+    reference = u""
+
+
+
 class is_interesse_storico_artistico(Variable):
     value_type = bool
     entity = Persona
@@ -345,6 +368,7 @@ class is_interesse_storico_artistico(Variable):
 class aliquota_imu(Variable):
     value_type = float
     entity = Persona
+    default_value = 0
     definition_period = MONTH
     set_input = set_input_divide_by_period
     label = u"Aliquota IMU che cambia a seconda della categoria"
@@ -384,6 +408,7 @@ class mesi_di_possesso(Variable):
 class imposta_imu(Variable):
     value_type = float
     entity = Persona
+    default_value = 0
     definition_period = MONTH
     set_input = set_input_divide_by_period
     label = u"Imposta IMU, risultato della moltiplicazione tra la base imponibile e l'aliquota imu"
@@ -393,22 +418,32 @@ class imposta_imu(Variable):
                             person('is_destinazione_ad_usi_culturali',period)+
                             person('is_proprieta_santa_sede',period)+
                             person('is_svolgimento_attivita_non_commerciali_di_un_determinato_tipo',period)+
-                            person('is_fabbricati_rurali_ad_uso_strumentale_in_comuni_montani',period)+
+                            person('is_immobile_rurale_ad_uso_strumentale_in_comune_montano',period)+
                             person('is_immobile_posseduto_da_CD',period)+
-                            person('is_immobile_posseduto_da_IAP',period)
+                            person('is_immobile_posseduto_da_IAP',period)+
+                            person('is_immobile_merce',period)
                         ,True,False)
-        other_case = not_(is_esenti)
-        risultato_imposta = select([is_esenti == True,other_case == True],[0,person('base_imponibile',period) * (person('aliquota_imu',period)/1000.00)])
+        is_area_fabbricabile = person('is_area_fabbricabile',period)
+        other_case = not_(is_esenti+is_area_fabbricabile)
+
+        risultato_imposta = select(  [
+                                is_esenti == True,
+                                other_case == True,
+                                is_area_fabbricabile == True
+                            ],
+                            [
+                                0,
+                                person('base_imponibile',period) * (person('aliquota_imu',period)/1000.00),
+                                #Le aree fabbricabili si calcolano RenditaCatastaleNonRivalutata*aliquota_imu
+                                person('valore_immobile_non_rivalutato',period)*(person('aliquota_imu',period)/1000.00)
+                            ])
         risultato_imposta_divisa_per_possesso = risultato_imposta * (person('percentuale_possesso',period)/100.00) * (person('mesi_di_possesso',period)/12.00)
-        print(risultato_imposta)
-        print(person('percentuale_possesso',period))
-        print(person('mesi_di_possesso',period))
-        print(risultato_imposta_divisa_per_possesso)
         return risultato_imposta_divisa_per_possesso
 
 class importo_imu(Variable):
     value_type = float
     entity = Persona
+    default_value = 0
     definition_period = MONTH
     set_input = set_input_divide_by_period
     label = u"Importo IMU, la differenza tra l'imposta imu e le detrazioni"
@@ -418,7 +453,8 @@ class importo_imu(Variable):
                             person('is_destinazione_ad_usi_culturali',period)+
                             person('is_proprieta_santa_sede',period)+
                             person('is_svolgimento_attivita_non_commerciali_di_un_determinato_tipo',period)+
-                            person('is_fabbricati_rurali_ad_uso_strumentale_in_comuni_montani',period)
+                            person('is_immobile_rurale_ad_uso_strumentale_in_comune_montano',period)+
+                            person('is_immobile_merce',period)
                         ,True,False)
         #se è esente ritorna 0 altrimenti calcola il risultato
         return where(is_esenti,0,person('imposta_imu',period) - person('detrazioni_imu',period))
@@ -427,6 +463,7 @@ class importo_imu(Variable):
 class detrazioni_imu(Variable):
     value_type = float
     entity = Persona
+    default_value = 0
     definition_period = MONTH
     set_input = set_input_divide_by_period
     label = u"Detrazioni applicate all'imposta imu"
@@ -438,11 +475,13 @@ class detrazioni_imu(Variable):
                             person('is_destinazione_ad_usi_culturali',period)+
                             person('is_proprieta_santa_sede',period)+
                             person('is_svolgimento_attivita_non_commerciali_di_un_determinato_tipo',period)+
-                            person('is_fabbricati_rurali_ad_uso_strumentale_in_comuni_montani',period)
+                            person('is_immobile_rurale_ad_uso_strumentale_in_comune_montano',period)+
+                            person('is_immobile_merce',period)
                         ,True,False)
-        a1_a8_a9_case = ((immobile_categoria_catastale_temp == CategoriaCatastale.A1)+
+        a1_a8_a9_case = (((immobile_categoria_catastale_temp == CategoriaCatastale.A1)+
                         (immobile_categoria_catastale_temp == CategoriaCatastale.A8)+
-                        (immobile_categoria_catastale_temp == CategoriaCatastale.A9))
+                        (immobile_categoria_catastale_temp == CategoriaCatastale.A9))*
+                        (person('is_immobile_prima_casa',period)==True))
         other_case = not_(a1_a8_a9_case) + not_(is_esenti)
         return select( [
                             is_esenti,
