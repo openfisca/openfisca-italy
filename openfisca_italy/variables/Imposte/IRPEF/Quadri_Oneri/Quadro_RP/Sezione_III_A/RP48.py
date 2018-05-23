@@ -3,6 +3,9 @@
 from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
 from openfisca_italy.entita import *
+# import common
+from openfisca_italy.variables.Imposte.IRPEF.Quadri_Oneri.Quadro_RP.Sezione_III_A_common import *
+
 
 class importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_36(Variable):
     value_type = float
@@ -20,7 +23,7 @@ class importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure
         Righi_RP41_47_importi_rate = ['RP41_importo_rata','RP42_importo_rata','RP43_importo_rata','RP44_importo_rata','RP45_importo_rata','RP46_importo_rata','RP47_importo_rata']
 
         for anno_rigo, codice_rigo, importo_rata in zip(Righi_RP41_47_anni,Righi_RP41_47_codici_2012_2013_2017_antisismico,Righi_RP41_47_importi_rate):
-            condizione_per_il_36 = ((person(anno_rigo,period) <= 2012) * (person(anno_rigo,period) >= 2008) * (person(codice_rigo,period) == 1)) + ((person(codice_rigo,period) == 3) * (person(anno_rigo,period) == 2012))
+            condizione_per_il_36 = ((person(anno_rigo,period) <= 2012) * (person(anno_rigo,period) >= 2008) * (person(codice_rigo,period) == TipiSpesaSostenutaPerRecuperoPatrimonioEdilizioInterventiAntisismici.nessun_codice)) + ((person(codice_rigo,period) == TipiSpesaSostenutaPerRecuperoPatrimonioEdilizioInterventiAntisismici.codice_due) * (person(anno_rigo,period) == 2012))
             print person(codice_rigo,period)
             importo_totale = where (condizione_per_il_36,(importo_totale + person(importo_rata,period)),importo_totale)
         return importo_totale
@@ -42,7 +45,7 @@ class importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure
         Righi_RP41_47_importi_rate = ['RP41_importo_rata','RP42_importo_rata','RP43_importo_rata','RP44_importo_rata','RP45_importo_rata','RP46_importo_rata','RP47_importo_rata']
 
         for anno_rigo, codice_rigo, importo_rata in zip(Righi_RP41_47_anni,Righi_RP41_47_codici_2012_2013_2017_antisismico,Righi_RP41_47_importi_rate):
-            condizione_per_il_50 = ((person(anno_rigo,period) <= 2017) * (person(anno_rigo,period) >= 2013) * (person(codice_rigo,period) == 1)) + ((person(anno_rigo,period) == 2012) * (person(codice_rigo,period) == 4)) + ((person(anno_rigo,period) == 2017) * (person(codice_rigo,period) == 6))
+            condizione_per_il_50 = ((person(anno_rigo,period) <= 2017) * (person(anno_rigo,period) >= 2013) * (person(codice_rigo,period) == TipiSpesaSostenutaPerRecuperoPatrimonioEdilizioInterventiAntisismici.nessun_codice)) + ((person(anno_rigo,period) == 2012) * (person(codice_rigo,period) == TipiSpesaSostenutaPerRecuperoPatrimonioEdilizioInterventiAntisismici.codice_tre)) + ((person(anno_rigo,period) == 2017) * (person(codice_rigo,period) == TipiSpesaSostenutaPerRecuperoPatrimonioEdilizioInterventiAntisismici.codice_cinque))
             importo_totale = where (condizione_per_il_50,(importo_totale + person(importo_rata,period)),importo_totale)
         return importo_totale
 
@@ -63,7 +66,7 @@ class importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure
         Righi_RP41_47_importi_rate = ['RP41_importo_rata','RP42_importo_rata','RP43_importo_rata','RP44_importo_rata','RP45_importo_rata','RP46_importo_rata','RP47_importo_rata']
 
         for anno_rigo, codice_rigo, importo_rata in zip(Righi_RP41_47_anni,Righi_RP41_47_codici_2012_2013_2017_antisismico,Righi_RP41_47_importi_rate):
-            condizione_per_il_65 = ((person(anno_rigo,period) >= 2013) * (person(anno_rigo,period) <= 2016) * (person(codice_rigo,period) == 5))
+            condizione_per_il_65 = ((person(anno_rigo,period) >= 2013) * (person(anno_rigo,period) <= 2016) * (person(codice_rigo,period) == TipiSpesaSostenutaPerRecuperoPatrimonioEdilizioInterventiAntisismici.codice_quattro))
             importo_totale = where (condizione_per_il_65,(importo_totale + person(importo_rata,period)),importo_totale)
         return importo_totale
 
@@ -83,7 +86,7 @@ class importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure
         Righi_RP41_47_importi_rate = ['RP41_importo_rata','RP42_importo_rata','RP43_importo_rata','RP44_importo_rata','RP45_importo_rata','RP46_importo_rata','RP47_importo_rata']
 
         for anno_rigo, codice_rigo, importo_rata in zip(Righi_RP41_47_anni,Righi_RP41_47_codici_2012_2013_2017_antisismico,Righi_RP41_47_importi_rate):
-            condizione_per_il_70 = ((person(anno_rigo,period) == 2017) * (person(codice_rigo,period) == 8))
+            condizione_per_il_70 = ((person(anno_rigo,period) == 2017) * (person(codice_rigo,period) == TipiSpesaSostenutaPerRecuperoPatrimonioEdilizioInterventiAntisismici.codice_sei))
             importo_totale = where (condizione_per_il_70,(importo_totale + person(importo_rata,period)),importo_totale)
         return importo_totale
 
@@ -103,7 +106,7 @@ class importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure
         Righi_RP41_47_importi_rate = ['RP41_importo_rata','RP42_importo_rata','RP43_importo_rata','RP44_importo_rata','RP45_importo_rata','RP46_importo_rata','RP47_importo_rata']
 
         for anno_rigo, codice_rigo, importo_rata in zip(Righi_RP41_47_anni,Righi_RP41_47_codici_2012_2013_2017_antisismico,Righi_RP41_47_importi_rate):
-            condizione_per_il_75 = ((person(anno_rigo,period) == 2017) * (person(codice_rigo,period) == 0)) + ((person(anno_rigo,period) == 2017) * (person(codice_rigo,period) == 10))
+            condizione_per_il_75 = ((person(anno_rigo,period) == 2017) * (person(codice_rigo,period) == TipiSpesaSostenutaPerRecuperoPatrimonioEdilizioInterventiAntisismici.codice_otto)) + ((person(anno_rigo,period) == 2017) * (person(codice_rigo,period) == TipiSpesaSostenutaPerRecuperoPatrimonioEdilizioInterventiAntisismici.codice_dieci))
             importo_totale = where (condizione_per_il_75,(importo_totale + person(importo_rata,period)),importo_totale)
         return importo_totale
 
@@ -123,7 +126,7 @@ class importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure
         Righi_RP41_47_importi_rate = ['RP41_importo_rata','RP42_importo_rata','RP43_importo_rata','RP44_importo_rata','RP45_importo_rata','RP46_importo_rata','RP47_importo_rata']
 
         for anno_rigo, codice_rigo, importo_rata in zip(Righi_RP41_47_anni,Righi_RP41_47_codici_2012_2013_2017_antisismico,Righi_RP41_47_importi_rate):
-            condizione_per_il_80 = ((person(anno_rigo,period) == 2017) * (person(codice_rigo,period) == 7))
+            condizione_per_il_80 = ((person(anno_rigo,period) == 2017) * (person(codice_rigo,period) == TipiSpesaSostenutaPerRecuperoPatrimonioEdilizioInterventiAntisismici.codice_sette))
             importo_totale = where (condizione_per_il_80,(importo_totale + person(importo_rata,period)),importo_totale)
         return importo_totale
 
@@ -143,6 +146,6 @@ class importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure
         Righi_RP41_47_importi_rate = ['RP41_importo_rata','RP42_importo_rata','RP43_importo_rata','RP44_importo_rata','RP45_importo_rata','RP46_importo_rata','RP47_importo_rata']
 
         for anno_rigo, codice_rigo, importo_rata in zip(Righi_RP41_47_anni,Righi_RP41_47_codici_2012_2013_2017_antisismico,Righi_RP41_47_importi_rate):
-            condizione_per_il_90 = ((person(anno_rigo,period) == 2017) * (person(codice_rigo,period) == 2)) + ((person(anno_rigo,period) == 2017) * (person(codice_rigo,period) == 9))
+            condizione_per_il_90 = ((person(anno_rigo,period) == 2017) * (person(codice_rigo,period) == TipiSpesaSostenutaPerRecuperoPatrimonioEdilizioInterventiAntisismici.codice_nove)) + ((person(anno_rigo,period) == 2017) * (person(codice_rigo,period) == TipiSpesaSostenutaPerRecuperoPatrimonioEdilizioInterventiAntisismici.codice_undici))
             importo_totale = where (condizione_per_il_90,(importo_totale + person(importo_rata,period)),importo_totale)
         return importo_totale
