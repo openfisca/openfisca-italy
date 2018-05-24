@@ -3,7 +3,7 @@
 from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
 from openfisca_italy.entita import *
-
+from openfisca_italy.variables.Imu.imu_common import *
 
 class moltiplicatore_catastale(Variable):
     value_type = int
