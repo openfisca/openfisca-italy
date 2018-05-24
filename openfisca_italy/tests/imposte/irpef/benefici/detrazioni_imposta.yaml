@@ -1,17 +1,17 @@
-- name: Test detrazione d'imposta 
+- name: Test detrazione d'imposta
   period: 2017
   input_variables:
-   detrazioni_per_carichi_famigliari: 1200
-   detrazione_per_lavoro: 1200
+   RN6_detrazioni_per_carichi_famigliari: 1200
+   RN7_detrazione_per_lavoro: 1200
    detrazioni_per_assegni_percepiti_ex_coniuge: 1200
-   detrazione_canoni_di_locazione_e_affitto_terreni_annuo: 1200
-   detrazioni_per_oneri_detraibili_annuali: 1200
-   detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_annue: 1200.72
-   detrazioni_per_spese_arredo_immobili_giovani_coppie_iva_acquisto_abitazione_annue: 1200.25
-   detrazioni_per_spese_per_interventi_finalizzati_al_risparmio_energetico_annue: 1200
-   totale_detrazione_oneri_Sez_VI_quadro_RP: 1200
-   detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2014: 1200
-   detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2015: 1200
-   detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2016: 1200
+   RN12_detrazione_canoni_di_locazione_e_affitto_terreni_annuo: 1200
+   RN13_detrazioni_per_oneri_detraibili_annuali: 1200
+   RN14_detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_annue: 1200.72
+   RN15_detrazioni_per_spese_arredo_immobili_giovani_coppie_iva_acquisto_abitazione_annue: 1200.25
+   RN16_detrazioni_per_spese_per_interventi_finalizzati_al_risparmio_energetico_annue: 1200
+   RN17_totale_detrazione_oneri_Sez_VI_quadro_RP: 1200
+   RN18_detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2014: 1200
+   RN19_detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2015: 1200
+   RN20_detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2016: 1200
   output_variables:
-    detrazioni_imposta_annuale: 14400.97
+    RN22_totale_detrazioni_imposta: 13200.97

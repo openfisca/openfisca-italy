@@ -7,4 +7,4 @@
     detrazione_per_inquilini_alloggi_adibiti_ad_abitazione_principale_con_contratti_per_giovani_tra_20_e_30_anni: 2700
     detrazioni_per_affitto_terreni_agricoli_ai_giovani: 1000
   output_variables:
-    detrazione_canoni_di_locazione_e_affitto_terreni_annuo: 10200
+    RN12_detrazione_canoni_di_locazione_e_affitto_terreni_annuo: 10200

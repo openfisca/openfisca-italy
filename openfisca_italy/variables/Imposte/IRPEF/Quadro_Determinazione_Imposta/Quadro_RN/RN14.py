@@ -7,19 +7,19 @@ from openfisca_italy.entita import *
 import numpy as np
 
 
-class detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_annue(Variable):
+class RN14_detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_annue(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
     set_input = set_input_divide_by_period
-    label = u"Detrazioni per interventi di recupero del patrimonio edilizio e misure antisismiche totali (Rigo RN14)"
+    label = u"Rigo RN14 - Detrazioni per interventi di recupero del patrimonio edilizio e misure antisismiche totali."
 
     def formula(person,period,parameters):
-        detrazioni_scaglioni = ['detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_36',
-                            'detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_50',
-                            'detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_65',
-                            'detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_70',
-                            'detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_75',
-                            'detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_80',
-                            'detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_85',]
+        detrazioni_scaglioni = ['RP49_detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_36',
+                            'RP49_detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_50',
+                            'RP49_detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_65',
+                            'RP49_detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_70',
+                            'RP49_detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_75',
+                            'RP49_detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_80',
+                            'RP49_detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_85',]
         return round_(sum(person(detrazione, period) for detrazione in detrazioni_scaglioni),2)

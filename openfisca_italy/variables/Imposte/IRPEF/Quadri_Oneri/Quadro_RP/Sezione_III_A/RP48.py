@@ -7,7 +7,7 @@ from openfisca_italy.entita import *
 from openfisca_italy.variables.Imposte.IRPEF.Quadri_Oneri.Quadro_RP.Sezione_III_A_common import *
 
 
-class importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_36(Variable):
+class RP48_importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_36(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
@@ -29,7 +29,7 @@ class importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure
         return importo_totale
 
 
-class importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_50(Variable):
+class RP48_importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_50(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
@@ -50,7 +50,7 @@ class importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure
         return importo_totale
 
 
-class importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_65(Variable):
+class RP48_importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_65(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
@@ -70,7 +70,7 @@ class importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure
             importo_totale = where (condizione_per_il_65,(importo_totale + person(importo_rata,period)),importo_totale)
         return importo_totale
 
-class importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_70(Variable):
+class RP48_importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_70(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
@@ -90,7 +90,7 @@ class importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure
             importo_totale = where (condizione_per_il_70,(importo_totale + person(importo_rata,period)),importo_totale)
         return importo_totale
 
-class importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_75(Variable):
+class RP48_importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_75(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
@@ -110,7 +110,7 @@ class importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure
             importo_totale = where (condizione_per_il_75,(importo_totale + person(importo_rata,period)),importo_totale)
         return importo_totale
 
-class importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_80(Variable):
+class RP48_importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_80(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
@@ -130,7 +130,7 @@ class importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure
             importo_totale = where (condizione_per_il_80,(importo_totale + person(importo_rata,period)),importo_totale)
         return importo_totale
 
-class importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_85(Variable):
+class RP48_importo_rata_su_spese_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_soggette_a_detrazione_del_85(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR

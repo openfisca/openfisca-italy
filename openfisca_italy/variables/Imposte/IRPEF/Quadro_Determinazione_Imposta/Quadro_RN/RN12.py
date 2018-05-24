@@ -7,13 +7,12 @@ from openfisca_italy.entita import *
 import numpy as np
 
 
-# Colonna 1
-class detrazione_canoni_di_locazione_e_affitto_terreni_annuo (Variable):
+class RN12_detrazione_canoni_di_locazione_e_affitto_terreni_annuo (Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
     set_input = set_input_divide_by_period
-    label = "Detrazione canoni di locazione e affitto terreni (Rigo RN12 col.1)"
+    label = "Rigo RN12 col.1 - Detrazione canoni di locazione e affitto terreni."
     reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
     def formula(person,period,parameters):
@@ -39,7 +38,7 @@ class detrazione_per_inquilini_alloggi_adibiti_ad_abitazione_principale_con_cont
         detrazione_senza_percentuali = select([not_(RP71_tipologia_di_detrazione_inquilini_alloggi_adibiti_abitazione_principale == 2),
                                                 reddito_per_detrazioni<=15493.71,
                                                 reddito_per_detrazioni<=30987.41,
-                                                reddito_per_detrazioni>=30987.41], # in all the other case
+                                                reddito_per_detrazioni>=30987.41],
                                                 [0,495.80,247.90,0])
         return round_((detrazione_senza_percentuali * RP71_percentuale_di_spettanza_relativa_a_inquilini_alloggi_adibiti_abitazione_principale * percentuale_giorni),0)
 
@@ -107,31 +106,31 @@ class detrazioni_canoni_locazione_per_lavoratori_dipendenti_che_si_trasferiscono
 
 # Colonna 2
 
-class credito_residuo_da_detrazioni_locazione_affitto(Variable):
+class RN12_credito_residuo_da_detrazioni_locazione_affitto(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
     set_input = set_input_divide_by_period
-    label = "Credito residuo che non ha trovato capienza nell'imposta IRPEF in quanto l'ammontare delle detrazione da locazione e affitto erano maggiore dell'irpef lorda diminuita di detrazioni per lavoro e famiglia (Rigo RN12 col 2)"
+    label = " Rigo RN12 col 2 - Credito residuo che non ha trovato capienza nell'imposta IRPEF in quanto l'ammontare delle detrazione da locazione e affitto erano maggiore dell'irpef lorda diminuita di detrazioni per lavoro e famiglia."
     reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
     def formula(person, period, parameters):
-            irpef_lorda = person('irpef_lorda',period)
-            detrazioni_imposta_famiglia_lavoro = person('detrazioni_per_carichi_famigliari',period) + person('detrazione_per_lavoro',period)
-            irpef_lorda_diminuita_delle_detrazioni_lavoro_e_famiglia =  irpef_lorda - detrazioni_imposta_famiglia_lavoro
-            residuo_detrazione_startup = 0 # TODO
-            capienza = irpef_lorda_diminuita_delle_detrazioni_lavoro_e_famiglia - residuo_detrazione_startup
-            detrazione_canoni_di_locazione_e_affitto_terreni_annuo = person('detrazione_canoni_di_locazione_e_affitto_terreni_annuo',period)
+            RN5_irpef_lorda = person('RN5_irpef_lorda',period)
+            detrazioni_imposta_famiglia_lavoro = person('RN8_totale_detrazioni_per_carichi_di_famiglia_e_lavoro',period)
+            irpef_lorda_diminuita_delle_detrazioni_lavoro_e_famiglia =  RN5_irpef_lorda - detrazioni_imposta_famiglia_lavoro
+            residui_detrazione_startup = person('RN18_residuo_detrazione_startup_2014',period)  + person('RN19_residuo_detrazione_startup_2015',period) +  person('RN20_residuo_detrazione_startup_2016',period) +  person('RN21_detrazioni_per_investimenti_startup',period)
+            capienza = irpef_lorda_diminuita_delle_detrazioni_lavoro_e_famiglia - residui_detrazione_startup
+            RN12_detrazione_canoni_di_locazione_e_affitto_terreni_annuo = person('RN12_detrazione_canoni_di_locazione_e_affitto_terreni_annuo',period)
             return select([capienza<=0,
-                    capienza<detrazione_canoni_di_locazione_e_affitto_terreni_annuo,
-                    capienza>=detrazione_canoni_di_locazione_e_affitto_terreni_annuo],
-                    [detrazione_canoni_di_locazione_e_affitto_terreni_annuo,
-                    detrazione_canoni_di_locazione_e_affitto_terreni_annuo-capienza,
+                    capienza<RN12_detrazione_canoni_di_locazione_e_affitto_terreni_annuo,
+                    capienza>=RN12_detrazione_canoni_di_locazione_e_affitto_terreni_annuo],
+                    [RN12_detrazione_canoni_di_locazione_e_affitto_terreni_annuo,
+                    RN12_detrazione_canoni_di_locazione_e_affitto_terreni_annuo-capienza,
                     0
                     ])
 # Colonna 3
 
-class detrazione_fruita_da_detrazioni_locazione_affitto(Variable):
+class RN12_detrazione_fruita_da_detrazioni_locazione_affitto(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
@@ -140,16 +139,16 @@ class detrazione_fruita_da_detrazioni_locazione_affitto(Variable):
     reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
     def formula(person, period, parameters):
-            irpef_lorda = person('irpef_lorda',period)
-            detrazioni_imposta_famiglia_lavoro = person('detrazioni_per_carichi_famigliari',period) + person('detrazione_per_lavoro',period)
-            irpef_lorda_diminuita_delle_detrazioni_lavoro_e_famiglia =  irpef_lorda - detrazioni_imposta_famiglia_lavoro
-            residuo_detrazione_startup = 0 # TODO
-            capienza = irpef_lorda_diminuita_delle_detrazioni_lavoro_e_famiglia - residuo_detrazione_startup
-            detrazione_canoni_di_locazione_e_affitto_terreni_annuo = person('detrazione_canoni_di_locazione_e_affitto_terreni_annuo',period)
+            RN5_irpef_lorda = person('RN5_irpef_lorda',period)
+            detrazioni_imposta_famiglia_lavoro = person('RN8_totale_detrazioni_per_carichi_di_famiglia_e_lavoro',period)
+            irpef_lorda_diminuita_delle_detrazioni_lavoro_e_famiglia =  RN5_irpef_lorda - detrazioni_imposta_famiglia_lavoro
+            residui_detrazione_startup = person('RN18_residuo_detrazione_startup_2014',period)  + person('RN19_residuo_detrazione_startup_2015',period) +  person('RN20_residuo_detrazione_startup_2016',period) +  person('RN21_detrazioni_per_investimenti_startup',period)
+            capienza = irpef_lorda_diminuita_delle_detrazioni_lavoro_e_famiglia - residui_detrazione_startup
+            RN12_detrazione_canoni_di_locazione_e_affitto_terreni_annuo = person('RN12_detrazione_canoni_di_locazione_e_affitto_terreni_annuo',period)
             return select([capienza<=0,
-                    capienza<detrazione_canoni_di_locazione_e_affitto_terreni_annuo,
-                    capienza>=detrazione_canoni_di_locazione_e_affitto_terreni_annuo],
+                    capienza<RN12_detrazione_canoni_di_locazione_e_affitto_terreni_annuo,
+                    capienza>=RN12_detrazione_canoni_di_locazione_e_affitto_terreni_annuo],
                     [0,
-                    detrazione_canoni_di_locazione_e_affitto_terreni_annuo - person('credito_residuo_da_detrazioni_locazione_affitto',period),
-                    detrazione_canoni_di_locazione_e_affitto_terreni_annuo
+                    RN12_detrazione_canoni_di_locazione_e_affitto_terreni_annuo - person('RN12_credito_residuo_da_detrazioni_locazione_affitto',period),
+                    RN12_detrazione_canoni_di_locazione_e_affitto_terreni_annuo
                     ])

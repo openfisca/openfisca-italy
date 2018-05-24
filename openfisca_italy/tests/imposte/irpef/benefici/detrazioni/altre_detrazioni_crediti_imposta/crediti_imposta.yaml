@@ -1,10 +1,10 @@
 - name: Test crediti d'imposta
   period: 2017
   input_variables:
-    credito_imposta_riacquisto_della_prima_casa: 1200.00
-    credito_imposta_incremento_occupazione: 1200.00
-    credito_imposta_reintegro_anticipazioni_fondi_pensione: 1200.00
-    credito_imposta_mediazioni_per_la_conciliazione_di_controversie_civili_commerciali: 1200.00
-    credito_imposta_negoziazione_e_arbitrato: 1200.00
+    RN24_credito_imposta_riacquisto_della_prima_casa: 1200.00
+    RN24_credito_imposta_incremento_occupazione: 1200.00
+    RN24_credito_imposta_reintegro_anticipazioni_fondi_pensione: 1200.00
+    RN24_credito_imposta_mediazioni_per_la_conciliazione_di_controversie_civili_commerciali: 1200.00
+    RN24_credito_imposta_negoziazione_e_arbitrato: 1200.00
   output_variables:
-    totale_crediti_imposta_generano_requisiti: 6000.00
+    RN24_totale_crediti_imposta_generano_requisiti: 6000.00

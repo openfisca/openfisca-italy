@@ -5,4 +5,4 @@
     detrazione_per_redditi_assimilati_a_lavoro_dipendente_e_altri_redditi: 2000
     detrazioni_per_pensionati: 3500
   output_variables:
-    detrazione_per_lavoro: 6500
+    RN7_detrazione_per_lavoro: 6500

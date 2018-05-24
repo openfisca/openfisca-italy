@@ -4,7 +4,7 @@ from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
 from openfisca_italy.entita import *
 
-class totale_detrazioni_per_carichi_di_famiglia_e_lavoro(Variable):
+class RN8_totale_detrazioni_per_carichi_di_famiglia_e_lavoro(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
@@ -13,4 +13,4 @@ class totale_detrazioni_per_carichi_di_famiglia_e_lavoro(Variable):
     reference = "https://www.gbsoftware.it/legginotizia.asp?IdNews=2364"  # Always use the most official source
 
     def formula (person,period,parameter):
-        return person('detrazioni_per_carichi_famigliari',period) + person('detrazione_per_lavoro',period)
+        return person('RN6_detrazioni_per_carichi_famigliari',period) + person('RN7_detrazione_per_lavoro',period)

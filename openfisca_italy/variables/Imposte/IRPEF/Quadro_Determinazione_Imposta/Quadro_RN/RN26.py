@@ -7,7 +7,7 @@ from openfisca_italy.entita import *
 import numpy as np
 
 
-class irpef_netta (Variable):
+class RN26_irpef_netta (Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR  # This housing tax is defined for a year.
@@ -16,9 +16,9 @@ class irpef_netta (Variable):
 
     def formula(person, period, parameters):
         reddito_imponibile = person('reddito_imponibile',period) # prendo il reddito imponibile perchè se questo era 0 o minore di 0 l'irpef netta è 0
-        irpef_lorda = person('irpef_lorda',period)
-        detrazioni_imposta_annuale = person('detrazioni_imposta_annuale',period)
-        totale_RP83_altre_detrazioni_crediti_di_imposta = person('totale_RP83_altre_detrazioni_crediti_di_imposta',period)
-        irpef_netta = irpef_lorda - detrazioni_imposta_annuale - totale_RP83_altre_detrazioni_crediti_di_imposta
-        irpef_netta = where(reddito_imponibile <= 0, 0, irpef_netta) # se reddito imponibile è uguale a 0 anche l'imposta netta è 0
-        return where (irpef_netta>0,np.array(round_(irpef_netta,2),np.array(0)))
+        RN5_irpef_lorda = person('RN5_irpef_lorda',period)
+        RN22_totale_detrazioni_imposta = person('RN22_totale_detrazioni_imposta',period)
+        RN25_totale_altre_detrazioni_crediti_imposta = person('RN25_totale_altre_detrazioni_crediti_imposta',period)
+        RN26_irpef_netta = RN5_irpef_lorda - RN22_totale_detrazioni_imposta - RN25_totale_altre_detrazioni_crediti_imposta
+        RN26_irpef_netta = where(reddito_imponibile <= 0, 0, RN26_irpef_netta) # se reddito imponibile è uguale a 0 anche l'imposta netta è 0
+        return where (RN26_irpef_netta>0,np.array(round_(RN26_irpef_netta,2)),np.array(0))

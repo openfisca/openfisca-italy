@@ -4,7 +4,7 @@ from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
 from openfisca_italy.entita import *
 
-class detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_55(Variable):
+class RP66_detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_55(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
@@ -15,7 +15,7 @@ class detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_det
         return round_((person('RP_65_importo_rate_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_55',period) * 0.55),2)
 
 
-class detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_65(Variable):
+class RP66_detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_65(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
@@ -26,7 +26,7 @@ class detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_det
         return round_((person('RP_65_importo_rate_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_65',period) * 0.65),2)
 
 
-class detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_70(Variable):
+class RP66_detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_70(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
@@ -37,7 +37,7 @@ class detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_det
         return round_((person('RP_65_importo_rate_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_70',period) * 0.70),2)
 
 
-class detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_75(Variable):
+class RP66_detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_75(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR

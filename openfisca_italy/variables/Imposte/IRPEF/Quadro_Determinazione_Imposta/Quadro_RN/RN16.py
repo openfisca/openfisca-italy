@@ -7,15 +7,15 @@ from openfisca_italy.entita import *
 import numpy as np
 
 # Totale
-class detrazioni_per_spese_per_interventi_finalizzati_al_risparmio_energetico_annue(Variable):
+class RN16_detrazioni_per_spese_per_interventi_finalizzati_al_risparmio_energetico_annue(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
     set_input = set_input_divide_by_period
-    label = u"Detrazione per spese indicate nella sezione IV C del Quadro RP (arredo immobili ristrutturati, giovani coppie, IVA per acquisto abitazione classe energetica A o B) (Rigo RN16)"
+    label = u"Rigo RN16 - Detrazione per spese indicate nella sezione IV C del Quadro RP (arredo immobili ristrutturati, giovani coppie, IVA per acquisto abitazione classe energetica A o B)."
     def formula(person,period,parameters):
-        tipi_detrazioni_spese_risparmio_energetico = ['detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_55',
-                                                    'detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_65',
-                                                    'detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_70',
-                                                    'detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_75',]
+        tipi_detrazioni_spese_risparmio_energetico = ['RP66_detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_55',
+                                                    'RP66_detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_65',
+                                                    'RP66_detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_70',
+                                                    'RP66_detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_75',]
         return round_(sum(person(detrazione, period) for detrazione in tipi_detrazioni_spese_risparmio_energetico),2)

@@ -27,24 +27,24 @@
     RP80_ammontare_investimento_startup: 50000
     RP80_ammontare_importo_detraibile_ricevuto_per_trasparenza_investimenti_startup: 1500
     # Parte dell'irpef lorda diminuita di tutte le altre detrazioni
-    irpef_lorda: 5000
-    detrazioni_per_carichi_famigliari: 500
-    detrazione_fruita_da_detrazioni_locazione_affitto: 150
-    detrazioni_per_oneri_detraibili_19_annuali: 150
-    detrazioni_per_oneri_detraibili_26_annuali: 150
-    detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_annue: 150
-    detrazioni_per_spese_arredo_immobili_giovani_coppie_iva_acquisto_abitazione_annue: 150
-    detrazioni_per_spese_per_interventi_finalizzati_al_risparmio_energetico_annue: 150
-    totale_detrazione_oneri_Sez_VI_quadro_RP: 150
-    detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2014: 100
-    detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2015: 100
-    detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2016: 100
+    RN5_irpef_lorda: 5000
+    RN6_detrazioni_per_carichi_famigliari: 500
+    RN12_detrazione_fruita_da_detrazioni_locazione_affitto: 150
+    RN13_detrazioni_per_oneri_detraibili_19_annuali: 150
+    RN13_detrazioni_per_oneri_detraibili_26_annuali: 150
+    RN14_detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_annue: 150
+    RN15_detrazioni_per_spese_arredo_immobili_giovani_coppie_iva_acquisto_abitazione_annue: 150
+    RN16_detrazioni_per_spese_per_interventi_finalizzati_al_risparmio_energetico_annue: 150
+    RN17_totale_detrazione_oneri_Sez_VI_quadro_RP: 150
+    RN18_detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2014: 100
+    RN19_detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2015: 100
+    RN20_detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2016: 100
   output_variables:
     # output relativi a rigo RP80
     RP80_diritto_a_compilare_colonna_codice_e_ammontare_detrazione_investimenti_startup: True
     RP80_totale_detrazioni_per_investimenti_startup: 15000
     # output relativi a rigo RN21
-    detrazioni_per_investimenti_startup_utilizzata: 3150
+    RN21_detrazioni_per_investimenti_startup_utilizzata: 3150
     residui_detrazioni_start_up_2018_RN21: 11850
 
 
@@ -56,24 +56,24 @@
     RP80_ammontare_investimento_startup: 7000
     RP80_ammontare_importo_detraibile_ricevuto_per_trasparenza_investimenti_startup: 1500
     # Parte dell'irpef lorda diminuita di tutte le altre detrazioni
-    irpef_lorda: 5000
-    detrazioni_per_carichi_famigliari: 500
-    detrazione_fruita_da_detrazioni_locazione_affitto: 150
-    detrazioni_per_oneri_detraibili_19_annuali: 150
-    detrazioni_per_oneri_detraibili_26_annuali: 150
-    detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_annue: 150
-    detrazioni_per_spese_arredo_immobili_giovani_coppie_iva_acquisto_abitazione_annue: 150
-    detrazioni_per_spese_per_interventi_finalizzati_al_risparmio_energetico_annue: 150
-    totale_detrazione_oneri_Sez_VI_quadro_RP: 150
-    detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2014: 100
-    detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2015: 100
-    detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2016: 100
+    RN5_irpef_lorda: 5000
+    RN6_detrazioni_per_carichi_famigliari: 500
+    RN12_detrazione_fruita_da_detrazioni_locazione_affitto: 150
+    RN13_detrazioni_per_oneri_detraibili_19_annuali: 150
+    RN13_detrazioni_per_oneri_detraibili_26_annuali: 150
+    RN14_detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_annue: 150
+    RN15_detrazioni_per_spese_arredo_immobili_giovani_coppie_iva_acquisto_abitazione_annue: 150
+    RN16_detrazioni_per_spese_per_interventi_finalizzati_al_risparmio_energetico_annue: 150
+    RN17_totale_detrazione_oneri_Sez_VI_quadro_RP: 150
+    RN18_detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2014: 100
+    RN19_detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2015: 100
+    RN20_detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2016: 100
   output_variables:
     # output relativi a rigo RP80
     RP80_diritto_a_compilare_colonna_codice_e_ammontare_detrazione_investimenti_startup: True
     RP80_totale_detrazioni_per_investimenti_startup: 2100
     # output relativi a rigo RN21
-    detrazioni_per_investimenti_startup_utilizzata: 2100
+    RN21_detrazioni_per_investimenti_startup_utilizzata: 2100
     residui_detrazioni_start_up_2018_RN21: 0
 
 
@@ -85,24 +85,24 @@
     RP80_ammontare_investimento_startup: 7000
     RP80_ammontare_importo_detraibile_ricevuto_per_trasparenza_investimenti_startup: 1500
     # Parte dell'irpef lorda diminuita di tutte le altre detrazioni
-    irpef_lorda: 1500
-    detrazioni_per_carichi_famigliari: 500
-    detrazione_fruita_da_detrazioni_locazione_affitto: 150
-    detrazioni_per_oneri_detraibili_19_annuali: 150
-    detrazioni_per_oneri_detraibili_26_annuali: 150
-    detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_annue: 150
-    detrazioni_per_spese_arredo_immobili_giovani_coppie_iva_acquisto_abitazione_annue: 150
-    detrazioni_per_spese_per_interventi_finalizzati_al_risparmio_energetico_annue: 150
-    totale_detrazione_oneri_Sez_VI_quadro_RP: 150
-    detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2014: 100
-    detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2015: 100
-    detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2016: 100
+    RN5_irpef_lorda: 1500
+    RN6_detrazioni_per_carichi_famigliari: 500
+    RN12_detrazione_fruita_da_detrazioni_locazione_affitto: 150
+    RN13_detrazioni_per_oneri_detraibili_19_annuali: 150
+    RN13_detrazioni_per_oneri_detraibili_26_annuali: 150
+    RN14_detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_annue: 150
+    RN15_detrazioni_per_spese_arredo_immobili_giovani_coppie_iva_acquisto_abitazione_annue: 150
+    RN16_detrazioni_per_spese_per_interventi_finalizzati_al_risparmio_energetico_annue: 150
+    RN17_totale_detrazione_oneri_Sez_VI_quadro_RP: 150
+    RN18_detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2014: 100
+    RN19_detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2015: 100
+    RN20_detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2016: 100
   output_variables:
     # output relativi a rigo RP80
     RP80_diritto_a_compilare_colonna_codice_e_ammontare_detrazione_investimenti_startup: True
     RP80_totale_detrazioni_per_investimenti_startup: 2100
     # output relativi a rigo RN21
-    detrazioni_per_investimenti_startup_utilizzata: 0
+    RN21_detrazioni_per_investimenti_startup_utilizzata: 0
     residui_detrazioni_start_up_2018_RN21: 2100
 
 - name: Test 4 per vedere se con  capienza = calcoli portano
@@ -113,22 +113,22 @@
     RP80_ammontare_investimento_startup: 7000
     RP80_ammontare_importo_detraibile_ricevuto_per_trasparenza_investimenti_startup: 1500
     # Parte dell'irpef lorda diminuita di tutte le altre detrazioni
-    irpef_lorda: 3950
-    detrazioni_per_carichi_famigliari: 500
-    detrazione_fruita_da_detrazioni_locazione_affitto: 150
-    detrazioni_per_oneri_detraibili_19_annuali: 150
-    detrazioni_per_oneri_detraibili_26_annuali: 150
-    detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_annue: 150
-    detrazioni_per_spese_arredo_immobili_giovani_coppie_iva_acquisto_abitazione_annue: 150
-    detrazioni_per_spese_per_interventi_finalizzati_al_risparmio_energetico_annue: 150
-    totale_detrazione_oneri_Sez_VI_quadro_RP: 150
-    detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2014: 100
-    detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2015: 100
-    detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2016: 100
+    RN5_irpef_lorda: 3950
+    RN6_detrazioni_per_carichi_famigliari: 500
+    RN12_detrazione_fruita_da_detrazioni_locazione_affitto: 150
+    RN13_detrazioni_per_oneri_detraibili_19_annuali: 150
+    RN13_detrazioni_per_oneri_detraibili_26_annuali: 150
+    RN14_detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_annue: 150
+    RN15_detrazioni_per_spese_arredo_immobili_giovani_coppie_iva_acquisto_abitazione_annue: 150
+    RN16_detrazioni_per_spese_per_interventi_finalizzati_al_risparmio_energetico_annue: 150
+    RN17_totale_detrazione_oneri_Sez_VI_quadro_RP: 150
+    RN18_detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2014: 100
+    RN19_detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2015: 100
+    RN20_detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2016: 100
   output_variables:
     # output relativi a rigo RP80
     RP80_diritto_a_compilare_colonna_codice_e_ammontare_detrazione_investimenti_startup: True
     RP80_totale_detrazioni_per_investimenti_startup: 2100
     # output relativi a rigo RN21
-    detrazioni_per_investimenti_startup_utilizzata: 2100
+    RN21_detrazioni_per_investimenti_startup_utilizzata: 2100
     residui_detrazioni_start_up_2018_RN21: 0

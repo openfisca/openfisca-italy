@@ -43,6 +43,7 @@ class detrazione_ulteriore_per_figli_a_carico(Variable):
         def formula(person,period,parameters):
             return where (person('numero_figli_a_carico',period),parameters(period).imposte.IRPEF.QuadroRN.detrazioni_carichi_famigliari.detrazioni_tipi_figli.ulteriore_detrazione_figli_a_carico,0)
 
+
 class detrazioni_per_figli_a_carico_teorica(Variable):
     value_type = float
     entity = Persona
@@ -86,6 +87,7 @@ class numero_figli_maggiore_disabili_a_carico(Variable):
     entity = Persona
     definition_period = YEAR
     label = "Numero di figli disabili"
+
 
 class numero_figli_a_carico(Variable):
     value_type = int

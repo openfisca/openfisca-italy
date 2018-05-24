@@ -4,7 +4,7 @@ from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
 from openfisca_italy.entita import *
 
-class detrazioni_spese_sanitarie_per_determinate_patologie(Variable):
+class RN23_detrazioni_spese_sanitarie_per_determinate_patologie(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR

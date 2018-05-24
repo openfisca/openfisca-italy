@@ -13,7 +13,7 @@ class RP83_TipiAltreDetrazioni(Enum):
     codice_due = u'Detrazione per le donazioni all ente ospedaliero Ospedali Galliera di Genova'
 
 
-class RP83_tipi_RP83_altre_detrazioni(Variable):
+class RP83_tipo_altre_detrazioni(Variable):
     value_type = Enum
     possible_values = RP83_TipiAltreDetrazioni
     default_value = RP83_TipiAltreDetrazioni.nessun_codice_inserito  # The default is codice_uno
@@ -23,7 +23,7 @@ class RP83_tipi_RP83_altre_detrazioni(Variable):
     reference = "https://www.gbsoftware.it/legginotizia.asp?IdNews=2364"  # Always use the most official source
 
 
-class RP83_importo_RP83_altre_detrazioni_speciali(Variable):
+class RP83_importo_altre_detrazioni_speciali(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
@@ -40,4 +40,4 @@ class RP83_altre_detrazioni(Variable):
     reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
     def formula(person,period,parameters):
-        return where(not_(person('RP83_tipi_RP83_altre_detrazioni',period) == RP83_TipiAltreDetrazioni.nessun_codice_inserito),np.array(0),round_(person('RP83_importo_RP83_altre_detrazioni_speciali',period),2))
+        return where(not_(person('RP83_tipo_altre_detrazioni',period) == RP83_TipiAltreDetrazioni.nessun_codice_inserito),np.array(0),round_(person('RP83_importo_altre_detrazioni_speciali',period),2))
