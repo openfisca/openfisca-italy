@@ -9,7 +9,7 @@
     reddito_di_capitali_annuale: 7000.00
     reddito_diversi_annuale: 7000.00
   output_variables:
-    reddito_complessivo: 48000.00
+    RN1_reddito_complessivo: 48000.00
 
 
 - name: Calcolo reddito lordo annuale con centesimi
@@ -22,4 +22,4 @@
     reddito_di_capitali_annuale: 7000.00
     reddito_diversi_annuale: 7000.00
   output_variables:
-    reddito_complessivo: 47431.24
+    RN1_reddito_complessivo: 47431.24

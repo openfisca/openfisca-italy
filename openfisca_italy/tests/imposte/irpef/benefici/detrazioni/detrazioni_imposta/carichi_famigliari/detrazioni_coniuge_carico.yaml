@@ -2,9 +2,9 @@
   period: 2017
   input_variables:
     reddito_coniuge_per_calcolo_detrazioni_coniuge_a_carico: 500
-    reddito_complessivo: 15000.00
-    deduzione_abitazione_principale_annuale: 2000.00
-    importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore: 100.00
+    RN1_reddito_complessivo: 15000.00
+    RN2_deduzione_abitazione_principale: 2000.00
+    RS37_importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore: 100.00
     mesi_coniuge_a_carico: 12
   output_variables:
     reddito_per_detrazioni: 13100.00
@@ -14,9 +14,9 @@
   period: 2017
   input_variables:
     reddito_coniuge_per_calcolo_detrazioni_coniuge_a_carico: 500
-    reddito_complessivo: 37000.00
-    deduzione_abitazione_principale_annuale: 2500.00
-    importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore: 300.00
+    RN1_reddito_complessivo: 37000.00
+    RN2_deduzione_abitazione_principale: 2500.00
+    RS37_importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore: 300.00
     mesi_coniuge_a_carico: 8
   output_variables:
     reddito_per_detrazioni: 34800.00
@@ -27,9 +27,9 @@
   period: 2017
   input_variables:
     reddito_coniuge_per_calcolo_detrazioni_coniuge_a_carico: 500
-    reddito_complessivo: 70000.00
-    deduzione_abitazione_principale_annuale: 6000.00
-    importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore: 1000.00
+    RN1_reddito_complessivo: 70000.00
+    RN2_deduzione_abitazione_principale: 6000.00
+    RS37_importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore: 1000.00
     mesi_coniuge_a_carico: 12
   output_variables:
     reddito_per_detrazioni: 65000.00
@@ -39,9 +39,9 @@
   period: 2017
   input_variables:
     reddito_coniuge_per_calcolo_detrazioni_coniuge_a_carico: 5000
-    reddito_complessivo: 90000.00
-    deduzione_abitazione_principale_annuale: 6000.00
-    importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore: 1000.00
+    RN1_reddito_complessivo: 90000.00
+    RN2_deduzione_abitazione_principale: 6000.00
+    RS37_importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore: 1000.00
     mesi_coniuge_a_carico: 12
   output_variables:
     reddito_per_detrazioni: 85000.00
@@ -51,9 +51,9 @@
   period: 2017
   input_variables:
     reddito_coniuge_per_calcolo_detrazioni_coniuge_a_carico: 5000
-    reddito_complessivo: 20000.00
-    deduzione_abitazione_principale_annuale: 6000.00
-    importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore: 1000.00
+    RN1_reddito_complessivo: 20000.00
+    RN2_deduzione_abitazione_principale: 6000.00
+    RS37_importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore: 1000.00
     mesi_coniuge_a_carico: 12
   output_variables:
     reddito_per_detrazioni: 15000.00

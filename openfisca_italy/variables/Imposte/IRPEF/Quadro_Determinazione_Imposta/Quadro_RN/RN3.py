@@ -6,22 +6,12 @@ from openfisca_italy.entita import *
 #import numpy
 import numpy as np
 
-class oneri_deducibili_totali_mensili(Variable):
-    value_type = float
-    entity = Persona
-    definition_period = MONTH
-    label = "Oneri deducibili mensili da sottrarre al reddito lordo mensile per il calcolo dell'IRPEF"
-    reference = "http://www.aclimperia.it/documenti/la_dichiarazione_dei_redditi.pdf"  # Some variables represent quantities used in economic models, and not defined by law. Always give the source of your definition.
 
-    def formula(person, period, parameters):
-        return person('RP_39_totale_oneri_deducibili',period,options=[DIVIDE])
-
-
-class oneri_deducibili_totali_annuale(Variable):
+class RN3_oneri_deducibili_totali(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
     label = "Oneri deducibili annuali da sottrarre al reddito lordo annuale per il calcolo dell'IRPEF"
-    reference = "http://www.aclimperia.it/documenti/la_dichiarazione_dei_redditi.pdf"  # Some variables represent quantities used in economic models, and not defined by law. Always give the source of your definition.
+    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=85"  # Always use the most official source
     def formula(person, period, parameters):
         return person('RP_39_totale_oneri_deducibili',period)

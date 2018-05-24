@@ -1,17 +1,17 @@
-- name: Test con importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore positivo
+- name: Test con RS37_importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore positivo
   period: 2017
   input_variables:
-    reddito_complessivo: 10000
-    deduzione_abitazione_principale_annuale: 2000
-    importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore: 100
+    RN1_reddito_complessivo: 10000
+    RN2_deduzione_abitazione_principale: 2000
+    RS37_importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore: 100
   output_variables:
     reddito_per_detrazioni: 8100
 
-- name: Test con importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore negativo
+- name: Test con RS37_importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore negativo
   period: 2017
   input_variables:
-    reddito_complessivo: 10000
-    deduzione_abitazione_principale_annuale: 2000
-    importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore: -100
+    RN1_reddito_complessivo: 10000
+    RN2_deduzione_abitazione_principale: 2000
+    RS37_importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore: -100
   output_variables:
     reddito_per_detrazioni: 8000

@@ -107,7 +107,7 @@ class casella_4_prospetto_compilazione_Rigo_RP31(Variable):
         label = "Casella  4 prospetto compilazione rigo rp31"
         reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=120"  # Always use the most official source
         def formula(person,period,parameters):
-            return person('reddito_complessivo',period)
+            return person('RN1_reddito_complessivo',period)
 
 
 class casella_5_prospetto_compilazione_Rigo_RP31(Variable):
@@ -170,7 +170,7 @@ class casella_10_prospetto_compilazione_Rigo_RP31(Variable):
         label = "Casella 10 prospetto compilazione rigo rp31"
         reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=120"  # Always use the most official source
         def formula(person,period,parameters):
-            return (person('reddito_di_riferimento_per_agevolazioni_fiscali',period)*0.12) - person('casella_1_prospetto_compilazione_Rigo_RP31',period)
+            return (person('RN1_reddito_di_riferimento_per_agevolazioni_fiscali',period)*0.12) - person('casella_1_prospetto_compilazione_Rigo_RP31',period)
 
 
 class casella_11_prospetto_compilazione_Rigo_RP31(Variable):

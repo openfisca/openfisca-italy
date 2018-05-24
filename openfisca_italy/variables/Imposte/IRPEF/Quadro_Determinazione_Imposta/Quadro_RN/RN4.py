@@ -15,13 +15,13 @@ class reddito_imponibile (Variable):
 
     def formula(person, period, parameters):
         # In the IRPEF calculation the  gross base income calculation could be in two ways
-        reddito_imponibile = person('reddito_complessivo',period) + person('credito_per_fondi_comuni',period) - person('perdite_compensabili_con_crediti_per_fondi_comuni',period) - person('deduzione_abitazione_principale_annuale',period) - person('oneri_deducibili_totali_annuale',period)
+        reddito_imponibile = person('RN1_reddito_complessivo',period) + person('RN1_credito_per_fondi_comuni',period) - person('RN1_perdite_compensabili_con_crediti_per_fondi_comuni',period) - person('RN2_deduzione_abitazione_principale',period) - person('RN3_oneri_deducibili_totali',period)
         # agevolazione ACE section that is optional depending on possiede_diritto_agevolazione_ACE (optional)
-        importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore = person('importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore',period)
+        RS37_importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore = person('RS37_importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore',period)
         possiede_diritto_agevolazione_ACE = person('possiede_diritto_agevolazione_ACE',period)
-        reddito_imponibile = where (possiede_diritto_agevolazione_ACE,(reddito_imponibile + importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore),reddito_imponibile)
+        reddito_imponibile = where (possiede_diritto_agevolazione_ACE,(reddito_imponibile + RS37_importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore),reddito_imponibile)
         # fees for amateur sports activities is optional
-        compensi_con_ritenuta_a_titolo_di_imposta = person('compensi_con_ritenuta_a_titolo_di_imposta',period)
+        RL22_compensi_con_ritenuta_a_titolo_di_imposta = person('RL22_compensi_con_ritenuta_a_titolo_di_imposta',period)
         possiede_diritto_agevolazione_per_attivita_sportive = person('possiede_diritto_agevolazione_per_attivita_sportive',period)
-        reddito_imponibile = where (possiede_diritto_agevolazione_per_attivita_sportive,(reddito_imponibile + compensi_con_ritenuta_a_titolo_di_imposta),reddito_imponibile)
+        reddito_imponibile = where (possiede_diritto_agevolazione_per_attivita_sportive,(reddito_imponibile + RL22_compensi_con_ritenuta_a_titolo_di_imposta),reddito_imponibile)
         return where (reddito_imponibile >= 0, reddito_imponibile, np.array(0))

@@ -14,7 +14,7 @@ class RP34_codice_fiscale_societa_startup_in_cui_si_e_investito(Variable):
     reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=68"  # Always use the most official source
 
 
-class RP34_quota_di_conferimento_in_start_up_eccedente_il_reddito_complessivo(Variable):
+class RP34_quota_di_conferimento_in_start_up_eccedente_il_RN1_reddito_complessivo(Variable):
     value_type = float
     entity = Persona
     label = u"Rigo RP34 col.2 - Quota di conferimento in start up eccedente il reddito complessivo"

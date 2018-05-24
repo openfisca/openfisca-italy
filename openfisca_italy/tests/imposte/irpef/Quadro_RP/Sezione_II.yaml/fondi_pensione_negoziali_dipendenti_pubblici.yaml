@@ -7,9 +7,9 @@
     importo_punto_414_certificazione_unica: 145
     importo_punto_421_certificazione_unica: 50
     importo_punto_423_certificazione_unica: 75
-    reddito_complessivo: 5400
+    RN1_reddito_complessivo: 5400
     reddito_lavoro_dipendente_annuale: 1500
-    reddito_di_riferimento_per_agevolazioni_fiscali: 1600
+    RN1_reddito_di_riferimento_per_agevolazioni_fiscali: 1600
   output_variables:
     RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_dedotti_dal_sostituto: 150
     RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_quota_TFR: 145
@@ -35,9 +35,9 @@
     importo_punto_414_certificazione_unica: 145
     importo_punto_421_certificazione_unica: 50
     importo_punto_423_certificazione_unica: 75
-    reddito_complessivo: 5400
+    RN1_reddito_complessivo: 5400
     reddito_lavoro_dipendente_annuale: 1500
-    reddito_di_riferimento_per_agevolazioni_fiscali: 1600
+    RN1_reddito_di_riferimento_per_agevolazioni_fiscali: 1600
   output_variables:
     RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_dedotti_dal_sostituto: 150
     RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_quota_TFR: 145
@@ -63,9 +63,9 @@
     importo_punto_414_certificazione_unica: 145
     importo_punto_421_certificazione_unica: 50
     importo_punto_423_certificazione_unica: 75
-    reddito_complessivo: 5400
+    RN1_reddito_complessivo: 5400
     reddito_lavoro_dipendente_annuale: 1500
-    reddito_di_riferimento_per_agevolazioni_fiscali: 1600
+    RN1_reddito_di_riferimento_per_agevolazioni_fiscali: 1600
   output_variables:
     RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_dedotti_dal_sostituto: 0
     RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_quota_TFR: 0

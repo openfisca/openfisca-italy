@@ -2,7 +2,7 @@
   period: 2017
   input_variables:
     reddito_di_impresa_annuale: 100
-    deduzione_per_capitale_investito_proprio_compilato: True
+    compilato_RS37_importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore: True
   output_variables:
     possiede_diritto_agevolazione_ACE: True
 
@@ -10,7 +10,7 @@
   period: 2017
   input_variables:
     reddito_di_impresa_annuale: 100
-    deduzione_per_capitale_investito_proprio_compilato: False
+    compilato_RS37_importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore: False
   output_variables:
     possiede_diritto_agevolazione_ACE: False
 

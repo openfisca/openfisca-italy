@@ -19,4 +19,4 @@
     RP34_importo_residuo_RPF_2016: 150
     RP34_importo_residuo_RPF_2015: 150
   output_variables:
-    oneri_deducibili_totali_annuale: 2550
+    RN3_oneri_deducibili_totali: 2550

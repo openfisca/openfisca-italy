@@ -26,7 +26,7 @@ class numero_anno_per_cui_il_soggetto_usufruisce_della_detrazione_per_spese_cano
     reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=62"  # Always use the most official source
 
 # Questo non fa parte del rigo, ma serve per capire se la detrazione spetta
-class reddito_complessivo_alla_data_atto_stipula_contratto_leasing(Variable):
+class RN1_reddito_complessivo_alla_data_atto_stipula_contratto_leasing(Variable):
     value_type = float
     entity = Persona
     definition_period = ETERNITY
