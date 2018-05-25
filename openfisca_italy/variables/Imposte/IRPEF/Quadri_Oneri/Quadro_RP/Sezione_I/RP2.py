@@ -9,10 +9,10 @@ import numpy as np
 # Spese sanitarie rigo rp2
 
 
-class spese_sanitarie_per_familiari_non_a_carico_affetti_da_patologie_esistenti_annue(Variable):
+class RP2_spese_sanitarie_per_familiari_non_a_carico_affetti_da_patologie_esistenti(Variable):
     value_type = float
     entity = Persona
     definition_period = YEAR
     set_input = set_input_divide_by_period
-    label = "Spese sanitarie per familiari non a carico affetti da patologie esenti (Rigo RP2)"
+    label = "Rigo RP2 - Spese sanitarie per familiari non a carico affetti da patologie esenti"
     reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=53"  # Always use the most official source

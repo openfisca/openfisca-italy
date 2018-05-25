@@ -19,10 +19,10 @@ class altre_spese_che_sono_soggette_a_detrazioni_al_19(Variable):
     def formula(person,period,parameters):
         importo_totale_da_detrarre_altre_spese_al_19 = 0
         # per ogni rigo l'importo potrebbe aumentare oppure no a seconda se il codice presente nel rigo e' quello giusto
-        codici_righi = ['codice_altra_spesa_rigo_RP8','codice_altra_spesa_rigo_RP9','codice_altra_spesa_rigo_RP10',
-        'codice_altra_spesa_rigo_RP11','codice_altra_spesa_rigo_RP12','codice_altra_spesa_rigo_RP13']
-        importi_righi = ['importo_altra_spesa_rigo_RP8','importo_altra_spesa_rigo_RP9','importo_altra_spesa_rigo_RP10',
-        'importo_altra_spesa_rigo_RP11','importo_altra_spesa_rigo_RP12','importo_altra_spesa_rigo_RP13']
+        codici_righi = ['RP8_codice_altra_spesa','RP9_codice_altra_spesa','RP10_codice_altra_spesa',
+        'RP11_codice_altra_spesa','RP12_codice_altra_spesa','RP13_codice_altra_spesa_rigo_RP13']
+        importi_righi = ['RP8_importo_altra_spesa','RP9_importo_altra_spesa','importo_altra_spesa_rigo_RP10',
+        'RP11_importo_altra_spesa','RP12_importo_altra_spesa','RP13_importo_altra_spesa']
         # cicliamo tutti i righi
         for codice_rigo,importo_rigo in zip(codici_righi,importi_righi):
             rigo_ha_codice_per_il_19 =  not_(person(codice_rigo,period) == CodiciAltreSpeseDetraibili.codice_42) * not_(person(codice_rigo,period) == CodiciAltreSpeseDetraibili.codice_41) * not_(person(codice_rigo,period) == CodiciAltreSpeseDetraibili.nessun_codice)
@@ -40,10 +40,10 @@ class altre_spese_che_sono_soggette_a_detrazioni_al_26(Variable):
     def formula(person,period,parameters):
         importo_totale_da_detrarre_altre_spese_al_26 = 0
         # per ogni rigo l'importo potrebbe aumentare oppure no a seconda se il codice presente nel rigo e' quello giusto
-        codici_righi = ['codice_altra_spesa_rigo_RP8','codice_altra_spesa_rigo_RP9','codice_altra_spesa_rigo_RP10',
-        'codice_altra_spesa_rigo_RP11','codice_altra_spesa_rigo_RP12','codice_altra_spesa_rigo_RP13']
-        importi_righi = ['importo_altra_spesa_rigo_RP8','importo_altra_spesa_rigo_RP9','importo_altra_spesa_rigo_RP10',
-        'importo_altra_spesa_rigo_RP11','importo_altra_spesa_rigo_RP12','importo_altra_spesa_rigo_RP13']
+        codici_righi = ['RP8_codice_altra_spesa','RP9_codice_altra_spesa','RP10_codice_altra_spesa',
+        'RP11_codice_altra_spesa','RP12_codice_altra_spesa','RP13_codice_altra_spesa_rigo_RP13']
+        importi_righi = ['RP8_importo_altra_spesa','RP9_importo_altra_spesa','importo_altra_spesa_rigo_RP10',
+        'RP11_importo_altra_spesa','RP12_importo_altra_spesa','RP13_importo_altra_spesa']
         # cicliamo tutti i righi
         for codice_rigo,importo_rigo in zip(codici_righi,importi_righi):
             rigo_ha_codice_per_il_26 =  (person(codice_rigo,period) == CodiciAltreSpeseDetraibili.codice_42) + (person(codice_rigo,period) == CodiciAltreSpeseDetraibili.codice_41)
@@ -60,8 +60,8 @@ class codice_29_trovato_nelle_altre_spese_da_RP8_a_RP13(Variable):
 
     def formula(person,period,parameters):
         altra_spesa_codice_29_trovata = np.array(False)
-        codici_righi = ['codice_altra_spesa_rigo_RP8','codice_altra_spesa_rigo_RP9','codice_altra_spesa_rigo_RP10',
-        'codice_altra_spesa_rigo_RP11','codice_altra_spesa_rigo_RP12','codice_altra_spesa_rigo_RP13']
+        codici_righi = ['RP8_codice_altra_spesa','RP9_codice_altra_spesa','RP10_codice_altra_spesa',
+        'RP11_codice_altra_spesa','RP12_codice_altra_spesa','RP13_codice_altra_spesa_rigo_RP13']
         for codice in codici_righi:
             altra_spesa_codice_29_trovata = where(altra_spesa_codice_29_trovata,altra_spesa_codice_29_trovata,person(codice,period) == CodiciAltreSpeseDetraibili.codice_29)
         return altra_spesa_codice_29_trovata

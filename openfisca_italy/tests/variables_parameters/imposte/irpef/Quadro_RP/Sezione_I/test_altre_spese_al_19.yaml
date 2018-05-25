@@ -2,19 +2,19 @@
   period: 2017
   input_variables:
     # Codici
-    codice_altra_spesa_rigo_RP8: codice_23
-    codice_altra_spesa_rigo_RP9: codice_24
-    codice_altra_spesa_rigo_RP10: codice_10
-    codice_altra_spesa_rigo_RP11: codice_12
-    codice_altra_spesa_rigo_RP12: codice_41
-    codice_altra_spesa_rigo_RP13: nessun_codice
+    RP8_codice_altra_spesa: codice_23
+    RP9_codice_altra_spesa: codice_24
+    RP10_codice_altra_spesa: codice_10
+    RP11_codice_altra_spesa: codice_12
+    RP12_codice_altra_spesa: codice_41
+    RP13_codice_altra_spesa_rigo_RP13: nessun_codice
     # Importi
-    importo_altra_spesa_rigo_RP8: 150
-    importo_altra_spesa_rigo_RP9: 150
+    RP8_importo_altra_spesa: 150
+    RP9_importo_altra_spesa: 150
     importo_altra_spesa_rigo_RP10: 150
-    importo_altra_spesa_rigo_RP11: 150
-    importo_altra_spesa_rigo_RP12: 150
-    importo_altra_spesa_rigo_RP13: 150
+    RP11_importo_altra_spesa: 150
+    RP12_importo_altra_spesa: 150
+    RP13_importo_altra_spesa: 150
   output_variables:
     altre_spese_che_sono_soggette_a_detrazioni_al_19: 600
     altre_spese_che_sono_soggette_a_detrazioni_al_26: 150

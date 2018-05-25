@@ -24,8 +24,8 @@ class si_possono_rateizzare_importo_spese_relative_a_righi_RP1_RP2_RP3(Variable)
     label = "Si possono rateizzare le spese se il costo dei righi RP1-RP2-RP3 supera la soglia"
 
     def formula(person,period,parameters):
-        spese_RP1_RP2_RP3 = person('spese_sanitarie_annue',period) + person('spese_sanitarie_per_familiari_non_a_carico_affetti_da_patologie_esistenti_annue',period) + person('spese_sanitarie_per_persone_con_disabilita',period)
-        print 'uscito fuori', person('spese_sanitarie_per_familiari_non_a_carico_affetti_da_patologie_esistenti_annue',period)
+        spese_RP1_RP2_RP3 = person('RP1_totale_spese_sanitarie',period) + person('RP2_spese_sanitarie_per_familiari_non_a_carico_affetti_da_patologie_esistenti',period) + person('RP3_spese_sanitarie_per_persone_con_disabilita',period)
+        print 'uscito fuori', person('RP2_spese_sanitarie_per_familiari_non_a_carico_affetti_da_patologie_esistenti',period)
         return where (spese_RP1_RP2_RP3> parameters(period).imposte.IRPEF.QuadroRP.sezione_I_Oneri_spese.importo_minimo_per_rateatizzazione_RP1_RP2_RP2, np.array(True), np.array(False))
 
 
@@ -52,13 +52,13 @@ class casella_2_importo_rata_o_somma_RP1_RP2_RP3(Variable):
         def formula(person,period,parameters):
             casella_1_barrata = person('casella_1_totale_spese_su_cui_determinare_la_detrazione_barrata',period)
             # situazione in cui la casella della rateizzazione non e' stata barrata
-            spese_senza_franchigia_casella_1_non_barrata = person('spese_sanitarie_comprensive_di_franchigia_rigo_RP1',period) + person('spese_sanitarie_per_familiari_non_a_carico_affetti_da_patologie_esistenti_annue',period) - parameters(period).imposte.IRPEF.QuadroRP.sezione_I_Oneri_spese.franchigia_spese_mediche
+            spese_senza_franchigia_casella_1_non_barrata = person('RP1_spese_sanitarie_comprensive_di_franchigia_rigo_RP1',period) + person('RP2_spese_sanitarie_per_familiari_non_a_carico_affetti_da_patologie_esistenti',period) - parameters(period).imposte.IRPEF.QuadroRP.sezione_I_Oneri_spese.franchigia_spese_mediche
             spese_senza_franchigia_casella_1_non_barrata = where (spese_senza_franchigia_casella_1_non_barrata > 0, spese_senza_franchigia_casella_1_non_barrata, np.array(0))
-            ammontare_da_indicare_in_colonna_2_se_casella_1_non_barrata = spese_senza_franchigia_casella_1_non_barrata + person('spese_sanitarie_per_persone_con_disabilita',period)
+            ammontare_da_indicare_in_colonna_2_se_casella_1_non_barrata = spese_senza_franchigia_casella_1_non_barrata + person('RP3_spese_sanitarie_per_persone_con_disabilita',period)
             # situazione in cui la casella della rateizzazione e' stata barrata
-            spese_senza_franchigia_casella_1_barrata = person('spese_sanitarie_annue',period) + person('spese_sanitarie_per_familiari_non_a_carico_affetti_da_patologie_esistenti_annue',period) - parameters(period).imposte.IRPEF.QuadroRP.sezione_I_Oneri_spese.franchigia_spese_mediche
+            spese_senza_franchigia_casella_1_barrata = person('RP1_totale_spese_sanitarie',period) + person('RP2_spese_sanitarie_per_familiari_non_a_carico_affetti_da_patologie_esistenti',period) - parameters(period).imposte.IRPEF.QuadroRP.sezione_I_Oneri_spese.franchigia_spese_mediche
             spese_senza_franchigia_casella_1_barrata = where (spese_senza_franchigia_casella_1_barrata > 0, spese_senza_franchigia_casella_1_barrata, np.array(0))
-            ammontare_da_indicare_in_colonna_2_se_casella_1_barrata = (spese_senza_franchigia_casella_1_barrata + person('spese_sanitarie_per_persone_con_disabilita',period))/4 # diviso 4 perche' si puo' rateizzare in 4 volte
+            ammontare_da_indicare_in_colonna_2_se_casella_1_barrata = (spese_senza_franchigia_casella_1_barrata + person('RP3_spese_sanitarie_per_persone_con_disabilita',period))/4 # diviso 4 perche' si puo' rateizzare in 4 volte
             return where(casella_1_barrata,round_(ammontare_da_indicare_in_colonna_2_se_casella_1_barrata,2), round_(ammontare_da_indicare_in_colonna_2_se_casella_1_non_barrata,2))
 
 
