@@ -5,32 +5,32 @@ from openfisca_core.scenarios import AbstractScenario
 
 
 class Scenario(AbstractScenario):
-    def init_single_entity(self, axes = None, enfants = None, famille = None, parent1 = None, parent2 = None,
+    def init_single_entity(self, axes = None, children = None, households = None, parent1 = None, parent2 = None,
             period = None):
-        if enfants is None:
-            enfants = []
+        if children is None:
+            children = []
         assert parent1 is not None
-        famille = famille.copy() if famille is not None else {}
-        individus = []
-        for index, individu in enumerate([parent1, parent2] + (enfants or [])):
-            if individu is None:
+        households = households.copy() if households is not None else {}
+        persons = []
+        for index, person in enumerate([parent1, parent2] + (children or [])):
+            if person is None:
                 continue
-            id = individu.get('id')
+            id = person.get('id')
             if id is None:
-                individu = individu.copy()
-                individu['id'] = id = 'ind{}'.format(index)
-            individus.append(individu)
+                person = person.copy()
+                person['id'] = id = 'ind{}'.format(index)
+            persons.append(person)
             if index <= 1:
-                famille.setdefault('parents', []).append(id)
+                households.setdefault('parents', []).append(id)
             else:
-                famille.setdefault('enfants', []).append(id)
-        famille.setdefault('enfants', [])
+                households.setdefault('children', []).append(id)
+        households.setdefault('children', [])
         conv.check(self.make_json_or_python_to_attributes())(dict(
             axes = axes,
             period = period,
             test_case = dict(
-                familles = [famille],
-                individus = individus,
+                households = [households],
+                persons = persons,
                 ),
             ))
         return self
