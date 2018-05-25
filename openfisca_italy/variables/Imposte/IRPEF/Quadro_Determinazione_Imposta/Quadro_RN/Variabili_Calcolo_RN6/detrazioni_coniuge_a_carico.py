@@ -16,9 +16,9 @@ class detrazioni_per_conigue_a_carico(Variable):
         #reddito per detrazioni è uguale alla somma del RN1_reddito_complessivo - deduzione_abitazione_principale + RS37_importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore
         reddito_per_detrazioni = person('reddito_per_detrazioni',period)
         # if this person doesn't have a spouse this value must be 0
-        la_persona_ha_un_coniuge_a_carico = person('la_persona_non_ha_un_coniuge_a_carico',period)
+        la_persona_non_ha_un_coniuge_a_carico = person('la_persona_non_ha_un_coniuge_a_carico',period)
         # calcuation basing on income
-        return select([la_persona_ha_un_coniuge_a_carico,reddito_per_detrazioni<=15000,reddito_per_detrazioni<=40000,
+        return select([la_persona_non_ha_un_coniuge_a_carico,reddito_per_detrazioni<=15000,reddito_per_detrazioni<=40000,
                         reddito_per_detrazioni<=80000,reddito_per_detrazioni>=80000],
                     [0, person('detrazioni_per_conigue_a_carico_reddito_inferiore_15000',period),
                     person('detrazioni_per_conigue_a_carico_reddito_inferiore_40000',period),
