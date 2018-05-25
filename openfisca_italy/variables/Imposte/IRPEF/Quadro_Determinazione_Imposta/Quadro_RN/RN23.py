@@ -15,7 +15,7 @@ class RN23_detrazioni_spese_sanitarie_per_determinate_patologie(Variable):
     def formula(person,period,parameters):
         franchigia = parameters(period).imposte.IRPEF.QuadroRP.sezione_I_Oneri_spese.franchigia_spese_mediche
         # caso 1
-        casella_1_totale_spese_su_cui_determinare_la_detrazione_barrata = person('casella_1_totale_spese_su_cui_determinare_la_detrazione_barrata',period)
+        RP15_casella_1_totale_spese_su_cui_determinare_la_detrazione_barrata = person('RP15_casella_1_totale_spese_su_cui_determinare_la_detrazione_barrata',period)
         #caso 2
         col_2_rigo_RP1_e_rigo_RP2_non_compilati = (person('RP1_spese_sanitarie_comprensive_di_franchigia_rigo_RP1',period) == 0) * (person('RP2_spese_sanitarie_per_familiari_non_a_carico_affetti_da_patologie_esistenti',period) == 0)
         spesa_da_restituire_se_caso_2_True = 0.19 * (person('RP1_spese_patologie_esenti_sostenute_da_familiare',period)-franchigia)
@@ -26,7 +26,7 @@ class RN23_detrazioni_spese_sanitarie_per_determinate_patologie(Variable):
         spesa_da_restituire_se_caso_3_True =  select([spese_RP1_RP2_caso_3>=franchigia, spese_RP1_RP2_caso_3 < franchigia],
                                                     [0.19 * person('RP1_spese_patologie_esenti_sostenute_da_familiare',period),
                                                      (0.19 * (person('RP1_spese_patologie_esenti_sostenute_da_familiare',period) - (franchigia - spese_RP1_RP2_caso_3)))])
-        return select([casella_1_totale_spese_su_cui_determinare_la_detrazione_barrata,
+        return select([RP15_casella_1_totale_spese_su_cui_determinare_la_detrazione_barrata,
                         col_2_rigo_RP1_e_rigo_RP2_non_compilati,
                         col_2_rigo_RP1_o_rigo_RP2_compilata],
                         [0,
