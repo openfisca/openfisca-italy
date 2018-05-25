@@ -1,4 +1,4 @@
-# IRPEF aliquotes 
+# IRPEF aliquotes
 description: Aliquote dell'imposta sul reddito delle persone fisiche
 reference: http://def.finanze.it/DocTribFrontend/getArticoloDetailFromResultList.do?id={1895247D-EBFC-408E-BE3D-509BC4409B61}&codiceOrdinamento=200001100000000&idAttoNormativo={31D694E8-4398-4030-873B-FEAF5A6647F9}
 brackets:
@@ -32,4 +32,3 @@ brackets:
   threshold:
     2007-01-01:
       value: 75000
-
