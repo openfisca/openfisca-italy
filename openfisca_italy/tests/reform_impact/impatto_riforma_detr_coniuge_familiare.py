@@ -19,8 +19,10 @@ def init_profile(scenario):
 # main
 tax_benefit_system = ItalyTaxBenefitSystem() #prendi il sistema di tasse e benefici
 simple_scenario = tax_benefit_system.new_scenario() # nuovo scenario normale
-print simple_scenario
+print "\nTipo scenario: ", simple_scenario
+print "\nEseguo inizializzazine dello scenario"
 simple_scenario = init_profile(simple_scenario) # inizializzo lo scenario con la situazione per calcolare la detrazione per la persona
+print "\nEseguo simulazione dello scenario"
 simulation = simple_scenario.new_simulation() # nuova simulazione per lo scenario normale
 # Print values
 print('Detrazioni per coniuge a carico con sistema senza riforma:')

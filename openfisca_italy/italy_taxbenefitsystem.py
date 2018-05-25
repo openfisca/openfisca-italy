@@ -3,7 +3,7 @@
 import os
 from openfisca_core.taxbenefitsystems import TaxBenefitSystem
 from . import entita
-
+from . import scenarios
 
 COUNTRY_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -17,5 +17,5 @@ class ItalyTaxBenefitSystem(TaxBenefitSystem):
         # We add to our tax and benefit system all the variables
         self.add_variables_from_directory(os.path.join(COUNTRY_DIR, 'variables'))
         # We add to our tax and benefit system all the legislation parameters defined in the  parameters files
-        self.load_parameters(os.path.join(COUNTRY_DIR, 'parameters')
-)
+        self.load_parameters(os.path.join(COUNTRY_DIR, 'parameters'))
+        self.Scenario = scenarios.Scenario
