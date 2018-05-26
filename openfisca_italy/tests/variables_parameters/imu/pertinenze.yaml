@@ -1,0 +1,51 @@
+- name: Test con categoria A6 prima casa con pertinenze
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: A3
+    valore_immobile_non_rivalutato: 10000
+    is_immobile_prima_casa: True
+    percentuale_possesso: 100
+    mesi_di_possesso: 12
+    aliquota_imu: 4
+    is_inagibile_accertato: False
+    rendita_catastale_non_rivalutata_C2: 1000
+    rendita_catastale_non_rivalutata_C6: 1000
+    rendita_catastale_non_rivalutata_C7: 1000
+  output_variables:
+    importo_imu: 0
+    detrazioni_imu: 0
+    imposta_imu: 0
+
+- name: Test con categoria A1 prima casa con pertinenze
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: A1
+    valore_immobile_non_rivalutato: 10000
+    is_immobile_prima_casa: True
+    percentuale_possesso: 100
+    mesi_di_possesso: 12
+    aliquota_imu: 4
+    is_inagibile_accertato: False
+    rendita_catastale_non_rivalutata_C2: 1000
+    rendita_catastale_non_rivalutata_C6: 1000
+    rendita_catastale_non_rivalutata_C7: 1000
+  output_variables:
+    detrazioni_imu: 200
+    imposta_imu: 8736
+    importo_imu: 8536
+
+- name: Test con categoria A1 prima casa con 1 pertinenza
+  period: 2018-01
+  input_variables:
+    immobile_categoria_catastale: A1
+    valore_immobile_non_rivalutato: 10000
+    is_immobile_prima_casa: True
+    percentuale_possesso: 100
+    mesi_di_possesso: 12
+    aliquota_imu: 4
+    is_inagibile_accertato: False
+    rendita_catastale_non_rivalutata_C2: 1000
+  output_variables:
+    detrazioni_imu: 200
+    imposta_imu: 7392
+    importo_imu: 7192
