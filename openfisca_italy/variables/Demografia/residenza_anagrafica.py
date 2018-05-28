@@ -39,7 +39,7 @@ class codice_avviamento_postale_del_comune_di_residenza_anagrafica(Variable):
     reference = u"http://www.agenziaentrate.gov.it/wps/content/Nsilib/Nsi/Schede/Istanze/Richiesta+TS_CF/Verifica+codice+fiscale/?page=schedeistanze"
 
 
-class indirizzo_residenza_anagrafica(Variable)
+class indirizzo_residenza_anagrafica(Variable):
     value_type = str
     entity = Persona
     label = u"Indirizzo nel comune di residenza della Persona"
