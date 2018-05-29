@@ -1,0 +1,84 @@
+- name: Test seconda casa posseduta al 25% per 12 mesi di categoria A6
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 10000
+    is_immobile_prima_casa: False
+    immobile_categoria_catastale: A6
+    percentuale_possesso: 25
+    mesi_di_possesso: 12
+    aliquota_imu: 7.6
+  output_variables:
+    imposta_imu: 3192
+    importo_imu: 3192
+
+- name: Test seconda casa posseduta al 25% per 12 mesi di categoria A1
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 10000
+    is_immobile_prima_casa: False
+    immobile_categoria_catastale: A1
+    percentuale_possesso: 25
+    mesi_di_possesso: 12
+    aliquota_imu: 7.6
+  output_variables:
+    imposta_imu: 3192
+    importo_imu: 3192
+
+- name: Test seconda casa posseduta al 100% per 12 mesi di categoria A9
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 10000
+    is_immobile_prima_casa: False
+    immobile_categoria_catastale: A9
+    percentuale_possesso: 100
+    mesi_di_possesso: 12
+    aliquota_imu: 4
+  output_variables:
+    imposta_imu: 6720
+    detrazioni_imu: 0
+    importo_imu: 6720
+
+- name: Test seconda casa posseduta al 100% per 12 mesi di categoria A9 inagibile
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 10000
+    is_immobile_prima_casa: False
+    immobile_categoria_catastale: A9
+    percentuale_possesso: 100
+    mesi_di_possesso: 12
+    aliquota_imu: 4
+    is_inagibile_accertato: True
+  output_variables:
+    imposta_imu: 3360
+    detrazioni_imu: 0
+    importo_imu: 3360
+
+- name: Test seconda casa posseduta al 100% per 12 mesi di categoria A9 a canone concordato
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 10000
+    is_immobile_prima_casa: False
+    immobile_categoria_catastale: A9
+    percentuale_possesso: 100
+    mesi_di_possesso: 12
+    aliquota_imu: 4
+    is_canone_concordato: True
+  output_variables:
+    imposta_imu: 6720
+    detrazioni_imu: 0
+    importo_imu: 6720
+
+- name: Test seconda casa posseduta al 100% per 12 mesi di categoria A3 a canone concordato
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 10000
+    is_immobile_prima_casa: False
+    immobile_categoria_catastale: A3
+    percentuale_possesso: 100
+    mesi_di_possesso: 12
+    aliquota_imu: 4
+    is_canone_concordato: True
+  output_variables:
+    imposta_imu: 5040
+    detrazioni_imu: 0
+    importo_imu: 5040
