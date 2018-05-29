@@ -8,12 +8,12 @@ OpenFisca è un software gratuito di microsimulazione versatile. Questa reposito
 ### Obiettivi finali da raggiungere 
 * Costruire un sistema di tasse e benefici completo per l'Italia, definendo ogni singola Variabile, Parametro, Riforma,Entità e Formula;
 * Implementare un software grafico dalle diverse funzionalità che possa essere utilizzato dalla pubblica amministrazione per misurare l'impatto che porterebbe al sistema Italiano il cambiamento di una Variabile/Parametro/Riforma tramite un sistema di simulazioni.
-### Prossimi obiettivi da raggiungere
+### Obiettivi
 L'obiettivo dal quale si vuole partire è quello di definire un sistema per gestire la disoccupazione. In particolare, i prossimi obiettivi da raggiungere per il campo della disoccupazione sono:
-- [ ] Definire variabili, parametri, riforme.... per creare una base dalla quale partire per sviluppare delle features;
-- [ ] __Feature 1__: Gestione delle pensioni di disoccupazione;
-- [ ] __Feature 2__: Gestione di un ipotetico reddito di base;
-- [ ] __Feature 3__: Statistiche sulla disoccupazione (tasso di disoccupazione derivante da inserimento/eliminazione di variabili (Es. imposte per le piccole/medie imprese, occupazione nel settore pubblico, Jobs Act...)
+- [✓] Definire variabili, parametri, riforme.... per creare una base dalla quale partire per sviluppare delle features;
+- [✓] __Feature 1__: Gestione IRPEF;
+- [✓] __Feature 2__: Gestione IMU;
+- [ ] __Feature 3__: Prototipo Web Api.
 
 ## Prerequisiti per l'installazione
 ### Sistemi operativi supportati
