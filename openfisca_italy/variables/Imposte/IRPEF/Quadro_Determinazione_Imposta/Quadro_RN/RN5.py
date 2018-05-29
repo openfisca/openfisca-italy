@@ -15,9 +15,9 @@ class RN5_irpef_lorda (Variable):
 
     def formula(person, period, parameters):
         # In the IRPEF calculation the  gross base income calculation could be in two ways
-        reddito_imponibile = person('reddito_imponibile',period)
+        RN4_reddito_imponibile = person('RN4_reddito_imponibile',period)
         # this is a fixed calculation
-        RN5_irpef_lorda = round_(parameters(period).imposte.IRPEF.aliquote_scaglioni_IRPEF.calc(reddito_imponibile),2)
+        RN5_irpef_lorda = round_(parameters(period).imposte.IRPEF.aliquote_scaglioni_IRPEF.calc(RN4_reddito_imponibile),2)
 
         # agevolazione ACE section that is optional depending on possiede_diritto_agevolazione_ACE (optional)
         RS37_importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore = person('RS37_importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore',period)
@@ -42,4 +42,4 @@ class RN5_irpef_lorda (Variable):
         # this boolean indicate that are no situations for what the Irpef values if fixed to 0
         no_condizioni_redditi_non_tassabili = not np.array(any([irpef_non_dovuta_pensionati_e_terreni,irpef_non_dovuta_per_soli_terreni_e_fabbricati]))
         # ovviamente se il reddito imponibile è 0 anche l'irpef lorda e netta devono essere 0
-        return select([irpef_non_dovuta_pensionati_e_terreni, irpef_non_dovuta_per_soli_terreni_e_fabbricati, reddito_imponibile <= 0 ,no_condizioni_redditi_non_tassabili], [0, 0, 0, RN5_irpef_lorda])
+        return select([irpef_non_dovuta_pensionati_e_terreni, irpef_non_dovuta_per_soli_terreni_e_fabbricati, RN4_reddito_imponibile <= 0 ,no_condizioni_redditi_non_tassabili], [0, 0, 0, RN5_irpef_lorda])

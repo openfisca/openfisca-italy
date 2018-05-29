@@ -1,4 +1,4 @@
-# total gross income for one month and one year
+# -*- coding: utf-8 -*-
 # Import from openfisca-core the common python objects used to code the legislation in OpenFisca
 from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
@@ -50,7 +50,36 @@ class RP14_eta_persona_stipula_del_contratto_leasing(Variable):
         return data_stipula_leasing_relativa_a_spese_per_canoni_di_leasing_year - data_di_nascita_year
 
 
-# TODO:  L'importo dei canoni di leasing non puo' superare: il limite di 8.000 euro annui se alla data di stipula del contratto di leasing il contribuente aveva meno di 35 anni; il limite di 4.000 euro annui se a tale data il contribuente aveva un eta' uguale o superiore a 35 anni.
+class RP14_limite_importo_canone_leasing(Variable):
+    value_type = float
+    entity = Persona
+    definition_period = ETERNITY
+    label = "Limite da indicare in RP14 col.3"
+    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=62"  # Always use the most official source
+
+    def formula(person,period,parameters):
+        eta = person('RP14_eta_persona_stipula_del_contratto_leasing',period)
+        return where(eta<=35,
+                parameters(period).imposte.IRPEF.QuadroRP.sezione_I_Oneri_spese.RP14.RP14_importo_massimo_canone_leasing_meno_35,
+                    parameters(period).imposte.IRPEF.QuadroRP.sezione_I_Oneri_spese.RP14.RP14_importo_massimo_canone_leasing_sopra_35)
+
+
+class RP14_limite_importo_prezzo_riscatto(Variable):
+    value_type = float
+    entity = Persona
+    definition_period = ETERNITY
+    label = "Limite da indicare in RP14 col.3"
+    reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=62"  # Always use the most official source
+
+    def formula(person,period,parameters):
+        eta = person('RP14_eta_persona_stipula_del_contratto_leasing',period)
+        return where(eta<=35,
+                parameters(period).imposte.IRPEF.QuadroRP.sezione_I_Oneri_spese.RP14.RP14_importo_prezzo_riscatto_meno_35,
+                    parameters(period).imposte.IRPEF.QuadroRP.sezione_I_Oneri_spese.RP14.RP14_importo_prezzo_riscatto_sopra_35)
+
+
+
+# TODO:  Quando sarà possibile utilizzare limite calcolato sopra
 class RP14_importo_canone_leasing_relativo_a_spese_per_canoni_di_leasing(Variable):
     value_type = float
     entity = Persona
@@ -60,7 +89,7 @@ class RP14_importo_canone_leasing_relativo_a_spese_per_canoni_di_leasing(Variabl
     reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=62"  # Always use the most official source
 
 
-# TODO: Il prezzo di riscatto non puo' superare: il limite di 20.000 euro se alla data di stipula del contratto di leasing il contribuente aveva meno di 35 anni; il limite di 10.000 euro se a tale data il contribuente aveva un eta' uguale o superiore a 35 anni.
+# TODO:  Quando sarà possibile utilizzare limite calcolato sopra
 class RP14_prezzo_di_riscatto_relativo_a_spese_per_canoni_di_leasing(Variable):
     value_type = float
     entity = Persona

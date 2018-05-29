@@ -1,0 +1,5 @@
+description: "RP14 Importo massimo canone leasing più di 35 anni"
+unit: currency
+values:
+  2010-01-01:
+    value: 4000

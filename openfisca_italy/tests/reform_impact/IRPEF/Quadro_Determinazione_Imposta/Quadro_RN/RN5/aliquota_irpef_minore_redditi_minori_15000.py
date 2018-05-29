@@ -7,7 +7,7 @@ def init_profile(scenario):
     scenario.init_single_entity(
         period = '2017',
         parent1 = dict(
-            reddito_imponibile= 10000,
+            RN4_reddito_imponibile= 10000,
         )
     )
     return scenario
