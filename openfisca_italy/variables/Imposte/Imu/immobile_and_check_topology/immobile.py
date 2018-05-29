@@ -117,20 +117,16 @@ class base_imponibile(Variable):
                                                 (person('immobile_categoria_catastale',period) == CategoriaCatastale.A8)+
                                                 (person('immobile_categoria_catastale',period) == CategoriaCatastale.A9)
                                                 ),True,False)
-        is_scontato_75_percento = where(    is_scontato_25_percento*is_scontato_50_percento,
-                                            True,False)
-        other_case = not_(is_scontato_25_percento)+not_(is_scontato_50_percento)+not_(is_scontato_75_percento)
+        other_case = not_(is_scontato_25_percento)+not_(is_scontato_50_percento)
 
         base_imponibile = person('valore_immobile_rivalutato',period) * person('moltiplicatore_catastale',period)
         return select(  [
                             is_scontato_25_percento,
                             is_scontato_50_percento,
-                            is_scontato_75_percento,
                             other_case
                         ],[
                             base_imponibile-(base_imponibile*25/100.00),
                             base_imponibile-(base_imponibile*50/100.00),
-                            base_imponibile-(base_imponibile*75/100.00),
                             base_imponibile
                         ])
 
