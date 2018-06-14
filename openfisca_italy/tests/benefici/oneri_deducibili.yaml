@@ -1,0 +1,47 @@
+- name: Test calcolo oneri deducibili annuali senza centesimi
+  period: 2017
+  input_variables:
+    contributi_previdenziali_assistenziali: 200
+    assegni_periodo_coniuge: 150
+    contributi_addetti_servizi_domestici_e_familiari: 170
+    erogazioni_istituzioni_religiose: 125
+    spese_mediche_e_assistenza_disabili: 250  
+    contributi_previdenza_complementare: 125
+  output_variables:
+    oneri_deducibili_totali_annuale: 1020
+
+- name: Test calcolo oneri deducibili annuali senza centesimi
+  period: 2017
+  input_variables:
+    contributi_previdenziali_assistenziali: 200
+    assegni_periodo_coniuge: 150
+    contributi_addetti_servizi_domestici_e_familiari: 170.23
+    erogazioni_istituzioni_religiose: 125
+    spese_mediche_e_assistenza_disabili: 250.56
+    contributi_previdenza_complementare: 125
+  output_variables:
+    oneri_deducibili_totali_annuale: 1020.79
+
+- name: Test calcolo oneri deducibili mensili senza centesimi
+  period: 2017-01
+  input_variables:
+    contributi_previdenziali_assistenziali: 200
+    assegni_periodo_coniuge: 150
+    contributi_addetti_servizi_domestici_e_familiari: 170
+    erogazioni_istituzioni_religiose: 125
+    spese_mediche_e_assistenza_disabili: 250
+    contributi_previdenza_complementare: 125
+  output_variables:
+    oneri_deducibili_totali_mensili: 85
+
+- name: Test calcolo oneri deducibili mensili con centesimi
+  period: 2017-01
+  input_variables:
+    contributi_previdenziali_assistenziali: 200
+    assegni_periodo_coniuge: 150
+    contributi_addetti_servizi_domestici_e_familiari: 170.23
+    erogazioni_istituzioni_religiose: 125
+    spese_mediche_e_assistenza_disabili: 250.25
+    contributi_previdenza_complementare: 125.72
+  output_variables:
+    oneri_deducibili_totali_mensili: 85.10

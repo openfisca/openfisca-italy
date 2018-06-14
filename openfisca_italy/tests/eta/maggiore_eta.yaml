@@ -1,0 +1,17 @@
+#Test to see if a person is adult (parameter: maggiore_eta.yaml) 
+- name: Test per vedere se funziona maggiore età prima del 75
+  period: 1950-01
+  input_variables:
+    birth: 1945-02-01
+  output_variables:
+    is_adult:
+      1966-01: False
+      1966-02: True
+- name: Test per vedere se funziona maggiore età prima del 75
+  period: 2000-01
+  input_variables:
+    birth: 1990-02-01
+  output_variables:
+    is_adult:
+      2008-01: False
+      2008-02: True

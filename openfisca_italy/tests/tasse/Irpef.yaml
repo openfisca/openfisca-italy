@@ -1,0 +1,18 @@
+- name: Calcolo IRPEF 
+  period: 2017
+  input_variables:
+    contributi_previdenziali_assistenziali: 200
+    assegni_periodo_coniuge: 150
+    contributi_addetti_servizi_domestici_e_familiari: 170
+    erogazioni_istituzioni_religiose: 125
+    spese_mediche_e_assistenza_disabili: 250  
+    contributi_previdenza_complementare: 125
+    reddito_lavoro_dipendente_annuale: 12000.00
+    reddito_lavoro_autonomo_annuale: 8000.00
+    reddito_fabbricati_annuale: 4000.00
+    reddito_terreni_annuale: 4000.00
+    reddito_di_impresa_annuale: 6000.00
+    reddito_di_capitali_annuale: 7000.00
+    reddito_diversi_annuale: 7000.00
+  output_variables:
+    irpef_lorda: 14172.4

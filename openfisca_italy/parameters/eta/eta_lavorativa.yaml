@@ -1,0 +1,11 @@
+description: Età in cui si può iniziare a lavorare per legge
+reference: https://www.inps.it/nuovoportaleinps/default.aspx?itemdir=43179
+values:
+  1967-10-17:
+    value: 15.0
+#l'età minima di ammissione al lavoro non può essere inferiore all'età in cui cessa l'obbligo scolastico, ossia anche se un sogg. ha 15 anni deve finire la scuola dell'obbligo per lavorare
+  1999-08-04:
+    value: 15.0 
+#innalzamento età minima a 16 anni
+  2006-12-27:
+    value: 16.0 
