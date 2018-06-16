@@ -2,8 +2,8 @@
 
 import os
 from openfisca_core.taxbenefitsystems import TaxBenefitSystem
-from . import entita
-from . import scenarios
+import entita
+import scenarios
 
 COUNTRY_DIR = os.path.dirname(os.path.abspath(__file__))
 
