@@ -16,7 +16,7 @@ setup(
     url='https://github.com/openfisca/openfisca-italy',
     include_package_data = True,  # Will read MANIFEST.in
     install_requires=[
-        'OpenFisca-Core >= 21.3.1, < 22.0',
+        'OpenFisca-Core >= 21.3.1, < 24.0',
         ],
     extras_require = {
         'api': [
