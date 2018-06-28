@@ -1,0 +1,18 @@
+- name: Test per altre detrazioni sezione VI quadro RP
+  period: 2017
+  input_variables:
+     RP82_sostenute_spese_mantenimento_cane_guida: True
+     RP83_altre_detrazioni: 1500
+  output_variables:
+    RP82_detrazioni_per_mantenimento_cane_guida: 516.46
+    RN17_totale_detrazione_oneri_Sez_VI_quadro_RP: 2016.46
+
+- name: Test altre detrazioni con altre detrazioni non dovute
+  period: 2017
+  input_variables:
+     RP82_sostenute_spese_mantenimento_cane_guida: True
+     RP83_tipo_altre_detrazioni: nessun_codice_inserito
+  output_variables:
+    RP83_altre_detrazioni: 0
+    RP82_detrazioni_per_mantenimento_cane_guida: 516.46
+    RN17_totale_detrazione_oneri_Sez_VI_quadro_RP:  516.46

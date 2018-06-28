@@ -1,0 +1,47 @@
+- name: Test per vedere se gli oneri deducibili sono inclusi nel totale nella maniera giusta
+  period: 2017
+  input_variables:
+    RP21_contributi_previdenziali_assistenziali: 150
+    RP22_assegno_periodico_al_coniuge: 150
+    RP23_contributi_addetti_servizi_domestici_e_familiari: 150
+    RP24_erogazioni_liberali_a_istituzioni_religiose: 150
+    RP25_spese_mediche_e_assistenza_disabili: 150
+    RP26_altri_oneri_e_spese_deducibili: 150
+    RP27_contributi_deducibilita_ordinaria_non_dedotti_dal_sostituto: 150
+    RP28_contributi_per_lavoratori_prima_occupazione_non_dedotti_dal_sostituto: 150
+    RP29_contributi_per_fondi_in_squilibrio_finanziario_non_dedotti_dal_sostituto: 150
+    RP30_contributi_versati_per_familiari_a_carico_non_dedotti_dal_sostituto: 150
+    RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_non_dedotti_dal_sostituto: 150
+    RP32_totale_importo_deducibile_abitazione_data_in_locazione: 150
+    RP33_totale_restituzione_somme_al_soggetto_erogatore: 150
+    RP34_totale_importo_RPF_2018: 150
+    RP34_importo_residuo_RPF_2017: 150
+    RP34_importo_residuo_RPF_2016: 150
+    RP34_importo_residuo_RPF_2015: 150
+  output_variables:
+    RP_39_totale_oneri_deducibili: 2550
+
+- name: Test 2 per vedere se gli oneri deducibili sono inclusi nel totale nella maniera giusta
+  period: 2017
+  input_variables:
+    # 21-26
+    RP21_contributi_previdenziali_assistenziali: 150
+    RP22_assegno_periodico_al_coniuge: 150
+    RP23_contributi_addetti_servizi_domestici_e_familiari: 150
+    RP24_erogazioni_liberali_a_istituzioni_religiose: 150
+    RP25_spese_mediche_e_assistenza_disabili: 150
+    RP26_altri_oneri_e_spese_deducibili: 150
+    #27-31
+    RP27_contributi_deducibilita_ordinaria_non_dedotti_dal_sostituto: 5000
+    RP28_contributi_per_lavoratori_prima_occupazione_non_dedotti_dal_sostituto: 4500
+    RP29_contributi_per_fondi_in_squilibrio_finanziario_non_dedotti_dal_sostituto: 3950
+    RP30_contributi_versati_per_familiari_a_carico_non_dedotti_dal_sostituto: 1000
+    RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_non_dedotti_dal_sostituto: 2780
+    RP32_totale_importo_deducibile_abitazione_data_in_locazione: 1500
+    RP33_totale_restituzione_somme_al_soggetto_erogatore: 2000
+    RP34_totale_importo_RPF_2018: 975
+    RP34_importo_residuo_RPF_2017: 525
+    RP34_importo_residuo_RPF_2016: 150
+    RP34_importo_residuo_RPF_2015: 150
+  output_variables:
+    RP_39_totale_oneri_deducibili: 14650

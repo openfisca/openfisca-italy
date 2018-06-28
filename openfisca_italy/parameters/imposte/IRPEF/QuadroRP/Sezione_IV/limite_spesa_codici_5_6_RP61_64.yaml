@@ -1,0 +1,67 @@
+# relative to RP61_64
+codice_uno:
+  importo_spese_sostenute_dal_1_gennaio_al_31_dicembre_2017:
+    description: "Rigo RP61_64 col. 8 - Spese sostenute  dal 1 gennaio al 31 dicembre 2017 (65%) con Codice 1 in colonna 1"
+    values:
+      2010-01-01:
+        value: 0 #significa che non esiste un limite
+
+codice_due:
+  importo_spese_sostenute_dal_1_gennaio_al_31_dicembre_2017:
+    description: "Rigo RP61_64 col. 8 - Spese sostenute  dal 1 gennaio al 31 dicembre 2017 (65%) con Codice 2 in colonna 1"
+    values:
+      2010-01-01:
+        value: 0 #significa che non esiste un limite
+
+
+codice_tre:
+  importo_spese_sostenute_dal_1_gennaio_al_31_dicembre_2017:
+    description: "Rigo RP61_64 col. 8 - Spese sostenute  dal 1 gennaio al 31 dicembre 2017 (65%) con Codice 3 in colonna 1"
+    values:
+      2010-01-01:
+        value: 0 #significa che non esiste un limite
+
+
+codice_quattro:
+  importo_spese_sostenute_dal_1_gennaio_al_31_dicembre_2017:
+    description: "Rigo RP61_64 col. 8 - Spese sostenute  dal 1 gennaio al 31 dicembre 2017 (65%) con Codice 5 in colonna 1"
+    values:
+      2010-01-01:
+        value: 0 #significa che non esiste un limite
+
+codice_cinque:
+  importo_spese_sostenute_dal_1_gennaio_al_31_dicembre_2017:
+    description: "Rigo RP61_64 col. 8 - Spese sostenute  dal 1 gennaio al 31 dicembre 2017 (65%) con Codice 5 in colonna 1"
+    values:
+      2010-01-01:
+        value: 92307.69
+
+codice_sei:
+    importo_spese_sostenute_dal_1_gennaio_al_31_dicembre_2017:
+      description: "Rigo RP61_64 col. 8 - Spese sostenute dal 1 gennaio al 31 dicembre 2017(65%) con Codice 6 in colonna 1"
+      values:
+        2010-01-01:
+          value: 46153.84
+
+codice_sette:
+  importo_spese_sostenute_dal_1_gennaio_al_31_dicembre_2017:
+    description: "Rigo RP61_64 col. 8 - Spese sostenute  dal 1 gennaio al 31 dicembre 2017 (65%) con Codice 7 in colonna 1"
+    values:
+      2010-01-01:
+        value: 0 #significa che non esiste un limite
+
+
+codice_otto:
+  importo_spese_sostenute_dal_1_gennaio_al_31_dicembre_2017:
+    description: "Rigo RP61_64 col. 8 - Spese sostenute  dal 1 gennaio al 31 dicembre 2017 (65%) con Codice 8 in colonna 1"
+    values:
+      2010-01-01:
+        value: 0 #significa che non esiste un limite
+
+
+codice_nove:
+    importo_spese_sostenute_dal_1_gennaio_al_31_dicembre_2017:
+      description: "Rigo RP61_64 col. 8 - Spese sostenute  dal 1 gennaio al 31 dicembre 2017 (65%) con Codice 9 in colonna 1"
+      values:
+        2010-01-01:
+          value: 0 #significa che non esiste un limiteite

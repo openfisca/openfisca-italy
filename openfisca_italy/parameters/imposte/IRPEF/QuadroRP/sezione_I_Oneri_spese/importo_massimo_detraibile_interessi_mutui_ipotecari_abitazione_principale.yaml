@@ -1,0 +1,6 @@
+description: Importo massimo cui applicare la detrazione per interessi per mutui ipotecari per l’acquisto dell’abitazione principale
+unit: currency
+values:
+ #Defined since 2010 because we do not know the previous legislation yet
+  2010-01-01:
+    value: 4000.00

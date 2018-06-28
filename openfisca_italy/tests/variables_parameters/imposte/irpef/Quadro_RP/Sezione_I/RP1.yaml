@@ -1,0 +1,7 @@
+- name: Test per vedere se funziona formula totale RP1
+  period: 2017
+  input_variables:
+    RP1_spese_sanitarie_comprensive_di_franchigia_rigo_RP1: 200
+    RP1_spese_patologie_esenti_sostenute_da_familiare: 300
+  output_variables:
+    RP1_totale_spese_sanitarie: 500

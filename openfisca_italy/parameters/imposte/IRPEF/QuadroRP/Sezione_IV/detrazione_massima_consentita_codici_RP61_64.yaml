@@ -1,0 +1,14 @@
+# relative to RP61_64
+codice_uno:
+    detrazione_massima_consentita:
+      description: "RP66 - Detrazione massima consentita per Spese sostenute risparmio energetico con Codice 1 in colonna 1"
+      values:
+        2010-01-01:
+          value: 100000
+          
+codice_due:
+    detrazione_massima_consentita:
+      description: "RP66 - Detrazione massima consentita per Spese sostenute risparmio energetico con Codice 2 in colonna 1"
+      values:
+        2010-01-01:
+          value: 60000

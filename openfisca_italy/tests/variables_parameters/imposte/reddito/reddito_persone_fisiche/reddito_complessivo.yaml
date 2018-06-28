@@ -1,0 +1,25 @@
+#Test for total gross income in a year
+- name: Calcolo reddito lordo annuale senza centesimi
+  period: 2017
+  input_variables:
+    reddito_lavoro_dipendente_annuale: 12000.00
+    reddito_lavoro_autonomo_annuale: 8000.00
+    reddito_fondiari_annuale: 8000.00
+    reddito_di_impresa_annuale: 6000.00
+    reddito_di_capitali_annuale: 7000.00
+    reddito_diversi_annuale: 7000.00
+  output_variables:
+    RN1_reddito_complessivo: 48000.00
+
+
+- name: Calcolo reddito lordo annuale con centesimi
+  period: 2017
+  input_variables:
+    reddito_lavoro_dipendente_annuale: 12000.00
+    reddito_lavoro_autonomo_annuale: 8000.00
+    reddito_fondiari_annuale: 7431.24
+    reddito_di_impresa_annuale: 6000.00
+    reddito_di_capitali_annuale: 7000.00
+    reddito_diversi_annuale: 7000.00
+  output_variables:
+    RN1_reddito_complessivo: 47431.24

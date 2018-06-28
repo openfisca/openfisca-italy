@@ -1,0 +1,102 @@
+- name: Test 1 calcolo irpef lorda senza agevolazioni o aumenti di alcun tipo
+  period: 2017
+  input_variables:
+    RN4_reddito_imponibile: 38000
+  output_variables:
+    RN5_irpef_lorda: 10760
+
+- name: Test 2 calcolo irpef lorda con agevolazioni ace
+  period: 2017
+  input_variables:
+    RN4_reddito_imponibile: 38000
+    reddito_di_impresa_annuale: 100 # compreso nel reddito imponibile
+    compilato_RS37_importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore: True
+    RS37_importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore: 500 # che ha aumentato il reddito imponibile
+  output_variables:
+    RN5_irpef_lorda: 10645
+
+
+- name: Test 3 calcolo irpef lorda con agevolazioni ace e per attività sportiva dilettantistica
+  period: 2017
+  input_variables:
+    RN4_reddito_imponibile: 38000
+    # agevolazione ace
+    reddito_di_impresa_annuale: 100 # compreso nel reddito imponibile
+    compilato_RS37_importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore: True
+    RS37_importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore: 500 # che ha aumentato il reddito imponibile
+    # agevolazione per attività sportiva dilettantistica
+    possiede_reddito_da_attivita_sportiva_dilettantistica: 2000 # compreso nel reddito imponibile
+    RL22_compensi_con_ritenuta_a_titolo_di_imposta: 2000 # che ha aumentato il reddito imponibile
+  output_variables:
+    RN5_irpef_lorda: 10185
+
+
+- name: Test 4 calcolo irpef lorda con agevolazioni ace, per attività sportiva dilettantistica ed ha avuto una decadenza degli investimenti in startup
+  period: 2017
+  input_variables:
+    RN4_reddito_imponibile: 38000
+    # agevolazione ace
+    reddito_di_impresa_annuale: 100 # compreso nel reddito imponibile
+    compilato_RS37_importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore: True
+    RS37_importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore: 500 # che ha aumentato il reddito imponibile
+    # agevolazione per attività sportiva dilettantistica
+    possiede_reddito_da_attivita_sportiva_dilettantistica: 2000 # compreso nel reddito imponibile
+    RL22_compensi_con_ritenuta_a_titolo_di_imposta: 2000 # che ha aumentato il reddito imponibile
+    # decadenza per investimenti startup
+    RP80_detrazione_effettivamente_fruita_e_interessi_legali_per_investimenti_startup: 315
+  output_variables:
+    RN5_irpef_lorda: 10500
+
+- name: Test 5 calcolo irpef lorda non dovuta per reddito di pensione
+  period: 2017
+  input_variables:
+    reddito_pensioni_annuale: 7350
+    reddito_terreni_annuale: 150
+  output_variables:
+    RN4_reddito_imponibile: 7500
+    RN5_irpef_lorda: 0
+
+- name: Test 6 calcolo irpef lorda non dovuta per reddito da fabbricati
+  period: 2017
+  input_variables:
+    reddito_fondiari_annuale: 300
+  output_variables:
+    RN4_reddito_imponibile: 300
+    RN5_irpef_lorda: 0
+
+- name: Test 7 se RN4_reddito_imponibile è 0 allora irpef lorda è 0
+  period: 2017
+  input_variables:
+    RN4_reddito_imponibile: 0
+    # agevolazione ace
+    reddito_di_impresa_annuale: 100 # compreso nel reddito imponibile
+    compilato_RS37_importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore: True
+    RS37_importo_del_rendimento_nozionale_di_spettanza_dell_imprenditore: 500 # che ha aumentato il reddito imponibile
+    # agevolazione per attività sportiva dilettantistica
+    possiede_reddito_da_attivita_sportiva_dilettantistica: 2000 # compreso nel reddito imponibile
+    RL22_compensi_con_ritenuta_a_titolo_di_imposta: 2000 # che ha aumentato il reddito imponibile
+    # decadenza per investimenti startup
+    RP80_detrazione_effettivamente_fruita_e_interessi_legali_per_investimenti_startup: 315
+  output_variables:
+    RN5_irpef_lorda: 0
+
+
+- name: Test 8 IRPEF lorda con tutti i campi da RN1 a RN4 senza altre opzioni
+  period: 2017
+  input_variables:
+    # redditi
+    RN1_reddito_di_riferimento_per_agevolazioni_fiscali: 2000
+    # per reddito RN1_reddito_complessivo
+    reddito_lavoro_dipendente_e_assimilati_annuale: 5000
+    reddito_di_capitali_annuale: 5000
+    reddito_fondiari_annuale: 5000
+    reddito_diversi_annuale: 5000
+    #deduzioni
+    RN2_deduzione_abitazione_principale: 2000
+    #Oneri deducibili
+    RN3_oneri_deducibili_totali: 2000
+  output_variables:
+    RN1_reddito_complessivo: 20000
+    reddito_per_detrazioni: 18000
+    RN4_reddito_imponibile: 16000
+    RN5_irpef_lorda: 3720

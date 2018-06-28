@@ -1,0 +1,5 @@
+description: Importo massimo indicabile nel Rigo RP73 canone annuo
+unit: currency
+values:
+  2010-01-01:
+    value: 6138

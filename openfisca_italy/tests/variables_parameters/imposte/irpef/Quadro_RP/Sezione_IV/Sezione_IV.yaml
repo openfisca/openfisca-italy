@@ -1,0 +1,14 @@
+- name: Test 1 per crediti residui e detrazione fruita dopo il calcolo dell IRPEF lorda diminuita delle detrazioni per lavoro e carichi famigliari positiva e con detrazioni per locazione minore
+  period: 2017
+  input_variables:
+    RP_65_importo_rate_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_55: 100
+    RP_65_importo_rate_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_65: 150
+    RP_65_importo_rate_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_70: 145
+    RP_65_importo_rate_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_75: 155
+  output_variables:
+    RP_65_importo_rate_per_spese_interventi_finalizzati_al_risparmio_energetico_totale_annue: 550
+    RP66_detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_55: 55
+    RP66_detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_65: 97.5
+    RP66_detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_70: 101.5
+    RP66_detrazioni_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_75: 116.25
+    RN16_detrazioni_per_spese_per_interventi_finalizzati_al_risparmio_energetico_annue: 370.25

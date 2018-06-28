@@ -1,0 +1,23 @@
+- name: Test 1 LC2 acconto non dovuta
+  period: 2017
+  input_variables:
+    LC1_differenza: 25.30
+  output_variables:
+    LC2_primo_acconto: 0
+    LC2_secondo_o_unico_acconto: 0
+
+- name: Test 1 LC2 acconto dovuta unica soluzione
+  period: 2017
+  input_variables:
+    LC1_differenza: 195.70
+  output_variables:
+    LC2_primo_acconto: 0
+    LC2_secondo_o_unico_acconto: 185.92
+
+- name: Test 1 LC2 acconto dovuta con doppia soluzione
+  period: 2017
+  input_variables:
+    LC1_differenza: 2000
+  output_variables:
+    LC2_primo_acconto: 760
+    LC2_secondo_o_unico_acconto: 1140

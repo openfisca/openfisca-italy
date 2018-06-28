@@ -1,0 +1,5 @@
+description: Soglia per il quale la detrazione non è prevista per soli redditi a campione d'italia
+reference: http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES
+values:
+  2010-01-01:
+    value: 6700.00

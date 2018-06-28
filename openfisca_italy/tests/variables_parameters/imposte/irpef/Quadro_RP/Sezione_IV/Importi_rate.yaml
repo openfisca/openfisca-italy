@@ -1,0 +1,111 @@
+- name: Test 1 per vedere se funziona meccanismo di calcolo RP65 importo rata al 55
+  period: 2017
+  input_variables:
+     RP61_anno_sostenimento_spese_risparmio_energetico: 2015
+     RP62_anno_sostenimento_spese_risparmio_energetico: 2015
+     RP63_anno_sostenimento_spese_risparmio_energetico: 2013
+     RP64_anno_sostenimento_spese_risparmio_energetico: 2012
+     RP61_periodo_2013: nessun_codice
+     RP62_periodo_2013: nessun_codice
+     RP63_periodo_2013: codice_uno
+     RP64_periodo_2013: nessun_codice
+     RP61_importo_rata: 150
+     RP62_importo_rata: 150
+     RP63_importo_rata: 150
+     RP64_importo_rata: 150
+  output_variables:
+    RP_65_importo_rate_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_55: 300
+
+- name: Test 2 per vedere se funziona meccanismo di calcolo RP65 importo rata al 65
+  period: 2017
+  input_variables:
+     RP61_anno_sostenimento_spese_risparmio_energetico: 2015
+     RP62_anno_sostenimento_spese_risparmio_energetico: 2015
+     RP63_anno_sostenimento_spese_risparmio_energetico: 2013
+     RP64_anno_sostenimento_spese_risparmio_energetico: 2017
+     RP61_periodo_2013: nessun_codice
+     RP62_periodo_2013: nessun_codice
+     RP63_periodo_2013: codice_due
+     RP64_tipo_intervento: codice_uno
+     RP61_importo_rata: 150
+     RP62_importo_rata: 150
+     RP63_importo_rata: 150
+     RP64_importo_rata: 150
+  output_variables:
+    RP_65_importo_rate_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_65: 600
+
+
+- name: Test 3 per vedere se funziona meccanismo di calcolo RP65 importo rata al 65
+  period: 2017
+  input_variables:
+     RP61_anno_sostenimento_spese_risparmio_energetico: 2017
+     RP62_anno_sostenimento_spese_risparmio_energetico: 2017
+     RP63_anno_sostenimento_spese_risparmio_energetico: 2017
+     RP64_anno_sostenimento_spese_risparmio_energetico: 2017
+     RP61_tipo_intervento: codice_due
+     RP62_tipo_intervento: codice_tre
+     RP63_tipo_intervento: codice_quattro
+     RP64_tipo_intervento: codice_cinque
+     RP61_importo_rata: 150
+     RP62_importo_rata: 150
+     RP63_importo_rata: 150
+     RP64_importo_rata: 150
+  output_variables:
+    RP_65_importo_rate_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_65: 600
+
+
+- name: Test 4 per vedere se funziona meccanismo di calcolo RP65 importo rata al 65
+  period: 2017
+  input_variables:
+     RP61_anno_sostenimento_spese_risparmio_energetico: 2017
+     RP62_anno_sostenimento_spese_risparmio_energetico: 2017
+     RP63_anno_sostenimento_spese_risparmio_energetico: 2017
+     RP64_anno_sostenimento_spese_risparmio_energetico: 2017
+     RP61_tipo_intervento: codice_sei
+     RP62_tipo_intervento: codice_otto
+     RP63_tipo_intervento: codice_quattro
+     RP64_tipo_intervento: codice_sette
+     RP61_importo_rata: 150
+     RP62_importo_rata: 150
+     RP63_importo_rata: 150
+     RP64_importo_rata: 150
+  output_variables:
+    RP_65_importo_rate_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_65: 450
+
+
+- name: Test 5 per vedere se funziona meccanismo di calcolo RP65 importo rata al 70
+  period: 2017
+  input_variables:
+     RP61_anno_sostenimento_spese_risparmio_energetico: 2017
+     RP62_anno_sostenimento_spese_risparmio_energetico: 2017
+     RP63_anno_sostenimento_spese_risparmio_energetico: 2017
+     RP64_anno_sostenimento_spese_risparmio_energetico: 2017
+     RP61_tipo_intervento: codice_sei
+     RP62_tipo_intervento: codice_otto
+     RP63_tipo_intervento: codice_quattro
+     RP64_tipo_intervento: codice_sette
+     RP61_importo_rata: 150
+     RP62_importo_rata: 150
+     RP63_importo_rata: 150
+     RP64_importo_rata: 150
+  output_variables:
+    RP_65_importo_rate_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_70: 150
+
+
+- name: Test 6 per vedere se funziona meccanismo di calcolo RP65 importo rata al 75
+  period: 2017
+  input_variables:
+     RP61_anno_sostenimento_spese_risparmio_energetico: 2017
+     RP62_anno_sostenimento_spese_risparmio_energetico: 2017
+     RP63_anno_sostenimento_spese_risparmio_energetico: 2017
+     RP64_anno_sostenimento_spese_risparmio_energetico: 2017
+     RP61_tipo_intervento: codice_sei
+     RP62_tipo_intervento: codice_nove
+     RP63_tipo_intervento: codice_nove
+     RP64_tipo_intervento: codice_nove
+     RP61_importo_rata: 150
+     RP62_importo_rata: 150
+     RP63_importo_rata: 150
+     RP64_importo_rata: 150
+  output_variables:
+    RP_65_importo_rate_per_spese_interventi_finalizzati_al_risparmio_energetico_da_detrarre_per_il_75: 450

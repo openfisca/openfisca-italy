@@ -1,0 +1,8 @@
+- name: Test semplice per calcolare il totale delle detrazioni da lavoro
+  period: 2017
+  input_variables:
+    detrazioni_per_lavoro_dipendente: 1000
+    detrazione_per_redditi_assimilati_a_lavoro_dipendente_e_altri_redditi: 2000
+    detrazioni_per_pensionati: 3500
+  output_variables:
+    RN7_detrazione_per_lavoro: 6500

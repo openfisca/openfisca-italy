@@ -1,0 +1,5 @@
+description: Importo massimo deducibile per Rigo RP30 Contributi versati per familiari a carico
+unit: currency
+values:
+  2010-01-01:
+    value: 5164.57

@@ -1,0 +1,82 @@
+- name: Test immobile con destinazione usi culturali
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 10000
+    immobile_categoria_catastale: A6
+    percentuale_possesso: 100
+    mesi_di_possesso: 12
+    aliquota_imu: 7.6
+    is_destinazione_ad_usi_culturali: True
+  output_variables:
+    imposta_imu: 0
+    detrazioni_imu: 0
+    importo_imu: 0
+
+- name: Test immobile con destinazione usi di culto
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 10000
+    immobile_categoria_catastale: A6
+    percentuale_possesso: 100
+    mesi_di_possesso: 12
+    aliquota_imu: 7.6
+    is_destinazione_ad_uso_di_culto: True
+  output_variables:
+    imposta_imu: 0
+    detrazioni_imu: 0
+    importo_imu: 0
+
+- name: Test immobile proprietà della santa sede
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 10000
+    immobile_categoria_catastale: A6
+    percentuale_possesso: 100
+    mesi_di_possesso: 12
+    aliquota_imu: 7.6
+    is_proprieta_santa_sede: True
+  output_variables:
+    imposta_imu: 0
+    detrazioni_imu: 0
+    importo_imu: 0
+
+- name: Test immobile non commerciale (ospedale, oratorio...)
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 10000
+    immobile_categoria_catastale: A6
+    percentuale_possesso: 100
+    mesi_di_possesso: 12
+    aliquota_imu: 7.6
+    is_svolgimento_attivita_non_commerciali_di_un_determinato_tipo: True
+  output_variables:
+    imposta_imu: 0
+    detrazioni_imu: 0
+    importo_imu: 0
+
+- name: Test immobile ad uso strumentale in comuni montani
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 10000
+    immobile_categoria_catastale: A6
+    percentuale_possesso: 100
+    mesi_di_possesso: 12
+    aliquota_imu: 7.6
+    is_immobile_rurale_ad_uso_strumentale_in_comune_montano: True
+  output_variables:
+    imposta_imu: 0
+    detrazioni_imu: 0
+    importo_imu: 0
+- name: Test immobile ad uso strumentale in comuni montani
+  period: 2018-01
+  input_variables:
+    valore_immobile_non_rivalutato: 10000
+    immobile_categoria_catastale: A6
+    percentuale_possesso: 100
+    mesi_di_possesso: 12
+    aliquota_imu: 7.6
+    is_immobile_merce: True
+  output_variables:
+    imposta_imu: 0
+    detrazioni_imu: 0
+    importo_imu: 0

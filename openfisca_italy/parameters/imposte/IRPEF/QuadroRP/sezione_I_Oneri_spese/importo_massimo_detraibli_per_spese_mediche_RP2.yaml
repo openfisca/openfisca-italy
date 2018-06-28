@@ -1,0 +1,6 @@
+description: L’ammontare massimo delle Spese sanitarie sostenute per familiari non a carico, affetti da patologie esenti sulle quali spetta la detrazione del 19 al lordo della franchigia
+unit: currency
+values:
+ #Defined since 2010 because we do not know the previous legislation yet
+  2010-01-01:
+    value: 6197.48

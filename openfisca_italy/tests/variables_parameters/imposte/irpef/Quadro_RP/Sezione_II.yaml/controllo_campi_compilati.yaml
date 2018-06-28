@@ -1,0 +1,150 @@
+- name: Test 1 per vedere se funziona il controllo della compilazione dei campi Rp27
+  period: 2017
+  input_variables:
+    importo_punto_413_certificazione_unica: 150
+    somme_versate_forme_pensionistiche_per_calcolo_RigoRP27_col_2: 150
+    RP27_contributi_deducibilita_ordinaria_dedotti_dal_sostituto: 500
+    codice_inserito_campo_411_modello_unico: codice_uno
+  output_variables:
+    RP27_contributi_deducibilita_ordinaria_non_dedotti_dal_sostituto: 300
+
+- name: Test 2  per vedere se funziona il controllo della compilazione dei campi Rp27
+  period: 2017
+  input_variables:
+    RP27_contributi_deducibilita_ordinaria_dedotti_dal_sostituto: 0
+    codice_inserito_campo_411_modello_unico: codice_uno
+  output_variables:
+    RP27_contributi_deducibilita_ordinaria_non_dedotti_dal_sostituto: 0
+
+- name: Test 3  per vedere se funziona il controllo della compilazione dei campi Rp27
+  period: 2017
+  input_variables:
+    importo_punto_413_certificazione_unica: 150
+    RP27_contributi_deducibilita_ordinaria_dedotti_dal_sostituto: 0
+    RP29_contributi_per_fondi_in_squilibrio_finanziario_dedotti_dal_sostituto: 100
+    codice_inserito_campo_411_modello_unico: codice_uno
+  output_variables:
+    RP27_contributi_deducibilita_ordinaria_non_dedotti_dal_sostituto: 150
+
+- name: Test 4  per vedere se funziona il controllo della compilazione dei campi Rp27
+  period: 2017
+  input_variables:
+    importo_punto_413_certificazione_unica: 150
+    codice_inserito_campo_411_modello_unico: codice_uno
+  output_variables:
+    RP27_contributi_deducibilita_ordinaria_non_dedotti_dal_sostituto: 0
+
+- name: Test 1 per vedere se funziona il controllo della compilazione dei campi Rp28
+  period: 2017
+  input_variables:
+    RP28_contributi_per_lavoratori_prima_occupazione_dedotti_dal_sostituto: 100
+    importo_punto_413_certificazione_unica: 150
+    codice_inserito_campo_411_modello_unico: codice_tre
+  output_variables:
+    RP28_contributi_per_lavoratori_prima_occupazione_non_dedotti_dal_sostituto: 150
+
+- name: Test 2 per vedere se funziona il controllo della compilazione dei campi Rp28
+  period: 2017
+  input_variables:
+    RP29_contributi_per_fondi_in_squilibrio_finanziario_dedotti_dal_sostituto: 100
+    importo_punto_413_certificazione_unica: 150
+    codice_inserito_campo_411_modello_unico: codice_tre
+  output_variables:
+    RP28_contributi_per_lavoratori_prima_occupazione_non_dedotti_dal_sostituto: 150
+
+
+- name: Test 3 per vedere se funziona il controllo della compilazione dei campi Rp28
+  period: 2017
+  input_variables:
+    importo_punto_413_certificazione_unica: 150
+    codice_inserito_campo_411_modello_unico: codice_tre
+  output_variables:
+    RP28_contributi_per_lavoratori_prima_occupazione_non_dedotti_dal_sostituto: 0
+
+- name: Test 1 per vedere se funziona il controllo della compilazione dei campi Rp29
+  period: 2017
+  input_variables:
+    RP29_contributi_per_fondi_in_squilibrio_finanziario_dedotti_dal_sostituto: 100
+    importo_punto_413_certificazione_unica: 150
+    codice_inserito_campo_411_modello_unico: codice_due
+  output_variables:
+    RP29_contributi_per_fondi_in_squilibrio_finanziario_non_dedotti_dal_sostituto: 150
+
+- name: Test 2 per vedere se funziona il controllo della compilazione dei campi Rp29
+  period: 2017
+  input_variables:
+    RP28_contributi_per_lavoratori_prima_occupazione_non_dedotti_dal_sostituto: 100
+    importo_punto_413_certificazione_unica: 150
+    codice_inserito_campo_411_modello_unico: codice_due
+  output_variables:
+    RP29_contributi_per_fondi_in_squilibrio_finanziario_non_dedotti_dal_sostituto: 150
+
+
+- name: Test 3 per vedere se funziona il controllo della compilazione dei campi Rp29
+  period: 2017
+  input_variables:
+    importo_punto_413_certificazione_unica: 150
+    codice_inserito_campo_411_modello_unico: codice_due
+  output_variables:
+    RP29_contributi_per_fondi_in_squilibrio_finanziario_non_dedotti_dal_sostituto: 0
+
+- name: Test 1 per vedere se funziona il controllo della compilazione dei campi RP30
+  period: 2017
+  input_variables:
+    RP30_contributi_versati_per_familiari_a_carico_dedotti_dal_sostituto: 100
+    importo_punto_421_certificazione_unica: 100
+    importo_punto_423_certificazione_unica: 150
+    codice_inserito_campo_411_modello_unico: codice_due
+  output_variables:
+    RP30_contributi_versati_per_familiari_a_carico_non_dedotti_dal_sostituto: 150
+
+- name: Test 2 per vedere se funziona il controllo della compilazione dei campi RP30
+  period: 2017
+  input_variables:
+    RP28_contributi_per_lavoratori_prima_occupazione_non_dedotti_dal_sostituto: 100
+    importo_punto_423_certificazione_unica: 150
+    codice_inserito_campo_411_modello_unico: codice_due
+  output_variables:
+    RP30_contributi_versati_per_familiari_a_carico_non_dedotti_dal_sostituto: 0
+
+
+- name: Test 3 per vedere se funziona il controllo della compilazione dei campi RP30
+  period: 2017
+  input_variables:
+    importo_punto_423_certificazione_unica: 150
+    importo_punto_421_certificazione_unica: 100
+    codice_inserito_campo_411_modello_unico: codice_due
+  output_variables:
+    RP30_contributi_versati_per_familiari_a_carico_non_dedotti_dal_sostituto: 0
+
+
+
+
+
+
+- name: Test 1 per vedere se funziona il controllo della compilazione dei campi RP31
+  period: 2017
+  input_variables:
+    RP30_contributi_versati_per_familiari_a_carico_dedotti_dal_sostituto: 100
+    casella_11_prospetto_compilazione_Rigo_RP31: 1500
+    codice_inserito_campo_411_modello_unico: codice_quattro
+  output_variables:
+    RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_non_dedotti_dal_sostituto: 1500
+
+- name: Test 2 per vedere se funziona il controllo della compilazione dei campi RP31
+  period: 2017
+  input_variables:
+    RP28_contributi_per_lavoratori_prima_occupazione_non_dedotti_dal_sostituto: 100
+    casella_11_prospetto_compilazione_Rigo_RP31: 110
+    codice_inserito_campo_411_modello_unico: codice_quattro
+  output_variables:
+    RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_non_dedotti_dal_sostituto: 110
+
+
+- name: Test 3 per vedere se funziona il controllo della compilazione dei campi RP31
+  period: 2017
+  input_variables:
+    casella_11_prospetto_compilazione_Rigo_RP31: 50
+    codice_inserito_campo_411_modello_unico: codice_due
+  output_variables:
+    RP31_contributi_fondo_pensione_negoziale_dipendenti_pubblici_non_dedotti_dal_sostituto: 0

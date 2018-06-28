@@ -1,0 +1,9 @@
+- name: Test per vedere se funziona il calcolo di RP60
+  period: 2017
+  input_variables:
+    RP57_col3_importo_rata_spesa_arredo_immobili_ristrutturati: 1500
+    RP57_col6_importo_rata_spesa_arredo_immobili_ristrutturati: 1500
+    RP58_importo_rata_spesa_arredo_immobili_giovani_coppie: 1500
+    RP59_importo_rata_iva_per_acquisto_abitazione_classe_energetica: 1500
+  output_variables:
+    RP60_totale_rate_spesa_arredo_immobili_ristrutturati_gc_iva_acquisto_abitazione: 6000

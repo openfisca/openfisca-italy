@@ -1,0 +1,58 @@
+- name: Test per residuo detrazione d'imposta rigo RN 20 col 2/RN 47 col.2 con residuo detrazione del 2016 minore di capienza
+  period: 2017
+  input_variables:
+    RN5_irpef_lorda: 5000
+    RN6_detrazioni_per_carichi_famigliari: 500
+    RN12_detrazione_fruita_da_detrazioni_locazione_affitto: 150
+    RN13_detrazioni_per_oneri_detraibili_19_annuali: 150
+    RN13_detrazioni_per_oneri_detraibili_26_annuali: 150
+    RN14_detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_annue: 150
+    RN15_detrazioni_per_spese_arredo_immobili_giovani_coppie_iva_acquisto_abitazione_annue: 150
+    RN16_detrazioni_per_spese_per_interventi_finalizzati_al_risparmio_energetico_annue: 150
+    RN17_totale_detrazione_oneri_Sez_VI_quadro_RP: 150
+    RN18_detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2014: 100
+    RN19_detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2015: 100
+    RN20_residuo_detrazione_startup_2016: 200
+  output_variables:
+    RN20_detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2016: 200
+    residui_detrazioni_start_up_2017_RN20: 0
+
+
+- name: Test per residuo detrazione d imposta rigo RN 20 col 2/RN 47 col.2 con residuo detrazione del 2016 maggiore di capienza
+  period: 2017
+  input_variables:
+    RN5_irpef_lorda: 5200
+    RN6_detrazioni_per_carichi_famigliari: 500
+    RN12_detrazione_fruita_da_detrazioni_locazione_affitto: 300
+    RN13_detrazioni_per_oneri_detraibili_19_annuali: 1500
+    RN13_detrazioni_per_oneri_detraibili_26_annuali: 1500
+    RN14_detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_annue: 300
+    RN15_detrazioni_per_spese_arredo_immobili_giovani_coppie_iva_acquisto_abitazione_annue: 300
+    RN16_detrazioni_per_spese_per_interventi_finalizzati_al_risparmio_energetico_annue: 250
+    RN17_totale_detrazione_oneri_Sez_VI_quadro_RP: 250
+    RN18_detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2014: 100
+    RN19_detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2015: 100
+    RN20_residuo_detrazione_startup_2016: 200
+  output_variables:
+    RN20_detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2016: 100
+    residui_detrazioni_start_up_2017_RN20: 100
+
+
+- name: Test per residuo detrazione d imposta rigo  RN 20 col 2/RN 47 col.2 con capienza minore di 0
+  period: 2017
+  input_variables:
+    RN5_irpef_lorda: 5000
+    RN6_detrazioni_per_carichi_famigliari: 1500
+    RN12_detrazione_fruita_da_detrazioni_locazione_affitto: 1500
+    RN13_detrazioni_per_oneri_detraibili_19_annuali: 1500
+    RN13_detrazioni_per_oneri_detraibili_26_annuali: 150
+    RN14_detrazioni_per_interventi_recupero_patrimonio_edilizione_misure_antisismiche_annue: 150
+    RN15_detrazioni_per_spese_arredo_immobili_giovani_coppie_iva_acquisto_abitazione_annue: 150
+    RN16_detrazioni_per_spese_per_interventi_finalizzati_al_risparmio_energetico_annue: 150
+    RN17_totale_detrazione_oneri_Sez_VI_quadro_RP: 150
+    RN18_detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2014: 100
+    RN19_detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2015: 100
+    RN20_residuo_detrazione_startup_2016: 200
+  output_variables:
+    RN20_detrazione_utilizzata_relativa_a_residuo_detrazione_startup_2016: 0
+    residui_detrazioni_start_up_2017_RN20: 200

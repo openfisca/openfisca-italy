@@ -1,0 +1,19 @@
+- name: Test 1 compilazione e calcolo RN 17
+  period: 2017
+  input_variables:
+    RN5_irpef_lorda: 10000
+    RP83_altre_detrazioni: 5000
+    RP82_sostenute_spese_mantenimento_cane_guida: True
+    RP83_tipo_altre_detrazioni: codice_due
+  output_variables:
+    RN17_totale_detrazione_oneri_Sez_VI_quadro_RP: 3516.46
+
+- name: Test 1 compilazione e calcolo RN 17
+  period: 2017
+  input_variables:
+    RN5_irpef_lorda: 10000
+    RP83_altre_detrazioni: 5000
+    RP82_sostenute_spese_mantenimento_cane_guida: True
+    RP83_tipo_altre_detrazioni: codice_uno
+  output_variables:
+    RN17_totale_detrazione_oneri_Sez_VI_quadro_RP: 5516.46

@@ -1,0 +1,40 @@
+- name: Test 1 Rigo RP61 con Tipo di intervento codice_uno
+  period: 2017
+  input_variables:
+    RP61_tipo_intervento: codice_uno
+    RP61_Range_Spesa_Date: codice_uno
+    RP61_spesa_totale: 200000
+    RP61_periodo_2008_rideterminazione_rate: 4
+    RP61_numero_rata: 5
+  output_variables:
+    RP61_limite_spesa_in_base_a_codice_da_1_a_4: 181818.18
+    RP61_importo_rata: 4545.45
+
+- name: Test 2 Rigo RP62 con Tipo di intervento codice_cinque
+  period: 2017
+  input_variables:
+    RP62_tipo_intervento: codice_cinque
+    RP62_Range_Spesa_Date: codice_tre
+  output_variables:
+    RP62_limite_spesa_in_base_a_codice_da_1_a_4: 0
+
+- name: Test 3 Rigo RP63 con Tipo di intervento codice_cinque
+  period: 2017
+  input_variables:
+    RP63_tipo_intervento: codice_cinque
+    RP63_Range_Spesa_Date: codice_tre
+  output_variables:
+    RP63_limite_spesa_in_base_a_codice_5_6: 92307.69
+
+- name: Test 4 Rigo RP64 con Tipo di intervento codice_quattro
+  period: 2017
+  input_variables:
+    RP64_tipo_intervento: codice_quattro
+    RP64_Range_Spesa_Date: codice_due
+    RP64_spesa_totale: 10000
+    RP64_periodo_2008_rideterminazione_rate: 0
+    RP64_numero_rata: 5
+  output_variables:
+    RP64_limite_spesa_in_base_a_codice_5_6: 0
+    RP64_limite_spesa_in_base_a_codice_da_1_a_4: 46153.84
+    RP64_importo_rata: 1000

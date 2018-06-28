@@ -1,0 +1,5 @@
+description: Detrazione forfetaria per spese mantenimento cane guida per non vedenti
+unit: currency
+values:
+  2010-01-01:
+    value: 516.46

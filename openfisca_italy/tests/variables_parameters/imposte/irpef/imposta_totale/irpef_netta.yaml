@@ -1,0 +1,19 @@
+- name: Test 1 calcolo irpef netta senza agevolazioni o aumenti di alcun tipo
+  period: 2017
+  input_variables:
+    RN4_reddito_imponibile: 100000
+    RN5_irpef_lorda: 38000
+    RN22_totale_detrazioni_imposta: 10000
+    RN25_totale_altre_detrazioni_crediti_imposta: 12000
+  output_variables:
+    RN26_irpef_netta: 16000
+
+- name: Test 2 calcolo irpef netta senza agevolazioni o aumenti di alcun tipo
+  period: 2017
+  input_variables:
+    RN4_reddito_imponibile: 20000 #lo indico diverso da 0 perchè sennò irpef netta porta 0
+    RN5_irpef_lorda: 3720
+    RN22_totale_detrazioni_imposta: 500
+    RN25_totale_altre_detrazioni_crediti_imposta: 500
+  output_variables:
+    RN26_irpef_netta: 2720

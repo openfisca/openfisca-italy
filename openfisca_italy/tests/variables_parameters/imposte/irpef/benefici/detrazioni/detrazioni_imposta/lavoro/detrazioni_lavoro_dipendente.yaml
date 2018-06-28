@@ -1,0 +1,149 @@
+- name: Detrazione per lavoro dipendente con solo lavoro dipendente sia determinato che indeterminato
+  period: 2017
+  input_variables:
+    percepito_reddito_comune_campione_italia: False
+    reddito_comune_campione_italia: 0
+    percepito_reddito_lavoro_frontaliere: False
+    reddito_lavoro_frontaliere: 0
+    percepito_reddito_lavori_socialmente_utili: False
+    reddito_lavori_socialmente_utili: 0
+    percepito_reddito_lavoro_dipendente_indeterminato: True
+    percepito_reddito_lavoro_dipendente_determinato: True
+    reddito_lavoro_dipendente_normale: 500
+  output_variables:
+    reddito_lavoro_dipendente_annuale: 500.00
+    detrazioni_per_lavoro_dipendente: 1380
+
+
+- name: Detrazione per lavoro dipendente con solo lavoro a Campion d'Italia sotto la soglia 
+  period: 2017
+  input_variables:
+    percepito_reddito_comune_campione_italia: True
+    reddito_comune_campione_italia: 5000
+    percepito_reddito_lavoro_frontaliere: False
+    reddito_lavoro_frontaliere: 0
+    percepito_reddito_lavori_socialmente_utili: False
+    reddito_lavori_socialmente_utili: 0
+    percepito_reddito_lavoro_dipendente_indeterminato: False
+    percepito_reddito_lavoro_dipendente_determinato: False
+    reddito_lavoro_dipendente_normale: 0
+  output_variables:
+    reddito_lavoro_dipendente_annuale: 5000.00
+    detrazioni_per_lavoro_dipendente: 0
+
+- name: Detrazione per lavoro dipendente con solo lavoro Frontaliero sotto la soglia 
+  period: 2017
+  input_variables:
+    percepito_reddito_comune_campione_italia: False
+    reddito_comune_campione_italia: 0
+    percepito_reddito_lavoro_frontaliere: True
+    reddito_lavoro_frontaliere: 5000
+    percepito_reddito_lavori_socialmente_utili: False
+    reddito_lavori_socialmente_utili: 0
+    percepito_reddito_lavoro_dipendente_indeterminato: False
+    percepito_reddito_lavoro_dipendente_determinato: False
+    reddito_lavoro_dipendente_normale: 0
+  output_variables:
+    reddito_lavoro_dipendente_annuale: 5000.00
+    detrazioni_per_lavoro_dipendente: 0    
+
+- name: Detrazione per lavoro dipendente con sia lavoro frontaliero che da campione d'italia sotto la soglia 
+  period: 2017
+  input_variables:
+    percepito_reddito_comune_campione_italia: True
+    reddito_comune_campione_italia: 4000
+    percepito_reddito_lavoro_frontaliere: True
+    reddito_lavoro_frontaliere: 5000
+    percepito_reddito_lavori_socialmente_utili: False
+    reddito_lavori_socialmente_utili: 0
+    percepito_reddito_lavoro_dipendente_indeterminato: False
+    percepito_reddito_lavoro_dipendente_determinato: False
+    reddito_lavoro_dipendente_normale: 0
+  output_variables:
+    reddito_lavoro_dipendente_annuale: 9000.00
+    detrazioni_per_lavoro_dipendente: 0 
+
+- name: Detrazione per lavoro dipendente in italia determinato e un po' in Campion d'Italia senza situazioni estreme ma con reddito inferiore a 8000 determinato
+  period: 2017
+  input_variables:
+    percepito_reddito_comune_campione_italia: True
+    reddito_comune_campione_italia: 1000
+    percepito_reddito_lavoro_frontaliere: True
+    reddito_lavoro_frontaliere: 0
+    percepito_reddito_lavori_socialmente_utili: False
+    reddito_lavori_socialmente_utili: 0
+    percepito_reddito_lavoro_dipendente_indeterminato: False
+    percepito_reddito_lavoro_dipendente_determinato: True
+    reddito_lavoro_dipendente_normale: 4000
+    numero_giorni_lavoro_dipendente: 100
+  output_variables:
+    reddito_lavoro_dipendente_annuale: 5000.00
+    detrazioni_per_lavoro_dipendente: 1380
+
+- name: Detrazione per lavoro dipendente in italia indeterminato e un po' in Campion d'Italia senza situazioni estreme ma con reddito inferiore a 8000 determinato
+  period: 2017
+  input_variables:
+    percepito_reddito_comune_campione_italia: True
+    reddito_comune_campione_italia: 1000
+    percepito_reddito_lavoro_frontaliere: True
+    reddito_lavoro_frontaliere: 0
+    percepito_reddito_lavori_socialmente_utili: False
+    reddito_lavori_socialmente_utili: 0
+    percepito_reddito_lavoro_dipendente_indeterminato: True
+    percepito_reddito_lavoro_dipendente_determinato: False
+    reddito_lavoro_dipendente_normale: 4000
+    numero_giorni_lavoro_dipendente: 100
+  output_variables:
+    reddito_lavoro_dipendente_annuale: 5000.00
+    detrazioni_per_lavoro_dipendente: 690
+
+- name: Detrazione per lavoro dipendente in italia indeterminato e un po' in Campion d'Italia con reddito tra 8000 e 28000 con tipo lavoro dipendente casuale (tanto non conta per questa fascia di reddito)
+  period: 2017
+  input_variables:
+    percepito_reddito_comune_campione_italia: True
+    reddito_comune_campione_italia: 1000
+    percepito_reddito_lavoro_frontaliere: True
+    reddito_lavoro_frontaliere: 0
+    percepito_reddito_lavori_socialmente_utili: False
+    reddito_lavori_socialmente_utili: 0
+    percepito_reddito_lavoro_dipendente_indeterminato: True
+    percepito_reddito_lavoro_dipendente_determinato: True
+    reddito_lavoro_dipendente_normale: 10000
+    numero_giorni_lavoro_dipendente: 100
+  output_variables:
+    reddito_lavoro_dipendente_annuale: 11000.00
+    detrazioni_per_lavoro_dipendente: 478
+
+- name: Detrazione per lavoro dipendente in italia indeterminato e un po' in Campion d'Italia con reddito tra 8000 e 28000 con tipo lavoro dipendente casuale (tanto non conta per questa fascia di reddito)
+  period: 2017
+  input_variables:
+    percepito_reddito_comune_campione_italia: True
+    reddito_comune_campione_italia: 1000
+    percepito_reddito_lavoro_frontaliere: True
+    reddito_lavoro_frontaliere: 0
+    percepito_reddito_lavori_socialmente_utili: False
+    reddito_lavori_socialmente_utili: 0
+    percepito_reddito_lavoro_dipendente_indeterminato: True
+    percepito_reddito_lavoro_dipendente_determinato: True
+    reddito_lavoro_dipendente_normale: 10000
+    numero_giorni_lavoro_dipendente: 100
+  output_variables:
+    reddito_lavoro_dipendente_annuale: 11000.00
+    detrazioni_per_lavoro_dipendente: 478
+
+- name: Detrazione per lavoro dipendente in italia indeterminato e un po' in Campion d'Italia con reddito tra 28000 e 55000 con tipo lavoro dipendente casuale (tanto non conta per questa fascia di reddito)
+  period: 2017
+  input_variables:
+    percepito_reddito_comune_campione_italia: True
+    reddito_comune_campione_italia: 1500
+    percepito_reddito_lavoro_frontaliere: True
+    reddito_lavoro_frontaliere: 0
+    percepito_reddito_lavori_socialmente_utili: False
+    reddito_lavori_socialmente_utili: 0
+    percepito_reddito_lavoro_dipendente_indeterminato: True
+    percepito_reddito_lavoro_dipendente_determinato: True
+    reddito_lavoro_dipendente_normale: 40000
+    numero_giorni_lavoro_dipendente: 100
+  output_variables:
+    reddito_lavoro_dipendente_annuale: 41500.00
+    detrazioni_per_lavoro_dipendente: 133.97

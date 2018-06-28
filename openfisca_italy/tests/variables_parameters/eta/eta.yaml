@@ -1,0 +1,12 @@
+
+# Test files describe situations and their expected outcomes
+# We can run this test on our command line using `openfisca-run-test eta.yaml`
+
+- name: Persona nata il 15 gennaio del 1980
+  period: 2015-01
+  input_variables:
+    data_di_nascita: 1970-01-15
+  output_variables:
+    age:
+      2014-12: 44 
+      2015-01: 45

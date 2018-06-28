@@ -1,0 +1,5 @@
+description: Soglia per il quale la detrazione di pensione non è prevista per soli redditi a favore dei superstiti corrisposte agli orfani
+reference: http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES
+values:
+  2010-01-01:
+    value: 1000.00

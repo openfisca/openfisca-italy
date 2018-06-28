@@ -1,0 +1,5 @@
+description: Importo massimo spesa per acquisto costruzione immobile dato in locazione Rigo RP32 col.2
+unit: currency
+values:
+  2010-01-01:
+    value: 300000.00

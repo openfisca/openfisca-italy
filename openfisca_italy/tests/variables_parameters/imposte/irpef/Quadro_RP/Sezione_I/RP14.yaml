@@ -1,0 +1,19 @@
+- name: Test 1 per vedere se funziona meccanismo calcolo età e importo massimo indicabile colonna 3
+  period: 2017
+  input_variables:
+    RP14_data_stipula_leasing_relativa_a_spese_per_canoni_di_leasing: 1985-01-01
+    data_di_nascita: 1960-01-01
+  output_variables:
+    RP14_eta_persona_stipula_del_contratto_leasing: 25
+    RP14_limite_importo_canone_leasing: 8000
+    RP14_limite_importo_prezzo_riscatto: 20000
+
+- name: Test 2 per vedere se funziona meccanismo calcolo età e importo massimo indicabile colonna 3
+  period: 2017
+  input_variables:
+    RP14_data_stipula_leasing_relativa_a_spese_per_canoni_di_leasing: 2005-01-01
+    data_di_nascita: 1960-01-01
+  output_variables:
+    RP14_eta_persona_stipula_del_contratto_leasing: 45
+    RP14_limite_importo_canone_leasing: 4000
+    RP14_limite_importo_prezzo_riscatto: 10000

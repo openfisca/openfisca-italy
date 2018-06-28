@@ -1,0 +1,34 @@
+# IRPEF aliquotes
+description: Aliquote dell'imposta sul reddito delle persone fisiche
+reference: http://def.finanze.it/DocTribFrontend/getArticoloDetailFromResultList.do?id={1895247D-EBFC-408E-BE3D-509BC4409B61}&codiceOrdinamento=200001100000000&idAttoNormativo={31D694E8-4398-4030-873B-FEAF5A6647F9}
+brackets:
+- rate:
+    2007-01-01:
+      value: 0.23
+  threshold:
+    2007-01-01:
+      value: 0.0
+- rate:
+    2007-01-01:
+      value: 0.27
+  threshold:
+    2007-01-01:
+      value: 15000
+- rate:
+    2007-01-01:
+      value: 0.38
+  threshold:
+    2007-01-01:
+      value: 28000
+- rate:
+    2007-01-01:
+      value: 0.41
+  threshold:
+    2007-01-01:
+      value: 55000
+- rate:
+    2007-01-01:
+      value: 0.43
+  threshold:
+    2007-01-01:
+      value: 75000

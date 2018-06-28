@@ -1,0 +1,48 @@
+- name: Test 1  per vedere se funziona la compilazione del rigo LC1
+  period: 2017
+  input_variables:
+    LC1_imposta_cedolare_secca: 150
+    LC1_imposta_su_redditi_diversi: 150
+    LC1_ritenute_CU_locazioni_brevi: 400
+    LC1_eccedenza_dichiarata_precedentemente: 200
+    LC1_eccedenza_compensata_modello_F24: 230
+    input_acconti_versati: 150
+    LC1_acconti_sospesi: 80
+  output_variables:
+    LC1_totale_imposta_complessiva: 300
+    LC1_differenza: -100
+    RN33_importo_negativo_LC1_col_5: 100
+    LC1_acconti_versati: 230
+
+- name: Test 2 per vedere se funziona la compilazione del rigo LC1 col.13-14
+  period: 2017
+  input_variables:
+    LC1_differenza: 200
+    LC1_eccedenza_dichiarata_precedentemente: 150
+    LC1_eccedenza_compensata_modello_F24: 400
+    LC1_acconti_versati: 200
+    LC1_cedolare_secca_trattenuta_dal_sostituto: 230
+    LC1_cedolare_Secca_rimbosata_dal_sostituto_o_REDDITI_2018: 150
+    LC1_credito_compensato_modello_F24: 80
+  output_variables:
+    LC1_imposta_a_debito: 250
+    LC1_imposta_a_credito: 0
+    RX4_imposta_a_debito_risultante_dalla_dichiarazione_IRPEF: 250
+    RX4_imposta_a_credito_risultante_dalla_dichiarazione_IRPEF: 0
+
+
+- name: Test 3 per vedere se funziona la compilazione del rigo LC1 col.13-14
+  period: 2017
+  input_variables:
+    LC1_differenza: -80
+    LC1_eccedenza_dichiarata_precedentemente: 150
+    LC1_eccedenza_compensata_modello_F24: 200
+    LC1_acconti_versati: 200
+    LC1_cedolare_secca_trattenuta_dal_sostituto: 230
+    LC1_cedolare_Secca_rimbosata_dal_sostituto_o_REDDITI_2018: 150
+    LC1_credito_compensato_modello_F24: 80
+  output_variables:
+    LC1_imposta_a_debito: 0
+    LC1_imposta_a_credito: 150
+    RX4_imposta_a_debito_risultante_dalla_dichiarazione_IRPEF: 0
+    RX4_imposta_a_credito_risultante_dalla_dichiarazione_IRPEF: 150

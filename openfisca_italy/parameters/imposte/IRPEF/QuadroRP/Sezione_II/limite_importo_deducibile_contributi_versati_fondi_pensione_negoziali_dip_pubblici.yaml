@@ -1,0 +1,5 @@
+description: Importo massimo deducibile per Rigo RP31 Contributi versati per fondi pensione negoziali da dipendenti pubblici
+unit: currency
+values:
+  2010-01-01:
+    value: 5164.57
