@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dacf609-effc-4223-add6-35c5f805aa2f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openfisca_italy/reforms/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/RN5/aliquota_irpef_minore_redditi_minori_15000.py" beforeDir="false" afterPath="$PROJECT_DIR$/openfisca_italy/reforms/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/RN5/al_IRP_red_inf_15000.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openfisca_italy/reforms/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/RN5/aliquota_irpef_minore_redditi_minori_55000.py" beforeDir="false" afterPath="$PROJECT_DIR$/openfisca_italy/reforms/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/RN5/al_IRP_red_inf_55000.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openfisca_italy/reforms/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/RN5/innalzamento_soglia_Irpef_al_27.py" beforeDir="false" afterPath="$PROJECT_DIR$/openfisca_italy/reforms/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/RN5/aumen_soglia_Irpef_del_27.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openfisca_italy/reforms/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/RN6/riforma_detrazioni_per_figli_a_carico.py" beforeDir="false" afterPath="$PROJECT_DIR$/openfisca_italy/reforms/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/RN6/rif_detr_figli_carico.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openfisca_italy/reforms/contributo_piatto_sicurezza_sociale.py" beforeDir="false" afterPath="$PROJECT_DIR$/openfisca_italy/reforms/contrib_sic_soc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openfisca_italy/reforms/modifica_tassazione_sicurezza_sociale.py" beforeDir="false" afterPath="$PROJECT_DIR$/openfisca_italy/reforms/mod_tas_sic_soc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openfisca_italy/reforms/rimozione_reddito_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/openfisca_italy/reforms/rim_red_base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openfisca_italy/tests/reform_impact/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/RN5/aliquota_irpef_minore_redditi_minori_15000.py" beforeDir="false" afterPath="$PROJECT_DIR$/openfisca_italy/tests/reform_impact/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/RN5/aliquota_irpef_minore_redditi_minori_15000.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openfisca_italy/tests/reform_impact/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/RN5/aliquota_irpef_minore_redditi_minori_55000.py" beforeDir="false" afterPath="$PROJECT_DIR$/openfisca_italy/tests/reform_impact/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/RN5/aliquota_irpef_minore_redditi_minori_55000.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openfisca_italy/tests/reform_impact/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/RN5/innalzamento_soglia_Irpef_al_27.py" beforeDir="false" afterPath="$PROJECT_DIR$/openfisca_italy/tests/reform_impact/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/RN5/innalzamento_soglia_Irpef_al_27.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openfisca_italy/tests/reform_impact/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/RN6/impatto_riforma_detr_coniuge_familiare.py" beforeDir="false" afterPath="$PROJECT_DIR$/openfisca_italy/tests/reform_impact/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/RN6/impatto_riforma_detr_coniuge_familiare.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openfisca_italy/tests/reform_impact/IRPEF/full_irpef.py" beforeDir="false" afterPath="$PROJECT_DIR$/openfisca_italy/tests/reform_impact/IRPEF/full_irpef.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openfisca_italy/tests/reform_impact/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/RN5/aliquota_irpef_minore_redditi_minori_15000.py" beforeDir="false" afterPath="$PROJECT_DIR$/openfisca_italy/tests/reform_impact/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/RN5/ali_IRP_min_red_min_15000.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openfisca_italy/tests/reform_impact/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/RN5/aliquota_irpef_minore_redditi_minori_55000.py" beforeDir="false" afterPath="$PROJECT_DIR$/openfisca_italy/tests/reform_impact/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/RN5/ali_IRP_min_red_min_55000.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openfisca_italy/tests/reform_impact/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/RN5/innalzamento_soglia_Irpef_al_27.py" beforeDir="false" afterPath="$PROJECT_DIR$/openfisca_italy/tests/reform_impact/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/RN5/aum_soglia_IRP_al_27.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openfisca_italy/tests/reform_impact/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/RN6/impatto_riforma_detr_coniuge_familiare.py" beforeDir="false" afterPath="$PROJECT_DIR$/openfisca_italy/tests/reform_impact/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/RN6/rif_detr_con_fam.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,12 +15,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="indennita_alloggio.yaml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/openfisca_italy/parameters/benefici/indennita_alloggio.yaml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -71,6 +62,19 @@
               <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
               <item name="parameters" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="openfisca-italy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openfisca-italy" type="462c0819:PsiDirectoryNode" />
+              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openfisca-italy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openfisca-italy" type="462c0819:PsiDirectoryNode" />
+              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="reform_impact" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -111,21 +115,21 @@
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.50292826" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -136,6 +140,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openfisca_italy/parameters/benefici/indennita_alloggio.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
