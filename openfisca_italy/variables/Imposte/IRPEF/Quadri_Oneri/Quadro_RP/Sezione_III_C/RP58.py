@@ -23,7 +23,7 @@ class RP58_importo_rata_spesa_arredo_immobili_giovani_coppie(Variable):
     reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=75"  # Always use the most official source
 
     def formula(person,period,parameters):
-        vero_valore_RP58_col_2 = where(person('RP58_spesa_arredo_immobili_giovani_coppie',period)<parameters(period).imposte.IRPEF.QuadroRP.Sezione_III_C.RP58_limite_spesa_arredo_immobile, person('RP58_spesa_arredo_immobili_giovani_coppie',period) ,parameters(period).imposte.IRPEF.QuadroRP.Sezione_III_C.RP58_limite_spesa_arredo_immobile)
+        vero_valore_RP58_col_2 = where(person('RP58_spesa_arredo_immobili_giovani_coppie',period)<parameters(period).imposte.IRPEF.QuadroRP.Sezione_III_C.RP58_lim_spesa_arr_imm, person('RP58_spesa_arredo_immobili_giovani_coppie',period) ,parameters(period).imposte.IRPEF.QuadroRP.Sezione_III_C.RP58_lim_spesa_arr_imm)
         return vero_valore_RP58_col_2 / 10.0
 
 class RP58_meno_di_35_anni(Variable):
