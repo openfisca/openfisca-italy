@@ -1,5 +1,5 @@
 # importo reform
-from openfisca_italy.reforms.IRPEF.Quadro_Determinazione_Imposta.Quadro_RN.RN5.innalzamento_soglia_Irpef_al_27 import *
+from openfisca_italy.reforms.IRPEF.Quadro_Determinazione_Imposta.Quadro_RN.RN5.aumen_soglia_Irpef_del_27 import *
 from openfisca_italy import ItalyTaxBenefitSystem # import tax benefit system
 from openfisca_italy.scenarios import Scenario # import scenario
 

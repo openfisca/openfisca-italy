@@ -1,5 +1,5 @@
 # importo reform
-from openfisca_italy.reforms.IRPEF.Quadro_Determinazione_Imposta.Quadro_RN.RN6.riforma_detrazioni_per_figli_a_carico import *
+from openfisca_italy.reforms.IRPEF.Quadro_Determinazione_Imposta.Quadro_RN.RN6.rif_detr_figli_carico import *
 from openfisca_italy import ItalyTaxBenefitSystem # import tax benefit system
 from openfisca_italy.scenarios import Scenario # import scenario
 

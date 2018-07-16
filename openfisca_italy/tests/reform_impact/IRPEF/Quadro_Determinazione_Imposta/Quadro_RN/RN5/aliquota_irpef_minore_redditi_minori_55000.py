@@ -1,5 +1,5 @@
 # importo reform
-from openfisca_italy.reforms.IRPEF.Quadro_Determinazione_Imposta.Quadro_RN.RN5.aliquota_irpef_minore_redditi_minori_55000 import *
+from openfisca_italy.reforms.IRPEF.Quadro_Determinazione_Imposta.Quadro_RN.RN5.al_IRP_red_inf_55000 import *
 from openfisca_italy import ItalyTaxBenefitSystem # import tax benefit system
 from openfisca_italy.scenarios import Scenario # import scenario
 
