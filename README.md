@@ -26,6 +26,7 @@ L'obiettivo dal quale si vuole partire è quello di definire un sistema per gest
 * [Pip](https://pip.pypa.io/en/stable/installing/)
 * [Numpy](https://pypi.python.org/pypi/numpy)
 * [Pew](https://pypi.python.org/pypi/pew/)
+* [PyYaml] (https://pyyaml.org/wiki/PyYAML)
 ## Installazione
 Per ora non esiste ancora una versione stabile di OpenFisca-Italy.
 ## Iniziare a contribuire
