@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6879a1ce-b98c-4e92-85ad-467707db0e47" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="detrazioni_figli_a_carico.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/variables/Imposte/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/Variabili_Calcolo_RN6/detrazioni_figli_a_carico.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>limite_acconto_unico</find>
+      <find>limite_LC1_Col_5_per_acconto_LC2</find>
+      <find>percentuale_acconto_dovuto_LC2</find>
+      <find>.percentuale_acconto_dovuto_LC2</find>
+      <find>percentuale_acconto_dov</find>
+      <find>perc_acc</find>
+      <find>percentuale</find>
+      <find>detrazione_figli_eta_maggiore_tre</find>
+      <find>detrazione_figli_eta_minore_tre</find>
+      <find>detrazione_figli_handicap</find>
+      <find>ulteriore_detrazione_figli_a_carico</find>
+      <find>detrazione_familiare_a_carico</find>
+      <find>limite_massimo_detrazione_coniuge_a_carico</find>
+      <find>soglia_familiare_a_carico</find>
+      <find>soglia_per_detrazioni_lavoro_dip_campione_italia</find>
+      <find>soglia_per_detrazione_esente_a_favore_superstiti_corrisposte_agli_orfani</find>
+      <find>soglia_per_detrazione_esente_residenti_campioni_italia</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/variables/Imposte/IRPEF/Quadri_Oneri/Quadro_LC/LC2.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="47" />
+    <option name="width" value="1191" />
+    <option name="height" value="669" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="openfisca_italy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openfisca_italy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
+              <item name="parameters" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openfisca_italy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
+              <item name="parameters" type="462c0819:PsiDirectoryNode" />
+              <item name="imposte" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openfisca_italy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
+              <item name="parameters" type="462c0819:PsiDirectoryNode" />
+              <item name="imposte" type="462c0819:PsiDirectoryNode" />
+              <item name="IRPEF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openfisca_italy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
+              <item name="parameters" type="462c0819:PsiDirectoryNode" />
+              <item name="imposte" type="462c0819:PsiDirectoryNode" />
+              <item name="IRPEF" type="462c0819:PsiDirectoryNode" />
+              <item name="QuadroRN" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openfisca_italy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
+              <item name="variables" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openfisca_italy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
+              <item name="variables" type="462c0819:PsiDirectoryNode" />
+              <item name="Imposte" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openfisca_italy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
+              <item name="variables" type="462c0819:PsiDirectoryNode" />
+              <item name="Imposte" type="462c0819:PsiDirectoryNode" />
+              <item name="IRPEF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openfisca_italy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
+              <item name="variables" type="462c0819:PsiDirectoryNode" />
+              <item name="Imposte" type="462c0819:PsiDirectoryNode" />
+              <item name="IRPEF" type="462c0819:PsiDirectoryNode" />
+              <item name="Quadri_Oneri" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openfisca_italy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
+              <item name="variables" type="462c0819:PsiDirectoryNode" />
+              <item name="Imposte" type="462c0819:PsiDirectoryNode" />
+              <item name="IRPEF" type="462c0819:PsiDirectoryNode" />
+              <item name="Quadri_Oneri" type="462c0819:PsiDirectoryNode" />
+              <item name="Quadro_LC" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openfisca_italy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
+              <item name="variables" type="462c0819:PsiDirectoryNode" />
+              <item name="Imposte" type="462c0819:PsiDirectoryNode" />
+              <item name="IRPEF" type="462c0819:PsiDirectoryNode" />
+              <item name="Quadro_Determinazione_Imposta" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openfisca_italy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
+              <item name="variables" type="462c0819:PsiDirectoryNode" />
+              <item name="Imposte" type="462c0819:PsiDirectoryNode" />
+              <item name="IRPEF" type="462c0819:PsiDirectoryNode" />
+              <item name="Quadro_Determinazione_Imposta" type="462c0819:PsiDirectoryNode" />
+              <item name="Quadro_RN" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openfisca_italy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
+              <item name="variables" type="462c0819:PsiDirectoryNode" />
+              <item name="Imposte" type="462c0819:PsiDirectoryNode" />
+              <item name="IRPEF" type="462c0819:PsiDirectoryNode" />
+              <item name="Quadro_Frontespizio" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6879a1ce-b98c-4e92-85ad-467707db0e47" name="Default" comment="" />
+      <created>1531745834297</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1531745834297</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1366" height="720" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.44143486" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/parameters/imposte/IRPEF/Quadro_LC/lim_LC1_Col_5_LC2.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/variables/Imposte/IRPEF/Quadri_Oneri/Quadro_LC/LC2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/variables/Imposte/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/Variabili_Calcolo_RN6/detrazioni_figli_a_carico.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

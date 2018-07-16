@@ -16,11 +16,11 @@ class LC2_primo_acconto(Variable):
 
     def formula(person,period,parameters):
         LC1_col_5 = person('LC1_differenza',period)
-        caso_acconto_non_dovuto = LC1_col_5 <= parameters(period).imposte.IRPEF.Quadro_LC.limite_LC1_Col_5_per_acconto_LC2
-        caso_acconto_dovuto = LC1_col_5 > parameters(period).imposte.IRPEF.Quadro_LC.limite_LC1_Col_5_per_acconto_LC2
-        acconto_dovuto = round_((LC1_col_5 * parameters(period).imposte.IRPEF.Quadro_LC.percentuale_acconto_dovuto_LC2),2)
-        caso_unica_soluzione = acconto_dovuto < parameters(period).imposte.IRPEF.Quadro_LC.limite_acconto_unico_LC2
-        caso_soluzione_due_rate = acconto_dovuto > parameters(period).imposte.IRPEF.Quadro_LC.limite_acconto_unico_LC2
+        caso_acconto_non_dovuto = LC1_col_5 <= parameters(period).imposte.IRPEF.Quadro_LC.lim_LC1_Col_5_LC2
+        caso_acconto_dovuto = LC1_col_5 > parameters(period).imposte.IRPEF.Quadro_LC.lim_LC1_Col_5_LC2
+        acconto_dovuto = round_((LC1_col_5 * parameters(period).imposte.IRPEF.Quadro_LC.perc_acc_dov_LC2),2)
+        caso_unica_soluzione = acconto_dovuto < parameters(period).imposte.IRPEF.Quadro_LC.lim_acc_uni_LC2
+        caso_soluzione_due_rate = acconto_dovuto > parameters(period).imposte.IRPEF.Quadro_LC.lim_acc_uni_LC2
         prima_rata = round((acconto_dovuto * 0.4),2)
         return select([caso_acconto_non_dovuto,
                 (caso_acconto_dovuto *caso_unica_soluzione),
@@ -38,11 +38,11 @@ class LC2_secondo_o_unico_acconto(Variable):
 
     def formula(person,period,parameters):
         LC1_col_5 = person('LC1_differenza',period)
-        caso_acconto_non_dovuto = LC1_col_5 <= parameters(period).imposte.IRPEF.Quadro_LC.limite_LC1_Col_5_per_acconto_LC2
-        caso_acconto_dovuto = LC1_col_5 > parameters(period).imposte.IRPEF.Quadro_LC.limite_LC1_Col_5_per_acconto_LC2
-        acconto_dovuto = round_((LC1_col_5 * parameters(period).imposte.IRPEF.Quadro_LC.percentuale_acconto_dovuto_LC2),2)
-        caso_unica_soluzione = acconto_dovuto < parameters(period).imposte.IRPEF.Quadro_LC.limite_acconto_unico_LC2
-        caso_soluzione_due_rate = acconto_dovuto > parameters(period).imposte.IRPEF.Quadro_LC.limite_acconto_unico_LC2
+        caso_acconto_non_dovuto = LC1_col_5 <= parameters(period).imposte.IRPEF.Quadro_LC.lim_LC1_Col_5_LC2
+        caso_acconto_dovuto = LC1_col_5 > parameters(period).imposte.IRPEF.Quadro_LC.lim_LC1_Col_5_LC2
+        acconto_dovuto = round_((LC1_col_5 * parameters(period).imposte.IRPEF.Quadro_LC.perc_acc_dov_LC2),2)
+        caso_unica_soluzione = acconto_dovuto < parameters(period).imposte.IRPEF.Quadro_LC.lim_acc_uni_LC2
+        caso_soluzione_due_rate = acconto_dovuto > parameters(period).imposte.IRPEF.Quadro_LC.lim_acc_uni_LC2
         seconda_rata = round_((acconto_dovuto * 0.6),2)
         return select([caso_acconto_non_dovuto,
                 (caso_acconto_dovuto *caso_unica_soluzione),

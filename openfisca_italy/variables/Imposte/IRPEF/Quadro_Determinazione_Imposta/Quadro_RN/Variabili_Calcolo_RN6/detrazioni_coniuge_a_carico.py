@@ -106,7 +106,7 @@ class la_persona_non_ha_un_coniuge_a_carico(Variable):
 
     def formula(person,period,parameters):
         reddito_coniuge_per_calcolo_detrazioni_coniuge_a_carico = person('reddito_coniuge_per_calcolo_detrazioni_coniuge_a_carico',period)
-        il_coniuge_ha_reddito_maggiore_di_soglia = reddito_coniuge_per_calcolo_detrazioni_coniuge_a_carico >= parameters(period).imposte.IRPEF.QuadroRN.detrazioni_carichi_famigliari.soglia_familiare_a_carico
+        il_coniuge_ha_reddito_maggiore_di_soglia = reddito_coniuge_per_calcolo_detrazioni_coniuge_a_carico >= parameters(period).imposte.IRPEF.QuadroRN.detrazioni_carichi_famigliari.soglia_fam_a_car
         return il_coniuge_ha_reddito_maggiore_di_soglia
 
 

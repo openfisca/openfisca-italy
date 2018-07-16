@@ -25,9 +25,9 @@ class detrazioni_per_lavoro_dipendente(Variable):
         reddito_lavoro_dipendente_annuale = person('reddito_lavoro_dipendente_annuale',period)
         # reddito per detrazioni
         reddito_per_detrazioni = person('reddito_per_detrazioni',period)
-        return select([solo_reddito_frontalieri==True * reddito_lavoro_dipendente_annuale <= parameter(period).imposte.IRPEF.QuadroRN.detrazioni_lavoro_dipendente.soglia_per_detrazioni_lavoro_dip_frontaliero,
-         solo_reddito_comune_campione_italia==True * reddito_lavoro_dipendente_annuale <= parameter(period).imposte.IRPEF.QuadroRN.detrazioni_lavoro_dipendente.soglia_per_detrazioni_lavoro_dip_campione_italia,
-         solo_reddito_comune_campione_italia_e_frontalieri * not_(reddito_lavoro_dipendente_annuale <= parameter(period).imposte.IRPEF.QuadroRN.detrazioni_lavoro_dipendente.soglia_per_detrazioni_lavoro_dip_campione_italia) * not_(reddito_lavoro_dipendente_annuale<=parameter(period).imposte.IRPEF.QuadroRN.detrazioni_lavoro_dipendente.soglia_per_detrazioni_lavoro_dip_frontaliero),
+        return select([solo_reddito_frontalieri==True * reddito_lavoro_dipendente_annuale <= parameter(period).imposte.IRPEF.QuadroRN.detrazioni_lavoro_dipendente.soglia_detr_lav_dip_front,
+         solo_reddito_comune_campione_italia==True * reddito_lavoro_dipendente_annuale <= parameter(period).imposte.IRPEF.QuadroRN.detrazioni_lavoro_dipendente.soglia_detr_lav_dip_camp_it,
+         solo_reddito_comune_campione_italia_e_frontalieri * not_(reddito_lavoro_dipendente_annuale <= parameter(period).imposte.IRPEF.QuadroRN.detrazioni_lavoro_dipendente.soglia_detr_lav_dip_camp_it) * not_(reddito_lavoro_dipendente_annuale<=parameter(period).imposte.IRPEF.QuadroRN.detrazioni_lavoro_dipendente.soglia_detr_lav_dip_front),
          reddito_per_detrazioni<=8000,
          reddito_per_detrazioni<=28000,
          reddito_per_detrazioni<=55000,
