@@ -11,11 +11,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="LC2.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/variables/Imposte/IRPEF/Quadri_Oneri/Quadro_LC/LC2.py">
+      <file leaf-file-name="detrazioni_figli_a_carico.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/variables/Imposte/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/Variabili_Calcolo_RN6/detrazioni_figli_a_carico.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="46" column="47" lean-forward="true" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
+            <state relative-caret-position="270">
+              <caret line="38" column="46" lean-forward="true" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -29,6 +29,12 @@
       <find>percentuale_acconto_dovuto_LC2</find>
       <find>.percentuale_acconto_dovuto_LC2</find>
       <find>percentuale_acconto_dov</find>
+      <find>perc_acc</find>
+      <find>percentuale</find>
+      <find>detrazione_figli_eta_maggiore_tre</find>
+      <find>detrazione_figli_eta_minore_tre</find>
+      <find>detrazione_figli_handicap</find>
+      <find>ulteriore_detrazione_figli_a_carico</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -79,7 +85,26 @@
               <item name="parameters" type="462c0819:PsiDirectoryNode" />
               <item name="imposte" type="462c0819:PsiDirectoryNode" />
               <item name="IRPEF" type="462c0819:PsiDirectoryNode" />
-              <item name="Quadro_LC" type="462c0819:PsiDirectoryNode" />
+              <item name="QuadroRN" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openfisca_italy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
+              <item name="parameters" type="462c0819:PsiDirectoryNode" />
+              <item name="imposte" type="462c0819:PsiDirectoryNode" />
+              <item name="IRPEF" type="462c0819:PsiDirectoryNode" />
+              <item name="QuadroRN" type="462c0819:PsiDirectoryNode" />
+              <item name="detrazioni_carichi_famigliari" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openfisca_italy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
+              <item name="parameters" type="462c0819:PsiDirectoryNode" />
+              <item name="imposte" type="462c0819:PsiDirectoryNode" />
+              <item name="IRPEF" type="462c0819:PsiDirectoryNode" />
+              <item name="QuadroRN" type="462c0819:PsiDirectoryNode" />
+              <item name="detrazioni_carichi_famigliari" type="462c0819:PsiDirectoryNode" />
+              <item name="detrazioni_tipi_figli" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="openfisca_italy" type="b2602c69:ProjectViewProjectNode" />
@@ -115,6 +140,31 @@
               <item name="IRPEF" type="462c0819:PsiDirectoryNode" />
               <item name="Quadri_Oneri" type="462c0819:PsiDirectoryNode" />
               <item name="Quadro_LC" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openfisca_italy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
+              <item name="variables" type="462c0819:PsiDirectoryNode" />
+              <item name="Imposte" type="462c0819:PsiDirectoryNode" />
+              <item name="IRPEF" type="462c0819:PsiDirectoryNode" />
+              <item name="Quadro_Determinazione_Imposta" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openfisca_italy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
+              <item name="variables" type="462c0819:PsiDirectoryNode" />
+              <item name="Imposte" type="462c0819:PsiDirectoryNode" />
+              <item name="IRPEF" type="462c0819:PsiDirectoryNode" />
+              <item name="Quadro_Determinazione_Imposta" type="462c0819:PsiDirectoryNode" />
+              <item name="Quadro_RN" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openfisca_italy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
+              <item name="variables" type="462c0819:PsiDirectoryNode" />
+              <item name="Imposte" type="462c0819:PsiDirectoryNode" />
+              <item name="IRPEF" type="462c0819:PsiDirectoryNode" />
+              <item name="Quadro_Frontespizio" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -153,9 +203,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="720" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32064423" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3579795" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -187,8 +236,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/variables/Imposte/IRPEF/Quadri_Oneri/Quadro_LC/LC2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="46" column="47" lean-forward="true" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
+        <state relative-caret-position="180">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/variables/Imposte/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/Variabili_Calcolo_RN6/detrazioni_figli_a_carico.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="38" column="46" lean-forward="true" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="46" />
         </state>
       </provider>
     </entry>
