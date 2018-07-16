@@ -43,7 +43,7 @@ class RP27_contributi_deducibilita_ordinaria_non_dedotti_dal_sostituto(Variable)
             almeno_un_campo_compilato = where(almeno_un_campo_compilato,almeno_un_campo_compilato,not_(person.get_holder(campo).get_array(period) is None))
         # restituire il minor importo tra
         oneri_di_previdenza_complementare_per_i_quali_si_chiede_la_deduzione = person('importo_punto_413_certificazione_unica',period) + person('somme_versate_forme_pensionistiche_per_calcolo_RigoRP27_col_2',period)
-        limite_deducibilita_per_RP27_contributi_deducibilita_ordinaria_dedotti_dal_sostituto = parameters(period).imposte.IRPEF.QuadroRP.Sezione_II.limite_importo_deducibile_contributi_deducibilita_ordinaria - person('RP27_contributi_deducibilita_ordinaria_dedotti_dal_sostituto',period)
+        limite_deducibilita_per_RP27_contributi_deducibilita_ordinaria_dedotti_dal_sostituto = parameters(period).imposte.IRPEF.QuadroRP.Sezione_II.lim_imp_deduc_contr_deduc_ord - person('RP27_contributi_deducibilita_ordinaria_dedotti_dal_sostituto',period)
         limite_deducibilita_per_RP27_contributi_deducibilita_ordinaria_dedotti_dal_sostituto = where(limite_deducibilita_per_RP27_contributi_deducibilita_ordinaria_dedotti_dal_sostituto>0,limite_deducibilita_per_RP27_contributi_deducibilita_ordinaria_dedotti_dal_sostituto,np.array(0))
         importo =  round_(min_(oneri_di_previdenza_complementare_per_i_quali_si_chiede_la_deduzione,limite_deducibilita_per_RP27_contributi_deducibilita_ordinaria_dedotti_dal_sostituto),2)
         codice_campo_411_valido = person('codice_inserito_campo_411_modello_unico',period) == TipiCodiciCampo411ModelloUnico.codice_uno

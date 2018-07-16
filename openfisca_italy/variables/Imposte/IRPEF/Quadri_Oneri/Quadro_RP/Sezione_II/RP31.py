@@ -160,7 +160,7 @@ class casella_9_prospetto_compilazione_Rigo_RP31(Variable):
         label = "Casella 9 prospetto compilazione rigo rp31"
         reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=120"  # Always use the most official source
         def formula(person,period,parameters):
-            return parameters(period).imposte.IRPEF.QuadroRP.Sezione_II.limite_importo_deducibile_contributi_versati_fondi_pensione_negoziali_dip_pubblici - person('casella_1_prospetto_compilazione_Rigo_RP31',period)
+            return parameters(period).imposte.IRPEF.QuadroRP.Sezione_II.lim_imp_deduc_contr_vers_fond_pens_negoz_dip_pub - person('casella_1_prospetto_compilazione_Rigo_RP31',period)
 
 
 class casella_10_prospetto_compilazione_Rigo_RP31(Variable):

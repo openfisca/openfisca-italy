@@ -23,7 +23,7 @@ class detrazioni_per_affitto_terreni_agricoli_ai_giovani(Variable):
     reference = "http://www.agenziaentrate.gov.it/wps/wcm/connect/fcae4d804bb1ef709472f5d94f8d55f4/Annuario_online_Parte_III.pdf?MOD=AJPERES"  # Always use the most official source
 
     def formula(person, period, parameters):
-        vero_valore_RP73 = where(person('RP73_spese_per_detrazione_affitto_terreni_agricoli_ai_giovani',period)< parameters(period).imposte.IRPEF.QuadroRP.Sezione_V.limite_massimo_canone_annuo_RP73, person('RP73_spese_per_detrazione_affitto_terreni_agricoli_ai_giovani',period),parameters(period).imposte.IRPEF.QuadroRP.Sezione_V.limite_massimo_canone_annuo_RP73)
+        vero_valore_RP73 = where(person('RP73_spese_per_detrazione_affitto_terreni_agricoli_ai_giovani',period)< parameters(period).imposte.IRPEF.QuadroRP.Sezione_V.lim_max_can_ann_RP73, person('RP73_spese_per_detrazione_affitto_terreni_agricoli_ai_giovani',period),parameters(period).imposte.IRPEF.QuadroRP.Sezione_V.lim_max_can_ann_RP73)
         detrazione_spettante_teorica = 0.19 * vero_valore_RP73
         detrazione_spettante_teorica = where(detrazione_spettante_teorica>1200, 1200,detrazione_spettante_teorica)
         detrazione_senza_percentuali = select([not_(person('RP73_spese_per_detrazione_affitto_terreni_agricoli_ai_giovani_compilato',period)),

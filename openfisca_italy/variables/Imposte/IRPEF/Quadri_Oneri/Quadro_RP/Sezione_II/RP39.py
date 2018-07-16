@@ -36,7 +36,7 @@ class RP27_30_31_limite_importo_deducibile(Variable):
     reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=66"  # Always use the most official source
     def formula(person,period,parameters):
         # calcolo capienza_RP28
-        limite_deducibilita = parameters(period).imposte.IRPEF.QuadroRP.Sezione_II.limite_importo_deducibile_contributi_versati_lavoratori_prima_occupazione #limite di deducibilità normale
+        limite_deducibilita = parameters(period).imposte.IRPEF.QuadroRP.Sezione_II.lim_imp_deduc_contr_vers_lav_prima_occ #limite di deducibilità normale
         # eventuale maggiorazione del limite di deduciblità
         eventuale_aumento_limite_deducibilita_maggiorato = (25822.85 - person('RP28_contributi_versati_nei_primi_5_anni_per_maggior_limite_deducibilita',period))
         eventuale_aumento_limite_deducibilita_maggiorato = where(eventuale_aumento_limite_deducibilita_maggiorato<2582,eventuale_aumento_limite_deducibilita_maggiorato,2582)
@@ -59,7 +59,7 @@ class RP_28_limite_importo_deducibile_contributi_per_lavoratori_prima_occupazion
         label = "Rigo RP28 Col.2 sottoposto al limite di deducibilità da utilizzare per il calcolo degli oneri deducibili"
         reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=66"  # Always use the most official source
         def formula(person,period,parameters):
-            limite_deducibilita = parameters(period).imposte.IRPEF.QuadroRP.Sezione_II.limite_importo_deducibile_contributi_versati_lavoratori_prima_occupazione #limite di deducibilità normale
+            limite_deducibilita = parameters(period).imposte.IRPEF.QuadroRP.Sezione_II.lim_imp_deduc_contr_vers_lav_prima_occ #limite di deducibilità normale
             # eventuale maggiorazione del limite di deduciblità
             eventuale_aumento_limite_deducibilita_maggiorato = (25822.85 - person('RP28_contributi_versati_nei_primi_5_anni_per_maggior_limite_deducibilita',period))
             eventuale_aumento_limite_deducibilita_maggiorato = where(eventuale_aumento_limite_deducibilita_maggiorato<2582,eventuale_aumento_limite_deducibilita_maggiorato,2582)

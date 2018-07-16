@@ -81,7 +81,7 @@ class RP61_limite_spesa_in_base_a_codice_da_1_a_4(Variable):
         codice_tipo_intervento = person('RP61_tipo_intervento',period)
         range_date_spesa = person('RP61_Range_Spesa_Date',period)
         # dove i codici sono diversi da 5 e 6
-        P = parameters(period).imposte.IRPEF.QuadroRP.Sezione_IV.limite_spesa_codici_diversi_da_5_6_RP61_64[codice_tipo_intervento]
+        P = parameters(period).imposte.IRPEF.QuadroRP.Sezione_IV.lim_spesa_cod_div_da_5_6_RP61_64[codice_tipo_intervento]
         return select([range_date_spesa == RangeSpesaDate.nessun_codice,
         range_date_spesa == RangeSpesaDate.codice_uno,
         range_date_spesa == RangeSpesaDate.codice_due],
@@ -98,7 +98,7 @@ class RP61_limite_spesa_in_base_a_codice_5_6(Variable):
         codice_tipo_intervento = person('RP61_tipo_intervento',period)
         range_date_spesa = person('RP61_Range_Spesa_Date',period)
         # dove i codici sono diversi da 5 e 6
-        P = parameters(period).imposte.IRPEF.QuadroRP.Sezione_IV.limite_spesa_codici_5_6_RP61_64[codice_tipo_intervento]
+        P = parameters(period).imposte.IRPEF.QuadroRP.Sezione_IV.lim_spesa_cod_5_6_RP61_64[codice_tipo_intervento]
         return select([range_date_spesa == RangeSpesaDate.nessun_codice,
         range_date_spesa == RangeSpesaDate.codice_tre],
         [0, P.importo_spese_sostenute_dal_1_gennaio_al_31_dicembre_2017])

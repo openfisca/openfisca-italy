@@ -60,8 +60,8 @@ class RP14_limite_importo_canone_leasing(Variable):
     def formula(person,period,parameters):
         eta = person('RP14_eta_persona_stipula_del_contratto_leasing',period)
         return where(eta<=35,
-                parameters(period).imposte.IRPEF.QuadroRP.sezione_I_Oneri_spese.RP14.RP14_importo_massimo_canone_leasing_meno_35,
-                    parameters(period).imposte.IRPEF.QuadroRP.sezione_I_Oneri_spese.RP14.RP14_importo_massimo_canone_leasing_sopra_35)
+                parameters(period).imposte.IRPEF.QuadroRP.sezione_I_Oneri_spese.RP14.RP14_imp_max_can_leas_meno_35,
+                    parameters(period).imposte.IRPEF.QuadroRP.sezione_I_Oneri_spese.RP14.RP14_imp_max_can_leas_sopra_35)
 
 
 class RP14_limite_importo_prezzo_riscatto(Variable):
@@ -74,8 +74,8 @@ class RP14_limite_importo_prezzo_riscatto(Variable):
     def formula(person,period,parameters):
         eta = person('RP14_eta_persona_stipula_del_contratto_leasing',period)
         return where(eta<=35,
-                parameters(period).imposte.IRPEF.QuadroRP.sezione_I_Oneri_spese.RP14.RP14_importo_prezzo_riscatto_meno_35,
-                    parameters(period).imposte.IRPEF.QuadroRP.sezione_I_Oneri_spese.RP14.RP14_importo_prezzo_riscatto_sopra_35)
+                parameters(period).imposte.IRPEF.QuadroRP.sezione_I_Oneri_spese.RP14.RP14_imp_prez_risc_meno_35,
+                    parameters(period).imposte.IRPEF.QuadroRP.sezione_I_Oneri_spese.RP14.RP14_imp_prez_risc_sopra_35)
 
 
 

@@ -13,7 +13,7 @@ class RN23_detrazioni_spese_sanitarie_per_determinate_patologie(Variable):
     reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf"  # Always use the most official source
 
     def formula(person,period,parameters):
-        franchigia = parameters(period).imposte.IRPEF.QuadroRP.sezione_I_Oneri_spese.franchigia_spese_mediche
+        franchigia = parameters(period).imposte.IRPEF.QuadroRP.sezione_I_Oneri_spese.franch_spese_med
         # caso 1
         RP15_casella_1_totale_spese_su_cui_determinare_la_detrazione_barrata = person('RP15_casella_1_totale_spese_su_cui_determinare_la_detrazione_barrata',period)
         #caso 2

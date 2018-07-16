@@ -41,7 +41,7 @@ class RP30_contributi_versati_per_familiari_a_carico_non_dedotti_dal_sostituto(V
                 almeno_un_campo_compilato = where(almeno_un_campo_compilato,almeno_un_campo_compilato,not_(person.get_holder(campo).get_array(period) is None))
 
             importo_punto_423_certificazione_unica = person('importo_punto_423_certificazione_unica',period)
-            importo_limite_deducibilita = parameters(period).imposte.IRPEF.QuadroRP.Sezione_II.limite_importo_deducibile_contributi_versati_familiari_carico - person('RP30_contributi_versati_per_familiari_a_carico_dedotti_dal_sostituto',period)
+            importo_limite_deducibilita = parameters(period).imposte.IRPEF.QuadroRP.Sezione_II.lim_imp_deduc_contr_vers_famil_caric - person('RP30_contributi_versati_per_familiari_a_carico_dedotti_dal_sostituto',period)
             importo_limite_deducibilita = where(importo_limite_deducibilita>0,importo_limite_deducibilita,np.array(0))
             importo = min_(importo_punto_423_certificazione_unica,importo_limite_deducibilita)
             punto_421_certificazione_unica_compilato = not_(person('importo_punto_421_certificazione_unica',period)==0)
