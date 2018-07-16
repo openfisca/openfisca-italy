@@ -59,7 +59,7 @@ class RP28_contributi_per_lavoratori_prima_occupazione_non_dedotti_dal_sostituto
                     almeno_un_campo_compilato = where(almeno_un_campo_compilato,almeno_un_campo_compilato,not_(person.get_holder(campo).get_array(period) is None))
                 # calcolo importo
                 importo_punto_413_certificazione_unica = person('importo_punto_413_certificazione_unica',period)
-                limite_deducibilita = parameters(period).imposte.IRPEF.QuadroRP.Sezione_II.limite_importo_deducibile_contributi_versati_lavoratori_prima_occupazione #limite di deducibilità normale
+                limite_deducibilita = parameters(period).imposte.IRPEF.QuadroRP.Sezione_II.lim_imp_deduc_contr_vers_lav_prima_occ #limite di deducibilità normale
                 # eventuale maggiorazione del limite di deduciblità
                 eventuale_aumento_limite_deducibilita_maggiorato = (25822.85 - person('RP28_contributi_versati_nei_primi_5_anni_per_maggior_limite_deducibilita',period))
                 eventuale_aumento_limite_deducibilita_maggiorato = where(eventuale_aumento_limite_deducibilita_maggiorato<2582,eventuale_aumento_limite_deducibilita_maggiorato,2582)
