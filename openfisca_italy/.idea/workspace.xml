@@ -14,8 +14,8 @@
       <file leaf-file-name="detrazioni_figli_a_carico.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/variables/Imposte/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/Variabili_Calcolo_RN6/detrazioni_figli_a_carico.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="38" column="46" lean-forward="true" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="46" />
+            <state relative-caret-position="360">
+              <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
             </state>
           </provider>
         </entry>
@@ -35,6 +35,12 @@
       <find>detrazione_figli_eta_minore_tre</find>
       <find>detrazione_figli_handicap</find>
       <find>ulteriore_detrazione_figli_a_carico</find>
+      <find>detrazione_familiare_a_carico</find>
+      <find>limite_massimo_detrazione_coniuge_a_carico</find>
+      <find>soglia_familiare_a_carico</find>
+      <find>soglia_per_detrazioni_lavoro_dip_campione_italia</find>
+      <find>soglia_per_detrazione_esente_a_favore_superstiti_corrisposte_agli_orfani</find>
+      <find>soglia_per_detrazione_esente_residenti_campioni_italia</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -86,25 +92,6 @@
               <item name="imposte" type="462c0819:PsiDirectoryNode" />
               <item name="IRPEF" type="462c0819:PsiDirectoryNode" />
               <item name="QuadroRN" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="openfisca_italy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
-              <item name="parameters" type="462c0819:PsiDirectoryNode" />
-              <item name="imposte" type="462c0819:PsiDirectoryNode" />
-              <item name="IRPEF" type="462c0819:PsiDirectoryNode" />
-              <item name="QuadroRN" type="462c0819:PsiDirectoryNode" />
-              <item name="detrazioni_carichi_famigliari" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="openfisca_italy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
-              <item name="parameters" type="462c0819:PsiDirectoryNode" />
-              <item name="imposte" type="462c0819:PsiDirectoryNode" />
-              <item name="IRPEF" type="462c0819:PsiDirectoryNode" />
-              <item name="QuadroRN" type="462c0819:PsiDirectoryNode" />
-              <item name="detrazioni_carichi_famigliari" type="462c0819:PsiDirectoryNode" />
-              <item name="detrazioni_tipi_figli" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="openfisca_italy" type="b2602c69:ProjectViewProjectNode" />
@@ -204,7 +191,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="720" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3579795" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.44143486" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -243,8 +230,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/variables/Imposte/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/Variabili_Calcolo_RN6/detrazioni_figli_a_carico.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="38" column="46" lean-forward="true" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="46" />
+        <state relative-caret-position="360">
+          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
         </state>
       </provider>
     </entry>

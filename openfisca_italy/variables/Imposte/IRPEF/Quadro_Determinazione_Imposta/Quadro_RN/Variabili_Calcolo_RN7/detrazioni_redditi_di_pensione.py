@@ -27,8 +27,8 @@ class detrazioni_per_pensionati(Variable):
         reddito_totale_da_pensioni = person('reddito_totale_da_pensioni',period) # it's the sum of the three income tipologies
         reddito_per_detrazioni = person('reddito_per_detrazioni',period)
         # parametri di esenzione
-        soglia_per_esenzioni_detrazioni_pensioni_solo_campione_italia = parameters(period).imposte.IRPEF.QuadroRN.detrazioni_pensione.soglia_per_detrazione_esente_residenti_campioni_italia
-        soglia_per_esenzioni_detrazioni_pensioni_solo_favore_dei_superstiti_corrisposte_agli_orfani = parameters(period).imposte.IRPEF.QuadroRN.detrazioni_pensione.soglia_per_detrazione_esente_a_favore_superstiti_corrisposte_agli_orfani
+        soglia_per_esenzioni_detrazioni_pensioni_solo_campione_italia = parameters(period).imposte.IRPEF.QuadroRN.detrazioni_pensione.soglia_detr_esente_res_camp_it
+        soglia_per_esenzioni_detrazioni_pensioni_solo_favore_dei_superstiti_corrisposte_agli_orfani = parameters(period).imposte.IRPEF.QuadroRN.detrazioni_pensione.soglia_detr_esente_a_fav_corr_orfani
         soglia_per_esenzioni_detrazioni_pensioni_solo_campione_italia_e_favore_dei_superstiti_corrisposte_agli_orfani = soglia_per_esenzioni_detrazioni_pensioni_solo_campione_italia + soglia_per_esenzioni_detrazioni_pensioni_solo_favore_dei_superstiti_corrisposte_agli_orfani
         # Condizioni
         return select([solo_pensione_residente_campione_italia * (reddito_totale_da_pensioni <= soglia_per_esenzioni_detrazioni_pensioni_solo_campione_italia),
