@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dacf609-effc-4223-add6-35c5f805aa2f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/openfisca_italy/tests/reform_impact/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/RN5/aliquota_irpef_minore_redditi_minori_15000.py" beforeDir="false" afterPath="$PROJECT_DIR$/openfisca_italy/tests/reform_impact/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/RN5/ali_IRP_min_red_min_15000.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openfisca_italy/tests/reform_impact/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/RN5/aliquota_irpef_minore_redditi_minori_55000.py" beforeDir="false" afterPath="$PROJECT_DIR$/openfisca_italy/tests/reform_impact/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/RN5/ali_IRP_min_red_min_55000.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openfisca_italy/tests/reform_impact/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/RN5/innalzamento_soglia_Irpef_al_27.py" beforeDir="false" afterPath="$PROJECT_DIR$/openfisca_italy/tests/reform_impact/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/RN5/aum_soglia_IRP_al_27.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/openfisca_italy/tests/reform_impact/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/RN6/impatto_riforma_detr_coniuge_familiare.py" beforeDir="false" afterPath="$PROJECT_DIR$/openfisca_italy/tests/reform_impact/IRPEF/Quadro_Determinazione_Imposta/Quadro_RN/RN6/rif_detr_con_fam.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openfisca_italy/tests/variables_parameters/imposte/irpef/Quadro_RP/spese_per_interventi_di_recupero_del_patrimonio_edilizio_misure_antisismiche.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/openfisca_italy/tests/variables_parameters/imposte/irpef/Quadro_RP/spese_interv_rec_patr_edili_misure_antisis.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openfisca_italy/tests/variables_parameters/imposte/irpef/benefici/detrazioni/altre_detrazioni_crediti_imposta/detrazioni_spese_sanitarie_determinate_patologie.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/openfisca_italy/tests/variables_parameters/imposte/irpef/benefici/detrazioni/altre_detrazioni_crediti_imposta/detr_spese_sanitarie_deter_patologie.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openfisca_italy/tests/variables_parameters/imposte/irpef/benefici/detrazioni/detrazioni_imposta/lavoro/detrazioni_redditi_assimilati_a_lavoro_dip_e_altri_redditi.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/openfisca_italy/tests/variables_parameters/imposte/irpef/benefici/detrazioni/detrazioni_imposta/lavoro/detr_red_assimilati_a_lavoro_dip_e_altri_red.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openfisca_italy/tests/variables_parameters/imposte/irpef/benefici/detrazioni/detrazioni_imposta/locazione_affitto/detrazioni_inquilini_di_alloggi_adibiti_ad_abit_principale.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/openfisca_italy/tests/variables_parameters/imposte/irpef/benefici/detrazioni/detrazioni_imposta/locazione_affitto/detr_inquilini_di_alloggi_adibiti_ad_abit_principale.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openfisca_italy/tests/variables_parameters/imposte/irpef/benefici/detrazioni/detrazioni_imposta/locazione_affitto/detrazioni_per_affitto_di_terreni_agricoli_ai_giovani.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/openfisca_italy/tests/variables_parameters/imposte/irpef/benefici/detrazioni/detrazioni_imposta/locazione_affitto/detr_per_affitto_di_terreni_agricoli_ai_giovani.yaml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,17 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="indennita_alloggio.yaml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/openfisca_italy/parameters/benefici/indennita_alloggio.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -73,7 +64,131 @@
               <item name="openfisca-italy" type="462c0819:PsiDirectoryNode" />
               <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="reform_impact" type="462c0819:PsiDirectoryNode" />
+              <item name="variables_parameters" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openfisca-italy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openfisca-italy" type="462c0819:PsiDirectoryNode" />
+              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="variables_parameters" type="462c0819:PsiDirectoryNode" />
+              <item name="imposte" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openfisca-italy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openfisca-italy" type="462c0819:PsiDirectoryNode" />
+              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="variables_parameters" type="462c0819:PsiDirectoryNode" />
+              <item name="imposte" type="462c0819:PsiDirectoryNode" />
+              <item name="irpef" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openfisca-italy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openfisca-italy" type="462c0819:PsiDirectoryNode" />
+              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="variables_parameters" type="462c0819:PsiDirectoryNode" />
+              <item name="imposte" type="462c0819:PsiDirectoryNode" />
+              <item name="irpef" type="462c0819:PsiDirectoryNode" />
+              <item name="agevolazioni" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openfisca-italy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openfisca-italy" type="462c0819:PsiDirectoryNode" />
+              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="variables_parameters" type="462c0819:PsiDirectoryNode" />
+              <item name="imposte" type="462c0819:PsiDirectoryNode" />
+              <item name="irpef" type="462c0819:PsiDirectoryNode" />
+              <item name="benefici" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openfisca-italy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openfisca-italy" type="462c0819:PsiDirectoryNode" />
+              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="variables_parameters" type="462c0819:PsiDirectoryNode" />
+              <item name="imposte" type="462c0819:PsiDirectoryNode" />
+              <item name="irpef" type="462c0819:PsiDirectoryNode" />
+              <item name="benefici" type="462c0819:PsiDirectoryNode" />
+              <item name="detrazioni" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openfisca-italy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openfisca-italy" type="462c0819:PsiDirectoryNode" />
+              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="variables_parameters" type="462c0819:PsiDirectoryNode" />
+              <item name="imposte" type="462c0819:PsiDirectoryNode" />
+              <item name="irpef" type="462c0819:PsiDirectoryNode" />
+              <item name="benefici" type="462c0819:PsiDirectoryNode" />
+              <item name="detrazioni" type="462c0819:PsiDirectoryNode" />
+              <item name="altre_detrazioni_crediti_imposta" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openfisca-italy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openfisca-italy" type="462c0819:PsiDirectoryNode" />
+              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="variables_parameters" type="462c0819:PsiDirectoryNode" />
+              <item name="imposte" type="462c0819:PsiDirectoryNode" />
+              <item name="irpef" type="462c0819:PsiDirectoryNode" />
+              <item name="benefici" type="462c0819:PsiDirectoryNode" />
+              <item name="detrazioni" type="462c0819:PsiDirectoryNode" />
+              <item name="detrazioni_imposta" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openfisca-italy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openfisca-italy" type="462c0819:PsiDirectoryNode" />
+              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="variables_parameters" type="462c0819:PsiDirectoryNode" />
+              <item name="imposte" type="462c0819:PsiDirectoryNode" />
+              <item name="irpef" type="462c0819:PsiDirectoryNode" />
+              <item name="benefici" type="462c0819:PsiDirectoryNode" />
+              <item name="detrazioni" type="462c0819:PsiDirectoryNode" />
+              <item name="detrazioni_imposta" type="462c0819:PsiDirectoryNode" />
+              <item name="carichi_famigliari" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openfisca-italy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openfisca-italy" type="462c0819:PsiDirectoryNode" />
+              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="variables_parameters" type="462c0819:PsiDirectoryNode" />
+              <item name="imposte" type="462c0819:PsiDirectoryNode" />
+              <item name="irpef" type="462c0819:PsiDirectoryNode" />
+              <item name="benefici" type="462c0819:PsiDirectoryNode" />
+              <item name="detrazioni" type="462c0819:PsiDirectoryNode" />
+              <item name="detrazioni_imposta" type="462c0819:PsiDirectoryNode" />
+              <item name="lavoro" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openfisca-italy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openfisca-italy" type="462c0819:PsiDirectoryNode" />
+              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="variables_parameters" type="462c0819:PsiDirectoryNode" />
+              <item name="imposte" type="462c0819:PsiDirectoryNode" />
+              <item name="irpef" type="462c0819:PsiDirectoryNode" />
+              <item name="benefici" type="462c0819:PsiDirectoryNode" />
+              <item name="detrazioni" type="462c0819:PsiDirectoryNode" />
+              <item name="detrazioni_imposta" type="462c0819:PsiDirectoryNode" />
+              <item name="locazione_affitto" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openfisca-italy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openfisca-italy" type="462c0819:PsiDirectoryNode" />
+              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
+              <item name="variables" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="openfisca-italy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="openfisca-italy" type="462c0819:PsiDirectoryNode" />
+              <item name="openfisca_italy" type="462c0819:PsiDirectoryNode" />
+              <item name="variables" type="462c0819:PsiDirectoryNode" />
+              <item name="Imposte" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
