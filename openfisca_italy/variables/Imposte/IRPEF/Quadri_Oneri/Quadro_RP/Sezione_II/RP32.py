@@ -45,5 +45,5 @@ class RP32_totale_importo_deducibile_abitazione_data_in_locazione(Variable):
     reference = "http://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Dichiarazioni/Redditi+Persone+fisiche+2018/Modello+e+istruzioni+Redditi+PF2018/Istruzioni+Redditi+Pf+-+Fascicolo+1+2018/PF1_istruzioni_2018_Ret.pdf#page=67"  # Always use the most official source
     def formula(person,period,parameters):
         # limit RP31 col.2
-        vero_valore_colonna_2 = where(person('RP32_spesa_acquisto_costruzione_abitazione_data_in_locazione',period)< parameters(period).imposte.IRPEF.QuadroRP.Sezione_II.limite_spesa_acquisto_costruzione_immobile_dato_locazione,person('RP32_spesa_acquisto_costruzione_abitazione_data_in_locazione',period),parameters(period).imposte.IRPEF.QuadroRP.Sezione_II.limite_spesa_acquisto_costruzione_immobile_dato_locazione)
+        vero_valore_colonna_2 = where(person('RP32_spesa_acquisto_costruzione_abitazione_data_in_locazione',period)< parameters(period).imposte.IRPEF.QuadroRP.Sezione_II.lim_spesa_acq_costr_imm_dato_loc,person('RP32_spesa_acquisto_costruzione_abitazione_data_in_locazione',period),parameters(period).imposte.IRPEF.QuadroRP.Sezione_II.lim_spesa_acq_costr_imm_dato_loc)
         return round_(((0.2 * vero_valore_colonna_2) / (8 + (0.2* person('RP32_interessi_passivi_sui_mutui_abitazione_data_in_locazione',period)))),2)
