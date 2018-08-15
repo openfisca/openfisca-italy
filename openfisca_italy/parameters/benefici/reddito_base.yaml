@@ -1,5 +1,5 @@
 description: Ammontare del reddito di base
-# Not defined for Italian legislation 
+# Not defined for Italian legislation
 values:
   # This parameter is only defined since the 1st of Dec 2015.
   2015-12-01:
