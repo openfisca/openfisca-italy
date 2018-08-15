@@ -1,30 +1,31 @@
-Hi there!
+Salve gente!
 
-I really enjoy OpenFisca, but I recently encountered an issue.
+Il progetto Openfisca-Italy è molto interessante, ma vorrei segnalare una problematica.
 
-### Here is what I did:
-
-
-### Here is what I expected to happen:
+### Questo è quello che ho fatto:
 
 
-### Here is what actually happened:
+### Questo è quello mi aspettavo succedesse:
 
 
-### Here is data (or links to it) that can help you reproduce this issue:
+### Questo è quello che è successo:
+
+
+### Questi sono i dati utilizzati (inserire un link se non è possibile specificarli tutti) che possono riprodurre la situazione specificata :
 
 
 
-## Context
+## Contesto
 
-I identify more as a:
+Sono in grado di identificare anche altro dato che sono:
 
-- Analyst _(I make macroscopic computations on real populations)_.
-- Business expert _(I create tests and model legislation)_.
-- Commenter _(I make data visualisations)_.
-- Developer _(I create tools that use the existing OpenFisca code)_.
-- Historian _(I accumulate data based on past legislation values)_.
-- Lobbyist _(I model reforms to make them exist)_.
-- Producer _(I make computations on individual situations)_.
+- Analista _(Eseguo calcoli macroscopici su popolazioni reali)_.
+- Esperto di business _(Creo test e modelli legislativi)_.
+- Commentatore _(Realizzo la visualizzazione dei dati)_.
+- Sviluppatore _(Creao strumenti da che utilizzano codice Openfisca esistente)_.
+- Storico _(Accumulo dati basati su valori di legislazioni passate)_.
+- Lobbista _(Io modifico le riforme per farle esistere
+)_.
+- Produttore _(Eseguo elaborazioni su situazioni individuali)_.
 
-(remove this line as well as all items in the list that don't fit your situation)
+(rimuovi tutta la sezione del contesto se non trovi una figura professionale nella lista alla quale appartieni)
