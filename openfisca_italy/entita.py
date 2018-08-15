@@ -8,18 +8,18 @@ Famiglia = build_entity(
     plural = "households",
     label = u'Famiglia',
     doc = '''
-    Household is an example of a group entity.
-    A group entity contains one or more individual·s.
-    Each individual in a group entity has a role (e.g. parent or children). Some roles can only be held by a limited number of individuals (e.g. a 'first_parent' can only be held by one individual), while others can have an unlimited number of individuals (e.g. 'children').
+    Una famiglia è un'entità di gruppo, formata da n persone.
+    Ogni individuo assume un ruolo (un individuo sarà il genitore 1, un altro il genitore 2 ed infine n figli)
+    Da ciò si assume che un certi ruoli avranno capienza limitata (genitore) mentre altri no (figli).
 
-    Example:
-    Housing variables (e.g. housing_tax') are usually defined for a group entity such as 'Household'.
+    Esempio di variabili di un'enità di gruppo:
+    Nel caso della famiglia, potrebbero esistere sgravi fiscali relativi al numero dei figli facenti parte il nucleo famigliare.
 
-    Usage:
-    Check the number of individuals of a specific role (e.g. check if there is a 'second_parent' with household.nb_persons(Household.SECOND_PARENT)).
-    Calculate a variable applied to each individual of the group entity (e.g. calculate the 'salary' of each member of the 'Household' with salaries = household.members('salary', period = MONTH); sum_salaries = household.sum(salaries)).
+    Utilizzo:
+    E' possibile calcolare il numero di individui che ricopre un certo ruolo (ad esempio, vedere se esiste una figura del 'genitore 2' con household.nb_persons(Household.SECOND_PARENT)).
+    Calcolare una variabile esistente per ogni tipo di individuo appartenente alla famiglia (ad esempio calcolare il 'salario' per ogni membro della 'Famiglia' con salario = household.members('salary', period = MONTH); sum_salaries = household.sum(salaries)).
 
-    For more information, see: http://openfisca.org/doc/coding-the-legislation/50_entities.html
+    Per ulteriori informazioni vedere: http://openfisca.org/doc/coding-the-legislation/50_entities.html
     ''',
     roles = [
         {
